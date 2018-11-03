@@ -218,14 +218,14 @@
                           <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="jl_correo" min="-2" max="-2" attributes="0"/>
-                              <Component id="jl_municipio" min="-2" max="-2" attributes="0"/>
+                              <Component id="jl_Provincia" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jtf_correo" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
-                      <Component id="jtf_numero" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
+                      <Component id="jtf_provincia" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
                       <Component id="jtf_colonia" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -284,8 +284,8 @@
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jtf_numero" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jl_municipio" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jtf_provincia" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jl_Provincia" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -397,7 +397,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="jl_municipio">
+        <Component class="javax.swing.JLabel" name="jl_Provincia">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="0"/>
@@ -473,7 +473,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtf_numero">
+        <Component class="javax.swing.JTextField" name="jtf_provincia">
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>

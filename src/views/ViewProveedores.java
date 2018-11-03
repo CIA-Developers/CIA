@@ -42,7 +42,7 @@ public class ViewProveedores extends javax.swing.JPanel {
         jtf_ap_pat = new javax.swing.JTextField();
         jl_nombre = new javax.swing.JLabel();
         jtf_nombre = new javax.swing.JTextField();
-        jl_municipio = new javax.swing.JLabel();
+        jl_Provincia = new javax.swing.JLabel();
         jl_calle = new javax.swing.JLabel();
         jtf_calle = new javax.swing.JTextField();
         jtf_municipio = new javax.swing.JTextField();
@@ -50,7 +50,7 @@ public class ViewProveedores extends javax.swing.JPanel {
         jl_numero = new javax.swing.JLabel();
         jtf_correo = new javax.swing.JTextField();
         jtf_colonia = new javax.swing.JTextField();
-        jtf_numero = new javax.swing.JTextField();
+        jtf_provincia = new javax.swing.JTextField();
         jl_colonia = new javax.swing.JLabel();
         jp_vista = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -120,9 +120,9 @@ public class ViewProveedores extends javax.swing.JPanel {
         jl_nombre.setForeground(new java.awt.Color(51, 51, 51));
         jl_nombre.setText("Nombre:");
 
-        jl_municipio.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jl_municipio.setForeground(new java.awt.Color(51, 51, 51));
-        jl_municipio.setText("Provincia:");
+        jl_Provincia.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jl_Provincia.setForeground(new java.awt.Color(51, 51, 51));
+        jl_Provincia.setText("Provincia:");
 
         jl_calle.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jl_calle.setForeground(new java.awt.Color(51, 51, 51));
@@ -188,11 +188,11 @@ public class ViewProveedores extends javax.swing.JPanel {
                         .addGap(51, 51, 51)
                         .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jl_correo)
-                            .addComponent(jl_municipio))))
+                            .addComponent(jl_Provincia))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jtf_correo, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtf_numero, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtf_provincia, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtf_colonia, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         jp_datosLayout.setVerticalGroup(
@@ -237,8 +237,8 @@ public class ViewProveedores extends javax.swing.JPanel {
                                     .addComponent(jl_numero))
                                 .addGap(18, 18, 18)
                                 .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jtf_numero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jl_municipio))))
+                                    .addComponent(jtf_provincia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jl_Provincia))))
                         .addGap(18, 18, 18)
                         .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jl_correo)
@@ -403,6 +403,7 @@ public class ViewProveedores extends javax.swing.JPanel {
     public javax.swing.JButton jb_guardar;
     public javax.swing.JButton jb_modificar;
     public javax.swing.JButton jb_nuevo;
+    public javax.swing.JLabel jl_Provincia;
     public javax.swing.JLabel jl_ap_mat;
     public javax.swing.JLabel jl_ap_pat;
     public javax.swing.JLabel jl_calle;
@@ -413,7 +414,6 @@ public class ViewProveedores extends javax.swing.JPanel {
     public javax.swing.JLabel jl_icon_buscar;
     public javax.swing.JLabel jl_imagen;
     public javax.swing.JLabel jl_modificar;
-    public javax.swing.JLabel jl_municipio;
     public javax.swing.JLabel jl_nombre;
     public javax.swing.JLabel jl_nuevo;
     public javax.swing.JLabel jl_numero;
@@ -433,7 +433,7 @@ public class ViewProveedores extends javax.swing.JPanel {
     public javax.swing.JTextField jtf_correo;
     public javax.swing.JTextField jtf_municipio;
     public javax.swing.JTextField jtf_nombre;
-    public javax.swing.JTextField jtf_numero;
+    public javax.swing.JTextField jtf_provincia;
     public javax.swing.JTextField jtf_rfc;
     public javax.swing.JTextField jtf_telefono;
     // End of variables declaration//GEN-END:variables
