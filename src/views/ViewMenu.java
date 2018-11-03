@@ -27,17 +27,56 @@ public class ViewMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jm_catalogos = new javax.swing.JMenu();
+        jmi_proveedores = new javax.swing.JMenuItem();
+        jmi_clientes = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jMenuBar1.setBackground(new java.awt.Color(255, 255, 204));
+        jMenuBar1.setPreferredSize(new java.awt.Dimension(88, 35));
+
+        jm_catalogos.setBackground(new java.awt.Color(255, 255, 102));
+        jm_catalogos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/catalogos.png"))); // NOI18N
+        jm_catalogos.setText("Catalogos");
+
+        jmi_proveedores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/Proveedores.png"))); // NOI18N
+        jmi_proveedores.setText("Proveedores");
+        jm_catalogos.add(jmi_proveedores);
+
+        jmi_clientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/clientes.png"))); // NOI18N
+        jmi_clientes.setText("Clientes");
+        jm_catalogos.add(jmi_clientes);
+
+        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/Empleados.png"))); // NOI18N
+        jMenuItem4.setText("Empleados compras");
+        jm_catalogos.add(jMenuItem4);
+
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/Empleados.png"))); // NOI18N
+        jMenuItem5.setText("Empleados ventas");
+        jm_catalogos.add(jMenuItem5);
+
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/productos.png"))); // NOI18N
+        jMenuItem1.setText("Productos");
+        jm_catalogos.add(jMenuItem1);
+
+        jMenuBar1.add(jm_catalogos);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 740, Short.MAX_VALUE)
+            .addGap(0, 768, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 471, Short.MAX_VALUE)
+            .addGap(0, 416, Short.MAX_VALUE)
         );
 
         pack();
@@ -79,5 +118,12 @@ public class ViewMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JMenuBar jMenuBar1;
+    public javax.swing.JMenuItem jMenuItem1;
+    public javax.swing.JMenuItem jMenuItem4;
+    public javax.swing.JMenuItem jMenuItem5;
+    public javax.swing.JMenu jm_catalogos;
+    public javax.swing.JMenuItem jmi_clientes;
+    public javax.swing.JMenuItem jmi_proveedores;
     // End of variables declaration//GEN-END:variables
 }
