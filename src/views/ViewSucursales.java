@@ -31,27 +31,6 @@ public class ViewSucursales extends javax.swing.JPanel {
         jl_imagen = new javax.swing.JLabel();
         jl_icon_buscar = new javax.swing.JLabel();
         jtf_buscar = new javax.swing.JTextField();
-        jp_datos = new javax.swing.JPanel();
-        jl_telefono = new javax.swing.JLabel();
-        jtf_apt_mat = new javax.swing.JTextField();
-        jtf_telefono = new javax.swing.JTextField();
-        jl_id = new javax.swing.JLabel();
-        jtf_id = new javax.swing.JTextField();
-        jl_ap_mat = new javax.swing.JLabel();
-        jtf_ap_pat = new javax.swing.JTextField();
-        jl_nombre = new javax.swing.JLabel();
-        jtf_nombre = new javax.swing.JTextField();
-        jl_Provincia = new javax.swing.JLabel();
-        jl_calle = new javax.swing.JLabel();
-        jtf_calle = new javax.swing.JTextField();
-        jtf_municipio = new javax.swing.JTextField();
-        jl_correo = new javax.swing.JLabel();
-        jl_numero = new javax.swing.JLabel();
-        jtf_correo = new javax.swing.JTextField();
-        jtf_provincia = new javax.swing.JTextField();
-        jl_colonia = new javax.swing.JLabel();
-        jl_ap_mat1 = new javax.swing.JLabel();
-        jtf_calle1 = new javax.swing.JTextField();
         jp_vista = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jt_vista = new javax.swing.JTable();
@@ -64,6 +43,27 @@ public class ViewSucursales extends javax.swing.JPanel {
         jl_eliminar = new javax.swing.JLabel();
         jb_guardar = new javax.swing.JButton();
         jl_guadar = new javax.swing.JLabel();
+        jp_datos = new javax.swing.JPanel();
+        jl_telefono = new javax.swing.JLabel();
+        jtf_numero = new javax.swing.JTextField();
+        jtf_telefono = new javax.swing.JTextField();
+        jl_no_sucursal = new javax.swing.JLabel();
+        jtf_no_sucursal = new javax.swing.JTextField();
+        jl_ap_mat = new javax.swing.JLabel();
+        jtf_colonia = new javax.swing.JTextField();
+        jl_cod_prod = new javax.swing.JLabel();
+        jtf_calle = new javax.swing.JTextField();
+        jl_stock_max = new javax.swing.JLabel();
+        jl_calle = new javax.swing.JLabel();
+        jtf_stock = new javax.swing.JTextField();
+        jtf_codigo_prod = new javax.swing.JTextField();
+        jl_stock_min = new javax.swing.JLabel();
+        jl_numero = new javax.swing.JLabel();
+        jtf_stock_min = new javax.swing.JTextField();
+        jtf_stock_max = new javax.swing.JTextField();
+        jl_colonia = new javax.swing.JLabel();
+        jl_nom_prod = new javax.swing.JLabel();
+        jtf_nom_prod = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -96,155 +96,6 @@ public class ViewSucursales extends javax.swing.JPanel {
         );
 
         jl_icon_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/buscar .png"))); // NOI18N
-
-        jp_datos.setBackground(new java.awt.Color(255, 255, 255));
-        jp_datos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14), new java.awt.Color(0, 153, 255))); // NOI18N
-
-        jl_telefono.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jl_telefono.setForeground(new java.awt.Color(51, 51, 51));
-        jl_telefono.setText("Telefono:");
-
-        jl_id.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jl_id.setForeground(new java.awt.Color(51, 51, 51));
-        jl_id.setText("No. sucursal:");
-
-        jl_ap_mat.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jl_ap_mat.setForeground(new java.awt.Color(51, 51, 51));
-        jl_ap_mat.setText("Stock:");
-
-        jl_nombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jl_nombre.setForeground(new java.awt.Color(51, 51, 51));
-        jl_nombre.setText("Codigo producto:");
-
-        jl_Provincia.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jl_Provincia.setForeground(new java.awt.Color(51, 51, 51));
-        jl_Provincia.setText("Stock Maximo:");
-
-        jl_calle.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jl_calle.setForeground(new java.awt.Color(51, 51, 51));
-        jl_calle.setText("Calle:");
-
-        jl_correo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jl_correo.setForeground(new java.awt.Color(51, 51, 51));
-        jl_correo.setText("Stock Minimo:");
-
-        jl_numero.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jl_numero.setForeground(new java.awt.Color(51, 51, 51));
-        jl_numero.setText("Numero:");
-
-        jl_colonia.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jl_colonia.setForeground(new java.awt.Color(51, 51, 51));
-        jl_colonia.setText("Colonia:");
-
-        jl_ap_mat1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jl_ap_mat1.setForeground(new java.awt.Color(51, 51, 51));
-        jl_ap_mat1.setText("Nombre producto:");
-
-        javax.swing.GroupLayout jp_datosLayout = new javax.swing.GroupLayout(jp_datos);
-        jp_datos.setLayout(jp_datosLayout);
-        jp_datosLayout.setHorizontalGroup(
-            jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_datosLayout.createSequentialGroup()
-                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jp_datosLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jl_id)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jtf_id, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jp_datosLayout.createSequentialGroup()
-                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jp_datosLayout.createSequentialGroup()
-                                .addGap(50, 50, 50)
-                                .addComponent(jl_numero)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jtf_apt_mat, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jp_datosLayout.createSequentialGroup()
-                                .addGap(55, 55, 55)
-                                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jl_calle)
-                                    .addComponent(jl_colonia))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jtf_ap_pat, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jtf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(32, 32, 32)
-                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jp_datosLayout.createSequentialGroup()
-                                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jl_telefono)
-                                    .addComponent(jl_nombre))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jtf_municipio, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jtf_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jp_datosLayout.createSequentialGroup()
-                                .addComponent(jl_ap_mat1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jtf_calle1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(58, 58, 58)
-                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_datosLayout.createSequentialGroup()
-                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jl_correo)
-                            .addComponent(jl_Provincia))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtf_provincia, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtf_correo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_datosLayout.createSequentialGroup()
-                        .addComponent(jl_ap_mat)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jtf_calle, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jp_datosLayout.setVerticalGroup(
-            jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_datosLayout.createSequentialGroup()
-                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jl_id)
-                    .addComponent(jtf_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
-                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jp_datosLayout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jtf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jl_calle))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtf_ap_pat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jl_colonia))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jl_numero)
-                            .addComponent(jtf_apt_mat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jp_datosLayout.createSequentialGroup()
-                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtf_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jl_telefono))
-                        .addGap(16, 16, 16)
-                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtf_municipio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jl_nombre))
-                        .addGap(18, 18, 18)
-                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtf_calle1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jl_ap_mat1)))
-                    .addGroup(jp_datosLayout.createSequentialGroup()
-                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtf_calle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jl_ap_mat))
-                        .addGap(16, 16, 16)
-                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtf_provincia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jl_Provincia))
-                        .addGap(16, 16, 16)
-                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtf_correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jl_correo))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
 
         jp_vista.setBackground(new java.awt.Color(255, 255, 255));
         jp_vista.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Vista", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14), new java.awt.Color(0, 153, 255))); // NOI18N
@@ -357,6 +208,155 @@ public class ViewSucursales extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jp_datos.setBackground(new java.awt.Color(255, 255, 255));
+        jp_datos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14), new java.awt.Color(0, 153, 255))); // NOI18N
+
+        jl_telefono.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jl_telefono.setForeground(new java.awt.Color(51, 51, 51));
+        jl_telefono.setText("Telefono:");
+
+        jl_no_sucursal.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jl_no_sucursal.setForeground(new java.awt.Color(51, 51, 51));
+        jl_no_sucursal.setText("No. sucursal:");
+
+        jl_ap_mat.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jl_ap_mat.setForeground(new java.awt.Color(51, 51, 51));
+        jl_ap_mat.setText("Stock:");
+
+        jl_cod_prod.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jl_cod_prod.setForeground(new java.awt.Color(51, 51, 51));
+        jl_cod_prod.setText("Codigo producto:");
+
+        jl_stock_max.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jl_stock_max.setForeground(new java.awt.Color(51, 51, 51));
+        jl_stock_max.setText("Stock Maximo:");
+
+        jl_calle.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jl_calle.setForeground(new java.awt.Color(51, 51, 51));
+        jl_calle.setText("Calle:");
+
+        jl_stock_min.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jl_stock_min.setForeground(new java.awt.Color(51, 51, 51));
+        jl_stock_min.setText("Stock Minimo:");
+
+        jl_numero.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jl_numero.setForeground(new java.awt.Color(51, 51, 51));
+        jl_numero.setText("Numero:");
+
+        jl_colonia.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jl_colonia.setForeground(new java.awt.Color(51, 51, 51));
+        jl_colonia.setText("Colonia:");
+
+        jl_nom_prod.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jl_nom_prod.setForeground(new java.awt.Color(51, 51, 51));
+        jl_nom_prod.setText("Nombre producto:");
+
+        javax.swing.GroupLayout jp_datosLayout = new javax.swing.GroupLayout(jp_datos);
+        jp_datos.setLayout(jp_datosLayout);
+        jp_datosLayout.setHorizontalGroup(
+            jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_datosLayout.createSequentialGroup()
+                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jp_datosLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(jl_no_sucursal)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jtf_no_sucursal, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jp_datosLayout.createSequentialGroup()
+                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jp_datosLayout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addComponent(jl_numero)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jtf_numero, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jp_datosLayout.createSequentialGroup()
+                                .addGap(55, 55, 55)
+                                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jl_calle)
+                                    .addComponent(jl_colonia))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jtf_colonia, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtf_calle, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(32, 32, 32)
+                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jp_datosLayout.createSequentialGroup()
+                                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jl_telefono)
+                                    .addComponent(jl_cod_prod))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jtf_codigo_prod, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtf_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jp_datosLayout.createSequentialGroup()
+                                .addComponent(jl_nom_prod)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jtf_nom_prod, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(58, 58, 58)
+                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_datosLayout.createSequentialGroup()
+                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jl_stock_min)
+                            .addComponent(jl_stock_max))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtf_stock_max, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtf_stock_min, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_datosLayout.createSequentialGroup()
+                        .addComponent(jl_ap_mat)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jtf_stock, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jp_datosLayout.setVerticalGroup(
+            jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_datosLayout.createSequentialGroup()
+                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_no_sucursal)
+                    .addComponent(jtf_no_sucursal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
+                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp_datosLayout.createSequentialGroup()
+                        .addGap(7, 7, 7)
+                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jtf_calle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jl_calle))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jtf_colonia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jl_colonia))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jl_numero)
+                            .addComponent(jtf_numero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jp_datosLayout.createSequentialGroup()
+                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jtf_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jl_telefono))
+                        .addGap(16, 16, 16)
+                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jtf_codigo_prod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jl_cod_prod))
+                        .addGap(18, 18, 18)
+                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jtf_nom_prod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jl_nom_prod)))
+                    .addGroup(jp_datosLayout.createSequentialGroup()
+                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jtf_stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jl_ap_mat))
+                        .addGap(16, 16, 16)
+                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jtf_stock_max, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jl_stock_max))
+                        .addGap(16, 16, 16)
+                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jtf_stock_min, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jl_stock_min))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -366,7 +366,6 @@ public class ViewSucursales extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jp_vista, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jp_datos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jl_icon_buscar)
@@ -377,6 +376,10 @@ public class ViewSucursales extends javax.swing.JPanel {
                 .addGap(152, 152, 152)
                 .addComponent(jp_botones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(302, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jp_datos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -386,9 +389,9 @@ public class ViewSucursales extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jtf_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jl_icon_buscar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jp_datos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(14, 14, 14)
                 .addComponent(jp_vista, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jp_botones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -403,21 +406,21 @@ public class ViewSucursales extends javax.swing.JPanel {
     public javax.swing.JButton jb_guardar;
     public javax.swing.JButton jb_modificar;
     public javax.swing.JButton jb_nuevo;
-    public javax.swing.JLabel jl_Provincia;
     public javax.swing.JLabel jl_ap_mat;
-    public javax.swing.JLabel jl_ap_mat1;
     public javax.swing.JLabel jl_calle;
+    public javax.swing.JLabel jl_cod_prod;
     public javax.swing.JLabel jl_colonia;
-    public javax.swing.JLabel jl_correo;
     public javax.swing.JLabel jl_eliminar;
     public javax.swing.JLabel jl_guadar;
     public javax.swing.JLabel jl_icon_buscar;
-    public javax.swing.JLabel jl_id;
     public javax.swing.JLabel jl_imagen;
     public javax.swing.JLabel jl_modificar;
-    public javax.swing.JLabel jl_nombre;
+    public javax.swing.JLabel jl_no_sucursal;
+    public javax.swing.JLabel jl_nom_prod;
     public javax.swing.JLabel jl_nuevo;
     public javax.swing.JLabel jl_numero;
+    public javax.swing.JLabel jl_stock_max;
+    public javax.swing.JLabel jl_stock_min;
     public javax.swing.JLabel jl_telefono;
     public javax.swing.JLabel jl_titulo;
     public javax.swing.JPanel jp_barra;
@@ -425,16 +428,16 @@ public class ViewSucursales extends javax.swing.JPanel {
     public javax.swing.JPanel jp_datos;
     public javax.swing.JPanel jp_vista;
     public javax.swing.JTable jt_vista;
-    public javax.swing.JTextField jtf_ap_pat;
-    public javax.swing.JTextField jtf_apt_mat;
     public javax.swing.JTextField jtf_buscar;
     public javax.swing.JTextField jtf_calle;
-    public javax.swing.JTextField jtf_calle1;
-    public javax.swing.JTextField jtf_correo;
-    public javax.swing.JTextField jtf_id;
-    public javax.swing.JTextField jtf_municipio;
-    public javax.swing.JTextField jtf_nombre;
-    public javax.swing.JTextField jtf_provincia;
+    public javax.swing.JTextField jtf_codigo_prod;
+    public javax.swing.JTextField jtf_colonia;
+    public javax.swing.JTextField jtf_no_sucursal;
+    public javax.swing.JTextField jtf_nom_prod;
+    public javax.swing.JTextField jtf_numero;
+    public javax.swing.JTextField jtf_stock;
+    public javax.swing.JTextField jtf_stock_max;
+    public javax.swing.JTextField jtf_stock_min;
     public javax.swing.JTextField jtf_telefono;
     // End of variables declaration//GEN-END:variables
 }
