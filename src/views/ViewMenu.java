@@ -33,6 +33,7 @@ public class ViewMenu extends javax.swing.JFrame {
         jmi_clientes = new javax.swing.JMenuItem();
         jmi_empleados_compras = new javax.swing.JMenuItem();
         jmi_empleados_ventas = new javax.swing.JMenuItem();
+        jmi_sucursales = new javax.swing.JMenuItem();
         jmi_productos = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -60,6 +61,10 @@ public class ViewMenu extends javax.swing.JFrame {
         jmi_empleados_ventas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/Empleados.png"))); // NOI18N
         jmi_empleados_ventas.setText("Empleados ventas");
         jm_catalogos.add(jmi_empleados_ventas);
+
+        jmi_sucursales.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/sucursales.png"))); // NOI18N
+        jmi_sucursales.setText("sucursales");
+        jm_catalogos.add(jmi_sucursales);
 
         jmi_productos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/productos.png"))); // NOI18N
         jmi_productos.setText("Productos");
@@ -126,5 +131,6 @@ public class ViewMenu extends javax.swing.JFrame {
     public javax.swing.JMenuItem jmi_empleados_ventas;
     public javax.swing.JMenuItem jmi_productos;
     public javax.swing.JMenuItem jmi_proveedores;
+    private javax.swing.JMenuItem jmi_sucursales;
     // End of variables declaration//GEN-END:variables
 }
