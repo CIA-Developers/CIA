@@ -397,7 +397,7 @@ public class ViewEmpleadosCompras extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JButton jb_eliminar;
     public javax.swing.JButton jb_guardar;
     public javax.swing.JButton jb_modificar;
