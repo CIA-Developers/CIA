@@ -44,12 +44,12 @@ public class ViewProveedores extends javax.swing.JPanel {
         jtf_nombre = new javax.swing.JTextField();
         jl_Provincia = new javax.swing.JLabel();
         jl_calle = new javax.swing.JLabel();
-        jtf_calle = new javax.swing.JTextField();
+        jtf_colonia = new javax.swing.JTextField();
         jtf_municipio = new javax.swing.JTextField();
         jl_correo = new javax.swing.JLabel();
         jl_numero = new javax.swing.JLabel();
         jtf_correo = new javax.swing.JTextField();
-        jtf_colonia = new javax.swing.JTextField();
+        jtf_numero = new javax.swing.JTextField();
         jtf_provincia = new javax.swing.JTextField();
         jl_colonia = new javax.swing.JLabel();
         jp_vista = new javax.swing.JPanel();
@@ -184,7 +184,7 @@ public class ViewProveedores extends javax.swing.JPanel {
                                 .addGap(64, 64, 64)
                                 .addComponent(jl_colonia)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jtf_calle, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jtf_colonia, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(51, 51, 51)
                         .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jl_correo)
@@ -193,7 +193,7 @@ public class ViewProveedores extends javax.swing.JPanel {
                 .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jtf_correo, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtf_provincia, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtf_colonia, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jtf_numero, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         jp_datosLayout.setVerticalGroup(
             jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,7 +219,7 @@ public class ViewProveedores extends javax.swing.JPanel {
                     .addGroup(jp_datosLayout.createSequentialGroup()
                         .addGap(78, 78, 78)
                         .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtf_calle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtf_colonia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jl_colonia)))
                     .addGroup(jp_datosLayout.createSequentialGroup()
                         .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,7 +233,7 @@ public class ViewProveedores extends javax.swing.JPanel {
                                     .addComponent(jl_calle)))
                             .addGroup(jp_datosLayout.createSequentialGroup()
                                 .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jtf_colonia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtf_numero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jl_numero))
                                 .addGap(18, 18, 18)
                                 .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -428,12 +428,12 @@ public class ViewProveedores extends javax.swing.JPanel {
     public javax.swing.JTextField jtf_ap_pat;
     public javax.swing.JTextField jtf_apt_mat;
     public javax.swing.JTextField jtf_buscar;
-    public javax.swing.JTextField jtf_calle;
     public javax.swing.JTextField jtf_colonia;
     public javax.swing.JTextField jtf_correo;
     public javax.swing.JTextField jtf_id;
     public javax.swing.JTextField jtf_municipio;
     public javax.swing.JTextField jtf_nombre;
+    public javax.swing.JTextField jtf_numero;
     public javax.swing.JTextField jtf_provincia;
     public javax.swing.JTextField jtf_telefono;
     // End of variables declaration//GEN-END:variables
