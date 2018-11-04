@@ -46,8 +46,33 @@ public class Main {
         ViewClientes viewClientes= new ViewClientes();
         ControllerClientes controllerClientes = new ControllerClientes(modelClientes, viewClientes);
         
-         Object[] controllers = new Object[6];
-         controllers[0] = controllerClientes;
+        ModelEmpleadosCompras modelEmpleadosCompras = new ModelEmpleadosCompras(); 
+        ViewEmpleadosCompras viewEmpleadosCompras = new ViewEmpleadosCompras();
+        ControllerEmpleadosCompras controllerEmpleadosCompras = new ControllerEmpleadosCompras(modelEmpleadosCompras, viewEmpleadosCompras);
+        
+        ModelEmpleadosVentas modelEmpleadosVentas = new ModelEmpleadosVentas(); 
+        ViewEmpleadosVentas viewEmpleadosVentas= new ViewEmpleadosVentas();
+        ControllerEmpleadosVentas controllerEmpleadosVentas = new ControllerEmpleadosVentas(modelEmpleadosVentas, viewEmpleadosVentas);
+        
+        ModelProductos modelProductos = new ModelProductos();
+        ViewProductos viewProductos = new ViewProductos();
+        ControllerProductos controllerProductos = new ControllerProductos(modelProductos, viewProductos);
+        
+        ModelProveedores modelProveedores = new ModelProveedores();
+        ViewProveedores viewProveedores = new ViewProveedores();
+        ControllerProveedores controllerProveedores = new ControllerProveedores(modelProveedores, viewProveedores);
+        
+        ModelSucursales modelSucursales  = new ModelSucursales ();
+        ViewSucursales  viewSucursales = new ViewSucursales ();
+        ControllerSucursales controllerSucursales  = new ControllerSucursales (modelSucursales , viewSucursales );
+        
+        Object[] controllers = new Object[6];
+        controllers[0] = controllerClientes;
+        controllers[1] = controllerEmpleadosCompras;
+        controllers[2] = controllerEmpleadosVentas;
+        controllers[3] = controllerProductos;
+        controllers[4] = controllerProveedores;
+        controllers[5] = controllerSucursales;
         
         ModelMenuAdmin modelMenuAdmin = new ModelMenuAdmin();
         ViewMenuAdmin viewMenuAdmin = new ViewMenuAdmin();

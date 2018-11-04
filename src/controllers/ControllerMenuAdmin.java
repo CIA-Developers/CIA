@@ -132,7 +132,7 @@ public class ControllerMenuAdmin {
         viewMenuAdmin.repaint();     
     }
     private void jmi_sucursales_actionPerformed(){
-        viewMenuAdmin.setContentPane(controllerClientes.viewClientes);
+        viewMenuAdmin.setContentPane(controllerSucursales.viewSucursales);
         viewMenuAdmin.revalidate();
         viewMenuAdmin.repaint();     
     }
