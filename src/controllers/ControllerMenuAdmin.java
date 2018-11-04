@@ -14,8 +14,8 @@ import views.ViewMenuAdmin;
  */
 public class ControllerMenuAdmin {
     
+    private final ModelMenuAdmin ModelMenuAdmin;
     private final ViewMenuAdmin  viewMenuAdmin;
-    private final ControllerMenuAdmin controllerMenuAdmin;
     
      /**
      * Esta variable almacena los controladores de cada vista de catalogos
@@ -36,14 +36,18 @@ public class ControllerMenuAdmin {
      * dentro de este controlador se tiene el accesso a la programacion 
      * en el controlador de cada JpanelCatalogo
      * @param modelMenuAdmin
-     * @param controllerMenuAdmin
+     * @param ViewMenuAdmin
      * @param controllers 
      */
-    public ControllerMenuAdmin(ViewMenuAdmin viewMenuAdmin, ControllerMenuAdmin controllerMenuAdmin, Object[] controllers){
+    public ControllerMenuAdmin(ModelMenuAdmin ModelMenuAdmin, ViewMenuAdmin viewMenuAdmin, Object[] controllers) {   
+        this.ModelMenuAdmin = ModelMenuAdmin;
         this.viewMenuAdmin = viewMenuAdmin;
-        this.controllerMenuAdmin = controllerMenuAdmin;
         this.controllers = controllers;
+        setControllers();
+        setActionListener();
+        initComponets();
     }
+
     /**
      * Separa cada uno de los controlladores almacendados en controllers, de
      * esta forma se puede acceder a todas las variables y métodos publicos
@@ -83,18 +87,18 @@ public class ControllerMenuAdmin {
     private final ActionListener actionListener = new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent e) {
-            
-        }
+           if (e.getSource() == viewMenuAdmin.jmi_clientes) {
+               jmi_clientes_actionPerformed();
+           }
+        }    
+    };
     /**
     * Muestra el JPanel ViewClientes dentro del JFrame ViewMenuAdmin, (incluido todo
     * el funcionamiendo programado).
     */
     private void jmi_clientes_actionPerformed(){
-       // viewMenuAdmin.setContentPane(controllerClientes.ViewClientes);
+        viewMenuAdmin.setContentPane(controllerClientes.viewClientes);
         viewMenuAdmin.revalidate();
         viewMenuAdmin.repaint();     
     }
-        
-    };
-
 }

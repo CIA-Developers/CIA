@@ -38,34 +38,42 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        setMaximumSize(new java.awt.Dimension(32767, 32767));
 
-        jMenuBar1.setBackground(new java.awt.Color(255, 255, 204));
+        jMenuBar1.setBackground(new java.awt.Color(102, 102, 102));
         jMenuBar1.setPreferredSize(new java.awt.Dimension(88, 35));
 
         jm_catalogos.setBackground(new java.awt.Color(255, 255, 102));
+        jm_catalogos.setForeground(new java.awt.Color(255, 255, 255));
         jm_catalogos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/catalogos.png"))); // NOI18N
         jm_catalogos.setText("Catalogos");
 
+        jmi_proveedores.setBackground(new java.awt.Color(255, 255, 255));
         jmi_proveedores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/Proveedores.png"))); // NOI18N
         jmi_proveedores.setText("Proveedores");
         jm_catalogos.add(jmi_proveedores);
 
+        jmi_clientes.setBackground(new java.awt.Color(255, 255, 255));
         jmi_clientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/clientes.png"))); // NOI18N
         jmi_clientes.setText("Clientes");
         jm_catalogos.add(jmi_clientes);
 
+        jmi_empleados_compras.setBackground(new java.awt.Color(255, 255, 255));
         jmi_empleados_compras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/Empleados.png"))); // NOI18N
         jmi_empleados_compras.setText("Empleados compras");
         jm_catalogos.add(jmi_empleados_compras);
 
+        jmi_empleados_ventas.setBackground(new java.awt.Color(255, 255, 255));
         jmi_empleados_ventas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/Empleados.png"))); // NOI18N
         jmi_empleados_ventas.setText("Empleados ventas");
         jm_catalogos.add(jmi_empleados_ventas);
 
+        jmi_sucursales.setBackground(new java.awt.Color(255, 255, 255));
         jmi_sucursales.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/sucursales.png"))); // NOI18N
         jmi_sucursales.setText("sucursales");
         jm_catalogos.add(jmi_sucursales);
 
+        jmi_productos.setBackground(new java.awt.Color(255, 255, 255));
         jmi_productos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/productos.png"))); // NOI18N
         jmi_productos.setText("Productos");
         jm_catalogos.add(jmi_productos);
@@ -78,11 +86,11 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 836, Short.MAX_VALUE)
+            .addGap(0, 1149, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 453, Short.MAX_VALUE)
+            .addGap(0, 657, Short.MAX_VALUE)
         );
 
         pack();
