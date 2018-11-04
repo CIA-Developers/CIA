@@ -57,8 +57,8 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jp_vista" min="-2" pref="228" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jp_botones" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="18" max="32767" attributes="0"/>
+              <Component id="jp_botones" min="-2" pref="102" max="-2" attributes="0"/>
+              <EmptySpace pref="38" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -616,32 +616,27 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="58" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jb_nuevo" min="-2" pref="63" max="-2" attributes="0"/>
-                      <Component id="jl_nuevo" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="79" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jl_nuevo" max="32767" attributes="0"/>
+                      <Component id="jb_nuevo" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jb_modificar" min="-2" pref="55" max="-2" attributes="0"/>
                       <Component id="jl_modificar" min="-2" max="-2" attributes="0"/>
-                      <Component id="jb_modificar" min="-2" pref="65" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                          <Component id="jl_eliminar" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                          <Component id="jb_eliminar" min="-2" pref="63" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jb_eliminar" alignment="0" min="-2" pref="54" max="-2" attributes="0"/>
+                      <Component id="jl_eliminar" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jb_guardar" alignment="0" min="-2" pref="63" max="-2" attributes="0"/>
-                      <Component id="jl_guadar" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jb_guardar" min="-2" pref="58" max="-2" attributes="0"/>
+                      <Component id="jl_guadar" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -649,29 +644,29 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jb_guardar" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="jb_nuevo" min="-2" max="-2" attributes="0"/>
-                      <Component id="jb_modificar" min="-2" max="-2" attributes="0"/>
-                      <Component id="jb_eliminar" alignment="1" min="-2" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jl_guadar" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jb_eliminar" min="-2" pref="61" max="-2" attributes="0"/>
+                              <Component id="jb_guardar" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="jl_nuevo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jl_modificar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jl_eliminar" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jb_nuevo" min="-2" pref="61" max="-2" attributes="0"/>
+                              <Component id="jb_modificar" pref="0" max="32767" attributes="0"/>
                           </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jl_nuevo" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jl_modificar" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jl_eliminar" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jl_guadar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

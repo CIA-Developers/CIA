@@ -34,15 +34,6 @@ public class ViewSucursales extends javax.swing.JPanel {
         jp_vista = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jt_vista = new javax.swing.JTable();
-        jp_botones = new javax.swing.JPanel();
-        jb_nuevo = new javax.swing.JButton();
-        jl_nuevo = new javax.swing.JLabel();
-        jb_modificar = new javax.swing.JButton();
-        jl_modificar = new javax.swing.JLabel();
-        jb_eliminar = new javax.swing.JButton();
-        jl_eliminar = new javax.swing.JLabel();
-        jb_guardar = new javax.swing.JButton();
-        jl_guadar = new javax.swing.JLabel();
         jp_datos = new javax.swing.JPanel();
         jl_telefono = new javax.swing.JLabel();
         jtf_numero = new javax.swing.JTextField();
@@ -64,6 +55,15 @@ public class ViewSucursales extends javax.swing.JPanel {
         jl_colonia = new javax.swing.JLabel();
         jl_nom_prod = new javax.swing.JLabel();
         jtf_nom_prod = new javax.swing.JTextField();
+        jp_botones = new javax.swing.JPanel();
+        jb_nuevo = new javax.swing.JButton();
+        jl_nuevo = new javax.swing.JLabel();
+        jb_modificar = new javax.swing.JButton();
+        jl_modificar = new javax.swing.JLabel();
+        jb_eliminar = new javax.swing.JButton();
+        jl_eliminar = new javax.swing.JLabel();
+        jb_guardar = new javax.swing.JButton();
+        jl_guadar = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -131,81 +131,6 @@ public class ViewSucursales extends javax.swing.JPanel {
             .addGroup(jp_vistaLayout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        jp_botones.setBackground(new java.awt.Color(255, 255, 51));
-
-        jb_nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/nuevo.png"))); // NOI18N
-
-        jl_nuevo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jl_nuevo.setForeground(new java.awt.Color(51, 51, 51));
-        jl_nuevo.setText("Nuevo");
-
-        jb_modificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Modificar.png"))); // NOI18N
-
-        jl_modificar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jl_modificar.setForeground(new java.awt.Color(51, 51, 51));
-        jl_modificar.setText("Modificar");
-
-        jb_eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/eliminar.png"))); // NOI18N
-
-        jl_eliminar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jl_eliminar.setForeground(new java.awt.Color(51, 51, 51));
-        jl_eliminar.setText("Eliminar");
-
-        jb_guardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Guardar.png"))); // NOI18N
-
-        jl_guadar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jl_guadar.setForeground(new java.awt.Color(51, 51, 51));
-        jl_guadar.setText("Guardar");
-
-        javax.swing.GroupLayout jp_botonesLayout = new javax.swing.GroupLayout(jp_botones);
-        jp_botones.setLayout(jp_botonesLayout);
-        jp_botonesLayout.setHorizontalGroup(
-            jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_botonesLayout.createSequentialGroup()
-                .addContainerGap(58, Short.MAX_VALUE)
-                .addGroup(jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jb_nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jl_nuevo))
-                .addGap(60, 60, 60)
-                .addGroup(jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jl_modificar)
-                    .addComponent(jb_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jp_botonesLayout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(jl_eliminar))
-                    .addGroup(jp_botonesLayout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(jb_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(45, 45, 45)
-                .addGroup(jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jb_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jl_guadar))
-                .addGap(50, 50, 50))
-        );
-        jp_botonesLayout.setVerticalGroup(
-            jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_botonesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jb_guardar)
-                    .addComponent(jb_nuevo)
-                    .addComponent(jb_modificar)
-                    .addComponent(jb_eliminar))
-                .addGroup(jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jp_botonesLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jl_guadar))
-                    .addGroup(jp_botonesLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jl_nuevo)
-                                .addComponent(jl_modificar))
-                            .addComponent(jl_eliminar))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jp_datos.setBackground(new java.awt.Color(255, 255, 255));
@@ -307,7 +232,7 @@ public class ViewSucursales extends javax.swing.JPanel {
                         .addComponent(jl_ap_mat)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jtf_stock, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
         jp_datosLayout.setVerticalGroup(
             jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -357,6 +282,78 @@ public class ViewSucursales extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jp_botones.setBackground(new java.awt.Color(255, 255, 51));
+
+        jb_nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/nuevo.png"))); // NOI18N
+
+        jl_nuevo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jl_nuevo.setForeground(new java.awt.Color(51, 51, 51));
+        jl_nuevo.setText("Nuevo");
+
+        jb_modificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Modificar.png"))); // NOI18N
+
+        jl_modificar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jl_modificar.setForeground(new java.awt.Color(51, 51, 51));
+        jl_modificar.setText("Modificar");
+
+        jb_eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/eliminar.png"))); // NOI18N
+
+        jl_eliminar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jl_eliminar.setForeground(new java.awt.Color(51, 51, 51));
+        jl_eliminar.setText("Eliminar");
+
+        jb_guardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Guardar.png"))); // NOI18N
+
+        jl_guadar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jl_guadar.setForeground(new java.awt.Color(51, 51, 51));
+        jl_guadar.setText("Guardar");
+
+        javax.swing.GroupLayout jp_botonesLayout = new javax.swing.GroupLayout(jp_botones);
+        jp_botones.setLayout(jp_botonesLayout);
+        jp_botonesLayout.setHorizontalGroup(
+            jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_botonesLayout.createSequentialGroup()
+                .addContainerGap(79, Short.MAX_VALUE)
+                .addGroup(jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jl_nuevo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jb_nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(48, 48, 48)
+                .addGroup(jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jb_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jl_modificar))
+                .addGap(28, 28, 28)
+                .addGroup(jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jb_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jl_eliminar))
+                .addGap(34, 34, 34)
+                .addGroup(jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jb_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jl_guadar))
+                .addGap(88, 88, 88))
+        );
+        jp_botonesLayout.setVerticalGroup(
+            jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_botonesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp_botonesLayout.createSequentialGroup()
+                        .addGroup(jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jb_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jb_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jp_botonesLayout.createSequentialGroup()
+                        .addGroup(jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jb_nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jb_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jl_nuevo)
+                            .addComponent(jl_modificar)
+                            .addComponent(jl_eliminar)
+                            .addComponent(jl_guadar))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -373,13 +370,13 @@ public class ViewSucursales extends javax.swing.JPanel {
                         .addComponent(jtf_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(20, 20, 20))
             .addGroup(layout.createSequentialGroup()
-                .addGap(152, 152, 152)
-                .addComponent(jp_botones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(302, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jp_datos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(184, 184, 184)
+                .addComponent(jp_botones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -393,9 +390,9 @@ public class ViewSucursales extends javax.swing.JPanel {
                 .addComponent(jp_datos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14)
                 .addComponent(jp_vista, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jp_botones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jp_botones, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
