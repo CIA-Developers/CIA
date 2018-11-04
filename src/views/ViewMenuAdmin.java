@@ -132,6 +132,6 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
     public javax.swing.JMenuItem jmi_empleados_ventas;
     public javax.swing.JMenuItem jmi_productos;
     public javax.swing.JMenuItem jmi_proveedores;
-    private javax.swing.JMenuItem jmi_sucursales;
+    public javax.swing.JMenuItem jmi_sucursales;
     // End of variables declaration//GEN-END:variables
 }
