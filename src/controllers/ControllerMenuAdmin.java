@@ -88,7 +88,17 @@ public class ControllerMenuAdmin {
         @Override
         public void actionPerformed(ActionEvent e) {
            if (e.getSource() == viewMenuAdmin.jmi_clientes) {
-               jmi_clientes_actionPerformed();
+                jmi_clientes_actionPerformed();
+           }else if (e.getSource() == viewMenuAdmin.jmi_empleados_compras) {
+                jmi_Empleados_compras_actionPerformed();
+           }else if (e.getSource() == viewMenuAdmin.jmi_empleados_ventas) {
+                jmi_Empleados_ventas_actionPerformed();
+           }else if (e.getSource() == viewMenuAdmin.jmi_productos) {
+                jmi_productos_actionPerformed();
+           }else if (e.getSource() == viewMenuAdmin.jmi_proveedores) {
+                jmi_proveedores_actionPerformed();
+           }else if (e.getSource() == viewMenuAdmin.jmi_sucursales) {
+                jmi_sucursales_actionPerformed();
            }
         }    
     };
@@ -97,6 +107,31 @@ public class ControllerMenuAdmin {
     * el funcionamiendo programado).
     */
     private void jmi_clientes_actionPerformed(){
+        viewMenuAdmin.setContentPane(controllerClientes.viewClientes);
+        viewMenuAdmin.revalidate();
+        viewMenuAdmin.repaint();     
+    }
+    private void jmi_Empleados_compras_actionPerformed(){
+        viewMenuAdmin.setContentPane(controllerEmpleadosCompras.viewEmpleadosCompras);
+        viewMenuAdmin.revalidate();
+        viewMenuAdmin.repaint();     
+    }
+    private void jmi_Empleados_ventas_actionPerformed(){
+        viewMenuAdmin.setContentPane(controllerEmpleadosVentas.viewsEmpleadosVentas);
+        viewMenuAdmin.revalidate();
+        viewMenuAdmin.repaint();     
+    }
+    private void jmi_productos_actionPerformed(){
+        viewMenuAdmin.setContentPane(controllerProductos.viewProductos);
+        viewMenuAdmin.revalidate();
+        viewMenuAdmin.repaint();     
+    }
+    private void jmi_proveedores_actionPerformed(){
+        viewMenuAdmin.setContentPane(controllerProveedores.viewProveedores);
+        viewMenuAdmin.revalidate();
+        viewMenuAdmin.repaint();     
+    }
+    private void jmi_sucursales_actionPerformed(){
         viewMenuAdmin.setContentPane(controllerClientes.viewClientes);
         viewMenuAdmin.revalidate();
         viewMenuAdmin.repaint();     
