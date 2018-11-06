@@ -28,8 +28,16 @@ public class ControllerSucursales {
     public ControllerSucursales(ModelSucursales modelSucursales, ViewSucursales viewSucursales) {
         this.modelSucursales = modelSucursales;
         this.viewSucursales = viewSucursales;
+        ConexionBD();
     }
-    
-    
-    
+    /**
+     * este metodo hace la conexion a la base de datos 
+     * llama a los metodos conectar, mostrar  dentro del modelo 
+     * muestra en la tabla los datos que contiene la variable de modelo_sucursal
+     */
+    public void ConexionBD(){
+        modelSucursales.Conectar();
+        modelSucursales.mostrar();
+        viewSucursales.jt_vista.setModel(modelSucursales.getModelo_sucursal()); //asignar a la tabla los valores correspondientes
+    }
 }
