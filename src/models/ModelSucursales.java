@@ -16,6 +16,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import views.ViewSucursales;
+
 /**
  *
  * @author Octaviano
@@ -26,6 +28,10 @@ public class ModelSucursales {
     private Statement st;     
     private ResultSet rs;
     PreparedStatement ps;
+    
+    private ViewSucursales viewSucursales;
+    
+    
     
     /**
      * se hace la conexion a la Base de datos y se hace la consulta hacia la tabla de sucursales 
@@ -46,5 +52,31 @@ public class ModelSucursales {
             } 
 
     } 
+    
+    private void mostrar() {
+        DefaultTableModel modelo = new DefaultTableModel();
+        ResultSet rs = Database.getTabla("SELECT sucursal.no_sucursal,productos.nom_producto, calle, colonia, numero, telefono,sucursal_productos.codigo_producto, existencias, limite_maximo, limite_minimo from sucursal inner join sucursal_productos on sucursal.no_sucursal = sucursal_productos.no_sucursal inner join productos on productos.codigo_producto = sucursal_productos.codigo_producto;");
+        modelo.setColumnIdentifiers(new Object[]{"No sucursal", "Calle", "Colonia", "Numero","Telefono", "Codigo_producto", "Nombre Producto", "Stock", "Stok maximo", "Stock minimo"});
+        try {
+            while (rs.next()) {
+                // añade los resultado a al modelo de tabla 
+                modelo.addRow(new Object[]{rs.getString("sucursal.no_sucursal"), 
+                    rs.getString("productos.nom_producto"),
+                    rs.getString("calle"), 
+                    rs.getString("colonia"), 
+                    rs.getString("numero"), 
+                    rs.getString("telefono"),
+                    rs.getString("sucursal_productos.codigo_producto"),
+                    rs.getString("existencias"),
+                    rs.getString("limite_maximo"),
+                    rs.getString("limite_minimo")});                                    
+            }
+            // asigna el modelo a la tabla
+            viewSucursales.jt_vista.setModel(modelo);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+    }
        
 }
