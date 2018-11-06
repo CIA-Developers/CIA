@@ -25,8 +25,7 @@ public class Database {
             /**
              * conexion a la Base de datos
              */
-            cn=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia","root","");
-            
+            cn=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia","root","");//conexion local     
         }
         catch(Exception e){
          System.out.println(String.valueOf(e));}
