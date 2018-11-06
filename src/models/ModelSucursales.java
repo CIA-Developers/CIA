@@ -23,16 +23,17 @@ import views.ViewSucursales;
  * @author Octaviano
  */
 public class ModelSucursales {
-    DefaultTableModel model_sucursales;
+    DefaultTableModel modelo = new DefaultTableModel();
 
-    public DefaultTableModel getModel_sucursales() {
-        return model_sucursales;
+    public DefaultTableModel getModelo() {
+        return modelo;
     }
 
-    public void setModel_sucursales(DefaultTableModel model_sucursales) {
-        this.model_sucursales = model_sucursales;
+    public void setModelo(DefaultTableModel modelo) {
+        this.modelo = modelo;
     }
-    
+  
+    DefaultTableModel model;
     private Connection conexion;     
     private Statement st;     
     private ResultSet rs;
@@ -63,7 +64,6 @@ public class ModelSucursales {
     } 
     
     private void mostrar() {
-        DefaultTableModel modelo = new DefaultTableModel();
         ResultSet rs = Database.getTabla("SELECT sucursal.no_sucursal,productos.nom_producto, calle, colonia, numero, telefono,sucursal_productos.codigo_producto, existencias, limite_maximo, limite_minimo from sucursal inner join sucursal_productos on sucursal.no_sucursal = sucursal_productos.no_sucursal inner join productos on productos.codigo_producto = sucursal_productos.codigo_producto;");
         modelo.setColumnIdentifiers(new Object[]{"No sucursal", "Calle", "Colonia", "Numero","Telefono", "Codigo_producto", "Nombre Producto", "Stock", "Stok maximo", "Stock minimo"});
         try {
