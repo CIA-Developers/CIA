@@ -16,21 +16,20 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-import views.ViewSucursales;
 
 /**
  *
  * @author Octaviano
  */
 public class ModelSucursales {
-    DefaultTableModel modelo = new DefaultTableModel();
+    DefaultTableModel modelo_sucursal= new DefaultTableModel(); //la variable modelo almacenara los tados de la tabla
 
-    public DefaultTableModel getModelo() {
-        return modelo;
+    public DefaultTableModel getModelo_sucursal() {
+        return modelo_sucursal;
     }
 
-    public void setModelo(DefaultTableModel modelo) {
-        this.modelo = modelo;
+    public void setModelo_sucursal(DefaultTableModel modelo_sucursal) {
+        this.modelo_sucursal = modelo_sucursal;
     }
   
     DefaultTableModel model;
@@ -39,7 +38,6 @@ public class ModelSucursales {
     private ResultSet rs;
     PreparedStatement ps;
     
-    private ViewSucursales viewSucursales;
     
     
     
@@ -63,13 +61,13 @@ public class ModelSucursales {
 
     } 
     
-    private void mostrar() {
+    public void mostrar() {
         ResultSet rs = Database.getTabla("SELECT sucursal.no_sucursal,productos.nom_producto, calle, colonia, numero, telefono,sucursal_productos.codigo_producto, existencias, limite_maximo, limite_minimo from sucursal inner join sucursal_productos on sucursal.no_sucursal = sucursal_productos.no_sucursal inner join productos on productos.codigo_producto = sucursal_productos.codigo_producto;");
-        modelo.setColumnIdentifiers(new Object[]{"No sucursal", "Calle", "Colonia", "Numero","Telefono", "Codigo_producto", "Nombre Producto", "Stock", "Stok maximo", "Stock minimo"});
+        modelo_sucursal.setColumnIdentifiers(new Object[]{"No sucursal", "Calle", "Colonia", "Numero","Telefono", "Codigo_producto", "Nombre Producto", "Stock", "Stok maximo", "Stock minimo"});
         try {
             while (rs.next()) {
                 // añade los resultado a al modelo de tabla 
-                modelo.addRow(new Object[]{rs.getString("sucursal.no_sucursal"), 
+                modelo_sucursal.addRow(new Object[]{rs.getString("sucursal.no_sucursal"), 
                     rs.getString("productos.nom_producto"),
                     rs.getString("calle"), 
                     rs.getString("colonia"), 
@@ -80,8 +78,6 @@ public class ModelSucursales {
                     rs.getString("limite_maximo"),
                     rs.getString("limite_minimo")});                                    
             }
-            // asigna el modelo a la tabla
-            viewSucursales.jt_vista.setModel(modelo);
         } catch (Exception e) {
             System.out.println(e);
         }
