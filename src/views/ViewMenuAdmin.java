@@ -37,7 +37,7 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
         jmi_productos = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(0, 153, 153));
         setMaximumSize(new java.awt.Dimension(32767, 32767));
 
         jMenuBar1.setBackground(new java.awt.Color(102, 102, 102));

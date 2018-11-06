@@ -10,5 +10,5 @@ package models;
  * @author Octaviano
  */
 public class ModelSucursales {
-    
+       
 }
