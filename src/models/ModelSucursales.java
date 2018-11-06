@@ -23,7 +23,16 @@ import views.ViewSucursales;
  * @author Octaviano
  */
 public class ModelSucursales {
-    DefaultTableModel model;
+    DefaultTableModel model_sucursales;
+
+    public DefaultTableModel getModel_sucursales() {
+        return model_sucursales;
+    }
+
+    public void setModel_sucursales(DefaultTableModel model_sucursales) {
+        this.model_sucursales = model_sucursales;
+    }
+    
     private Connection conexion;     
     private Statement st;     
     private ResultSet rs;
