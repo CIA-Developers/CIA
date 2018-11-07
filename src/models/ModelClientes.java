@@ -22,11 +22,11 @@ import javax.swing.table.DefaultTableModel;
 public class ModelClientes {
          DefaultTableModel modelo_EmCompras= new DefaultTableModel(); //la variable modelo almacenara los tados de la tabla
 
-    public DefaultTableModel getModelo_EmCompras() {
+    public DefaultTableModel getModelo_Clientes() {
         return modelo_EmCompras;
     }
 
-    public void setModelo_EmCompras(DefaultTableModel modelo_EmCompras) {
+    public void setModelo_Clientess(DefaultTableModel modelo_EmCompras) {
         this.modelo_EmCompras = modelo_EmCompras;
     }
     
