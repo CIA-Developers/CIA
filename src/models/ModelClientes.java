@@ -20,14 +20,14 @@ import javax.swing.table.DefaultTableModel;
  * @author Familia Hernández
  */
 public class ModelClientes {
-         DefaultTableModel modelo_EmCompras= new DefaultTableModel(); //la variable modelo almacenara los tados de la tabla
+         DefaultTableModel modelo_Clientes= new DefaultTableModel(); //la variable modelo almacenara los tados de la tabla
 
     public DefaultTableModel getModelo_Clientes() {
-        return modelo_EmCompras;
+        return modelo_Clientes;
     }
 
-    public void setModelo_Clientess(DefaultTableModel modelo_EmCompras) {
-        this.modelo_EmCompras = modelo_EmCompras;
+    public void setModelo_Clientes(DefaultTableModel modelo_EmCompras) {
+        this.modelo_Clientes = modelo_EmCompras;
     }
     
     
@@ -54,4 +54,27 @@ public class ModelClientes {
             } 
     
 }
+
+    public void mostrar() {
+        ResultSet rs = Database.getTabla("SELECT RFC_empl_comp, nombre_empl_comp, ap_pat_comp, ap_mat_comp, sexo_comp, estado_civil_comp, telefono_comp, correo_comp, usuario_comp FROM empleados_compras;");
+        modelo_Clientes.setColumnIdentifiers(new Object[]{"RFC", "Nombre", "Apellido Paterno", "Apellido Materno","Sexo", "Estado Civil", "Telefono", "Correo", "Usuario"});
+        try {
+            while (rs.next()) {
+                // añade los resultado a al modelo de tabla 
+                modelo_Clientes.addRow(new Object[]{
+                    rs.getString("RFC_empl_comp"), 
+                    rs.getString("nombre_empl_comp"), 
+                    rs.getString("ap_pat_comp"), 
+                    rs.getString("ap_mat_comp"),
+                    rs.getString("sexo_comp"),
+                    rs.getString("estado_civil_comp"),
+                    rs.getString("telefono_comp"),
+                    rs.getString("correo_comp"),
+                    rs.getString("usuario_comp")});                                    
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+    }
 }
