@@ -319,19 +319,19 @@ public class ViewEmpleadosCompras extends javax.swing.JPanel {
         jt_vista.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jt_vista.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "RFC", "Nombre", "Apellido Paterno", "Apellido Materno", "Sexo", "Estado Civil", "Telefono", "Correo", "Usuario", "fecha_ingreso"
+                "RFC", "Nombre", "Apellido Paterno", "Apellido Materno", "Sexo", "Estado Civil", "Telefono", "Correo", "Usuario"
             }
         ));
         jScrollPane1.setViewportView(jt_vista);

@@ -50,7 +50,7 @@ public class ModelEmpleadosCompras {
             try{ 
                 conexion=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia","root","");                     
                 st=conexion.createStatement(); 
-                rs=st.executeQuery("SELECT RFC_empl_comp, nombre_empl_comp, ap_pat_comp, ap_mat_comp, sexo_comp, estado_civil_comp, telefono_comp, correo_comp, usuario_comp, fecha_ingreso_comp FROM empleados_compras ;");
+                rs=st.executeQuery("SELECT RFC_empl_comp, nombre_empl_comp, ap_pat_comp, ap_mat_comp, sexo_comp, estado_civil_comp, telefono_comp, correo_comp, usuario_comp FROM empleados_compras ;");
                         
                 rs.first();
                 
@@ -60,8 +60,8 @@ public class ModelEmpleadosCompras {
     }
      
      public void mostrar() {
-        ResultSet rs = Database.getTabla("SELECT RFC_empl_comp, nombre_empl_comp, ap_pat_comp, ap_mat_comp, sexo_comp, estado_civil_comp, telefono_comp, correo_comp, usuario_comp, fecha_ingreso_comp FROM empleados_compras;");
-        modelo_EmCompras.setColumnIdentifiers(new Object[]{"RFC", "Nombre", "Apellido Paterno", "Apellido Materno","Sexo", "Estado Civil", "Telefono", "Correo", "Usuario", "fecha_ingreso"});
+        ResultSet rs = Database.getTabla("SELECT RFC_empl_comp, nombre_empl_comp, ap_pat_comp, ap_mat_comp, sexo_comp, estado_civil_comp, telefono_comp, correo_comp, usuario_comp FROM empleados_compras;");
+        modelo_EmCompras.setColumnIdentifiers(new Object[]{"RFC", "Nombre", "Apellido Paterno", "Apellido Materno","Sexo", "Estado Civil", "Telefono", "Correo", "Usuario"});
         try {
             while (rs.next()) {
                 // añade los resultado a al modelo de tabla 
@@ -74,8 +74,7 @@ public class ModelEmpleadosCompras {
                     rs.getString("estado_civil_comp"),
                     rs.getString("telefono_comp"),
                     rs.getString("correo_comp"),
-                    rs.getString("usuario_comp"),
-                    rs.getString("fecha_ingreso_comp")});                                    
+                    rs.getString("usuario_comp")});                                    
             }
         } catch (Exception e) {
             System.out.println(e);
