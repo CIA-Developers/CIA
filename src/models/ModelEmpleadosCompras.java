@@ -26,13 +26,25 @@ public class ModelEmpleadosCompras {
     
      DefaultTableModel modelo_EmCompras= new DefaultTableModel(); //la variable modelo almacenara los tados de la tabla
 
-    public DefaultTableModel getModelo_sucursal() {
+    public DefaultTableModel getModelo_EmCompras() {
         return modelo_EmCompras;
     }
 
-    public void setModelo_sucursal(DefaultTableModel modelo_EmCompras) {
+    public void setModelo_EmCompras(DefaultTableModel modelo_EmCompras) {
         this.modelo_EmCompras = modelo_EmCompras;
     }
+    
+    public int rec;
+
+    public int getRec() {
+        return rec;
+    }
+
+    public void setRec(int rec) {
+        this.rec = rec;
+    }
+
+   
   
     DefaultTableModel model;
     private Connection conexion;     

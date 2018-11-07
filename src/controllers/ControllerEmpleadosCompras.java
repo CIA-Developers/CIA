@@ -26,6 +26,7 @@ public class ControllerEmpleadosCompras {
     public ControllerEmpleadosCompras(ModelEmpleadosCompras modelEmpleadosCompras, ViewEmpleadosCompras viewEmpleadosCompras) {
         this.modelEmpleadosCompras = modelEmpleadosCompras;
         this.viewEmpleadosCompras = viewEmpleadosCompras;
+       
     }
     
     /**
@@ -34,9 +35,9 @@ public class ControllerEmpleadosCompras {
      * muestra en la tabla los datos que contiene la variable de modelo_EmpleadosCompras
      */
     public void ConexionBD(){
-        modelEmpleadosCompras.Conectar();
+         modelEmpleadosCompras.Conectar();
         modelEmpleadosCompras.mostrar();
-        viewEmpleadosCompras.jt_vista.setModel(viewEmpleadosCompras()); //asignar a la tabla los valores correspondientes
+        viewEmpleadosCompras.jt_vista.setModel(modelEmpleadosCompras.getModelo_EmCompras()); //asignar a la tabla los valores correspondientes
     }
     
     
