@@ -31,6 +31,17 @@ public class ModelSucursales {
     public void setModelo_sucursal(DefaultTableModel modelo_sucursal) {
         this.modelo_sucursal = modelo_sucursal;
     }
+    
+    public int rec;//Variable que tomara el valor seleccionado en la tabla 
+
+    public int getRec() {
+        return rec;
+    }
+
+    public void setRec(int rec) {
+        this.rec = rec;
+    }
+    
   
     DefaultTableModel model;
     private Connection conexion;     
