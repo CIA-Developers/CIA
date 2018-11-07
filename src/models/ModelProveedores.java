@@ -30,5 +30,10 @@ public class ModelProveedores {
         this.modelo_EmCompras = modelo_EmCompras;
     }
     
+    DefaultTableModel model;
+    private Connection conexion;     
+    private Statement st;     
+    private ResultSet rs;
+    PreparedStatement ps;
     }
     
