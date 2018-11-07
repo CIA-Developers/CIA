@@ -23,11 +23,11 @@ public class ModelProveedores {
     
      DefaultTableModel modelo_Proveedores= new DefaultTableModel(); //la variable modelo almacenara los tados de la tabla
 
-    public DefaultTableModel getModelo_EmCompras() {
+    public DefaultTableModel getModelo_Proveedores() {
         return modelo_Proveedores;
     }
 
-    public void setModelo_EmCompras(DefaultTableModel modelo_EmCompras) {
+    public void setModelo_Proveedores(DefaultTableModel modelo_EmCompras) {
         this.modelo_Proveedores = modelo_Proveedores;
     }
     

@@ -20,5 +20,14 @@ import javax.swing.table.DefaultTableModel;
  * @author Familia Hernández
  */
 public class ModelClientes {
+         DefaultTableModel modelo_EmCompras= new DefaultTableModel(); //la variable modelo almacenara los tados de la tabla
+
+    public DefaultTableModel getModelo_EmCompras() {
+        return modelo_EmCompras;
+    }
+
+    public void setModelo_EmCompras(DefaultTableModel modelo_EmCompras) {
+        this.modelo_EmCompras = modelo_EmCompras;
+    }
     
 }
