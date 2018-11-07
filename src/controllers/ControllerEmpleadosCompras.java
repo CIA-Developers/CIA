@@ -28,6 +28,16 @@ public class ControllerEmpleadosCompras {
         this.viewEmpleadosCompras = viewEmpleadosCompras;
     }
     
+    /**
+     * este metodo hace la conexion a la base de datos 
+     * llama a los metodos conectar, mostrar  dentro del modelo 
+     * muestra en la tabla los datos que contiene la variable de modelo_EmpleadosCompras
+     */
+    public void ConexionBD(){
+        modelEmpleadosCompras.Conectar();
+        modelEmpleadosCompras.mostrar();
+        viewEmpleadosCompras.jt_vista.setModel(viewEmpleadosCompras()); //asignar a la tabla los valores correspondientes
+    }
     
     
 }
