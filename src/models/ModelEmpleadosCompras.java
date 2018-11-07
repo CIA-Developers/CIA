@@ -40,4 +40,23 @@ public class ModelEmpleadosCompras {
     private ResultSet rs;
     PreparedStatement ps;
     
+    /**
+     * se hace la conexion a la Base de datos y se hace la consulta hacia la tabla de EmpleadosCompras 
+     * que tiene una union con la tabla de compra 
+     * 
+     */
+     public void Conectar(){
+             try{ 
+                conexion=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia","root","");                     
+                st=conexion.createStatement(); 
+                rs=st.executeQuery("SELECT * From empleados_compras;");
+                        
+                rs.first();
+                
+            }catch(SQLException err){ 
+                JOptionPane.showMessageDialog(null,"Error "+err.getMessage()); 
+            } 
+
+    } 
+    
 }
