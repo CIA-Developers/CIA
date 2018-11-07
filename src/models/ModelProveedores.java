@@ -16,9 +16,19 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 /**
- *
- * @author Octaviano
+ * 
+ * @author Familia Hernández
  */
 public class ModelProveedores {
+      DefaultTableModel modelo_EmCompras= new DefaultTableModel(); //la variable modelo almacenara los tados de la tabla
+
+    public DefaultTableModel getModelo_EmCompras() {
+        return modelo_EmCompras;
+    }
+
+    public void setModelo_EmCompras(DefaultTableModel modelo_EmCompras) {
+        this.modelo_EmCompras = modelo_EmCompras;
+    }
     
-}
+    }
+    
