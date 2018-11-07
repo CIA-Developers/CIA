@@ -6,6 +6,8 @@
 package controllers;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import models.ModelSucursales;
 import views.ViewSucursales;
 
@@ -15,7 +17,47 @@ import views.ViewSucursales;
  */
 public class ControllerSucursales {
     public ModelSucursales modelSucursales;
-    public ViewSucursales viewSucursales; 
+    public ViewSucursales viewSucursales;
+    
+    MouseListener ml = new MouseListener(){
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+        
+    };
+    
+    /**
+     * Asigna el actionListener a cada uno de los Botones de la vista 
+     * ViewSucursales.
+     * y 
+     */
+    private void setActionListener(){
+        
+    }
+    /*para los botones dentro de la vista*
+     * ActionListener 
+     */
     
     ActionListener actionListener = new ActionListener(){
         @Override
@@ -40,4 +82,6 @@ public class ControllerSucursales {
         modelSucursales.mostrar();
         viewSucursales.jt_vista.setModel(modelSucursales.getModelo_sucursal()); //asignar a la tabla los valores correspondientes
     }
+    
+    
 }
