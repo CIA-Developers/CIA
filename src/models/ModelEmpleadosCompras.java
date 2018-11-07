@@ -56,7 +56,29 @@ public class ModelEmpleadosCompras {
             }catch(SQLException err){ 
                 JOptionPane.showMessageDialog(null,"Error "+err.getMessage()); 
             } 
+    }
+     
+     public void mostrar() {
+        ResultSet rs = Database.getTabla("SELECT empleados_compras.RFC_empl_comp, nombre_empl_comp, ap_pat_comp, ap_mat_comp, estado_civil_comp, telefono_comp, correo_comp, usuario_comp, fecha_ingreso_comp;");
+        modelo_EmCompras.setColumnIdentifiers(new Object[]{"RFC", "Nombre", "Apellido Paterno", "Apellido Materno","Sexo", "Estado Civil", "Telefono", "Correo", "Usuario", "fecha_ingreso"});
+        try {
+            while (rs.next()) {
+                // añade los resultado a al modelo de tabla 
+                modelo_EmCompras.addRow(new Object[]{rs.getString("empleados_compras.RFC_empl_comp"), 
+                    rs.getString("RFC_empl_comp"), 
+                    rs.getString("nombre_empl_comp"), 
+                    rs.getString("ap_pat_comp"), 
+                    rs.getString("ap_mat_comp"),
+                    rs.getString("estado_civil_comp"),
+                    rs.getString("telefono_comp"),
+                    rs.getString("correo_comp"),
+                    rs.getString("limite_minimo"),
+                    rs.getString("usuario_comp"),
+                    rs.getString("fecha_ingreso_comp")});                                    
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
 
-    } 
-    
+    }
 }
