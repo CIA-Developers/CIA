@@ -20,20 +20,41 @@ import javax.swing.table.DefaultTableModel;
  * @author Familia Hernández
  */
 public class ModelProveedores {
-      DefaultTableModel modelo_EmCompras= new DefaultTableModel(); //la variable modelo almacenara los tados de la tabla
+    
+     DefaultTableModel modelo_Proveedores= new DefaultTableModel(); //la variable modelo almacenara los tados de la tabla
 
     public DefaultTableModel getModelo_EmCompras() {
-        return modelo_EmCompras;
+        return modelo_Proveedores;
     }
 
     public void setModelo_EmCompras(DefaultTableModel modelo_EmCompras) {
-        this.modelo_EmCompras = modelo_EmCompras;
+        this.modelo_Proveedores = modelo_Proveedores;
     }
     
+  
     DefaultTableModel model;
     private Connection conexion;     
     private Statement st;     
     private ResultSet rs;
     PreparedStatement ps;
+    
+    /**
+     * se hace la conexion a la Base de datos y se hace la consulta hacia la tabla de EmpleadosCompras 
+     * que tiene una union con la tabla de compra 
+     * 
+     */
+     public void Conectar(){
+            try{ 
+                conexion=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia","root","");                     
+                st=conexion.createStatement(); 
+                rs=st.executeQuery("SELECT RFC_empl_comp, nombre_empl_comp, ap_pat_comp, ap_mat_comp, sexo_comp, estado_civil_comp, telefono_comp, correo_comp, usuario_comp FROM empleados_compras ;");
+                        
+                rs.first();
+                
+            }catch(SQLException err){ 
+                JOptionPane.showMessageDialog(null,"Error "+err.getMessage()); 
+            } 
     }
+    }
+
     
