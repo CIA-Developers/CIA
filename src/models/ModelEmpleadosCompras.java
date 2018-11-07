@@ -9,6 +9,19 @@ package models;
  *
  * @author Octaviano
  */
+
+import conectar_tablas.Database; //llamamos la conexion a la BD para almacen
+import static conectar_tablas.Database.getConexion;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 public class ModelEmpleadosCompras {
     
 }
