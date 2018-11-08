@@ -68,4 +68,18 @@ public class ControllerProveedores {
         modelProveedores.mostrar();
         viewProveedores.jt_vista.setModel(modelProveedores.getModelo_Proveedores()); //asignar a la tabla los valores correspondientes
     }
+ public void jt_vista_MouseClicked(){
+        modelProveedores.setRec(viewProveedores.jt_vista.getSelectedRow());//a la variable se le asigna el elemento seleccionado en la tabla
+        viewProveedores.jtf_no_sucursal.setText(viewProveedores.jt_vista.getValueAt(modelProveedores.getRec(), 0).toString());
+        viewProveedores.jtf_calle.setText(viewProveedores.jt_vista.getValueAt(modelProveedores.getRec(), 1).toString());
+        viewProveedores.jtf_colonia.setText(viewProveedores.jt_vista.getValueAt(modelProveedores.getRec(), 2).toString());
+        viewProveedores.jtf_numero.setText(viewProveedores.jt_vista.getValueAt(modelProveedores.getRec(), 3).toString());
+        viewProveedores.jtf_telefono.setText(viewProveedores.jt_vista.getValueAt(modelProveedores.getRec(), 4).toString());
+        viewProveedores.jtf_codigo_prod.setText(viewProveedores.jt_vista.getValueAt(modelProveedores.getRec(), 5).toString());
+        viewProveedores.jtf_nom_prod.setText(viewProveedores.jt_vista.getValueAt(modelProveedores.getRec(), 6).toString());
+        viewProveedores.jtf_stock.setText(viewProveedores.jt_vista.getValueAt(modelProveedores.getRec(), 7).toString());
+        viewProveedores.jtf_stock_max.setText(viewProveedores.jt_vista.getValueAt(modelProveedores.getRec(), 8).toString());
+        viewProveedores.jtf_stock_min.setText(viewProveedores.jt_vista.getValueAt(modelProveedores.getRec(), 9).toString());  
+    }
+    
 }
