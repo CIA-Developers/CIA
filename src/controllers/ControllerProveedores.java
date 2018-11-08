@@ -63,5 +63,9 @@ public class ControllerProveedores {
         this.viewProveedores.jt_vista.addMouseListener(ml);//agregar a la table el evento de MouseListener
         ConexionBD();
     }
-
+   public void ConexionBD(){
+        modelProveedores.Conectar();
+        modelProveedores.mostrar();
+        viewProveedores.jt_vista.setModel(modelProveedores.getModelo_Proveedores()); //asignar a la tabla los valores correspondientes
+    }
 }
