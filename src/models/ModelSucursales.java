@@ -246,7 +246,7 @@ public class ModelSucursales {
         try {
             Statement st = (Statement) cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
-            while (rs.next()) {
+            while (rs.next()) { //Registros sobre a los que se les realizara una busqueda 
                 registros[0] = rs.getString("sucursal.no_sucursal");
                 registros[1] = rs.getString("calle");
                 registros[2] = rs.getString("colonia");
