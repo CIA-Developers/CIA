@@ -21,14 +21,14 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ModelProveedores {
     
-     DefaultTableModel modelo_Proveedores= new DefaultTableModel(); //la variable modelo almacenara los tados de la tabla
+     DefaultTableModel modelo_proveedores= new DefaultTableModel(); //la variable modelo almacenara los tados de la tabla
 
     public DefaultTableModel getModelo_Proveedores() {
-        return modelo_Proveedores;
+        return modelo_proveedores;
     }
 
     public void setModelo_Proveedores(DefaultTableModel modelo_EmCompras) {
-        this.modelo_Proveedores = modelo_Proveedores;
+        this.modelo_proveedores = modelo_proveedores;
     }
     
   
@@ -57,11 +57,11 @@ public class ModelProveedores {
     }
     public void mostrar() {
         ResultSet rs = Database.getTabla("SELECT RFC_empl_comp, nombre_empl_comp, ap_pat_comp, ap_mat_comp, sexo_comp, estado_civil_comp, telefono_comp, correo_comp, usuario_comp FROM empleados_compras;");
-        modelo_Proveedores.setColumnIdentifiers(new Object[]{"RFC", "Nombre", "Apellido Paterno", "Apellido Materno","Sexo", "Estado Civil", "Telefono", "Correo", "Usuario"});
+        modelo_proveedores.setColumnIdentifiers(new Object[]{"RFC", "Nombre", "Apellido Paterno", "Apellido Materno","Sexo", "Estado Civil", "Telefono", "Correo", "Usuario"});
         try {
             while (rs.next()) {
                 // añade los resultado a al modelo de tabla 
-                modelo_Proveedores.addRow(new Object[]{
+                modelo_proveedores.addRow(new Object[]{
                     rs.getString("RFC_empl_comp"), 
                     rs.getString("nombre_empl_comp"), 
                     rs.getString("ap_pat_comp"), 
