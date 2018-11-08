@@ -239,8 +239,7 @@ public class ModelProveedores {
             JOptionPane.showMessageDialog(null, "Error " + err.getMessage());
         }
     }
-//Mostar datos en Tabla
-    
+
     public void mostrar() {
         ResultSet rs = Database.getTabla("SELECT id_proveedor, nombre_prov, ap_pat_prov, ap_mat_prov, telefono_prov, calle_prov, colonia_prov, numero_prov, provincia_prov, correo_prov FROM proveedores;");
         modelo_proveedores.setColumnIdentifiers(new Object[]{"ID", "Nombre", "Apellido Paterno", "Apellido Materno", "telefono", "calle", "Colonia", "Numero", "Provincia", "Correo"});
