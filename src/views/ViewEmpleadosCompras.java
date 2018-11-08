@@ -167,14 +167,11 @@ public class ViewEmpleadosCompras extends javax.swing.JPanel {
                     .addComponent(jtf_calle, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtf_municipio, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtf_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51)
-                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jl_correo)
-                    .addComponent(jl_Provincia))
+                .addGap(47, 47, 47)
+                .addComponent(jl_correo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jtf_provincia, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jl_correo1)))
+                .addComponent(jl_correo1)
+                .addGap(47, 47, 47))
             .addGroup(jp_datosLayout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -185,13 +182,19 @@ public class ViewEmpleadosCompras extends javax.swing.JPanel {
                     .addGroup(jp_datosLayout.createSequentialGroup()
                         .addComponent(jtf_rfc, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jp_datosLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_datosLayout.createSequentialGroup()
                         .addComponent(jtf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jl_numero)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jtf_colonia, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addGap(325, 325, 325)
+                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jp_datosLayout.createSequentialGroup()
+                                .addComponent(jl_numero)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jtf_colonia, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jp_datosLayout.createSequentialGroup()
+                                .addComponent(jl_Provincia)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jtf_provincia, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jp_datosLayout.setVerticalGroup(
             jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -413,6 +416,6 @@ public class ViewEmpleadosCompras extends javax.swing.JPanel {
     public javax.swing.JTextField jtf_nombre;
     public javax.swing.JTextField jtf_provincia;
     public javax.swing.JTextField jtf_rfc;
-    public javax.swing.JTextField jtf_telefono;
+    private javax.swing.JTextField jtf_telefono;
     // End of variables declaration//GEN-END:variables
 }
