@@ -34,6 +34,17 @@ public class ModelEmpleadosCompras {
         this.modelo_EmCompras = modelo_EmCompras;
     }
     
+     public int rec;
+    //Variable que tomara el valor seleccionado en la tabla 
+
+    public int getRec() {
+        return rec;
+    }
+
+    public void setRec(int rec) {
+        this.rec = rec;
+    }
+    
   
     DefaultTableModel model;
     private Connection conexion;     
