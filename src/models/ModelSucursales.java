@@ -167,7 +167,7 @@ public class ModelSucursales {
     
     
       
-    DefaultTableModel model; // variable que usa para el metodo de buscar
+    DefaultTableModel model = new DefaultTableModel(); // variable que usa para el metodo de buscar
 
     public DefaultTableModel getModel() {
         return model;
