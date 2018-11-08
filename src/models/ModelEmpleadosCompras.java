@@ -50,6 +50,82 @@ public class ModelEmpleadosCompras {
     {"RFC", "Nombre", "Apellido Paterno", "Apellido Materno","Sexo", "Estado civil", "Telefono", "Correo", "Usuario"};
     
   
+    //Variables que corresponden a cada caja de texto
+    public String rfc;
+    public String nombre;
+    public String apellido_pat;
+    public String apellido_mat;
+    public String sexo;
+    public String estado_civil;
+    public String telefono;
+    public String correo;
+    public String usuario;
+    
+    public String getRfc() {
+        return rfc;
+    }
+
+    public void setRfc(String rfc) {
+        this.rfc = rfc;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido_pat() {
+        return apellido_pat;
+    }
+
+    public void setApellido_pat(String apellido_pat) {
+        this.apellido_pat = apellido_pat;
+    }
+
+    public String getApellido_mat() {
+        return apellido_mat;
+    }
+
+    public void setApellido_mat(String apellido_mat) {
+        this.apellido_mat = apellido_mat;
+    }
+
+    public String getEstado_civil() {
+        return estado_civil;
+    }
+
+    public void setEstado_civil(String estado_civil) {
+        this.estado_civil = estado_civil;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+    
+    
     DefaultTableModel model;
     private Connection conexion;     
     private Statement st;     
