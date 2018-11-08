@@ -22,7 +22,7 @@ CREATE TABLE productos (
     
     insert into productos (codigo_producto,nom_producto,tipo_producto,marca,precio_unitario_venta,unidad,descripcion,fecha_ingreso,existencia_total,status_prod) values
         (1651,"lamina galvanizada calibre 16 de 4 x 8","construccion","Vimar",105.00,"pza","Lamina de acero con recubrimiento de zinc","2018-05-01",727,"en venta"),
-        (1722,"Tuerca hexagonal de 5/8","ferreteria","Fastenere",0.00,"kg","Tuerca con una insercion de collar de nylon que resiste el giro.","2018-03-02",1308,"en venta"),
+        (1722,"Tuerca hexagonal de 5/8","ferreteria","Fastenere",20.00,"kg","Tuerca con una insercion de collar de nylon que resiste el giro.","2018-03-02",1308,"en venta"),
         (1658,"Tubo rectangular aluminio","construccion","Bosch",389.00,"pza","Tubo de 1m de lago y 12 mm de ancho ","2018-06-23",1098,"en venta"),
         (1321,"Clavos","ferreteria","Sithl",50.00,"kg","Clavos Estandar 3-2-1","2018-07-20",3330,"en venta"),
         (8170,"Motosierra" ,"jardin","Truper",500.00,"pza","Motosierra Electrica 18 pulgadas","2018-04-15",27,"en venta");
@@ -33,14 +33,14 @@ CREATE TABLE sucursal (
     calle VARCHAR(50) NOT NULL,
     colonia VARCHAR(50) NOT NULL,
     numero VARCHAR(5) NOT NULL,
-    telefono INT(12) NOT NULL);
+    telefono VARCHAR(12) NOT NULL);
     
     insert into sucursal values 
-        (1,"Vicente Guerrero","Tulancingo",213,7757532101),
-        (2,"Gabriel Garcia marquez","Magisterio",333,5575123047),
-        (3,"Santa clara","Jaltepec",152,7757712362),
-        (4,"Cipres","La Morena",122,7751236547),
-        (5,"Verla Bartoc","Jardines del Sur",200,5575896300);
+        (1,"Vicente Guerrero","Tulancingo",213,"7757532101"),
+        (2,"Gabriel Garcia marquez","Magisterio",333,"5575123047"),
+        (3,"Santa clara","Jaltepec",152,"7757712362"),
+        (4,"Cipres","La Morena",122,"7751236547"),
+        (5,"Verla Bartoc","Jardines del Sur",200,"5575896300");
     
 CREATE TABLE sucursal_productos (
     id_sucursal_productos INT(5) NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -117,11 +117,11 @@ CREATE TABLE empleados_compras (
     fecha_ingreso_comp timestamp NOT NULL);
     
     insert into empleados_compras values 
-        ("BAFJ701213SB1","Juan","Barrios","Fernández","hombre","casado",5557542100,"juan@email.com","barrios69",1234,"2018-01-01"),
-        ("MAHM670102N01","Manuel","Martinez","Hernández","hombre","divorciado",5547896332,"manu@outlook.com","manu15",1234,"2018-05-03"),
-        ("RASL75112LM50","Maria Luisa","Ramirez","Sanchez","mujer","soltero",7755896412,"luisa12@hotmail.com","mariaR",1234,"2018-02-02"),
-        ("ADD7808121G80","Dolores","San Martín","Davilos","mujer","soltero",7751200145,"dolores@hotmail.com","doloresMart",1234,"2018-03-15"),
-        ("CALF750228LK7","Felipe","Camargo","Lozano","hombre","soltero",7756632114,"felipelozano@gmail.com","FelipeC",1234,"2018-08-12");
+        ("BAFJ701213SB1","Juan","Barrios","Fernández","hombre","casado","5557542100","juan@email.com","barrios69","1234","2018-01-01"),
+        ("MAHM670102N01","Manuel","Martinez","Hernández","hombre","divorciado","5547896332","manu@outlook.com","manu15","1234","2018-05-03"),
+        ("RASL75112LM50","Maria Luisa","Ramirez","Sanchez","mujer","soltero","7755896412","luisa12@hotmail.com","mariaR","1234","2018-02-02"),
+        ("ADD7808121G80","Dolores","San Martín","Davilos","mujer","soltero","7751200145","dolores@hotmail.com","doloresMart","1234","2018-03-15"),
+        ("CALF750228LK7","Felipe","Camargo","Lozano","hombre","soltero","7756632114","felipelozano@gmail.com","FelipeC","1234","2018-08-12");
 
 
 CREATE TABLE proveedores (
@@ -137,11 +137,11 @@ CREATE TABLE proveedores (
     correo_prov VARCHAR(100) NOT NULL);
     
     insert into proveedores values 
-       ( 1,"Diana","gayosso","octaviano",7751247896,"jacarandas","2 de enero",7,"santiago","diana_gayosso@gmail.com"),
-       ( 2,"luisa","octaviano","sebastian",7754120314,"girasoles","las rosas",502,"tulancingo","luisa245@hotmail.com"),
-       ( 3,"Jose luis","octaviano","sebastian",7754012377,"nicolas bravo","5 de mayo",20,"cuautepec","jose_luis142@gmail.com"),
-       ( 4,"Mario","nieto","lopez",7754100256,"tlalpan","rio balsas",536,"mexico","mario142@hotmail.com"),
-       ( 5,"Diego","bolaños","pardo",7757583652,"tepeapulco","lindavista",358,"sagun","diegopardo24@gmail.com");
+       ( 1,"Diana","gayosso","octaviano","7751247896","jacarandas","2 de enero",7,"santiago","diana_gayosso@gmail.com"),
+       ( 2,"luisa","octaviano","sebastian","7754120314","girasoles","las rosas",502,"tulancingo","luisa245@hotmail.com"),
+       ( 3,"Jose luis","octaviano","sebastian","7754012377","nicolas bravo","5 de mayo",20,"cuautepec","jose_luis142@gmail.com"),
+       ( 4,"Mario","nieto","lopez","7754100256","tlalpan","rio balsas",536,"mexico","mario142@hotmail.com"),
+       ( 5,"Diego","bolaños","pardo","7757583652","tepeapulco","lindavista",358,"sagun","diegopardo24@gmail.com");
 
 CREATE TABLE compra (
     id_compra INT(5) NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -198,11 +198,11 @@ CREATE TABLE empleados_ventas (
     fecha_ingreso_vent timestamp NOT NULL);
 
     insert into empleados_ventas values 
-        ("CAGC800503021","Cinthia","Cazarez","Garcia","mujer","soltero",5575285866,"cintia@gmail.com","cinita_garcia",1234,"2018-02-05"),
-        ("TCHM830304102","Maria","Torres","Hernández","mujer","soltero",7538907451,"mari@email.com","Maria_torres",1234,"2018-03-15"),
-        ("CAJJ790305145","Javier","Carrasco","Jimenez","hombre","soltero",7757536987,"javier@outlook.com","Javier_carraso",1234,"2018-05-04"),
-        ("RIM8840305102","Benito","Rivera","Martinez","hombre","casado",7757589641,"benitoR@hotmail.com","Beniro_rivera",1234,"2018-03-20"),
-        ("PIPL850306120","Lilia","Prieto","Perez","mujer","casado",7757541230,"lilia@hootmail.com","Lilia_prieto",1234,"2018-01-01");
+        ("CAGC800503021","Cinthia","Cazarez","Garcia","mujer","soltero","5575285866","cintia@gmail.com","cinita_garcia",1234,"2018-02-05"),
+        ("TCHM830304102","Maria","Torres","Hernández","mujer","soltero","7538907451","mari@email.com","Maria_torres",1234,"2018-03-15"),
+        ("CAJJ790305145","Javier","Carrasco","Jimenez","hombre","soltero","7757536987","javier@outlook.com","Javier_carraso",1234,"2018-05-04"),
+        ("RIM8840305102","Benito","Rivera","Martinez","hombre","casado","7757589641","benitoR@hotmail.com","Beniro_rivera",1234,"2018-03-20"),
+        ("PIPL850306120","Lilia","Prieto","Perez","mujer","casado","7757541230","lilia@hootmail.com","Lilia_prieto",1234,"2018-01-01");
 
 CREATE TABLE clientes (
     RFC_cliente CHAR(13) NOT NULL PRIMARY KEY,
@@ -219,10 +219,10 @@ CREATE TABLE clientes (
     
     insert into clientes values 
         ("CLIENTEGENERA","cliente_general","desconocido","desconocido","desconocido","desconocido","desconocido","desconocido","desconocido","desconocido",0),
-        ("HEOI231DFR456","Ivan","Hernandez","Osornio",7757538907,"Tulancingo","rio balsas","Francisco villa",5,"ivan.herdez@outlook.com",50),
-        ("GAOA123EDFR4","Angeles","Gayosso","Octaviano",5575285877,"Tulancingo","gomez palacio","Francisco i madero",307,"annggii199@gmail.com",200),
-        ("DIRA123DFR56T","Amairani","Diaz","Ramirez",7757583454,"Tulancingo","lucerna","pajaritos",15,"171711615@utectulancingo.edu.mx",100),
-        ("HERA123DFR456","Alexis","Hernandez","Ramirez",7752145689,"Tulancingo","guadalupe","guadalupe",10,"alex@email.com",50);
+        ("HEOI231DFR456","Ivan","Hernandez","Osornio","7757538907","Tulancingo","rio balsas","Francisco villa",5,"ivan.herdez@outlook.com",50),
+        ("GAOA123EDFR4","Angeles","Gayosso","Octaviano","5575285877","Tulancingo","gomez palacio","Francisco i madero",307,"annggii199@gmail.com",200),
+        ("DIRA123DFR56T","Amairani","Diaz","Ramirez","7757583454","Tulancingo","lucerna","pajaritos",15,"1717110615@utectulancingo.edu.mx",100),
+        ("HERA123DFR456","Alexis","Hernandez","Ramirez","7752145689","Tulancingo","guadalupe","guadalupe",10,"alex@email.com",50);
     
 CREATE TABLE descuentos (
     codigo_descuento INT(5) NOT NULL PRIMARY KEY,
@@ -276,4 +276,3 @@ CREATE TABLE detalle_ventas (
         (6,4,1658,2,309,618),
         (7,4,1658,5,309,1545),
         (8,5,1722,5,15,75);
-
