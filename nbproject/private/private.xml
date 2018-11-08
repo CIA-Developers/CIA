@@ -3,8 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Ami/Desktop/CIA/src/models/ModelEmpleadosCompras.java</file>
-            <file>file:/C:/Users/Ami/Desktop/CIA/src/models/ModelSucursales.java</file>
+            <file>file:/F:/PROYECTO_4TO/SISTEMA/CIA/src/controllers/ControllerProductos.java</file>
+            <file>file:/F:/PROYECTO_4TO/SISTEMA/CIA/src/models/ModelClientes.java</file>
+            <file>file:/F:/PROYECTO_4TO/SISTEMA/CIA/src/controllers/ControllerClientes.java</file>
+            <file>file:/F:/PROYECTO_4TO/SISTEMA/CIA/src/models/ModelProductos.java</file>
         </group>
     </open-files>
 </project-private>
