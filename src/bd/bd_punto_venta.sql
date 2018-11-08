@@ -17,9 +17,10 @@ CREATE TABLE productos (
     descripcion VARCHAR(25) NOT NULL,
     fecha_ingreso DATE NOT NULL,
     existencia_total INT(25) NOT NULL,
-    status_prod VARCHAR(15) NOT NULL);
+    status_prod VARCHAR(15) NOT NULL,
+    image BLOB);
     
-    insert into productos values
+    insert into productos (codigo_producto,nom_producto,tipo_producto,marca,precio_unitario_venta,unidad,descripcion,fecha_ingreso,existencia_total,status_prod) values
         (1651,"lamina galvanizada calibre 16 de 4 x 8","construccion","Vimar",105.00,"pza","Lamina de acero con recubrimiento de zinc",2018-05-01,727,"promocion"),
         (1722,"Tuerca hexagonal de 5/8","ferreteria","Fastenere",0.00,"kg","Tuerca con una insercion de collar de nylon que resiste el giro.",2018-03-02,1308,"normal"),
         (1658,"Tubo rectangular aluminio","construccion","Bosch",389.00,"pza","Tubo de 1m de lago y 12 mm de ancho ",2018-06-23,1098,"normal"),
