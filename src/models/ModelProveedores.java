@@ -31,7 +31,7 @@ public class ModelProveedores {
         this.modelo_proveedores = modelo_proveedores;
     }
     
-       public int rec;//Variable que tomara el valor seleccionado en la tabla 
+    public int rec;//Variable que tomara el valor seleccionado en la tabla 
 
     public int getRec() {
         return rec;
