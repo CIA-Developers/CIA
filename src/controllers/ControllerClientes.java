@@ -64,13 +64,14 @@ public class ControllerClientes {
         this.viewClientes.jt_vista.addMouseListener(ml);//agregar a la table el evento de MouseListener
         ConexionBD();
     }
-      public void ConexionBD(){
+
+    public void ConexionBD() {
         modelClientes.Conectar();
         modelClientes.mostrar();
         viewClientes.jt_vista.setModel(modelClientes.getModelo_Clientes()); //asignar a la tabla los valores correspondientes
     }
 
- public void jt_vista_MouseClicked(){
+    public void jt_vista_MouseClicked() {
         modelClientes.setRec(viewClientes.jt_vista.getSelectedRow());//a la variable se le asigna el elemento seleccionado en la tabla
         viewClientes.jtf_rfc.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 0).toString());
         viewClientes.jtf_nombre.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 1).toString());
@@ -81,9 +82,10 @@ public class ControllerClientes {
         viewClientes.jtf_calle.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 6).toString());
         viewClientes.jtf_colonia.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 7).toString());
         viewClientes.jtf_numero.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 8).toString());
-        viewClientes.jtf_correo.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 9).toString());  
+        viewClientes.jtf_correo.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 9).toString());
+        viewClientes.jtf_correo.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 9).toString());
+        viewClientes.jl_puntos.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 10).toString());
+
     }
-    
+
 }
-
-
