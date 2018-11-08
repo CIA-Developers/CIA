@@ -52,6 +52,7 @@ public class ControllerEmpleadosCompras {
     public ControllerEmpleadosCompras(ModelEmpleadosCompras modelEmpleadosCompras, ViewEmpleadosCompras viewEmpleadosCompras) {
         this.modelEmpleadosCompras = modelEmpleadosCompras;
         this.viewEmpleadosCompras = viewEmpleadosCompras;
+        this.viewEmpleadosCompras.jt_vista.addMouseListener(ml);
         ConexionBD();
        
     }
