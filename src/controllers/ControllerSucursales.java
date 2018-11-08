@@ -22,46 +22,28 @@ public class ControllerSucursales {
     MouseListener ml = new MouseListener(){
         @Override
         public void mouseClicked(MouseEvent e) {
-            
+          if (e.getSource() == viewSucursales.jt_vista) {
+                jt_vista_MouseClicked();
+            }  
         }
 
         @Override
         public void mousePressed(MouseEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+           
         }
 
         @Override
         public void mouseReleased(MouseEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+           
         }
 
         @Override
         public void mouseEntered(MouseEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            
         }
 
         @Override
         public void mouseExited(MouseEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-        
-    };
-    
-    /**
-     * Asigna el actionListener a cada uno de los Botones de la vista 
-     * ViewSucursales.
-     * y 
-     */
-    private void setActionListener(){
-        
-    }
-    /*para los botones dentro de la vista*
-     * ActionListener 
-     */
-    
-    ActionListener actionListener = new ActionListener(){
-        @Override
-        public void actionPerformed(ActionEvent e) {
            
         }
         
