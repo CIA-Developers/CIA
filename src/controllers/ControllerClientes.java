@@ -70,6 +70,20 @@ public class ControllerClientes {
         viewClientes.jt_vista.setModel(modelClientes.getModelo_Clientes()); //asignar a la tabla los valores correspondientes
     }
 
+ public void jt_vista_MouseClicked(){
+        modelClientes.setRec(viewClientes.jt_vista.getSelectedRow());//a la variable se le asigna el elemento seleccionado en la tabla
+        viewClientes.jtf_rfc.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 0).toString());
+        viewClientes.jtf_nombre.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 1).toString());
+        viewClientes.jtf_ap_pat.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 2).toString());
+        viewClientes.jtf_apt_mat.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 3).toString());
+        viewClientes.jtf_telefono.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 4).toString());
+        viewClientes.jtf_municipio.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 5).toString());
+        viewClientes.jtf_calle.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 6).toString());
+        viewClientes.jtf_colonia.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 7).toString());
+        viewClientes.jtf_numero.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 8).toString());
+        viewClientes.jtf_correo.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 9).toString());  
+    }
+    
 }
 
 
