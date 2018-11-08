@@ -20,29 +20,7 @@ import views.ViewSucursales;
 public class ControllerSucursales {
     public ModelSucursales modelSucursales;
     public ViewSucursales viewSucursales;
-    
-    KeyListener key = new KeyListener(){
-    @Override
-    public void keyTyped(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-       if (e.getSource() == viewSucursales.jt_vista) {
-            jtf_buscar_KeyPressed();
-        }  
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
         
-    };
-    
-    
-    
     MouseListener ml = new MouseListener(){
         @Override
         public void mouseClicked(MouseEvent e) {
@@ -72,6 +50,24 @@ public class ControllerSucursales {
         }       
     };
    
+    KeyListener key = new KeyListener(){
+        @Override
+        public void keyTyped(KeyEvent e) {
+
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+           if (e.getSource() == viewSucursales.jt_vista) {
+                jtf_buscar_KeyPressed();
+            }  
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+
+        }    
+    };
     
     public ControllerSucursales(ModelSucursales modelSucursales, ViewSucursales viewSucursales) {
         this.modelSucursales = modelSucursales;
