@@ -182,9 +182,9 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jtf_calle" min="-2" pref="148" max="-2" attributes="0"/>
-                      <Component id="jtf_municipio" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
-                      <Component id="jtf_telefono" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
+                      <Component id="jtf_Telefono" min="-2" pref="148" max="-2" attributes="0"/>
+                      <Component id="jtf_estado_civil" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
+                      <Component id="jtf_sexo" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                   <Component id="jl_correo" min="-2" max="-2" attributes="0"/>
@@ -211,12 +211,12 @@
                               <Group type="102" attributes="0">
                                   <Component id="jl_numero" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jtf_colonia" min="-2" pref="162" max="-2" attributes="0"/>
+                                  <Component id="jtf_correo" min="-2" pref="162" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Component id="jl_Provincia" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jtf_provincia" min="-2" pref="148" max="-2" attributes="0"/>
+                                  <Component id="jtf_usuario" min="-2" pref="148" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -254,7 +254,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="78" pref="78" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jtf_calle" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jtf_Telefono" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jl_colonia" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -262,23 +262,23 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jtf_telefono" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jtf_sexo" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jl_telefono" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jtf_municipio" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jtf_estado_civil" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jl_calle" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jtf_colonia" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jtf_correo" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jl_numero" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jtf_provincia" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jtf_usuario" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jl_Provincia" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -329,7 +329,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtf_telefono">
+        <Component class="javax.swing.JTextField" name="jtf_sexo">
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
@@ -419,12 +419,12 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtf_calle">
+        <Component class="javax.swing.JTextField" name="jtf_Telefono">
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtf_municipio">
+        <Component class="javax.swing.JTextField" name="jtf_estado_civil">
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
@@ -457,12 +457,12 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtf_colonia">
+        <Component class="javax.swing.JTextField" name="jtf_correo">
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtf_provincia">
+        <Component class="javax.swing.JTextField" name="jtf_usuario">
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>

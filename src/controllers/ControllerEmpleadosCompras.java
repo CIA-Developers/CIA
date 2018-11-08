@@ -48,11 +48,6 @@ public class ControllerEmpleadosCompras {
         }
     };
     
-    
-        private void jt_vista_MouseClicked() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-        
         
     public ControllerEmpleadosCompras(ModelEmpleadosCompras modelEmpleadosCompras, ViewEmpleadosCompras viewEmpleadosCompras) {
         this.modelEmpleadosCompras = modelEmpleadosCompras;
@@ -71,6 +66,20 @@ public class ControllerEmpleadosCompras {
         modelEmpleadosCompras.mostrar();
         viewEmpleadosCompras.jt_vista.setModel(modelEmpleadosCompras.getModelo_EmCompras()); //asignar a la tabla los valores correspondientes
     }
+    
+    private void jt_vista_MouseClicked() {
+ modelEmpleadosCompras.setRec(viewEmpleadosCompras.jt_vista.getSelectedRow());
+    //variable que se le asigna el elemento seleccionado en la tabla
+        viewEmpleadosCompras.jtf_rfc.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 0).toString());
+        viewEmpleadosCompras.jtf_nombre.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 1).toString());
+        viewEmpleadosCompras.jtf_ap_pat.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 2).toString());
+        viewEmpleadosCompras.jtf_apt_mat.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 3).toString());
+        viewEmpleadosCompras.jtf_sexo.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 4).toString());
+        viewEmpleadosCompras.jtf_estado_civil.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 5).toString());
+        viewEmpleadosCompras.jtf_Telefono.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 6).toString());
+        viewEmpleadosCompras.jtf_correo.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 7).toString());
+        viewEmpleadosCompras.jtf_usuario.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 8).toString());
+    }        
     
     
 }
