@@ -41,9 +41,182 @@ public class ModelProveedores {
         this.rec = rec;
     }
     
+      /**
+     * Variables para el metodo de busqueda
+     */
+    public String[] titulos = {"RFC", "Nombre", "Apellido Paterno", "Apellido Materno", "Telefono", "Municipio", "calle", "Colonia", "Numero", "Correo"}; //columnas de la tabla
+
+    public String[] getTitulos() {
+        return titulos;
+    }
+
+    public void setTitulos(String[] titulos) {
+        this.titulos = titulos;
+    }
+    
+    public String[] registros = new String[50];
+
+    public String[] getRegistros() {
+        return registros;
+    }
+
+    public void setRegistros(String[] registros) {
+        this.registros = registros;
+    }
+    
+    public String sql;
+
+    public String getSql() {
+        return sql;
+    }
+
+    public void setSql(String sql) {
+        this.sql = sql;
+    }
+    //Variables que corresponden a cada caja de texto
+    public String rfc;
+    public String nombre;
+    public String ap_pat;
+    public String ap_mat;
+    public String Telefono;
+    public String municipio;
+    public String calle;
+    public String colonia;
+    public String numero;
+    public String correo;
+
+    public DefaultTableModel getModelo_proveedores() {
+        return modelo_proveedores;
+    }
+
+    public void setModelo_proveedores(DefaultTableModel modelo_proveedores) {
+        this.modelo_proveedores = modelo_proveedores;
+    }
+
+    public String getRfc() {
+        return rfc;
+    }
+
+    public void setRfc(String rfc) {
+        this.rfc = rfc;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getAp_pat() {
+        return ap_pat;
+    }
+
+    public void setAp_pat(String ap_pat) {
+        this.ap_pat = ap_pat;
+    }
+
+    public String getAp_mat() {
+        return ap_mat;
+    }
+
+    public void setAp_mat(String ap_mat) {
+        this.ap_mat = ap_mat;
+    }
+
+    public String getTelefono() {
+        return Telefono;
+    }
+
+    public void setTelefono(String Telefono) {
+        this.Telefono = Telefono;
+    }
+
+    public String getMunicipio() {
+        return municipio;
+    }
+
+    public void setMunicipio(String municipio) {
+        this.municipio = municipio;
+    }
+
+    public String getCalle() {
+        return calle;
+    }
+
+    public void setCalle(String calle) {
+        this.calle = calle;
+    }
+
+    public String getColonia() {
+        return colonia;
+    }
+
+    public void setColonia(String colonia) {
+        this.colonia = colonia;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public Connection getConexion() {
+        return conexion;
+    }
+
+    public void setConexion(Connection conexion) {
+        this.conexion = conexion;
+    }
+
+    public Statement getSt() {
+        return st;
+    }
+
+    public void setSt(Statement st) {
+        this.st = st;
+    }
+
+    public ResultSet getRs() {
+        return rs;
+    }
+
+    public void setRs(ResultSet rs) {
+        this.rs = rs;
+    }
+
+    public PreparedStatement getPs() {
+        return ps;
+    }
+
+    public void setPs(PreparedStatement ps) {
+        this.ps = ps;
+    }
+
+      
+    DefaultTableModel model; // variable que usa para el metodo de buscar
+
+    public DefaultTableModel getModel() {
+        return model;
+    }
+
+    public void setModel(DefaultTableModel model) {
+        this.model = model;
+    }
   
-  
-    DefaultTableModel model;
+ 
     private Connection conexion;     
     private Statement st;     
     private ResultSet rs;
