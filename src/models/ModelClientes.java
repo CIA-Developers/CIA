@@ -57,7 +57,7 @@ public class ModelClientes {
         try {
             conexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia", "root", "");
             st = conexion.createStatement();
-            rs = st.executeQuery("SELECT RFC_cliente, nombre_client, ap_pat_client, ap_mat_client, telefono_client, municipio_client, calle_client, colonia_client, numero_client, correo_client FROM clientes ;");
+            rs = st.executeQuery("SELECT * FROM clientes ;");
 
             rs.first();
 
@@ -66,10 +66,11 @@ public class ModelClientes {
         }
 
     }
- // Mostar datos de Tabla
+    // Mostar datos de Tabla
+
     public void mostrar() {
-        ResultSet rs = Database.getTabla("SELECT RFC_cliente, nombre_client, ap_pat_client, ap_mat_client, telefono_client, municipio_client, calle_client, colonia_client, numero_client, correo_client FROM clientes ;");
-        modelo_clientes.setColumnIdentifiers(new Object[]{"RFC", "Nombre", "Apellido Paterno", "Apellido Materno", "Telefono", "Municipio", "Calle", "Colonio", "Numero", "Correo"});
+        ResultSet rs = Database.getTabla("SELECT * FROM clientes ;");;
+        modelo_clientes.setColumnIdentifiers(new Object[]{"RFC", "Nombre", "Apellido Paterno", "Apellido Materno", "Telefono", "Municipio", "Calle", "Colonio", "Numero", "Correo", "Puntos"});
         try {
             while (rs.next()) {
                 // añade los resultado a al modelo de tabla 
@@ -83,7 +84,8 @@ public class ModelClientes {
                     rs.getString("calle_client"),
                     rs.getString("colonia_client"),
                     rs.getString("numero_client"),
-                    rs.getString("correo_client")});
+                    rs.getString("numero_client"),
+                    rs.getString("puntos")});
             }
         } catch (Exception e) {
             System.out.println(e);
