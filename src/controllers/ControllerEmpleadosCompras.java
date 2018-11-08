@@ -5,7 +5,10 @@
  */
 package controllers;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import models.ModelEmpleadosCompras;
 import views.ViewEmpleadosCompras;
 /**
@@ -16,13 +19,41 @@ public class ControllerEmpleadosCompras {
     public ModelEmpleadosCompras modelEmpleadosCompras;
     public ViewEmpleadosCompras viewEmpleadosCompras;
     
-    ActionListener actionListener = new ActionListener(){
+    MouseListener ml = new MouseListener(){
         @Override
-        public void actionPerformed(ActionEvent e) {
-            
-        }    
-    };
+        public void mouseClicked(MouseEvent e) {
+          if (e.getSource() == viewEmpleadosCompras.jt_vista) {
+                jt_vista_MouseClicked();
+            }  
+        }
 
+        @Override
+        public void mousePressed(MouseEvent e) {
+            
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+            
+        }
+    };
+    
+    
+        private void jt_vista_MouseClicked() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+        
+        
     public ControllerEmpleadosCompras(ModelEmpleadosCompras modelEmpleadosCompras, ViewEmpleadosCompras viewEmpleadosCompras) {
         this.modelEmpleadosCompras = modelEmpleadosCompras;
         this.viewEmpleadosCompras = viewEmpleadosCompras;
