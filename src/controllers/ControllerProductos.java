@@ -22,9 +22,9 @@ public class ControllerProductos {
   MouseListener ml = new MouseListener() {
         @Override
         public void mouseClicked(MouseEvent e) {
-//            if (e.getSource() == ) {
-//                jt_vista_MouseClicked();
-//            }
+            if (e.getSource() == viewProductos ) {
+                jt_vista_MouseClicked();
+            }
         }
 
         @Override
@@ -60,6 +60,7 @@ public class ControllerProductos {
     public ControllerProductos(ModelProductos modelProductos, ViewProductos viewProductos) {
         this.modelProductos = modelProductos;
         this.viewProductos = viewProductos;
+        this.viewProductos.jt_vista.addMouseListener(ml);//agregar a la table el evento de MouseListener
         ConexionBD(); //se llama a este metodo para obtener los datos en la tabla
     }
     
@@ -74,4 +75,16 @@ public class ControllerProductos {
         viewProductos.jt_vista.setModel(modelProductos.getModelo_productos()); //asignar a la tabla los valores correspondientes
     }
     
+    public void jt_vista_MouseClicked(){
+        modelProductos.setRec(viewProductos.jt_vista.getSelectedRow());//a la variable se le asigna el elemento seleccionado en la tabla
+        viewProductos.jtf_codigo_prod.setText(viewProductos.jt_vista.getValueAt(modelProductos.getRec(), 0).toString());
+        viewProductos.jtf_nom_prod.setText(viewProductos.jt_vista.getValueAt(modelProductos.getRec(), 1).toString());
+        viewProductos.jtf_tipo_prod.setText(viewProductos.jt_vista.getValueAt(modelProductos.getRec(), 2).toString());
+        viewProductos.jtf_marca.setText(viewProductos.jt_vista.getValueAt(modelProductos.getRec(), 3).toString());
+        viewProductos.jtf_precio_unitario.setText(viewProductos.jt_vista.getValueAt(modelProductos.getRec(), 4).toString());
+        viewProductos.jtf_unidad_medida.setText(viewProductos.jt_vista.getValueAt(modelProductos.getRec(), 5).toString());
+        viewProductos.jtf_status.setText(viewProductos.jt_vista.getValueAt(modelProductos.getRec(), 6).toString());
+        viewProductos.jl_existencia_total.setText(viewProductos.jt_vista.getValueAt(modelProductos.getRec(), 7).toString());
+        viewProductos.jta_descripcion.setText(viewProductos.jt_vista.getValueAt(modelProductos.getRec(), 7).toString());
+    }
 }

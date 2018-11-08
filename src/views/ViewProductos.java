@@ -36,7 +36,7 @@ public class ViewProductos extends javax.swing.JPanel {
         jtf_marca = new javax.swing.JTextField();
         jtf_precio_unitario = new javax.swing.JTextField();
         jl_codigo_prod = new javax.swing.JLabel();
-        jtf_no_sucursal = new javax.swing.JTextField();
+        jtf_nom_prod = new javax.swing.JTextField();
         jl_Existencia = new javax.swing.JLabel();
         jtf_tipo_prod = new javax.swing.JTextField();
         jtf_unidad_medida = new javax.swing.JTextField();
@@ -182,7 +182,7 @@ public class ViewProductos extends javax.swing.JPanel {
                         .addContainerGap()
                         .addComponent(jl_nom_prod)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtf_no_sucursal, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jtf_nom_prod, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(27, 27, 27)
                 .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -210,7 +210,7 @@ public class ViewProductos extends javax.swing.JPanel {
                 .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jp_datosLayout.createSequentialGroup()
                         .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtf_no_sucursal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtf_nom_prod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jl_nom_prod))
                         .addGap(18, 18, 18)
                         .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -413,11 +413,11 @@ public class ViewProductos extends javax.swing.JPanel {
     public javax.swing.JPanel jp_botones;
     public javax.swing.JPanel jp_datos;
     public javax.swing.JTable jt_vista;
-    private javax.swing.JTextArea jta_descripcion;
+    public javax.swing.JTextArea jta_descripcion;
     public javax.swing.JTextField jtf_buscar;
     public javax.swing.JTextField jtf_codigo_prod;
     public javax.swing.JTextField jtf_marca;
-    public javax.swing.JTextField jtf_no_sucursal;
+    public javax.swing.JTextField jtf_nom_prod;
     public javax.swing.JTextField jtf_precio_unitario;
     public javax.swing.JTextField jtf_status;
     public javax.swing.JTextField jtf_tipo_prod;
