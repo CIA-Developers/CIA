@@ -64,6 +64,11 @@ public class ControllerClientes {
         this.viewClientes.jt_vista.addMouseListener(ml);//agregar a la table el evento de MouseListener
         ConexionBD();
     }
+      public void ConexionBD(){
+        modelClientes.Conectar();
+        modelClientes.mostrar();
+        viewClientes.jt_vista.setModel(modelClientes.getModelo_Clientes()); //asignar a la tabla los valores correspondientes
+    }
 
 }
 
