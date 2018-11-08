@@ -79,12 +79,12 @@ public class ModelSucursales {
             while (rs.next()) {
                 // añade los resultado a al modelo de tabla 
                 modelo_sucursal.addRow(new Object[]{rs.getString("sucursal.no_sucursal"), 
-                    rs.getString("productos.nom_producto"),
-                    rs.getString("calle"), 
+                    rs.getString("calle"),
                     rs.getString("colonia"), 
                     rs.getString("numero"), 
-                    rs.getString("telefono"),
+                    rs.getString("telefono"), 
                     rs.getString("sucursal_productos.codigo_producto"),
+                    rs.getString("productos.nom_producto"),
                     rs.getString("existencias"),
                     rs.getString("limite_maximo"),
                     rs.getString("limite_minimo")});                                    
