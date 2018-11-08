@@ -46,6 +46,18 @@ public class ModelEmpleadosVentas {
         this.rec = rec;
     }
     
+     //Variables que corresponden a cada caja de texto
+    public String rfc;
+    public String nombre;
+    public String apellido_pat;
+    public String apellido_mat;
+    public String sexo;
+    public String estado_civil;
+    public String telefono;
+    public String correo;
+    public String usuario;
+    
+    
   
     DefaultTableModel model;
     private Connection conexion;     
