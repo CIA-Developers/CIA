@@ -45,6 +45,10 @@ public class ModelEmpleadosCompras {
         this.rec = rec;
     }
     
+    //Nombre de las columnas de las tablas
+    public String[] titulos = 
+    {"RFC", "Nombre", "Apellido Paterno", "Apellido Materno","Sexo", "Estado civil", "Telefono", "Correo", "Usuario"};
+    
   
     DefaultTableModel model;
     private Connection conexion;     
