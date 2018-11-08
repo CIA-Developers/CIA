@@ -57,7 +57,7 @@ public class ModelClientes {
         try {
             conexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia", "root", "");
             st = conexion.createStatement();
-            rs = st.executeQuery("SELECT RFC_empl_comp, nombre_empl_comp, ap_pat_comp, ap_mat_comp, sexo_comp, estado_civil_comp, telefono_comp, correo_comp, usuario_comp FROM empleados_compras ;");
+            rs = st.executeQuery("SELECT RFC_cliente, nombre_client, ap_pat_client, ap_mat_client, telefono_client, municipio_client, calle_client, colonia_client, numero_client, correo_client FROM clientes ;");
 
             rs.first();
 
@@ -68,21 +68,22 @@ public class ModelClientes {
     }
 
     public void mostrar() {
-        ResultSet rs = Database.getTabla("SELECT RFC_empl_comp, nombre_empl_comp, ap_pat_comp, ap_mat_comp, sexo_comp, estado_civil_comp, telefono_comp, correo_comp, usuario_comp FROM empleados_compras;");
-        modelo_clientes.setColumnIdentifiers(new Object[]{"RFC", "Nombre", "Apellido Paterno", "Apellido Materno", "Sexo", "Estado Civil", "Telefono", "Correo", "Usuario"});
+        ResultSet rs = Database.getTabla("SELECT RFC_cliente, nombre_client, ap_pat_client, ap_mat_client, telefono_client, municipio_client, calle_client, colonia_client, numero_client, correo_client FROM clientes ;");
+        modelo_clientes.setColumnIdentifiers(new Object[]{"RFC", "Nombre", "Apellido Paterno", "Apellido Materno", "Telefono", "Municipio", "Calle", "Colonio", "Numero", "Correo"});
         try {
             while (rs.next()) {
                 // añade los resultado a al modelo de tabla 
                 modelo_clientes.addRow(new Object[]{
-                    rs.getString("RFC_empl_comp"),
-                    rs.getString("nombre_empl_comp"),
-                    rs.getString("ap_pat_comp"),
-                    rs.getString("ap_mat_comp"),
-                    rs.getString("sexo_comp"),
-                    rs.getString("estado_civil_comp"),
-                    rs.getString("telefono_comp"),
-                    rs.getString("correo_comp"),
-                    rs.getString("usuario_comp")});
+                    rs.getString("RFC_cliente"),
+                    rs.getString("nombre_client"),
+                    rs.getString("ap_pat_client"),
+                    rs.getString("ap_mat_client"),
+                    rs.getString("telefono_client"),
+                    rs.getString("municipio_client"),
+                    rs.getString("calle_client"),
+                    rs.getString("colonia_client"),
+                    rs.getString("numero_client"),
+                    rs.getString("correo_client")});
             }
         } catch (Exception e) {
             System.out.println(e);

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package models;
+
 import conectar_tablas.Database; //llamamos la conexion a la BD para almacen
 import static conectar_tablas.Database.getConexion;
 import java.sql.Connection;
@@ -15,13 +16,14 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
 /**
- * 
+ *
  * @author Familia Hernández
  */
 public class ModelProveedores {
-    
-     DefaultTableModel modelo_proveedores= new DefaultTableModel(); //la variable modelo almacenara los tados de la tabla
+
+    DefaultTableModel modelo_proveedores = new DefaultTableModel(); //la variable modelo almacenara los tados de la tabla
 
     public DefaultTableModel getModelo_Proveedores() {
         return modelo_proveedores;
@@ -30,7 +32,7 @@ public class ModelProveedores {
     public void setModelo_Proveedores(DefaultTableModel modelo_EmCompras) {
         this.modelo_proveedores = modelo_proveedores;
     }
-    
+
     public int rec;//Variable que tomara el valor seleccionado en la tabla 
 
     public int getRec() {
@@ -40,8 +42,8 @@ public class ModelProveedores {
     public void setRec(int rec) {
         this.rec = rec;
     }
-    
-      /**
+
+    /**
      * Variables para el metodo de busqueda
      */
     public String[] titulos = {"RFC", "Nombre", "Apellido Paterno", "Apellido Materno", "Telefono", "Municipio", "calle", "Colonia", "Numero", "Correo"}; //columnas de la tabla
@@ -53,7 +55,7 @@ public class ModelProveedores {
     public void setTitulos(String[] titulos) {
         this.titulos = titulos;
     }
-    
+
     public String[] registros = new String[50];
 
     public String[] getRegistros() {
@@ -63,7 +65,7 @@ public class ModelProveedores {
     public void setRegistros(String[] registros) {
         this.registros = registros;
     }
-    
+
     public String sql;
 
     public String getSql() {
@@ -205,7 +207,6 @@ public class ModelProveedores {
         this.ps = ps;
     }
 
-      
     DefaultTableModel model; // variable que usa para el metodo de buscar
 
     public DefaultTableModel getModel() {
@@ -215,46 +216,47 @@ public class ModelProveedores {
     public void setModel(DefaultTableModel model) {
         this.model = model;
     }
-  
- 
-    private Connection conexion;     
-    private Statement st;     
+
+    private Connection conexion;
+    private Statement st;
     private ResultSet rs;
     PreparedStatement ps;
-    
+
     /**
-     * se hace la conexion a la Base de datos y se hace la consulta hacia la tabla de EmpleadosCompras 
-     * que tiene una union con la tabla de compra 
-     * 
+     * se hace la conexion a la Base de datos y se hace la consulta hacia la
+     * tabla de EmpleadosCompras que tiene una union con la tabla de compra
+     *
      */
-     public void Conectar(){
-            try{ 
-                conexion=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia","root","");                     
-                st=conexion.createStatement(); 
-                rs=st.executeQuery("SELECT RFC_empl_comp, nombre_empl_comp, ap_pat_comp, ap_mat_comp, sexo_comp, estado_civil_comp, telefono_comp, correo_comp, usuario_comp FROM empleados_compras ;");
-                        
-                rs.first();
-                
-            }catch(SQLException err){ 
-                JOptionPane.showMessageDialog(null,"Error "+err.getMessage()); 
-            } 
+    public void Conectar() {
+        try {
+            conexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia", "root", "");
+            st = conexion.createStatement();
+            rs = st.executeQuery("SELECT id_proveedor, nombre_prov, ap_pat_prov, ap_mat_prov, telefono_prov, calle_prov,colonia_prov, numero_prov, provincia_prov, correo_prov FROM proveedores;");
+
+            rs.first();
+
+        } catch (SQLException err) {
+            JOptionPane.showMessageDialog(null, "Error " + err.getMessage());
+        }
     }
+
     public void mostrar() {
-        ResultSet rs = Database.getTabla("SELECT RFC_empl_comp, nombre_empl_comp, ap_pat_comp, ap_mat_comp, sexo_comp, estado_civil_comp, telefono_comp, correo_comp, usuario_comp FROM empleados_compras;");
-        modelo_proveedores.setColumnIdentifiers(new Object[]{"RFC", "Nombre", "Apellido Paterno", "Apellido Materno","Sexo", "Estado Civil", "Telefono", "Correo", "Usuario"});
+        ResultSet rs = Database.getTabla("SELECT id_proveedor, nombre_prov, ap_pat_prov, ap_mat_prov, telefono_prov, calle_prov, colonia_prov, numero_prov, provincia_prov, correo_prov FROM proveedores;");
+        modelo_proveedores.setColumnIdentifiers(new Object[]{"ID", "Nombre", "Apellido Paterno", "Apellido Materno", "telefono", "calle", "Colonia", "Numero", "Provincia", "Correo"});
         try {
             while (rs.next()) {
                 // añade los resultado a al modelo de tabla 
                 modelo_proveedores.addRow(new Object[]{
-                    rs.getString("RFC_empl_comp"), 
-                    rs.getString("nombre_empl_comp"), 
-                    rs.getString("ap_pat_comp"), 
-                    rs.getString("ap_mat_comp"),
-                    rs.getString("sexo_comp"),
-                    rs.getString("estado_civil_comp"),
-                    rs.getString("telefono_comp"),
-                    rs.getString("correo_comp"),
-                    rs.getString("usuario_comp")});                                    
+                    rs.getString("id_proveedor"),
+                    rs.getString("nombre_prov"),
+                    rs.getString("ap_pat_prov"),
+                    rs.getString("ap_mat_prov"),
+                    rs.getString("telefono_prov"),
+                    rs.getString("calle_prov"),
+                    rs.getString("colonia_prov"),
+                    rs.getString("numero_prov"),
+                    rs.getString("provincia_prov"),
+                    rs.getString("correo_prov")});
             }
         } catch (Exception e) {
             System.out.println(e);
@@ -262,6 +264,3 @@ public class ModelProveedores {
 
     }
 }
-
-
-    
