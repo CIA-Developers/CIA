@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package controllers;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -16,8 +17,9 @@ import views.ViewClientes;
  * @author Octaviano
  */
 public class ControllerClientes {
-   public ModelClientes modelClientes; 
-   public ViewClientes viewClientes; 
+
+    public ModelClientes modelClientes;
+    public ViewClientes viewClientes;
     MouseListener ml = new MouseListener() {
         @Override
         public void mouseClicked(MouseEvent e) {
@@ -47,22 +49,22 @@ public class ControllerClientes {
         }
 
     };
-   
-   
-   
-   ActionListener actionListener = new ActionListener(){
-       @Override
-       public void actionPerformed(ActionEvent e) {
-           
-       }
-       
-   };
+
+    ActionListener actionListener = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+        }
+
+    };
 
     public ControllerClientes(ModelClientes modelClientes, ViewClientes viewClientes) {
         this.modelClientes = modelClientes;
         this.viewClientes = viewClientes;
-        
+        this.viewClientes.jt_vista.addMouseListener(ml);//agregar a la table el evento de MouseListener
+        ConexionBD();
     }
-   
-   
+
 }
+
+

@@ -57,6 +57,7 @@ public class ControllerProveedores {
         }
     };
 
+    
     public ControllerProveedores(ModelProveedores modelProveedores, ViewProveedores viewProveedores) {
         this.modelProveedores = modelProveedores;
         this.viewProveedores = viewProveedores;
