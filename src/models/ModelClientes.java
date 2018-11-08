@@ -66,7 +66,7 @@ public class ModelClientes {
         }
 
     }
-
+ // Mostar datos de Tabla
     public void mostrar() {
         ResultSet rs = Database.getTabla("SELECT RFC_cliente, nombre_client, ap_pat_client, ap_mat_client, telefono_client, municipio_client, calle_client, colonia_client, numero_client, correo_client FROM clientes ;");
         modelo_clientes.setColumnIdentifiers(new Object[]{"RFC", "Nombre", "Apellido Paterno", "Apellido Materno", "Telefono", "Municipio", "Calle", "Colonio", "Numero", "Correo"});
