@@ -71,9 +71,13 @@ public class ControllerEmpleadosCompras {
         
         ConexionBD();
         setActionListener();
+        cajas_deshabilitadas();
         
     }
     
+    /**
+     * Método para agregar el actionListener a cada boton
+     */
      private void setActionListener() {
           viewEmpleadosCompras.jb_nuevo.addActionListener(list);
     }
@@ -106,6 +110,19 @@ public class ControllerEmpleadosCompras {
     private void jbtn_nuevo_actionPerformed() {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
+
+    private void cajas_deshabilitadas() {
+        viewEmpleadosCompras.jtf_rfc.setEditable(false);
+        viewEmpleadosCompras.jtf_nombre.setEditable(false);
+        viewEmpleadosCompras.jtf_ap_pat.setEditable(false);
+        viewEmpleadosCompras.jtf_apt_mat.setEditable(false);
+        viewEmpleadosCompras.jtf_sexo.setEditable(false);
+        viewEmpleadosCompras.jtf_estado_civil.setEditable(false);
+        viewEmpleadosCompras.jtf_Telefono.setEditable(false);
+        viewEmpleadosCompras.jtf_correo.setEditable(false);
+        viewEmpleadosCompras.jtf_usuario.setEditable(false);
+
+    }
     
     
 }
