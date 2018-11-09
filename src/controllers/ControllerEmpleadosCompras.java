@@ -53,6 +53,12 @@ public class ControllerEmpleadosCompras {
         this.modelEmpleadosCompras = modelEmpleadosCompras;
         this.viewEmpleadosCompras = viewEmpleadosCompras;
         this.viewEmpleadosCompras.jt_vista.addMouseListener(ml);
+        
+        //Boton Guardar inhabilitado
+         viewEmpleadosCompras.jb_guardar.setEnabled(false);
+         //Boton Eliminar inhabilitado
+        viewEmpleadosCompras.jb_eliminar.setEnabled(false);
+        
         ConexionBD();
        
     }
