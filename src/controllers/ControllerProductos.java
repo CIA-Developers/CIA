@@ -64,6 +64,7 @@ public class ControllerProductos {
         this.viewProductos = viewProductos;
         this.viewProductos.jt_vista.addMouseListener(ml);//agregar a la table el evento de MouseListener
         ConexionBD(); //se llama a este metodo para obtener los datos en la tabla
+        cajas_deshabilitadas();
     }
     
     /**
@@ -89,4 +90,35 @@ public class ControllerProductos {
         viewProductos.jl_existencia_total.setText(viewProductos.jt_vista.getValueAt(modelProductos.getRec(), 7).toString());
         viewProductos.jta_descripcion.setText(viewProductos.jt_vista.getValueAt(modelProductos.getRec(), 8).toString());
     }
+    
+    /***
+     * Metodos Habilitar y deshabilitar cajas 
+     */
+    public void cajas_deshabilitadas(){
+        viewProductos.jtf_codigo_prod.setEnabled(false);
+        viewProductos.jtf_nom_prod.setEnabled(false);
+        viewProductos.jtf_tipo_prod.setEnabled(false);
+        viewProductos.jtf_marca.setEnabled(false);
+        viewProductos.jtf_precio_unitario.setEnabled(false);
+        viewProductos.jtf_nom_prod.setEnabled(false);
+        viewProductos.jtf_unidad_medida.setEnabled(false);
+        viewProductos.jcb_status.setEnabled(false);
+        viewProductos.jta_descripcion.setEnabled(false);
+    }
+        public void cajas_habilitadas(){
+        viewProductos.jtf_codigo_prod.setEnabled(true);
+        viewProductos.jtf_nom_prod.setEnabled(true);
+        viewProductos.jtf_tipo_prod.setEnabled(true);
+        viewProductos.jtf_marca.setEnabled(true);
+        viewProductos.jtf_precio_unitario.setEnabled(true);
+        viewProductos.jtf_nom_prod.setEnabled(true);
+        viewProductos.jtf_unidad_medida.setEnabled(true);
+        viewProductos.jcb_status.setEnabled(true);
+        viewProductos.jta_descripcion.setEnabled(true);
+    }
+    
+    //***************** BOTONES Nuevo, Borrar, Guardar y Modificar**************************
+    /**
+     * Metodo que limpiara las cajas de texto para ingresar nuevo datos. 
+     */
 }
