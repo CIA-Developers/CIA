@@ -45,7 +45,7 @@ public class ControllerEmpleadosVentas {
         public void mouseExited(MouseEvent e) {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
-        
+
     };
 
     public ControllerEmpleadosVentas(ModelEmpleadosVentas modelEmpleadosVentas, ViewEmpleadosVentas viewsEmpleadosVentas) {
@@ -65,5 +65,19 @@ public class ControllerEmpleadosVentas {
         modelEmpleadosVentas.mostrar();
         viewsEmpleadosVentas.jt_vista.setModel(modelEmpleadosVentas.getModelo_EmVentas()); //asignar a la tabla los valores correspondientes
     }
+    
+    //variable que se le asigna el elemento seleccionado en la tabla
+    private void jt_vista_MouseClicked() {
+            modelEmpleadosVentas.setRec(viewsEmpleadosVentas.jt_vista.getSelectedRow());
+        viewsEmpleadosVentas.jtf_rfc.setText(viewsEmpleadosVentas.jt_vista.getValueAt(modelEmpleadosVentas.getRec(), 0).toString());
+        viewsEmpleadosVentas.jtf_nombre.setText(viewsEmpleadosVentas.jt_vista.getValueAt(modelEmpleadosVentas.getRec(), 1).toString());
+        viewsEmpleadosVentas.jtf_ap_pat.setText(viewsEmpleadosVentas.jt_vista.getValueAt(modelEmpleadosVentas.getRec(), 2).toString());
+        viewsEmpleadosVentas.jtf_apt_mat.setText(viewsEmpleadosVentas.jt_vista.getValueAt(modelEmpleadosVentas.getRec(), 3).toString());
+        viewsEmpleadosVentas.jtf_sexo.setText(viewsEmpleadosVentas.jt_vista.getValueAt(modelEmpleadosVentas.getRec(), 4).toString());
+        viewsEmpleadosVentas.jtf_estado_civil.setText(viewsEmpleadosVentas.jt_vista.getValueAt(modelEmpleadosVentas.getRec(), 5).toString());
+        viewsEmpleadosVentas.jtf_telefono.setText(viewsEmpleadosVentas.jt_vista.getValueAt(modelEmpleadosVentas.getRec(), 6).toString());
+        viewsEmpleadosVentas.jtf_correo.setText(viewsEmpleadosVentas.jt_vista.getValueAt(modelEmpleadosVentas.getRec(), 7).toString());
+        viewsEmpleadosVentas.jtf_usuario.setText(viewsEmpleadosVentas.jt_vista.getValueAt(modelEmpleadosVentas.getRec(), 8).toString());
+    }       
     
 }

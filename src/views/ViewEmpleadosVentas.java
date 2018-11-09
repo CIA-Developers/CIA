@@ -35,7 +35,7 @@ public class ViewEmpleadosVentas extends javax.swing.JPanel {
         jl_telefono = new javax.swing.JLabel();
         jtf_apt_mat = new javax.swing.JTextField();
         jl_ap_pat = new javax.swing.JLabel();
-        jtf_telefono = new javax.swing.JTextField();
+        jtf_sexo = new javax.swing.JTextField();
         jl_rfc = new javax.swing.JLabel();
         jtf_rfc = new javax.swing.JTextField();
         jl_ap_mat = new javax.swing.JLabel();
@@ -44,7 +44,7 @@ public class ViewEmpleadosVentas extends javax.swing.JPanel {
         jtf_nombre = new javax.swing.JTextField();
         jl_Provincia = new javax.swing.JLabel();
         jl_calle = new javax.swing.JLabel();
-        jtf_tel = new javax.swing.JTextField();
+        jtf_telefono = new javax.swing.JTextField();
         jtf_estado_civil = new javax.swing.JTextField();
         jl_correo = new javax.swing.JLabel();
         jl_numero = new javax.swing.JLabel();
@@ -176,9 +176,9 @@ public class ViewEmpleadosVentas extends javax.swing.JPanel {
                             .addComponent(jl_colonia))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtf_tel, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtf_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jtf_estado_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtf_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jtf_sexo, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(51, 51, 51)
                         .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jp_datosLayout.createSequentialGroup()
@@ -219,13 +219,13 @@ public class ViewEmpleadosVentas extends javax.swing.JPanel {
                     .addGroup(jp_datosLayout.createSequentialGroup()
                         .addGap(78, 78, 78)
                         .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtf_tel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtf_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jl_colonia)))
                     .addGroup(jp_datosLayout.createSequentialGroup()
                         .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jp_datosLayout.createSequentialGroup()
                                 .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jtf_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtf_sexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jl_telefono))
                                 .addGap(16, 16, 16)
                                 .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -416,7 +416,7 @@ public class ViewEmpleadosVentas extends javax.swing.JPanel {
     public javax.swing.JTextField jtf_estado_civil;
     public javax.swing.JTextField jtf_nombre;
     public javax.swing.JTextField jtf_rfc;
-    public javax.swing.JTextField jtf_tel;
+    public javax.swing.JTextField jtf_sexo;
     public javax.swing.JTextField jtf_telefono;
     public javax.swing.JTextField jtf_usuario;
     // End of variables declaration//GEN-END:variables
