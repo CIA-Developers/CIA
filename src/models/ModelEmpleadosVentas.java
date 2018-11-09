@@ -56,6 +56,78 @@ public class ModelEmpleadosVentas {
     public String telefono;
     public String correo;
     public String usuario;
+
+    public String getRfc() {
+        return rfc;
+    }
+
+    public void setRfc(String rfc) {
+        this.rfc = rfc;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido_pat() {
+        return apellido_pat;
+    }
+
+    public void setApellido_pat(String apellido_pat) {
+        this.apellido_pat = apellido_pat;
+    }
+
+    public String getApellido_mat() {
+        return apellido_mat;
+    }
+
+    public void setApellido_mat(String apellido_mat) {
+        this.apellido_mat = apellido_mat;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public String getEstado_civil() {
+        return estado_civil;
+    }
+
+    public void setEstado_civil(String estado_civil) {
+        this.estado_civil = estado_civil;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
     
     
   
