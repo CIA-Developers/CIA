@@ -20,7 +20,17 @@ import views.ViewSucursales;
 public class ControllerSucursales {
     public ModelSucursales modelSucursales;
     public ViewSucursales viewSucursales;
+     
+    ActionListener list = new ActionListener(){
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (e.getSource() == viewSucursales.jb_nuevo) {
+                jbtn_nuevo_actionPerformed();
+            }       
+        }
         
+    };
+    
     MouseListener ml = new MouseListener(){
         @Override
         public void mouseClicked(MouseEvent e) {
@@ -74,7 +84,19 @@ public class ControllerSucursales {
         this.viewSucursales = viewSucursales;
         this.viewSucursales.jt_vista.addMouseListener(ml);//agregar a la table el evento de MouseListener
         this.viewSucursales.jtf_buscar.addKeyListener(key);
+        
+        viewSucursales.jb_guardar.setEnabled(false);//El boton guardar aparecera inhabilitado
+        viewSucursales.jb_eliminar.setEnabled(false);//El boton guardar aparecera inhabilitado
+       
         ConexionBD();
+        setActionListener();
+    }
+    
+    /**
+     * Método para agregar el actionListener a cada boton de la vista
+     */
+    private void setActionListener(){
+        viewSucursales.jb_nuevo.addActionListener(list);
     }
     /**
      * este metodo hace la conexion a la base de datos 
@@ -115,8 +137,24 @@ public class ControllerSucursales {
         modelSucursales.setStock_maximo(viewSucursales.jtf_buscar.getText());
         modelSucursales.setStrock_minimo(viewSucursales.jtf_buscar.getText());
         
-        viewSucursales.jt_vista.setModel(modelSucursales.getModel()); //Realizar la busqueda 
-        
+        viewSucursales.jt_vista.setModel(modelSucursales.getModel()); //Realizar la busqueda        
     }
     
+    //***************** BOTONES Nuevo, Borrar, Guardar y Modificar**************************
+    
+    private void jbtn_nuevo_actionPerformed(){
+        viewSucursales.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
+        viewSucursales.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
+        //limpiar cada caja de la Interfaz 
+        viewSucursales.jtf_no_sucursal.setText(Integer.toString(modelSucursales.getCodigo()));// la caja de texto CODIGO_PRODUCTO recibe el valor de cero
+        viewSucursales.jtf_calle.setText(modelSucursales.getLimpiar());
+        viewSucursales.jtf_colonia.setText(modelSucursales.getLimpiar());
+        viewSucursales.jtf_numero.setText(modelSucursales.getLimpiar());
+        viewSucursales.jtf_telefono.setText(modelSucursales.getLimpiar());
+        viewSucursales.jtf_codigo_prod.setText(modelSucursales.getLimpiar());
+        viewSucursales.jtf_nom_prod.setText(modelSucursales.getLimpiar());
+        viewSucursales.jtf_stock.setText(modelSucursales.getLimpiar());
+        viewSucursales.jtf_stock_max.setText(modelSucursales.getLimpiar());
+        viewSucursales.jtf_stock_min.setText(modelSucursales.getLimpiar()); 
+    }
 }
