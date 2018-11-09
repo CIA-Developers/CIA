@@ -90,6 +90,7 @@ public class ControllerSucursales {
        
         ConexionBD();
         setActionListener();
+        cajas_deshabilitadas();
     }
     
     /**
@@ -179,6 +180,7 @@ public class ControllerSucursales {
         viewSucursales.jtf_nom_prod.setText(modelSucursales.getLimpiar());
         viewSucursales.jtf_stock.setText(modelSucursales.getLimpiar());
         viewSucursales.jtf_stock_max.setText(modelSucursales.getLimpiar());
-        viewSucursales.jtf_stock_min.setText(modelSucursales.getLimpiar());
+        viewSucursales.jtf_stock_min.setText(modelSucursales.getLimpiar());    
+        cajas_habilitadas();
     }
 }

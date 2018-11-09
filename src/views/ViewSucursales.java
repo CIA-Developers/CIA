@@ -125,8 +125,6 @@ public class ViewSucursales extends javax.swing.JPanel {
         jl_calle.setForeground(new java.awt.Color(51, 51, 51));
         jl_calle.setText("Calle:");
 
-        jtf_stock.setEditable(false);
-
         jl_stock_min.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jl_stock_min.setForeground(new java.awt.Color(51, 51, 51));
         jl_stock_min.setText("Stock Minimo:");
@@ -134,10 +132,6 @@ public class ViewSucursales extends javax.swing.JPanel {
         jl_numero.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jl_numero.setForeground(new java.awt.Color(51, 51, 51));
         jl_numero.setText("Numero:");
-
-        jtf_stock_min.setEditable(false);
-
-        jtf_stock_max.setEditable(false);
 
         jl_colonia.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jl_colonia.setForeground(new java.awt.Color(51, 51, 51));
