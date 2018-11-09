@@ -103,17 +103,27 @@ public class ViewSucursales extends javax.swing.JPanel {
         jl_telefono.setForeground(new java.awt.Color(51, 51, 51));
         jl_telefono.setText("Telefono:");
 
+        jtf_numero.setEditable(false);
+
+        jtf_telefono.setEditable(false);
+
         jl_no_sucursal.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jl_no_sucursal.setForeground(new java.awt.Color(51, 51, 51));
         jl_no_sucursal.setText("No. sucursal:");
+
+        jtf_no_sucursal.setEditable(false);
 
         jl_ap_mat.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jl_ap_mat.setForeground(new java.awt.Color(51, 51, 51));
         jl_ap_mat.setText("Stock:");
 
+        jtf_colonia.setEditable(false);
+
         jl_cod_prod.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jl_cod_prod.setForeground(new java.awt.Color(51, 51, 51));
         jl_cod_prod.setText("Codigo producto:");
+
+        jtf_calle.setEditable(false);
 
         jl_stock_max.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jl_stock_max.setForeground(new java.awt.Color(51, 51, 51));
@@ -123,6 +133,10 @@ public class ViewSucursales extends javax.swing.JPanel {
         jl_calle.setForeground(new java.awt.Color(51, 51, 51));
         jl_calle.setText("Calle:");
 
+        jtf_stock.setEditable(false);
+
+        jtf_codigo_prod.setEditable(false);
+
         jl_stock_min.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jl_stock_min.setForeground(new java.awt.Color(51, 51, 51));
         jl_stock_min.setText("Stock Minimo:");
@@ -131,6 +145,10 @@ public class ViewSucursales extends javax.swing.JPanel {
         jl_numero.setForeground(new java.awt.Color(51, 51, 51));
         jl_numero.setText("Numero:");
 
+        jtf_stock_min.setEditable(false);
+
+        jtf_stock_max.setEditable(false);
+
         jl_colonia.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jl_colonia.setForeground(new java.awt.Color(51, 51, 51));
         jl_colonia.setText("Colonia:");
@@ -138,6 +156,8 @@ public class ViewSucursales extends javax.swing.JPanel {
         jl_nom_prod.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jl_nom_prod.setForeground(new java.awt.Color(51, 51, 51));
         jl_nom_prod.setText("Nombre producto:");
+
+        jtf_nom_prod.setEditable(false);
 
         javax.swing.GroupLayout jp_datosLayout = new javax.swing.GroupLayout(jp_datos);
         jp_datos.setLayout(jp_datosLayout);

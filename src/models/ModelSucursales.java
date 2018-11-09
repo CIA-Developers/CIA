@@ -230,7 +230,7 @@ public class ModelSucursales {
         sql= "SELECT sucursal.no_sucursal,productos.nom_producto, calle, colonia, numero, telefono,sucursal_productos.codigo_producto, existencias, limite_maximo, limite_minimo from sucursal inner join sucursal_productos on sucursal.no_sucursal = sucursal_productos.no_sucursal inner join productos on productos.codigo_producto = sucursal_productos.codigo_producto "
                 + "WHERE sucursal.no_sucursal'%" + sucursal + "%' "
                 + "OR productos.nom_producto LIKE '%" + nombre_producto+ "%'"
-                + "OR  calle LIKE '%" + calle + "%'"
+                + "OR calle LIKE '%" + calle + "%'"
                 + "OR colonia LIKE '%" + colonia + "%'"
                 + "OR calle LIKE '%" + calle + "%'"
                 + "OR telefono LIKE '%" + colonia + "%'"
@@ -261,8 +261,8 @@ public class ModelSucursales {
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null,"error00"+ ex);
-        }
-         
+        }         
     }
-         
+    //*****************METODOS DE BOTONES Nuevo, Borrar, Guardar y Modificar**************************
+    
 }
