@@ -60,7 +60,11 @@ public class ControllerEmpleadosCompras {
         viewEmpleadosCompras.jb_eliminar.setEnabled(false);
         
         ConexionBD();
-       
+        setActionListener();
+        
+    }
+    
+     private void setActionListener() {
     }
     
     /**
@@ -87,6 +91,8 @@ public class ControllerEmpleadosCompras {
         viewEmpleadosCompras.jtf_correo.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 7).toString());
         viewEmpleadosCompras.jtf_usuario.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 8).toString());
     }        
+
+   
     
     
 }
