@@ -217,13 +217,8 @@ public class ModelProveedores {
         this.model = model;
     }
 
-    private Connection conexion;
-    private Statement st;
-    private ResultSet rs;
-    PreparedStatement ps;
-
-     public String Limpiar=" "; // variables para boton limpiar
-    public int codigo=0;
+    public String Limpiar = " "; // variables para boton limpiar
+    public int codigo = 0;
 
     public String getLimpiar() {
         return Limpiar;
@@ -240,16 +235,25 @@ public class ModelProveedores {
     public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
+
+    private DefaultTableModel model_prov = new DefaultTableModel(); // variable que usa para el metodo de buscar
+
+    public DefaultTableModel getModel_prov() {
+        return model_prov;
+    }
+
+    public void setModel_prov(DefaultTableModel model_prov) {
+        this.model_prov = model_prov;
+    }
+
+
+private Connection conexion;
+    private Statement st;
+    private ResultSet rs;
+    PreparedStatement ps;
+
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+   
     
     
     
