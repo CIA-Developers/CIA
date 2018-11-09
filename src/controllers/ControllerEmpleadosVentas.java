@@ -6,6 +6,8 @@
 package controllers;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import models.ModelEmpleadosVentas;
 import views.ViewEmpleadosVentas;
 /**
@@ -16,10 +18,32 @@ public class ControllerEmpleadosVentas {
     public ModelEmpleadosVentas modelEmpleadosVentas;
     public ViewEmpleadosVentas viewsEmpleadosVentas;
     
-    ActionListener actionListener = new ActionListener(){
+   MouseListener ml = new MouseListener(){
         @Override
-        public void actionPerformed(ActionEvent e) {
-            
+        public void mouseClicked(MouseEvent e) {
+          if (e.getSource() == viewsEmpleadosVentas.jt_vista) {
+                jt_vista_MouseClicked();
+            }  
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
         
     };
