@@ -82,5 +82,4 @@ public class ControllerProveedores {
         viewProveedores.jtf_provincia.setText(viewProveedores.jt_vista.getValueAt(modelProveedores.getRec(), 8).toString());
         viewProveedores.jtf_correo.setText(viewProveedores.jt_vista.getValueAt(modelProveedores.getRec(), 9).toString());  
     }
-    
 }

@@ -76,15 +76,15 @@ public class ModelProveedores {
         this.sql = sql;
     }
     //Variables que corresponden a cada caja de texto
-    public String rfc;
+    public String id;
     public String nombre;
     public String ap_pat;
     public String ap_mat;
     public String Telefono;
-    public String municipio;
     public String calle;
     public String colonia;
     public String numero;
+    public String provincia;
     public String correo;
 
     public DefaultTableModel getModelo_proveedores() {
@@ -96,11 +96,11 @@ public class ModelProveedores {
     }
 
     public String getRfc() {
-        return rfc;
+        return id;
     }
 
     public void setRfc(String rfc) {
-        this.rfc = rfc;
+        this.id = rfc;
     }
 
     public String getNombre() {
@@ -135,12 +135,12 @@ public class ModelProveedores {
         this.Telefono = Telefono;
     }
 
-    public String getMunicipio() {
-        return municipio;
+    public String getprovincia() {
+        return provincia;
     }
 
-    public void setMunicipio(String municipio) {
-        this.municipio = municipio;
+    public void setprovincia(String municipio) {
+        this.provincia = municipio;
     }
 
     public String getCalle() {
@@ -246,18 +246,11 @@ public class ModelProveedores {
         this.model_prov = model_prov;
     }
 
-
-private Connection conexion;
+    private Connection conexion;
     private Statement st;
     private ResultSet rs;
     PreparedStatement ps;
 
-    
-   
-    
-    
-    
-    
     /**
      * se hace la conexion a la Base de datos y se hace la consulta hacia la
      * tabla de EmpleadosCompras que tiene una union con la tabla de compra
@@ -297,6 +290,44 @@ private Connection conexion;
         } catch (Exception e) {
             System.out.println(e);
         }
-
     }
+
+    public void busqueda() {
+        // consulta de la Base de datos 
+        sql = "SELECT id_proveedor, nombre_prov, ap_pat_prov, ap_mat_prov, telefono_prov, calle_prov, colonia_prov, numero_prov, provincia_prov, correo_prov FROM proveedores;"
+                + "WHERE id_proveedor'%" + id + "%' "
+                + "OR nombre_prov LIKE '%" + nombre + "%'"
+                + "OR calle LIKE '%" + ap_pat + "%'"
+                + "OR colonia LIKE '%" + ap_mat + "%'"
+                + "OR calle LIKE '%" + Telefono + "%'"
+                + "OR telefono LIKE '%" + calle + "%'"
+                + "OR numero LIKE '%" + colonia + "%'"
+                + "OR telefono LIKE '%" + numero + "%'"
+                + "OR sucursal_productos.codigo_producto LIKE '%" + provincia + "%'"
+                + "OR existencias LIKE '%" + correo + "%'";               
+        model = new DefaultTableModel(null, titulos);
+        Database cc = new Database();
+        Connection cn = getConexion();
+        try {
+            Statement st = (Statement) cn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) { //Registros sobre a los que se les realizara una busqueda 
+                registros[0] = rs.getString("sucursal.no_sucursal");
+                registros[1] = rs.getString("calle");
+                registros[2] = rs.getString("colonia");
+                registros[3] = rs.getString("numero");
+                registros[4] = rs.getString("telefono");
+                registros[5] = rs.getString("sucursal_productos.codigo_producto");
+                registros[6] = rs.getString("productos.nom_producto");
+                registros[7] = rs.getString("existencias");
+                registros[8] = rs.getString("limite_maximo");
+                registros[9] = rs.getString("limite_minimo");
+                model.addRow(registros);
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "error00" + ex);
+        }
+    }
+    //*****************METODOS DE BOTONES Nuevo, Borrar, Guardar y Modificar**************************
+
 }
