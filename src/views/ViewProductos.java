@@ -44,7 +44,6 @@ public class ViewProductos extends javax.swing.JPanel {
         jl_numero = new javax.swing.JLabel();
         jl_tipo_prod = new javax.swing.JLabel();
         jl_nom_prod = new javax.swing.JLabel();
-        jtf_status = new javax.swing.JTextField();
         jl_unidad_medida = new javax.swing.JLabel();
         jl_status = new javax.swing.JLabel();
         jl_existencia_total = new javax.swing.JLabel();
@@ -52,6 +51,7 @@ public class ViewProductos extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         jta_descripcion = new javax.swing.JTextArea();
         jl_image_producto = new javax.swing.JLabel();
+        jcb_status = new javax.swing.JComboBox<>();
         jp_botones = new javax.swing.JPanel();
         jb_nuevo = new javax.swing.JButton();
         jl_nuevo = new javax.swing.JLabel();
@@ -135,8 +135,6 @@ public class ViewProductos extends javax.swing.JPanel {
         jl_nom_prod.setForeground(new java.awt.Color(51, 51, 51));
         jl_nom_prod.setText("Nombre producto:");
 
-        jtf_status.setEditable(false);
-
         jl_unidad_medida.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jl_unidad_medida.setForeground(new java.awt.Color(51, 51, 51));
         jl_unidad_medida.setText("unidad medida:");
@@ -159,6 +157,11 @@ public class ViewProductos extends javax.swing.JPanel {
         jScrollPane2.setViewportView(jta_descripcion);
 
         jl_image_producto.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        jcb_status.setBackground(new java.awt.Color(153, 204, 255));
+        jcb_status.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jcb_status.setForeground(new java.awt.Color(51, 51, 51));
+        jcb_status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "en venta ", "ya no se maneja" }));
 
         javax.swing.GroupLayout jp_datosLayout = new javax.swing.GroupLayout(jp_datos);
         jp_datos.setLayout(jp_datosLayout);
@@ -186,9 +189,9 @@ public class ViewProductos extends javax.swing.JPanel {
                                             .addComponent(jl_status)
                                             .addComponent(jl_unidad_medida))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jtf_unidad_medida, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jtf_status, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jtf_unidad_medida, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                                            .addComponent(jcb_status, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                     .addGroup(jp_datosLayout.createSequentialGroup()
                                         .addComponent(jl_precio_unitario)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -253,7 +256,7 @@ public class ViewProductos extends javax.swing.JPanel {
                                         .addGap(18, 18, 18)
                                         .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                             .addComponent(jl_status)
-                                            .addComponent(jtf_status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(jcb_status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(jp_datosLayout.createSequentialGroup()
@@ -406,6 +409,7 @@ public class ViewProductos extends javax.swing.JPanel {
     public javax.swing.JButton jb_guardar;
     public javax.swing.JButton jb_modificar;
     public javax.swing.JButton jb_nuevo;
+    public javax.swing.JComboBox<String> jcb_status;
     public javax.swing.JLabel jl_Existencia;
     public javax.swing.JLabel jl_codigo_prod;
     public javax.swing.JLabel jl_descripcion;
@@ -434,7 +438,6 @@ public class ViewProductos extends javax.swing.JPanel {
     public javax.swing.JTextField jtf_marca;
     public javax.swing.JTextField jtf_nom_prod;
     public javax.swing.JTextField jtf_precio_unitario;
-    public javax.swing.JTextField jtf_status;
     public javax.swing.JTextField jtf_tipo_prod;
     public javax.swing.JTextField jtf_unidad_medida;
     // End of variables declaration//GEN-END:variables

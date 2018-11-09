@@ -59,14 +59,6 @@ public class ControllerProductos {
 
     };
 
-    ActionListener actionListener = new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
-        }
-
-    }; 
-
     public ControllerProductos(ModelProductos modelProductos, ViewProductos viewProductos) {
         this.modelProductos = modelProductos;
         this.viewProductos = viewProductos;
@@ -93,7 +85,7 @@ public class ControllerProductos {
         viewProductos.jtf_marca.setText(viewProductos.jt_vista.getValueAt(modelProductos.getRec(), 3).toString());
         viewProductos.jtf_precio_unitario.setText(viewProductos.jt_vista.getValueAt(modelProductos.getRec(), 4).toString());
         viewProductos.jtf_unidad_medida.setText(viewProductos.jt_vista.getValueAt(modelProductos.getRec(), 5).toString());
-        viewProductos.jtf_status.setText(viewProductos.jt_vista.getValueAt(modelProductos.getRec(), 6).toString());
+        viewProductos.jcb_status.setSelectedItem(viewProductos.jt_vista.getValueAt(modelProductos.getRec(), 6).toString());
         viewProductos.jl_existencia_total.setText(viewProductos.jt_vista.getValueAt(modelProductos.getRec(), 7).toString());
         viewProductos.jta_descripcion.setText(viewProductos.jt_vista.getValueAt(modelProductos.getRec(), 8).toString());
     }
