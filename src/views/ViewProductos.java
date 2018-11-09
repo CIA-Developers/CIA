@@ -103,13 +103,25 @@ public class ViewProductos extends javax.swing.JPanel {
         jl_precio_unitario.setForeground(new java.awt.Color(51, 51, 51));
         jl_precio_unitario.setText("Precio unitario:");
 
+        jtf_marca.setEditable(false);
+
+        jtf_precio_unitario.setEditable(false);
+
         jl_codigo_prod.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jl_codigo_prod.setForeground(new java.awt.Color(51, 51, 51));
         jl_codigo_prod.setText("Codigo Producto:");
 
+        jtf_nom_prod.setEditable(false);
+
         jl_Existencia.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jl_Existencia.setForeground(new java.awt.Color(51, 51, 51));
         jl_Existencia.setText("Stock TOTAL:");
+
+        jtf_tipo_prod.setEditable(false);
+
+        jtf_unidad_medida.setEditable(false);
+
+        jtf_codigo_prod.setEditable(false);
 
         jl_numero.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jl_numero.setForeground(new java.awt.Color(51, 51, 51));
@@ -122,6 +134,8 @@ public class ViewProductos extends javax.swing.JPanel {
         jl_nom_prod.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jl_nom_prod.setForeground(new java.awt.Color(51, 51, 51));
         jl_nom_prod.setText("Nombre producto:");
+
+        jtf_status.setEditable(false);
 
         jl_unidad_medida.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jl_unidad_medida.setForeground(new java.awt.Color(51, 51, 51));
@@ -139,6 +153,7 @@ public class ViewProductos extends javax.swing.JPanel {
         jl_descripcion.setForeground(new java.awt.Color(51, 51, 51));
         jl_descripcion.setText("descripcion:");
 
+        jta_descripcion.setEditable(false);
         jta_descripcion.setColumns(20);
         jta_descripcion.setRows(5);
         jScrollPane2.setViewportView(jta_descripcion);
