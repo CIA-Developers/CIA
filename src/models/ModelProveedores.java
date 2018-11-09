@@ -222,6 +222,38 @@ public class ModelProveedores {
     private ResultSet rs;
     PreparedStatement ps;
 
+     public String Limpiar=" "; // variables para boton limpiar
+    public int codigo=0;
+
+    public String getLimpiar() {
+        return Limpiar;
+    }
+
+    public void setLimpiar(String Limpiar) {
+        this.Limpiar = Limpiar;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /**
      * se hace la conexion a la Base de datos y se hace la consulta hacia la
      * tabla de EmpleadosCompras que tiene una union con la tabla de compra
