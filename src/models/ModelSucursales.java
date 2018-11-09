@@ -165,6 +165,8 @@ public class ModelSucursales {
         this.Strock_minimo = Strock_minimo;
     }
     
+    //*************************Variables que corresponden a los BOTONES*************************************
+    
     
       
     DefaultTableModel model = new DefaultTableModel(); // variable que usa para el metodo de buscar
