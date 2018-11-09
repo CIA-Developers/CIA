@@ -85,6 +85,6 @@ public class ControllerProductos {
         viewProductos.jtf_unidad_medida.setText(viewProductos.jt_vista.getValueAt(modelProductos.getRec(), 5).toString());
         viewProductos.jtf_status.setText(viewProductos.jt_vista.getValueAt(modelProductos.getRec(), 6).toString());
         viewProductos.jl_existencia_total.setText(viewProductos.jt_vista.getValueAt(modelProductos.getRec(), 7).toString());
-        viewProductos.jta_descripcion.setText(viewProductos.jt_vista.getValueAt(modelProductos.getRec(), 7).toString());
+        viewProductos.jta_descripcion.setText(viewProductos.jt_vista.getValueAt(modelProductos.getRec(), 8).toString());
     }
 }
