@@ -167,6 +167,24 @@ public class ModelSucursales {
     
     //*************************Variables que corresponden a los BOTONES*************************************
     
+    public String Limpiar=" ";
+    public int codigo=0;
+
+    public String getLimpiar() {
+        return Limpiar;
+    }
+
+    public void setLimpiar(String Limpiar) {
+        this.Limpiar = Limpiar;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
     
       
     DefaultTableModel model = new DefaultTableModel(); // variable que usa para el metodo de buscar
