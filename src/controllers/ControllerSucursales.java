@@ -140,8 +140,32 @@ public class ControllerSucursales {
         viewSucursales.jt_vista.setModel(modelSucursales.getModel()); //Realizar la busqueda        
     }
     
+    public void cajas_deshabilitadas(){
+        viewSucursales.jtf_calle.setEnabled(false);
+        viewSucursales.jtf_colonia.setEnabled(false);
+        viewSucursales.jtf_numero.setEnabled(false);
+        viewSucursales.jtf_telefono.setEnabled(false);
+        viewSucursales.jtf_codigo_prod.setEnabled(false);
+        viewSucursales.jtf_nom_prod.setEnabled(false);
+        viewSucursales.jtf_stock.setEnabled(false);
+        viewSucursales.jtf_stock_max.setEnabled(false);
+        viewSucursales.jtf_stock_min.setEnabled(false);
+    }
+    public void cajas_habilitadas(){
+        viewSucursales.jtf_calle.setEnabled(true);
+        viewSucursales.jtf_colonia.setEnabled(true);
+        viewSucursales.jtf_numero.setEnabled(true);
+        viewSucursales.jtf_telefono.setEnabled(true);
+        viewSucursales.jtf_codigo_prod.setEnabled(true);
+        viewSucursales.jtf_nom_prod.setEnabled(true);
+        viewSucursales.jtf_stock.setEnabled(true);
+        viewSucursales.jtf_stock_max.setEnabled(true);
+        viewSucursales.jtf_stock_min.setEnabled(true);
+    }
     //***************** BOTONES Nuevo, Borrar, Guardar y Modificar**************************
-    
+    /**
+     * Metodo que limpiara las cajas de texto para ingresar nuevo datos. 
+     */
     private void jbtn_nuevo_actionPerformed(){
         viewSucursales.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
         viewSucursales.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
@@ -155,6 +179,6 @@ public class ControllerSucursales {
         viewSucursales.jtf_nom_prod.setText(modelSucursales.getLimpiar());
         viewSucursales.jtf_stock.setText(modelSucursales.getLimpiar());
         viewSucursales.jtf_stock_max.setText(modelSucursales.getLimpiar());
-        viewSucursales.jtf_stock_min.setText(modelSucursales.getLimpiar()); 
+        viewSucursales.jtf_stock_min.setText(modelSucursales.getLimpiar());
     }
 }
