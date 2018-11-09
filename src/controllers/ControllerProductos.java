@@ -19,6 +19,16 @@ public class ControllerProductos {
     public ModelProductos modelProductos;
     public ViewProductos viewProductos;
     
+    ActionListener list = new ActionListener(){
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (e.getSource() == viewProductos.jb_nuevo) {
+                //jbtn_nuevo_actionPerformed();
+            }       
+        }
+        
+    };
+    
   MouseListener ml = new MouseListener() {
         @Override
         public void mouseClicked(MouseEvent e) {
