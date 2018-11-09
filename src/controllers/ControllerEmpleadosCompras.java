@@ -5,6 +5,7 @@
  */
 package controllers;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -18,6 +19,15 @@ import views.ViewEmpleadosCompras;
 public class ControllerEmpleadosCompras {
     public ModelEmpleadosCompras modelEmpleadosCompras;
     public ViewEmpleadosCompras viewEmpleadosCompras;
+    
+    ActionListener list = new ActionListener(){
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (e.getSource() == viewEmpleadosCompras.jb_nuevo) {
+                jbtn_nuevo_actionPerformed();
+            }       
+        }
+    };
     
     MouseListener ml = new MouseListener(){
         @Override
@@ -65,6 +75,7 @@ public class ControllerEmpleadosCompras {
     }
     
      private void setActionListener() {
+          viewEmpleadosCompras.jb_nuevo.addActionListener(list);
     }
     
     /**
@@ -92,7 +103,9 @@ public class ControllerEmpleadosCompras {
         viewEmpleadosCompras.jtf_usuario.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 8).toString());
     }        
 
-   
+    private void jbtn_nuevo_actionPerformed() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
     
     
 }
