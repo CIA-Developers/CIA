@@ -51,6 +51,7 @@ public class ControllerEmpleadosVentas {
     public ControllerEmpleadosVentas(ModelEmpleadosVentas modelEmpleadosVentas, ViewEmpleadosVentas viewsEmpleadosVentas) {
         this.modelEmpleadosVentas = modelEmpleadosVentas;
         this.viewsEmpleadosVentas = viewsEmpleadosVentas;
+        this.viewsEmpleadosVentas.jt_vista.addMouseListener(ml);
         ConexionBD();
        
     }
@@ -63,7 +64,8 @@ public class ControllerEmpleadosVentas {
     public void ConexionBD(){
          modelEmpleadosVentas.Conectar();
         modelEmpleadosVentas.mostrar();
-        viewsEmpleadosVentas.jt_vista.setModel(modelEmpleadosVentas.getModelo_EmVentas()); //asignar a la tabla los valores correspondientes
+        //asignar a la tabla los valores correspondientes
+        viewsEmpleadosVentas.jt_vista.setModel(modelEmpleadosVentas.getModelo_EmVentas()); 
     }
     
     //variable que se le asigna el elemento seleccionado en la tabla
