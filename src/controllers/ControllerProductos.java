@@ -76,6 +76,8 @@ public class ControllerProductos {
      */
     private void setActionListener(){
         viewProductos.jb_nuevo.addActionListener(list);
+        viewProductos.jb_modificar.addActionListener(list);
+        viewProductos.jb_guardar.addActionListener(list);
     }
     /**
      * este metodo hace la conexion a la base de datos 

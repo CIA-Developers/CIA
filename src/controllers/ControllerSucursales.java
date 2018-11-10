@@ -98,6 +98,8 @@ public class ControllerSucursales {
      */
     private void setActionListener(){
         viewSucursales.jb_nuevo.addActionListener(list);
+        viewSucursales.jb_modificar.addActionListener(list);
+        viewSucursales.jb_guardar.addActionListener(list);
     }
     /**
      * este metodo hace la conexion a la base de datos 
