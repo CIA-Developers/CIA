@@ -111,6 +111,8 @@ public class ViewEmpleadosCompras extends javax.swing.JPanel {
         jl_rfc.setForeground(new java.awt.Color(51, 51, 51));
         jl_rfc.setText("RFC:");
 
+        jtf_rfc.setBackground(new java.awt.Color(240, 240, 240));
+
         jl_ap_mat.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jl_ap_mat.setForeground(new java.awt.Color(51, 51, 51));
         jl_ap_mat.setText("Apellido Materno:");
