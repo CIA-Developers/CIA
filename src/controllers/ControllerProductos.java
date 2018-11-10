@@ -95,30 +95,32 @@ public class ControllerProductos {
      * Metodos Habilitar y deshabilitar cajas 
      */
     public void cajas_deshabilitadas(){
-        viewProductos.jtf_codigo_prod.setEnabled(false);
-        viewProductos.jtf_nom_prod.setEnabled(false);
-        viewProductos.jtf_tipo_prod.setEnabled(false);
-        viewProductos.jtf_marca.setEnabled(false);
-        viewProductos.jtf_precio_unitario.setEnabled(false);
-        viewProductos.jtf_nom_prod.setEnabled(false);
-        viewProductos.jtf_unidad_medida.setEnabled(false);
-        viewProductos.jcb_status.setEnabled(false);
-        viewProductos.jta_descripcion.setEnabled(false);
+        viewProductos.jtf_codigo_prod.setEditable(false);
+        viewProductos.jtf_nom_prod.setEditable(false);
+        viewProductos.jtf_tipo_prod.setEditable(false);
+        viewProductos.jtf_marca.setEditable(false);
+        viewProductos.jtf_precio_unitario.setEditable(false);
+        viewProductos.jtf_nom_prod.setEditable(false);
+        viewProductos.jtf_unidad_medida.setEditable(false);
+        viewProductos.jcb_status.setEditable(false);
+        viewProductos.jta_descripcion.setEditable(false);
     }
         public void cajas_habilitadas(){
-        viewProductos.jtf_codigo_prod.setEnabled(true);
-        viewProductos.jtf_nom_prod.setEnabled(true);
-        viewProductos.jtf_tipo_prod.setEnabled(true);
-        viewProductos.jtf_marca.setEnabled(true);
-        viewProductos.jtf_precio_unitario.setEnabled(true);
-        viewProductos.jtf_nom_prod.setEnabled(true);
-        viewProductos.jtf_unidad_medida.setEnabled(true);
-        viewProductos.jcb_status.setEnabled(true);
-        viewProductos.jta_descripcion.setEnabled(true);
+        viewProductos.jtf_codigo_prod.setEditable(true);
+        viewProductos.jtf_nom_prod.setEditable(true);
+        viewProductos.jtf_tipo_prod.setEditable(true);
+        viewProductos.jtf_marca.setEditable(true);
+        viewProductos.jtf_precio_unitario.setEditable(true);
+        viewProductos.jtf_nom_prod.setEditable(true);
+        viewProductos.jtf_unidad_medida.setEditable(true);
+        viewProductos.jcb_status.setEditable(true);
+        viewProductos.jta_descripcion.setEditable(true);
     }
-    
+   
     //***************** BOTONES Nuevo, Borrar, Guardar y Modificar**************************
     /**
      * Metodo que limpiara las cajas de texto para ingresar nuevo datos. 
-     */
+    */
+        
+    
 }
