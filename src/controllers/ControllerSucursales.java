@@ -110,6 +110,7 @@ public class ControllerSucursales {
         viewSucursales.jt_vista.setModel(modelSucursales.getModelo_sucursal()); //asignar a la tabla los valores correspondientes
     }
     public void jt_vista_MouseClicked(){
+        viewSucursales.jb_guardar.setEnabled(false);
         viewSucursales.jb_modificar.setEnabled(true);//El boton modificar aparecera habilitado
         cajas_deshabilitadas(); // cuando se haga clic en la tabla, las cajas se volveran a deshabilitar 
         modelSucursales.setRec(viewSucursales.jt_vista.getSelectedRow());//a la variable se le asigna el elemento seleccionado en la tabla

@@ -43,7 +43,16 @@ public class ModelProductos {
     //*************************Variables que corresponden a los BOTONES*************************************
     
     public String Limpiar=" ";
+    public int cantidad =0;
 
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+    
     public String getLimpiar() {
         return Limpiar;
     }

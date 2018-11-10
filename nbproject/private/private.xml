@@ -5,6 +5,8 @@
         <group>
             <file>file:/E:/PROYECTO_4TO/SISTEMA/CIA/src/controllers/ControllerProductos.java</file>
             <file>file:/E:/PROYECTO_4TO/SISTEMA/CIA/src/controllers/ControllerSucursales.java</file>
+            <file>file:/E:/PROYECTO_4TO/SISTEMA/CIA/src/models/ModelProductos.java</file>
+            <file>file:/E:/PROYECTO_4TO/SISTEMA/CIA/src/models/ModelSucursales.java</file>
         </group>
     </open-files>
 </project-private>

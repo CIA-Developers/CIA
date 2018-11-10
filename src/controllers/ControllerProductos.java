@@ -63,10 +63,20 @@ public class ControllerProductos {
         this.modelProductos = modelProductos;
         this.viewProductos = viewProductos;
         this.viewProductos.jt_vista.addMouseListener(ml);//agregar a la table el evento de MouseListener
+        
+        viewProductos.jb_guardar.setEnabled(false);//El boton guardar aparecera inhabilitado
+        viewProductos.jb_eliminar.setEnabled(false);//El boton guardar aparecera inhabilitado
+        
         ConexionBD(); //se llama a este metodo para obtener los datos en la tabla
         cajas_deshabilitadas();
+        setActionListener();
     }
-    
+    /***
+     * agregar eventos de actionlistener a botones 
+     */
+    private void setActionListener(){
+        viewProductos.jb_nuevo.addActionListener(list);
+    }
     /**
      * este metodo hace la conexion a la base de datos 
      * llama a los metodos conectar, mostrar  dentro del modelo 
@@ -79,6 +89,7 @@ public class ControllerProductos {
     }
     
     public void jt_vista_MouseClicked(){
+        viewProductos.jb_guardar.setEnabled(false);
         viewProductos.jb_modificar.setEnabled(true);//El boton modificar aparecera habilitado
         cajas_deshabilitadas();
         modelProductos.setRec(viewProductos.jt_vista.getSelectedRow());//a la variable se le asigna el elemento seleccionado en la tabla
@@ -131,7 +142,8 @@ public class ControllerProductos {
         viewProductos.jtf_precio_unitario.setText(modelProductos.getLimpiar());
         viewProductos.jtf_nom_prod.setText(modelProductos.getLimpiar());
         viewProductos.jtf_unidad_medida.setText(modelProductos.getLimpiar());
-        viewProductos.jta_descripcion.setText(modelProductos.getLimpiar());    
+        viewProductos.jta_descripcion.setText(modelProductos.getLimpiar()); 
+        viewProductos.jl_existencia_total.setText(Integer.toString(modelProductos.getCantidad())); 
         cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
      } 
       
