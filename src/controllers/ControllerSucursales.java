@@ -110,6 +110,7 @@ public class ControllerSucursales {
         viewSucursales.jt_vista.setModel(modelSucursales.getModelo_sucursal()); //asignar a la tabla los valores correspondientes
     }
     public void jt_vista_MouseClicked(){
+        cajas_deshabilitadas(); // cuando se haga clic en la tabla, las cajas se volveran a deshabilitar 
         modelSucursales.setRec(viewSucursales.jt_vista.getSelectedRow());//a la variable se le asigna el elemento seleccionado en la tabla
         viewSucursales.jtf_no_sucursal.setText(viewSucursales.jt_vista.getValueAt(modelSucursales.getRec(), 0).toString());
         viewSucursales.jtf_calle.setText(viewSucursales.jt_vista.getValueAt(modelSucursales.getRec(), 1).toString());
@@ -142,26 +143,26 @@ public class ControllerSucursales {
     }
     
     public void cajas_deshabilitadas(){
-        viewSucursales.jtf_calle.setEnabled(false);
-        viewSucursales.jtf_colonia.setEnabled(false);
-        viewSucursales.jtf_numero.setEnabled(false);
-        viewSucursales.jtf_telefono.setEnabled(false);
-        viewSucursales.jtf_codigo_prod.setEnabled(false);
-        viewSucursales.jtf_nom_prod.setEnabled(false);
-        viewSucursales.jtf_stock.setEnabled(false);
-        viewSucursales.jtf_stock_max.setEnabled(false);
-        viewSucursales.jtf_stock_min.setEnabled(false);
+        viewSucursales.jtf_calle.setEditable(false);
+        viewSucursales.jtf_colonia.setEditable(false);
+        viewSucursales.jtf_numero.setEditable(false);
+        viewSucursales.jtf_telefono.setEditable(false);
+        viewSucursales.jtf_codigo_prod.setEditable(false);
+        viewSucursales.jtf_nom_prod.setEditable(false);
+        viewSucursales.jtf_stock.setEditable(false);
+        viewSucursales.jtf_stock_max.setEditable(false);
+        viewSucursales.jtf_stock_min.setEditable(false);
     }
     public void cajas_habilitadas(){
-        viewSucursales.jtf_calle.setEnabled(true);
-        viewSucursales.jtf_colonia.setEnabled(true);
-        viewSucursales.jtf_numero.setEnabled(true);
-        viewSucursales.jtf_telefono.setEnabled(true);
-        viewSucursales.jtf_codigo_prod.setEnabled(true);
-        viewSucursales.jtf_nom_prod.setEnabled(true);
-        viewSucursales.jtf_stock.setEnabled(true);
-        viewSucursales.jtf_stock_max.setEnabled(true);
-        viewSucursales.jtf_stock_min.setEnabled(true);
+        viewSucursales.jtf_calle.setEditable(true);
+        viewSucursales.jtf_colonia.setEditable(true);
+        viewSucursales.jtf_numero.setEditable(true);
+        viewSucursales.jtf_telefono.setEditable(true);
+        viewSucursales.jtf_codigo_prod.setEditable(true);
+        viewSucursales.jtf_nom_prod.setEditable(true);
+        viewSucursales.jtf_stock.setEditable(true);
+        viewSucursales.jtf_stock_max.setEditable(true);
+        viewSucursales.jtf_stock_min.setEditable(true);
     }
     //***************** BOTONES Nuevo, Borrar, Guardar y Modificar**************************
     /**
@@ -181,6 +182,6 @@ public class ControllerSucursales {
         viewSucursales.jtf_stock.setText(modelSucursales.getLimpiar());
         viewSucursales.jtf_stock_max.setText(modelSucursales.getLimpiar());
         viewSucursales.jtf_stock_min.setText(modelSucursales.getLimpiar());    
-        cajas_habilitadas();
+        cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
     }
 }
