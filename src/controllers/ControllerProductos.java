@@ -23,7 +23,7 @@ public class ControllerProductos {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == viewProductos.jb_nuevo) {
-                //jbtn_nuevo_actionPerformed();
+                borrar_productos();
             }       
         }
         
@@ -79,6 +79,8 @@ public class ControllerProductos {
     }
     
     public void jt_vista_MouseClicked(){
+        viewProductos.jb_modificar.setEnabled(true);//El boton modificar aparecera habilitado
+        cajas_deshabilitadas();
         modelProductos.setRec(viewProductos.jt_vista.getSelectedRow());//a la variable se le asigna el elemento seleccionado en la tabla
         viewProductos.jtf_codigo_prod.setText(viewProductos.jt_vista.getValueAt(modelProductos.getRec(), 0).toString());
         viewProductos.jtf_nom_prod.setText(viewProductos.jt_vista.getValueAt(modelProductos.getRec(), 1).toString());
@@ -118,9 +120,19 @@ public class ControllerProductos {
     }
    
     //***************** BOTONES Nuevo, Borrar, Guardar y Modificar**************************
-    /**
-     * Metodo que limpiara las cajas de texto para ingresar nuevo datos. 
-    */
-        
-    
+     public void borrar_productos(){
+        viewProductos.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
+        viewProductos.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
+        //limpiar cada caja de la Interfaz 
+        viewProductos.jtf_codigo_prod.setText(modelProductos.getLimpiar());
+        viewProductos.jtf_nom_prod.setText(modelProductos.getLimpiar());
+        viewProductos.jtf_tipo_prod.setText(modelProductos.getLimpiar());
+        viewProductos.jtf_marca.setText(modelProductos.getLimpiar());
+        viewProductos.jtf_precio_unitario.setText(modelProductos.getLimpiar());
+        viewProductos.jtf_nom_prod.setText(modelProductos.getLimpiar());
+        viewProductos.jtf_unidad_medida.setText(modelProductos.getLimpiar());
+        viewProductos.jta_descripcion.setText(modelProductos.getLimpiar());    
+        cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
+     } 
+      
 }
