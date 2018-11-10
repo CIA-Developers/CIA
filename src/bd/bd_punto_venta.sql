@@ -1,24 +1,20 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 Create database StockCia;
 
 use StockCia;
 
 CREATE TABLE productos (
     codigo_producto VARCHAR(13) NOT NULL PRIMARY KEY,
-    nom_producto VARCHAR(25) NOT NULL,
+    nom_producto VARCHAR(100) NOT NULL,
     tipo_producto VARCHAR(25) NOT NULL,
     marca VARCHAR(15) NOT NULL,
     precio_unitario_venta FLOAT NOT NULL,
     Unidad VARCHAR(15) NOT NULL,
-    descripcion VARCHAR(25) NOT NULL,
+    descripcion VARCHAR(100) NOT NULL,
     fecha_ingreso TIMESTAMP NOT NULL,
     existencia_total INT(25) NOT NULL,
     status_prod VARCHAR ( 15 ) NOT NULL,
-    image BLOB);
+    image Varchar(100) null);
     
     insert into productos (codigo_producto,nom_producto,tipo_producto,marca,precio_unitario_venta,unidad,descripcion,fecha_ingreso,existencia_total,status_prod) values
         (1651,"lamina galvanizada calibre 16 de 4 x 8","construccion","Vimar",105.00,"pza","Lamina de acero con recubrimiento de zinc","2018-05-01",727,"en venta"),
@@ -84,7 +80,7 @@ CREATE TABLE promociones (
     causa_promocion VARCHAR(25) NOT NULL,
     desc_promocion INT(5) NOT NULL,
     precio_descuento FLOAT NOT NULL,
-    unidad_medida INT(15) NOT NULL);
+    unidad_medida VARCHAR(15) NOT NULL);
     
     insert into promociones values 
         (1,"producto con danios",30,73.5,"pza"),
@@ -219,10 +215,10 @@ CREATE TABLE clientes (
     
     insert into clientes values 
         ("CLIENTEGENERA","cliente_general","desconocido","desconocido","desconocido","desconocido","desconocido","desconocido","desconocido","desconocido",0),
-        ("HEOI231DFR456","Ivan","Hernandez","Osornio","7757538907","Tulancingo","rio balsas","Francisco villa",5,"ivan.herdez@outlook.com",50),
-        ("GAOA123EDFR4","Angeles","Gayosso","Octaviano","5575285877","Tulancingo","gomez palacio","Francisco i madero",307,"annggii199@gmail.com",200),
-        ("DIRA123DFR56T","Amairani","Diaz","Ramirez","7757583454","Tulancingo","lucerna","pajaritos",15,"1717110615@utectulancingo.edu.mx",100),
-        ("HERA123DFR456","Alexis","Hernandez","Ramirez","7752145689","Tulancingo","guadalupe","guadalupe",10,"alex@email.com",50);
+        ("HEOI231DFR456","Ivan","Hernandez","Osornio","7757538907","Tulancingo","rio balsas","Francisco villa","5","ivan.herdez@outlook.com",50),
+        ("GAOA123EDFR4","Angeles","Gayosso","Octaviano","5575285877","Tulancingo","gomez palacio","Francisco i madero","307","annggii199@gmail.com",200),
+        ("DIRA123DFR56T","Amairani","Diaz","Ramirez","7757583454","Tulancingo","lucerna","pajaritos","15","1717110615@utectulancingo.edu.mx",100),
+        ("HERA123DFR456","Alexis","Hernandez","Ramirez","7752145689","Tulancingo","guadalupe","guadalupe","10","alex@email.com",50);
     
 CREATE TABLE descuentos (
     codigo_descuento INT(5) NOT NULL PRIMARY KEY,
@@ -242,12 +238,13 @@ CREATE TABLE ventas(
     subtotal_venta float not null,
     iva float not null,
     importe_vent float not null,
-    num_factura int (159) not null,
+    num_factura varchar (10) not null,
     RFC_empleado varchar(25) not null,
     forma_pago varchar(15) not null,
     no_sucursal int(5) not null,
     codigo_descuento int(5) not null,
     puntos_ganados int(15) not null,
+    FOREIGN KEY(RFC_cliente) REFERENCES clientes (RFC_cliente),
     FOREIGN KEY(RFC_empleado) REFERENCES empleados_ventas (RFC_empl_vent),
     FOREIGN KEY(codigo_descuento ) REFERENCES descuentos (codigo_descuento));
     
