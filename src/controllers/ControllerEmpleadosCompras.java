@@ -107,9 +107,7 @@ public class ControllerEmpleadosCompras {
         viewEmpleadosCompras.jtf_usuario.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 8).toString());
     }        
 
-    private void jbtn_nuevo_actionPerformed() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
+   
 
     private void cajas_deshabilitadas() {
         viewEmpleadosCompras.jtf_rfc.setEditable(false);
@@ -136,5 +134,28 @@ public class ControllerEmpleadosCompras {
         viewEmpleadosCompras.jtf_usuario.setEditable(true);
     }
     
+     //***************** BOTONES Nuevo, Borrar, Guardar y Modificar**************************
+    /**
+     * Metodo para limpiar las cajas de texto para ingresar nuevos datos. 
+     */
     
+     private void jbtn_nuevo_actionPerformed() {
+         //El boton guardar aparecera habilitado
+         viewEmpleadosCompras.jb_guardar.setEnabled(true);
+         //El boton modificar aparecera inhabilitado
+        viewEmpleadosCompras.jb_modificar.setEnabled(false);
+        //limpiar cada caja de la Interfaz 
+        // la caja de texto CODIGO_PRODUCTO recibe el valor de cero
+        viewEmpleadosCompras.jtf_rfc.setText(Integer.toString(modelEmpleadosCompras.getCodigo()));
+        viewEmpleadosCompras.jtf_nombre.setText(modelEmpleadosCompras.getLimpiar());
+        viewEmpleadosCompras.jtf_ap_pat.setText(modelEmpleadosCompras.getLimpiar());
+        viewEmpleadosCompras.jtf_apt_mat.setText(modelEmpleadosCompras.getLimpiar());
+        viewEmpleadosCompras.jtf_sexo.setText(modelEmpleadosCompras.getLimpiar());
+        viewEmpleadosCompras.jtf_estado_civil.setText(modelEmpleadosCompras.getLimpiar());
+        viewEmpleadosCompras.jtf_Telefono.setText(modelEmpleadosCompras.getLimpiar());
+        viewEmpleadosCompras.jtf_correo.setText(modelEmpleadosCompras.getLimpiar());  
+        viewEmpleadosCompras.jtf_usuario.setText(modelEmpleadosCompras.getLimpiar());  
+        //llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
+        cajas_habilitadas();
+        }
 }
