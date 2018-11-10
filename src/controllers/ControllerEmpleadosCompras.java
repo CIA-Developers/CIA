@@ -124,5 +124,17 @@ public class ControllerEmpleadosCompras {
 
     }
     
+    public void cajas_habilitadas(){
+        viewEmpleadosCompras.jtf_rfc.setEditable(true);
+        viewEmpleadosCompras.jtf_nombre.setEditable(true);
+        viewEmpleadosCompras.jtf_ap_pat.setEditable(true);
+        viewEmpleadosCompras.jtf_apt_mat.setEditable(true);
+        viewEmpleadosCompras.jtf_sexo.setEditable(true);
+        viewEmpleadosCompras.jtf_estado_civil.setEditable(true);
+        viewEmpleadosCompras.jtf_Telefono.setEditable(true);
+        viewEmpleadosCompras.jtf_correo.setEditable(true);
+        viewEmpleadosCompras.jtf_usuario.setEditable(true);
+    }
+    
     
 }
