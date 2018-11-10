@@ -43,7 +43,7 @@ public class ModelSucursales {
     }
     /**
      * Variables para el metodo de busqueda
-     */
+     */   
     public String[] titulos = {"No sucursal", "Calle", "Colonia", "Numero","Telefono", "Codigo_producto", "Nombre Producto", "Stock", "Stok maximo", "Stock minimo"}; //columnas de la tabla
 
     public String[] getTitulos() {

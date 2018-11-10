@@ -68,7 +68,7 @@ public class ControllerSucursales {
 
         @Override
         public void keyPressed(KeyEvent e) {
-           if (e.getSource() == viewSucursales.jt_vista) {
+           if (e.getSource() == viewSucursales.jtf_buscar) {
                 jtf_buscar_KeyPressed();
             }  
         }
@@ -110,6 +110,7 @@ public class ControllerSucursales {
         viewSucursales.jt_vista.setModel(modelSucursales.getModelo_sucursal()); //asignar a la tabla los valores correspondientes
     }
     public void jt_vista_MouseClicked(){
+        viewSucursales.jb_modificar.setEnabled(true);//El boton modificar aparecera habilitado
         cajas_deshabilitadas(); // cuando se haga clic en la tabla, las cajas se volveran a deshabilitar 
         modelSucursales.setRec(viewSucursales.jt_vista.getSelectedRow());//a la variable se le asigna el elemento seleccionado en la tabla
         viewSucursales.jtf_no_sucursal.setText(viewSucursales.jt_vista.getValueAt(modelSucursales.getRec(), 0).toString());
@@ -123,6 +124,7 @@ public class ControllerSucursales {
         viewSucursales.jtf_stock_max.setText(viewSucursales.jt_vista.getValueAt(modelSucursales.getRec(), 8).toString());
         viewSucursales.jtf_stock_min.setText(viewSucursales.jt_vista.getValueAt(modelSucursales.getRec(), 9).toString());  
     }
+    
     
     public void jtf_buscar_KeyPressed(){
         modelSucursales.Conectar(); //llamar al metodo de conectar
