@@ -20,7 +20,7 @@ public class ControllerClientes {
 
     public ModelClientes modelClientes;
     public ViewClientes viewClientes;
-        ActionListener list = new ActionListener() {
+    ActionListener list = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == viewClientes.jb_nuevo) {
@@ -70,7 +70,14 @@ public class ControllerClientes {
         this.modelClientes = modelClientes;
         this.viewClientes = viewClientes;
         this.viewClientes.jt_vista.addMouseListener(ml);//agregar a la table el evento de MouseListener
+
+        viewClientes.jb_guardar.setEnabled(false);
+//El boton guardar aparecera inhabilitado
+        viewClientes.jb_eliminar.setEnabled(false);
+//El boton guardar aparecera inhabilitado
+
         ConexionBD();
+
     }
 
     public void ConexionBD() {
