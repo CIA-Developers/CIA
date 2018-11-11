@@ -12,7 +12,7 @@ CREATE TABLE productos (
     Unidad VARCHAR(15) NOT NULL,
     descripcion VARCHAR(100) NOT NULL,
     fecha_ingreso TIMESTAMP NOT NULL,
-    existencia_total INT(25) NOT NULL,
+    existencia_total INT(25)  NULL,
     status_prod VARCHAR ( 15 ) NOT NULL,
     image Varchar(100) null);
     
