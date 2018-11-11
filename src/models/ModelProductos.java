@@ -205,8 +205,28 @@ public class ModelProductos {
             }
         }
     }
-        
-        
-      
     
+    public void Guardar_Modificado(){
+        //cada variable obtendra el valor actual de las cajas de texto 
+        codigo_producto=this.getCodigo_producto();
+        nombre_producto=this.getNombre_producto();
+        tipo_producto=this.getTipo_producto();
+        marca=this.getMarca();
+        precio_unitario=this.getPrecio_unitario();
+        unidad_medida=this.getUnidad_medida();
+        status=this.status;
+        descripcion=this.getDescripcion();
+        
+        int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de Guardar el NUEVO registro?");
+        
+        if(JOptionPane.OK_OPTION==confirmar) {
+            try{
+               st.executeUpdate("UPDATE productos SET nom_producto='"+nombre_producto+"',tipo_producto='"+tipo_producto+"',marca='"+marca+"',precio_unitario_venta='"+precio_unitario+"',unidad='"+unidad_medida+"',status_prod='"+status+"',descripcion='"+descripcion+"' WHERE codigo_producto='"+codigo_producto+"';");
+               JOptionPane.showMessageDialog(null,"El registro se modifico correctamente");
+            } catch(Exception err) 
+            { 
+                JOptionPane.showMessageDialog(null,"Error Nuevo no se puede guardar "+err.getMessage()); 
+            }
+        }
+    }   
 }
