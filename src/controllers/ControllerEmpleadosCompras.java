@@ -32,6 +32,7 @@ public class ControllerEmpleadosCompras {
             }              
         }
     };
+    
     MouseListener ml = new MouseListener(){
         @Override
         public void mouseClicked(MouseEvent e) {
@@ -65,6 +66,7 @@ public class ControllerEmpleadosCompras {
     public ControllerEmpleadosCompras(ModelEmpleadosCompras modelEmpleadosCompras, ViewEmpleadosCompras viewEmpleadosCompras) {
         this.modelEmpleadosCompras = modelEmpleadosCompras;
         this.viewEmpleadosCompras = viewEmpleadosCompras;
+        //agregar a la table el evento de MouseListener
         this.viewEmpleadosCompras.jt_vista.addMouseListener(ml);
         
         //Boton Guardar inhabilitado
@@ -83,6 +85,8 @@ public class ControllerEmpleadosCompras {
      */
      private void setActionListener() {
           viewEmpleadosCompras.jb_nuevo.addActionListener(list);
+          viewEmpleadosCompras.jb_modificar.addActionListener(list);
+          viewEmpleadosCompras.jb_guardar.addActionListener(list);
     }
     
     /**
