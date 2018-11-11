@@ -80,14 +80,14 @@ public class ControllerClientes {
         cajas_deshabilitadas();
         setActionListener();
     }
-       /**
+
+    /**
      * Método para agregar el actionListener a cada boton
      */
     private void setActionListener() {
 
         viewClientes.jb_nuevo.addActionListener(list);
     }
-
 
     public void ConexionBD() {
         modelClientes.Conectar();
@@ -96,6 +96,10 @@ public class ControllerClientes {
     }
 
     public void jt_vista_MouseClicked() {
+        viewClientes.jb_guardar.setEnabled(false);
+        viewClientes.jb_modificar.setEnabled(true);//El boton modificar aparecera habilitado
+        viewClientes.jb_nuevo.setEnabled(true);//El boton nuevo aparecera habilitado
+        cajas_deshabilitadas(); // cuando se haga clic en la tabla, las cajas se volveran a deshabilitar 
         modelClientes.setRec(viewClientes.jt_vista.getSelectedRow());//a la variable se le asigna el elemento seleccionado en la tabla
         viewClientes.jtf_rfc.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 0).toString());
         viewClientes.jtf_nombre.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 1).toString());
