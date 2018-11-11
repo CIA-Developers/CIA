@@ -45,10 +45,21 @@ public class ModelProductos {
     public String nombre_producto;
     public String tipo_producto;
     public String marca;
-    public int precio_unitario;
+    public float precio_unitario;
+    public int stock_total=0;
     public String unidad_medida;
     public String status;
     public String descripcion;
+
+    public int getStock_total() {
+        return stock_total;
+    }
+
+    public void setStock_total(int stock_total) {
+        this.stock_total = stock_total;
+    }
+    
+    
 
     public int getVerificar() {
         return verificar;
@@ -90,14 +101,14 @@ public class ModelProductos {
         this.marca = marca;
     }
 
-    public int getPrecio_unitario() {
+    public float getPrecio_unitario() {
         return precio_unitario;
     }
 
-    public void setPrecio_unitario(int precio_unitario) {
+    public void setPrecio_unitario(float precio_unitario) {
         this.precio_unitario = precio_unitario;
     }
-
+    
     public String getUnidad_medida() {
         return unidad_medida;
     }
@@ -205,8 +216,8 @@ public class ModelProductos {
         
         if(JOptionPane.OK_OPTION==confirmar) {
             try{
-            st.executeUpdate("insert into productos (codigo_producto,nom_producto,tipo_producto,marca,precio_unitario_venta,unidad,descripcion,status_prod) values"
-                    + "('"+codigo_producto+"','"+nombre_producto+"','"+tipo_producto+"','"+marca+"','"+precio_unitario+"','"+unidad_medida+"','"+descripcion+"','"+status+"');"); 
+            st.executeUpdate("insert into productos (codigo_producto,nom_producto,tipo_producto,marca,precio_unitario_venta,unidad,descripcion,	existencia_total,status_prod) values"
+                    + "('"+codigo_producto+"','"+nombre_producto+"','"+tipo_producto+"','"+marca+"','"+precio_unitario+"','"+unidad_medida+"','"+descripcion+"','"+stock_total+"','"+status+"');"); 
                 JOptionPane.showMessageDialog(null,"Guardado con exito ");
             } catch(Exception err) 
             { 
