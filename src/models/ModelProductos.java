@@ -39,6 +39,80 @@ public class ModelProductos {
     public void setRec(int rec) {
         this.rec = rec;
     } 
+    //************************Variables que pertenecen a las cajas de Texto********************************
+    public String codigo_producto;
+    public String nombre_producto;
+    public String tipo_producto;
+    public String marca;
+    public int precio_unitario;
+    public String unidad_medida;
+    public String status;
+    public String descripcion;
+
+    public String getCodigo_producto() {
+        return codigo_producto;
+    }
+
+    public void setCodigo_producto(String codigo_producto) {
+        this.codigo_producto = codigo_producto;
+    }
+
+    public String getNombre_producto() {
+        return nombre_producto;
+    }
+
+    public void setNombre_producto(String nombre_producto) {
+        this.nombre_producto = nombre_producto;
+    }
+
+    public String getTipo_producto() {
+        return tipo_producto;
+    }
+
+    public void setTipo_producto(String tipo_producto) {
+        this.tipo_producto = tipo_producto;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public int getPrecio_unitario() {
+        return precio_unitario;
+    }
+
+    public void setPrecio_unitario(int precio_unitario) {
+        this.precio_unitario = precio_unitario;
+    }
+
+    public String getUnidad_medida() {
+        return unidad_medida;
+    }
+
+    public void setUnidad_medida(String unidad_medida) {
+        this.unidad_medida = unidad_medida;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+    
     
     //*************************Variables que corresponden a los BOTONES*************************************
     
@@ -105,7 +179,19 @@ public class ModelProductos {
         } catch (Exception e) {
             System.out.println(e);
         }
-
     }
+   //*****************METODOS DE BOTONES Nuevo, Borrar, Guardar y Modificar**************************
+    public void Guardar_Nuevo(){
+        codigo_producto;
+        nombre_producto;
+        tipo_producto;
+        marca;
+        precio_unitario;
+        unidad_medida;
+        status;
+        descripcion;  
+    }
+        
+      
     
 }
