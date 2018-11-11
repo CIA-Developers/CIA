@@ -217,21 +217,22 @@ public class ModelEmpleadosCompras {
      //---------------METODOS DE BOTONES Nuevo, Borrar, Guardar y Modificar-----------------
       public void Guardar_Nuevo(){
         //cada variable obtendra el valor actual de las cajas de texto 
-        codigo_producto=this.getCodigo_producto();
-        nombre_producto=this.getNombre_producto();
-        tipo_producto=this.getTipo_producto();
-        marca=this.getMarca();
-        precio_unitario=this.getPrecio_unitario();
-        unidad_medida=this.getUnidad_medida();
-        status=this.getStatus();
-        descripcion=this.getDescripcion();
+        rfc=this.getRfc();
+        nombre=this.getNombre();
+        apellido_pat=this.getApellido_pat();
+        apellido_mat=this.getApellido_mat();
+        sexo=this.getSexo();
+        estado_civil=this.getEstado_civil();
+        telefono=this.getTelefono();
+        correo=this.getCorreo();
+        usuario=this.getUsuario();
         
         int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de Guardar el NUEVO registro?");
         
         if(JOptionPane.OK_OPTION==confirmar) {
             try{
             st.executeUpdate("insert into productos (codigo_producto,nom_producto,tipo_producto,marca,precio_unitario_venta,unidad,descripcion,	existencia_total,status_prod) values"
-                    + "('"+codigo_producto+"','"+nombre_producto+"','"+tipo_producto+"','"+marca+"','"+precio_unitario+"','"+unidad_medida+"','"+descripcion+"','"+stock_total+"','"+status+"');"); 
+                    + "('"+rfc+"','"+nombre+"','"+apellido_pat+"','"+apellido_mat+"','"+sexo+"','"+estado_civil+"','"+telefono+"','"+correo+"','"+usuario+"');"); 
                 JOptionPane.showMessageDialog(null,"Guardado con exito ");
             } catch(Exception err) 
             { 
