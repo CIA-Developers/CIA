@@ -58,8 +58,8 @@ public class ControllerProveedores {
 
         }
     };
-    
-    KeyListener key = new KeyListener(){
+
+    KeyListener key = new KeyListener() {
         @Override
         public void keyTyped(KeyEvent e) {
 
@@ -67,15 +67,15 @@ public class ControllerProveedores {
 
         @Override
         public void keyPressed(KeyEvent e) {
-           if (e.getSource() == viewProveedores.jtf_buscar) {
+            if (e.getSource() == viewProveedores.jtf_buscar) {
                 jtf_buscar_KeyPressed();
-            }  
+            }
         }
 
         @Override
         public void keyReleased(KeyEvent e) {
 
-        }    
+        }
 
         private void jtf_buscar_KeyPressed() {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -120,6 +120,16 @@ public class ControllerProveedores {
     }
 
     private void cajas_deshabilitadas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        viewProveedores.jtf_id.setEditable(false);
+        viewProveedores.jtf_nombre.setEditable(false);
+        viewProveedores.jtf_ap_pat.setEditable(false);
+        viewProveedores.jtf_apt_mat.setEditable(false);
+        viewProveedores.jtf_telefono.setEditable(false);
+        viewProveedores.jtf_municipio.setEditable(false);
+        viewProveedores.jtf_colonia.setEditable(false);
+        viewProveedores.jtf_numero.setEditable(false);
+        viewProveedores.jtf_provincia.setEditable(false);
+        viewProveedores.jtf_correo.setEditable(false);
+
     }
 }
