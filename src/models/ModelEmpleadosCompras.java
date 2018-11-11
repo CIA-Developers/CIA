@@ -51,6 +51,8 @@ public class ModelEmpleadosCompras {
     
   
     //Variables que corresponden a cada caja de texto
+     // variable que nos ayudara a ver si se inserto un nuevo registro o se midificara
+    public int verificar;
     public String rfc;
     public String nombre;
     public String apellido_pat;
@@ -60,6 +62,23 @@ public class ModelEmpleadosCompras {
     public String telefono;
     public String correo;
     public String usuario;
+
+    public int getVerificar() {
+        return verificar;
+    }
+
+    public void setVerificar(int verificar) {
+        this.verificar = verificar;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+    
     
     public String getRfc() {
         return rfc;
@@ -193,6 +212,31 @@ public class ModelEmpleadosCompras {
         } catch (Exception e) {
             System.out.println(e);
         }
-
+    }
+     
+     //---------------METODOS DE BOTONES Nuevo, Borrar, Guardar y Modificar-----------------
+      public void Guardar_Nuevo(){
+        //cada variable obtendra el valor actual de las cajas de texto 
+        codigo_producto=this.getCodigo_producto();
+        nombre_producto=this.getNombre_producto();
+        tipo_producto=this.getTipo_producto();
+        marca=this.getMarca();
+        precio_unitario=this.getPrecio_unitario();
+        unidad_medida=this.getUnidad_medida();
+        status=this.getStatus();
+        descripcion=this.getDescripcion();
+        
+        int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de Guardar el NUEVO registro?");
+        
+        if(JOptionPane.OK_OPTION==confirmar) {
+            try{
+            st.executeUpdate("insert into productos (codigo_producto,nom_producto,tipo_producto,marca,precio_unitario_venta,unidad,descripcion,	existencia_total,status_prod) values"
+                    + "('"+codigo_producto+"','"+nombre_producto+"','"+tipo_producto+"','"+marca+"','"+precio_unitario+"','"+unidad_medida+"','"+descripcion+"','"+stock_total+"','"+status+"');"); 
+                JOptionPane.showMessageDialog(null,"Guardado con exito ");
+            } catch(Exception err) 
+            { 
+                JOptionPane.showMessageDialog(null,"Error Nuevo no se puede guardar "+err.getMessage()); 
+            }
+        }
     }
 }
