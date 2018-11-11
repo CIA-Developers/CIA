@@ -77,7 +77,8 @@ public class ControllerClientes {
 //El boton guardar aparecera inhabilitado
 
         ConexionBD();
-
+        cajas_deshabilitadas();
+        setActionListener();
     }
 
     public void ConexionBD() {
