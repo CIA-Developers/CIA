@@ -182,15 +182,30 @@ public class ModelProductos {
     }
    //*****************METODOS DE BOTONES Nuevo, Borrar, Guardar y Modificar**************************
     public void Guardar_Nuevo(){
-        codigo_producto;
-        nombre_producto;
-        tipo_producto;
-        marca;
-        precio_unitario;
-        unidad_medida;
-        status;
-        descripcion;  
+        //cada variable obtendra el valor actual de las cajas de texto 
+        codigo_producto=this.getCodigo_producto();
+        nombre_producto=this.getNombre_producto();
+        tipo_producto=this.getTipo_producto();
+        marca=this.getMarca();
+        precio_unitario=this.getPrecio_unitario();
+        unidad_medida=this.getUnidad_medida();
+        status=this.status;
+        descripcion=this.getDescripcion();
+        
+        int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de Guardar el NUEVO registro?");
+        
+        if(JOptionPane.OK_OPTION==confirmar) {
+            try{
+            st.executeUpdate("insert into productos (codigo_producto,nom_producto,tipo_producto,marca,precio_unitario_venta,unidad,descripcion,status_prod) values"
+                    + "('"+codigo_producto+"','"+nombre_producto+"','"+tipo_producto+"','"+marca+"','"+precio_unitario+"','"+unidad_medida+"','"+descripcion+"','"+status+"');"); 
+                JOptionPane.showMessageDialog(null,"Guardado con exito ");
+            } catch(Exception err) 
+            { 
+                JOptionPane.showMessageDialog(null,"Error Nuevo no se puede guardar "+err.getMessage()); 
+            }
+        }
     }
+        
         
       
     
