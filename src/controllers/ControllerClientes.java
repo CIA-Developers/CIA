@@ -111,9 +111,21 @@ public class ControllerClientes {
         viewClientes.jtf_colonia.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 7).toString());
         viewClientes.jtf_numero.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 8).toString());
         viewClientes.jtf_correo.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 9).toString());
-        viewClientes.jtf_correo.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 9).toString());
         viewClientes.jl_puntos.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 10).toString());
 
     }
+    
+    private void cajas_deshabilitadas() {
+        viewClientes.jtf_rfc.setEditable(false);
+        viewClientes.jtf_nombre.setEditable(false);
+        viewClientes.jtf_ap_pat.setEditable(false);
+        viewClientes.jtf_apt_mat.setEditable(false);
+        viewClientes.jtf_telefono.setEditable(false);
+        viewClientes.jtf_municipio.setEditable(false);
+        viewClientes.jtf_colonia.setEditable(false);
+        viewClientes.jtf_numero.setEditable(false);
+        viewClientes.jtf_correo.setEditable(false);
+    }
+
 
 }
