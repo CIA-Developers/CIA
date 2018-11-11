@@ -114,7 +114,7 @@ public class ControllerClientes {
         viewClientes.jl_puntos.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 10).toString());
 
     }
-    
+
     private void cajas_deshabilitadas() {
         viewClientes.jtf_rfc.setEditable(false);
         viewClientes.jtf_nombre.setEditable(false);
@@ -126,6 +126,7 @@ public class ControllerClientes {
         viewClientes.jtf_numero.setEditable(false);
         viewClientes.jtf_correo.setEditable(false);
     }
+
     private void cajas_habilitadas() {
         viewClientes.jtf_rfc.setEditable(true);
         viewClientes.jtf_nombre.setEditable(true);
@@ -138,5 +139,24 @@ public class ControllerClientes {
         viewClientes.jtf_correo.setEditable(true);
     }
 
+    //***************** BOTONES Nuevo, Borrar, Guardar y Modificar**************************
+    /**
+     * Metodo que limpiara las cajas de texto para ingresar nuevo datos.
+     */
+    public void jbtn_nuevo_actionPerformed() {
+        viewClientes.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
+        viewClientes.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
+        //limpiar cada caja de la Interfaz 
+        viewClientes.jtf_rfc.setText(Integer.toString(modelClientes.getCodigo()));// la caja de texto CODIGO_PRODUCTO recibe el valor de cero
+        viewClientes.jtf_nombre.setText(modelClientes.getLimpiar());
+        viewClientes.jtf_ap_pat.setText(modelClientes.getLimpiar());
+        viewClientes.jtf_apt_mat.setText(modelClientes.getLimpiar());
+        viewClientes.jtf_telefono.setText(modelClientes.getLimpiar());
+        viewClientes.jtf_municipio.setText(modelClientes.getLimpiar());
+        viewClientes.jtf_colonia.setText(modelClientes.getLimpiar());
+        viewClientes.jtf_numero.setText(modelClientes.getLimpiar());
+        viewClientes.jtf_correo.setText(modelClientes.getLimpiar());
+        cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
+    }
 
 }
