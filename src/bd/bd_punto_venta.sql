@@ -262,6 +262,7 @@ CREATE TABLE detalle_ventas (
     cantidad INT(15) NOT NULL,
     precio_venta FLOAT NOT NULL,
     total_producto FLOAT NOT NULL,
+    FOREIGN KEY (id_ventas) REFERENCES ventas (id_ventas),
     FOREIGN KEY (Codigo_producto) REFERENCES productos (codigo_producto));
     
     insert into detalle_ventas values 
