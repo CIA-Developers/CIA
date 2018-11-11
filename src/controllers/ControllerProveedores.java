@@ -7,6 +7,8 @@ package controllers;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import models.ModelProveedores;
@@ -56,20 +58,54 @@ public class ControllerProveedores {
 
         }
     };
-
     
+    KeyListener key = new KeyListener(){
+        @Override
+        public void keyTyped(KeyEvent e) {
+
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+           if (e.getSource() == viewProveedores.jtf_buscar) {
+                jtf_buscar_KeyPressed();
+            }  
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+
+        }    
+
+        private void jtf_buscar_KeyPressed() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    };
+
     public ControllerProveedores(ModelProveedores modelProveedores, ViewProveedores viewProveedores) {
         this.modelProveedores = modelProveedores;
         this.viewProveedores = viewProveedores;
         this.viewProveedores.jt_vista.addMouseListener(ml);//agregar a la table el evento de MouseListener
+        this.viewProveedores.jtf_buscar.addKeyListener(key);
+
+        viewProveedores.jb_guardar.setEnabled(false);//El boton guardar aparecera inhabilitado
+        viewProveedores.jb_eliminar.setEnabled(false);//El boton guardar aparecera inhabilitado
+
+        cajas_deshabilitadas();
         ConexionBD();
     }
-   public void ConexionBD(){
+
+    public void ConexionBD() {
         modelProveedores.Conectar();
         modelProveedores.mostrar();
         viewProveedores.jt_vista.setModel(modelProveedores.getModelo_Proveedores()); //asignar a la tabla los valores correspondientes
     }
- public void jt_vista_MouseClicked(){
+
+    public void jt_vista_MouseClicked() {
+        viewProveedores.jb_guardar.setEnabled(false);
+        viewProveedores.jb_modificar.setEnabled(true);//El boton modificar aparecera habilitado
+        viewProveedores.jb_nuevo.setEnabled(true);//El boton nuevo aparecera habilitado
+        cajas_deshabilitadas(); // cuando se haga clic en la tabla, las cajas se volveran a deshabilitar 
         modelProveedores.setRec(viewProveedores.jt_vista.getSelectedRow());//a la variable se le asigna el elemento seleccionado en la tabla
         viewProveedores.jtf_id.setText(viewProveedores.jt_vista.getValueAt(modelProveedores.getRec(), 0).toString());
         viewProveedores.jtf_nombre.setText(viewProveedores.jt_vista.getValueAt(modelProveedores.getRec(), 1).toString());
@@ -80,6 +116,10 @@ public class ControllerProveedores {
         viewProveedores.jtf_colonia.setText(viewProveedores.jt_vista.getValueAt(modelProveedores.getRec(), 6).toString());
         viewProveedores.jtf_numero.setText(viewProveedores.jt_vista.getValueAt(modelProveedores.getRec(), 7).toString());
         viewProveedores.jtf_provincia.setText(viewProveedores.jt_vista.getValueAt(modelProveedores.getRec(), 8).toString());
-        viewProveedores.jtf_correo.setText(viewProveedores.jt_vista.getValueAt(modelProveedores.getRec(), 9).toString());  
+        viewProveedores.jtf_correo.setText(viewProveedores.jt_vista.getValueAt(modelProveedores.getRec(), 9).toString());
+    }
+
+    private void cajas_deshabilitadas() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
