@@ -92,7 +92,7 @@ public class ControllerClientes {
     public void ConexionBD() {
         modelClientes.Conectar();
         modelClientes.mostrar();
-        viewClientes.jt_vista.setModel(modelClientes.getModelo_Clientes()); //asignar a la tabla los valores correspondientes
+        viewClientes.jt_vista.setModel(modelClientes.getModelo_clientes()); //asignar a la tabla los valores correspondientes
     }
 
     public void jt_vista_MouseClicked() {

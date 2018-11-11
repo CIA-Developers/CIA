@@ -46,7 +46,7 @@ public class ModelProveedores {
     /**
      * Variables para el metodo de busqueda
      */
-    public String[] titulos = {"RFC", "Nombre", "Apellido Paterno", "Apellido Materno", "Telefono", "Municipio", "calle", "Colonia", "Numero", "Correo"}; //columnas de la tabla
+    public String[] titulos = {"ID", "Nombre", "Apellido Paterno", "Apellido Materno", "Telefono", "Municipio", "calle", "Colonia", "Numero", "Correo"}; //columnas de la tabla
 
     public String[] getTitulos() {
         return titulos;
