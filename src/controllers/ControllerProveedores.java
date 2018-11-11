@@ -11,6 +11,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import static java.util.Collections.list;
 import models.ModelProveedores;
 import views.ViewProveedores;
 
@@ -22,6 +23,15 @@ public class ControllerProveedores {
 
     public ModelProveedores modelProveedores;
     public ViewProveedores viewProveedores;
+    ActionListener list = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (e.getSource() == viewProveedores.jb_nuevo) {
+                jbtn_nuevo_actionPerformed();
+            }
+        }
+    };
+
     MouseListener ml = new MouseListener() {
         @Override
         public void mouseClicked(MouseEvent e) {
@@ -59,40 +69,27 @@ public class ControllerProveedores {
         }
     };
 
-    KeyListener key = new KeyListener() {
-        @Override
-        public void keyTyped(KeyEvent e) {
-
-        }
-
-        @Override
-        public void keyPressed(KeyEvent e) {
-            if (e.getSource() == viewProveedores.jtf_buscar) {
-                jtf_buscar_KeyPressed();
-            }
-        }
-
-        @Override
-        public void keyReleased(KeyEvent e) {
-
-        }
-
-        private void jtf_buscar_KeyPressed() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-    };
-
     public ControllerProveedores(ModelProveedores modelProveedores, ViewProveedores viewProveedores) {
         this.modelProveedores = modelProveedores;
         this.viewProveedores = viewProveedores;
         this.viewProveedores.jt_vista.addMouseListener(ml);//agregar a la table el evento de MouseListener
-        this.viewProveedores.jtf_buscar.addKeyListener(key);
 
-        viewProveedores.jb_guardar.setEnabled(false);//El boton guardar aparecera inhabilitado
-        viewProveedores.jb_eliminar.setEnabled(false);//El boton guardar aparecera inhabilitado
+        viewProveedores.jb_guardar.setEnabled(false);
+//El boton guardar aparecera inhabilitado
+        viewProveedores.jb_eliminar.setEnabled(false);
+//El boton guardar aparecera inhabilitado
 
         cajas_deshabilitadas();
+        setActionListener();
         ConexionBD();
+    }
+
+    /**
+     * Método para agregar el actionListener a cada boton
+     */
+    private void setActionListener() {
+
+        viewProveedores.jb_nuevo.addActionListener(list);
     }
 
     public void ConexionBD() {
@@ -132,7 +129,8 @@ public class ControllerProveedores {
         viewProveedores.jtf_correo.setEditable(false);
 
     }
-        private void cajas_habilitadas() {
+
+    private void cajas_habilitadas() {
         viewProveedores.jtf_id.setEditable(false);
         viewProveedores.jtf_nombre.setEditable(false);
         viewProveedores.jtf_ap_pat.setEditable(false);
@@ -145,11 +143,12 @@ public class ControllerProveedores {
         viewProveedores.jtf_correo.setEditable(false);
 
     }
-        //***************** BOTONES Nuevo, Borrar, Guardar y Modificar**************************
+    //***************** BOTONES Nuevo, Borrar, Guardar y Modificar**************************
+
     /**
-     * Metodo que limpiara las cajas de texto para ingresar nuevo datos. 
+     * Metodo que limpiara las cajas de texto para ingresar nuevo datos.
      */
-    public void jbtn_nuevo_actionPerformed(){
+    public void jbtn_nuevo_actionPerformed() {
         viewProveedores.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
         viewProveedores.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
         //limpiar cada caja de la Interfaz 
@@ -162,7 +161,24 @@ public class ControllerProveedores {
         viewProveedores.jtf_colonia.setText(modelProveedores.getLimpiar());
         viewProveedores.jtf_numero.setText(modelProveedores.getLimpiar());
         viewProveedores.jtf_provincia.setText(modelProveedores.getLimpiar());
-        viewProveedores.jtf_correo.setText(modelProveedores.getLimpiar());    
+        viewProveedores.jtf_correo.setText(modelProveedores.getLimpiar());
         cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
+    }
+
+    public void modificar_proveedores() {
+        viewProveedores.jb_guardar.setEnabled(true);
+//El boton guardar aparecera habilitado
+        viewProveedores.jb_nuevo.setEnabled(false);
+//El boton modificar aparecera inhabilitado
+        //limpiar cada caja de la Interfaz 
+        viewProveedores.jtf_id.setEditable(true);
+        viewProveedores.jtf_nombre.setEditable(true);
+        viewProveedores.jtf_ap_pat.setEditable(true);
+        viewProveedores.jtf_apt_mat.setEditable(true);
+        viewProveedores.jtf_telefono.setEditable(true);
+        viewProveedores.jtf_colonia.setEditable(true);
+        viewProveedores.jtf_numero.setEditable(true);
+        viewProveedores.jtf_provincia.setEditable(true);
+        viewProveedores.jtf_correo.setEditable(true);
     }
 }
