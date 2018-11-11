@@ -235,5 +235,29 @@ public class ModelEmpleadosVentas {
         }
     }
     
+     public void Guardar_Modificado(){
+        //cada variable obtendra el valor actual de las cajas de texto 
+       rfc=this.getRfc();
+        nombre=this.getNombre();
+        apellido_pat=this.getApellido_pat();
+        apellido_mat=this.getApellido_mat();
+        sexo=this.getSexo();
+        estado_civil=this.getEstado_civil();
+        telefono=this.getTelefono();
+        correo=this.getCorreo();
+        usuario=this.getUsuario();
+        
+        int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de MODIFICAR registro?");
+        
+        if(JOptionPane.OK_OPTION==confirmar) {
+            try{
+               st.executeUpdate("UPDATE empleados_ventas SET nombre_empl_comp='"+nombre+"',ap_pat_comp='"+apellido_pat+"',ap_mat_comp='"+apellido_mat+"',sexo_comp='"+sexo+"',estado_civil_comp='"+estado_civil+"',telefono_comp='"+telefono+"', correo_comp='"+correo+"',usuario_comp='"+usuario+"' WHERE RFC_empl_comp='"+rfc+"';");
+               JOptionPane.showMessageDialog(null,"El registro se modifico correctamente");
+            } catch(Exception err) 
+            { 
+                JOptionPane.showMessageDialog(null,"Error Nuevo no se puede guardar "+err.getMessage()); 
+            }
+        }
+    }   
     
 }
