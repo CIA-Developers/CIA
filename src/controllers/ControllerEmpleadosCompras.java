@@ -164,7 +164,19 @@ public class ControllerEmpleadosCompras {
         }
 
         private void modificar_empleado() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        viewEmpleadosCompras.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
+        viewEmpleadosCompras.jb_nuevo.setEnabled(false);//El boton modificar aparecera inhabilitado
+        //limpiar cada caja de la Interfaz 
+         modelEmpleadosCompras.setVerificar(2);// le da el valor a verificar de uno para identificar Modifiar registro
+        viewEmpleadosCompras.jtf_rfc.setEditable(false); // el codigo no se puede modificar
+        viewEmpleadosCompras.jtf_nombre.setEditable(true);
+        viewEmpleadosCompras.jtf_ap_pat.setEditable(true);
+        viewEmpleadosCompras.jtf_apt_mat.setEditable(true);
+        viewEmpleadosCompras.jtf_sexo.setEditable(true);
+        viewEmpleadosCompras.jtf_estado_civil.setEditable(true);
+        viewEmpleadosCompras.jtf_Telefono.setEditable(true);
+        viewEmpleadosCompras.jtf_correo.setEditable(true);
+        viewEmpleadosCompras.jtf_usuario.setEditable(true);
         }
 
         private void Guardar() {
