@@ -207,5 +207,33 @@ public class ModelEmpleadosVentas {
         }
 
     }
+     
+     //--------------------METODOS DE BOTONES Nuevo, Borrar, Guardar y Modificar-------------------------
+    public void Guardar_Nuevo(){
+        //cada variable obtendra el valor actual de las cajas de texto 
+        rfc=this.getRfc();
+        nombre=this.getNombre();
+        apellido_pat=this.getApellido_pat();
+        apellido_mat=this.getApellido_mat();
+        sexo=this.getSexo();
+        estado_civil=this.getEstado_civil();
+        telefono=this.getTelefono();
+        correo=this.getCorreo();
+        usuario=this.getUsuario();
+        
+        int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de Guardar el NUEVO registro?");
+        
+        if(JOptionPane.OK_OPTION==confirmar) {
+            try{
+            st.executeUpdate("insert into empleados_ventas (RFC_empl_vent,nombre_empl_vent,ap_pat_vent,ap_mat_vent,sexo_vent,estado_civil_vent,telefono_vent,correo_vent,usuario_vent) values"
+                    + "('"+rfc+"','"+nombre+"','"+apellido_pat+"','"+apellido_mat+"','"+sexo+"','"+estado_civil+"','"+telefono+"','"+correo+"','"+usuario+"');"); 
+                JOptionPane.showMessageDialog(null,"Guardado con exito ");
+            } catch(Exception err) 
+            { 
+                JOptionPane.showMessageDialog(null,"Error Nuevo no se puede guardar "+err.getMessage()); 
+            }
+        }
+    }
+    
     
 }
