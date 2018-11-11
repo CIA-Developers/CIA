@@ -20,6 +20,14 @@ public class ControllerClientes {
 
     public ModelClientes modelClientes;
     public ViewClientes viewClientes;
+        ActionListener list = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (e.getSource() == viewClientes.jb_nuevo) {
+                jbtn_nuevo_actionPerformed();
+            }
+        }
+    };
     MouseListener ml = new MouseListener() {
         @Override
         public void mouseClicked(MouseEvent e) {
