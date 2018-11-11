@@ -80,6 +80,14 @@ public class ControllerClientes {
         cajas_deshabilitadas();
         setActionListener();
     }
+       /**
+     * Método para agregar el actionListener a cada boton
+     */
+    private void setActionListener() {
+
+        viewClientes.jb_nuevo.addActionListener(list);
+    }
+
 
     public void ConexionBD() {
         modelClientes.Conectar();
