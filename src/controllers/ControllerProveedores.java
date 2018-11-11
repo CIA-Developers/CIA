@@ -145,4 +145,24 @@ public class ControllerProveedores {
         viewProveedores.jtf_correo.setEditable(false);
 
     }
+        //***************** BOTONES Nuevo, Borrar, Guardar y Modificar**************************
+    /**
+     * Metodo que limpiara las cajas de texto para ingresar nuevo datos. 
+     */
+    public void jbtn_nuevo_actionPerformed(){
+        viewProveedores.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
+        viewProveedores.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
+        //limpiar cada caja de la Interfaz 
+        viewProveedores.jtf_id.setText(Integer.toString(modelProveedores.getCodigo()));// la caja de texto CODIGO_PRODUCTO recibe el valor de cero
+        viewProveedores.jtf_nombre.setText(modelProveedores.getLimpiar());
+        viewProveedores.jtf_ap_pat.setText(modelProveedores.getLimpiar());
+        viewProveedores.jtf_apt_mat.setText(modelProveedores.getLimpiar());
+        viewProveedores.jtf_telefono.setText(modelProveedores.getLimpiar());
+        viewProveedores.jtf_municipio.setText(modelProveedores.getLimpiar());
+        viewProveedores.jtf_colonia.setText(modelProveedores.getLimpiar());
+        viewProveedores.jtf_numero.setText(modelProveedores.getLimpiar());
+        viewProveedores.jtf_provincia.setText(modelProveedores.getLimpiar());
+        viewProveedores.jtf_correo.setText(modelProveedores.getLimpiar());    
+        cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
+    }
 }
