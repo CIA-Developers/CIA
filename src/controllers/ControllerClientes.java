@@ -123,6 +123,7 @@ public class ControllerClientes {
         viewClientes.jtf_telefono.setEditable(false);
         viewClientes.jtf_municipio.setEditable(false);
         viewClientes.jtf_colonia.setEditable(false);
+        viewClientes.jtf_calle.setEditable(false);
         viewClientes.jtf_numero.setEditable(false);
         viewClientes.jtf_correo.setEditable(false);
     }
@@ -135,6 +136,7 @@ public class ControllerClientes {
         viewClientes.jtf_telefono.setEditable(true);
         viewClientes.jtf_municipio.setEditable(true);
         viewClientes.jtf_colonia.setEditable(true);
+        viewClientes.jtf_calle.setEditable(true);
         viewClientes.jtf_numero.setEditable(true);
         viewClientes.jtf_correo.setEditable(true);
     }
@@ -154,6 +156,7 @@ public class ControllerClientes {
         viewClientes.jtf_telefono.setText(modelClientes.getLimpiar());
         viewClientes.jtf_municipio.setText(modelClientes.getLimpiar());
         viewClientes.jtf_colonia.setText(modelClientes.getLimpiar());
+        viewClientes.jtf_calle.setText(modelClientes.getLimpiar());
         viewClientes.jtf_numero.setText(modelClientes.getLimpiar());
         viewClientes.jtf_correo.setText(modelClientes.getLimpiar());
         cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
