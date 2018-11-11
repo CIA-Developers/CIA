@@ -131,16 +131,16 @@ public class ControllerProveedores {
     }
 
     private void cajas_habilitadas() {
-        viewProveedores.jtf_id.setEditable(false);
-        viewProveedores.jtf_nombre.setEditable(false);
-        viewProveedores.jtf_ap_pat.setEditable(false);
-        viewProveedores.jtf_apt_mat.setEditable(false);
-        viewProveedores.jtf_telefono.setEditable(false);
-        viewProveedores.jtf_municipio.setEditable(false);
-        viewProveedores.jtf_colonia.setEditable(false);
-        viewProveedores.jtf_numero.setEditable(false);
-        viewProveedores.jtf_provincia.setEditable(false);
-        viewProveedores.jtf_correo.setEditable(false);
+        viewProveedores.jtf_id.setEditable(true);
+        viewProveedores.jtf_nombre.setEditable(true);
+        viewProveedores.jtf_ap_pat.setEditable(true);
+        viewProveedores.jtf_apt_mat.setEditable(true);
+        viewProveedores.jtf_telefono.setEditable(true);
+        viewProveedores.jtf_municipio.setEditable(true);
+        viewProveedores.jtf_colonia.setEditable(true);
+        viewProveedores.jtf_numero.setEditable(true);
+        viewProveedores.jtf_provincia.setEditable(true);
+        viewProveedores.jtf_correo.setEditable(true);
 
     }
     //***************** BOTONES Nuevo, Borrar, Guardar y Modificar**************************

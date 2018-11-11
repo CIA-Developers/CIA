@@ -126,6 +126,19 @@ public class ControllerClientes {
         viewClientes.jtf_numero.setEditable(false);
         viewClientes.jtf_correo.setEditable(false);
     }
+        private void cajas_habilitadas() {
+        viewProveedores.jtf_id.setEditable(false);
+        viewProveedores.jtf_nombre.setEditable(false);
+        viewProveedores.jtf_ap_pat.setEditable(false);
+        viewProveedores.jtf_apt_mat.setEditable(false);
+        viewProveedores.jtf_telefono.setEditable(false);
+        viewProveedores.jtf_municipio.setEditable(false);
+        viewProveedores.jtf_colonia.setEditable(false);
+        viewProveedores.jtf_numero.setEditable(false);
+        viewProveedores.jtf_provincia.setEditable(false);
+        viewProveedores.jtf_correo.setEditable(false);
+
+    }
 
 
 }
