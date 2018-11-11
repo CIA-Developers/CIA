@@ -180,7 +180,39 @@ public class ControllerEmpleadosCompras {
         }
 
         private void Guardar() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+             // si la variable verificar es igual a 0 se llama al metodo de guardar Nuevo
+        if (modelEmpleadosCompras.getVerificar() == 1) {
+            // darle el valor a las variables
+            modelEmpleadosCompras.setRfc(viewEmpleadosCompras.jtf_rfc.getText());
+            modelEmpleadosCompras.setNombre(viewEmpleadosCompras.jtf_nombre.getText());
+            modelEmpleadosCompras.setApellido_pat(viewEmpleadosCompras.jtf_ap_pat.getText());
+            modelEmpleadosCompras.setApellido_mat(viewEmpleadosCompras.jtf_apt_mat.getText());
+            modelEmpleadosCompras.setEstado_civil(viewEmpleadosCompras.jtf_estado_civil.getText());
+            modelEmpleadosCompras.setTelefono(viewEmpleadosCompras.jtf_Telefono.getText());
+            modelEmpleadosCompras.setCorreo(viewEmpleadosCompras.jtf_correo.getText());
+            modelEmpleadosCompras.setUsuario(viewEmpleadosCompras.jtf_usuario.getText()); 
+            
+            modelEmpleadosCompras.Guardar_Nuevo(); // metodo de  insertar nuevo registro           
+        }
+        else{
+            // darle el valor a las variables
+            modelEmpleadosCompras.setRfc(viewEmpleadosCompras.jtf_rfc.getText());
+            modelEmpleadosCompras.setNombre(viewEmpleadosCompras.jtf_nombre.getText());
+            modelEmpleadosCompras.setApellido_pat(viewEmpleadosCompras.jtf_ap_pat.getText());
+            modelEmpleadosCompras.setApellido_mat(viewEmpleadosCompras.jtf_apt_mat.getText());
+            modelEmpleadosCompras.setEstado_civil(viewEmpleadosCompras.jtf_estado_civil.getText());
+            modelEmpleadosCompras.setTelefono(viewEmpleadosCompras.jtf_Telefono.getText());
+            modelEmpleadosCompras.setCorreo((String) viewEmpleadosCompras.jtf_correo.getText());
+            modelEmpleadosCompras.setUsuario(viewEmpleadosCompras.jtf_usuario.getText());
+            modelEmpleadosCompras.Guardar_Modificado();// metodo de  Modificar el registro
+        }
+        //LIMPIAR TABLA 
+        for (int i = 0; i <  viewEmpleadosCompras.jt_vista.getRowCount(); i++) {
+           modelEmpleadosCompras.getModelo_EmCompras().removeRow(i);
+            i-=1;
+        }
+        //mostrar los nuevos datos 
+        modelEmpleadosCompras.mostrar();
         } 
     
     
