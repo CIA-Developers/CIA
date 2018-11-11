@@ -26,6 +26,8 @@ public class ControllerSucursales {
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == viewSucursales.jb_nuevo) {
                 jbtn_nuevo_actionPerformed();
+            }else if (e.getSource() == viewSucursales.jb_modificar) {
+                modificar_sucursales();
             }       
         }
         
@@ -114,6 +116,7 @@ public class ControllerSucursales {
     public void jt_vista_MouseClicked(){
         viewSucursales.jb_guardar.setEnabled(false);
         viewSucursales.jb_modificar.setEnabled(true);//El boton modificar aparecera habilitado
+        viewSucursales.jb_nuevo.setEnabled(true);//El boton nuevo aparecera habilitado
         cajas_deshabilitadas(); // cuando se haga clic en la tabla, las cajas se volveran a deshabilitar 
         modelSucursales.setRec(viewSucursales.jt_vista.getSelectedRow());//a la variable se le asigna el elemento seleccionado en la tabla
         viewSucursales.jtf_no_sucursal.setText(viewSucursales.jt_vista.getValueAt(modelSucursales.getRec(), 0).toString());
@@ -173,7 +176,7 @@ public class ControllerSucursales {
     /**
      * Metodo que limpiara las cajas de texto para ingresar nuevo datos. 
      */
-    private void jbtn_nuevo_actionPerformed(){
+    public void jbtn_nuevo_actionPerformed(){
         viewSucursales.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
         viewSucursales.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
         //limpiar cada caja de la Interfaz 
@@ -188,5 +191,20 @@ public class ControllerSucursales {
         viewSucursales.jtf_stock_max.setText(modelSucursales.getLimpiar());
         viewSucursales.jtf_stock_min.setText(modelSucursales.getLimpiar());    
         cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
+    }
+    
+    public void modificar_sucursales(){
+        viewSucursales.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
+        viewSucursales.jb_nuevo.setEnabled(false);//El boton modificar aparecera inhabilitado
+        //limpiar cada caja de la Interfaz 
+        viewSucursales.jtf_calle.setEditable(true);
+        viewSucursales.jtf_colonia.setEditable(true);
+        viewSucursales.jtf_numero.setEditable(true);
+        viewSucursales.jtf_telefono.setEditable(true);
+        viewSucursales.jtf_codigo_prod.setEditable(true);
+        viewSucursales.jtf_nom_prod.setEditable(true);
+        viewSucursales.jtf_stock.setEditable(true);
+        viewSucursales.jtf_stock_max.setEditable(true);
+        viewSucursales.jtf_stock_min.setEditable(true);  
     }
 }
