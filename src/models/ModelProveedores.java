@@ -268,7 +268,7 @@ public class ModelProveedores {
             JOptionPane.showMessageDialog(null, "Error " + err.getMessage());
         }
     }
-
+//Metodo Buscar 
     public void mostrar() {
         ResultSet rs = Database.getTabla("SELECT id_proveedor, nombre_prov, ap_pat_prov, ap_mat_prov, telefono_prov, calle_prov, colonia_prov, numero_prov, provincia_prov, correo_prov FROM proveedores;");
         modelo_proveedores.setColumnIdentifiers(new Object[]{"ID", "Nombre", "Apellido Paterno", "Apellido Materno", "telefono", "calle", "Colonia", "Numero", "Provincia", "Correo"});
@@ -291,20 +291,20 @@ public class ModelProveedores {
             System.out.println(e);
         }
     }
-
+//Meotod de Busqueda 
     public void busqueda() {
         // consulta de la Base de datos 
         sql = "SELECT id_proveedor, nombre_prov, ap_pat_prov, ap_mat_prov, telefono_prov, calle_prov, colonia_prov, numero_prov, provincia_prov, correo_prov FROM proveedores;"
                 + "WHERE id_proveedor'%" + id + "%' "
                 + "OR nombre_prov LIKE '%" + nombre + "%'"
-                + "OR calle LIKE '%" + ap_pat + "%'"
-                + "OR colonia LIKE '%" + ap_mat + "%'"
-                + "OR calle LIKE '%" + Telefono + "%'"
-                + "OR telefono LIKE '%" + calle + "%'"
-                + "OR numero LIKE '%" + colonia + "%'"
-                + "OR telefono LIKE '%" + numero + "%'"
-                + "OR sucursal_productos.codigo_producto LIKE '%" + provincia + "%'"
-                + "OR existencias LIKE '%" + correo + "%'";               
+                + "OR ap_pat_prov LIKE '%" + ap_pat + "%'"
+                + "OR ap_mat_prov LIKE '%" + ap_mat + "%'"
+                + "OR telefono_prov LIKE '%" + Telefono + "%'"
+                + "OR calle_prov LIKE '%" + calle + "%'"
+                + "OR colonia_prov LIKE '%" + colonia + "%'"
+                + "OR numero_prov LIKE '%" + numero + "%'"
+                + "OR provincia_prov LIKE '%" + provincia + "%'"
+                + "OR correo_prov LIKE '%" + correo + "%'";               
         model = new DefaultTableModel(null, titulos);
         Database cc = new Database();
         Connection cn = getConexion();
@@ -312,16 +312,16 @@ public class ModelProveedores {
             Statement st = (Statement) cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) { //Registros sobre a los que se les realizara una busqueda 
-                registros[0] = rs.getString("sucursal.no_sucursal");
-                registros[1] = rs.getString("calle");
-                registros[2] = rs.getString("colonia");
-                registros[3] = rs.getString("numero");
-                registros[4] = rs.getString("telefono");
-                registros[5] = rs.getString("sucursal_productos.codigo_producto");
-                registros[6] = rs.getString("productos.nom_producto");
-                registros[7] = rs.getString("existencias");
-                registros[8] = rs.getString("limite_maximo");
-                registros[9] = rs.getString("limite_minimo");
+                registros[0] = rs.getString("id_proveedor");
+                registros[1] = rs.getString("nombre_prov");
+                registros[2] = rs.getString("ap_pat");
+                registros[3] = rs.getString("ap_mat");
+                registros[4] = rs.getString("telefono_prov");
+                registros[5] = rs.getString("calle_prov");
+                registros[6] = rs.getString("colonia_prov");
+                registros[7] = rs.getString("numero_prov");
+                registros[8] = rs.getString("provincia_prov");
+                registros[9] = rs.getString("correo_prov");
                 model.addRow(registros);
             }
         } catch (SQLException ex) {
