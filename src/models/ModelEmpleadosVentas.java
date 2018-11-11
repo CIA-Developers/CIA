@@ -138,6 +138,27 @@ public class ModelEmpleadosVentas {
         this.usuario = usuario;
     }
     
+    //*************************Variables que corresponden a los BOTONES*************************************
+    
+    public String Limpiar=" ";
+    public int cantidad =0;
+
+    public String getLimpiar() {
+        return Limpiar;
+    }
+
+    public void setLimpiar(String Limpiar) {
+        this.Limpiar = Limpiar;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+    
     
   
     DefaultTableModel model;
