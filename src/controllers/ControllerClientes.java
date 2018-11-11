@@ -126,18 +126,16 @@ public class ControllerClientes {
         viewClientes.jtf_numero.setEditable(false);
         viewClientes.jtf_correo.setEditable(false);
     }
-        private void cajas_habilitadas() {
-        viewProveedores.jtf_id.setEditable(false);
-        viewProveedores.jtf_nombre.setEditable(false);
-        viewProveedores.jtf_ap_pat.setEditable(false);
-        viewProveedores.jtf_apt_mat.setEditable(false);
-        viewProveedores.jtf_telefono.setEditable(false);
-        viewProveedores.jtf_municipio.setEditable(false);
-        viewProveedores.jtf_colonia.setEditable(false);
-        viewProveedores.jtf_numero.setEditable(false);
-        viewProveedores.jtf_provincia.setEditable(false);
-        viewProveedores.jtf_correo.setEditable(false);
-
+    private void cajas_habilitadas() {
+        viewClientes.jtf_rfc.setEditable(true);
+        viewClientes.jtf_nombre.setEditable(true);
+        viewClientes.jtf_ap_pat.setEditable(true);
+        viewClientes.jtf_apt_mat.setEditable(true);
+        viewClientes.jtf_telefono.setEditable(true);
+        viewClientes.jtf_municipio.setEditable(true);
+        viewClientes.jtf_colonia.setEditable(true);
+        viewClientes.jtf_numero.setEditable(true);
+        viewClientes.jtf_correo.setEditable(true);
     }
 
 
