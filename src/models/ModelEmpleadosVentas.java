@@ -47,6 +47,7 @@ public class ModelEmpleadosVentas {
     }
     
      //Variables que corresponden a cada caja de texto
+     public int verificar; // variable que nos ayudara a ver si se inserto un nuevo registro o se midificara
     public String rfc;
     public String nombre;
     public String apellido_pat;
@@ -56,6 +57,14 @@ public class ModelEmpleadosVentas {
     public String telefono;
     public String correo;
     public String usuario;
+
+    public int getVerificar() {
+        return verificar;
+    }
+
+    public void setVerificar(int verificar) {
+        this.verificar = verificar;
+    }
 
     public String getRfc() {
         return rfc;
