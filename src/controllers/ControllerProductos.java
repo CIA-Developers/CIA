@@ -23,7 +23,9 @@ public class ControllerProductos {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == viewProductos.jb_nuevo) {
-                borrar_productos();
+                nuevo_productos();
+            }else if (e.getSource() == viewProductos.jb_modificar) {
+                modificar_productos();
             }       
         }
         
@@ -93,6 +95,7 @@ public class ControllerProductos {
     public void jt_vista_MouseClicked(){
         viewProductos.jb_guardar.setEnabled(false);
         viewProductos.jb_modificar.setEnabled(true);//El boton modificar aparecera habilitado
+        viewProductos.jb_nuevo.setEnabled(true);//El boton nuevo aparecera habilitado
         cajas_deshabilitadas();
         modelProductos.setRec(viewProductos.jt_vista.getSelectedRow());//a la variable se le asigna el elemento seleccionado en la tabla
         viewProductos.jtf_codigo_prod.setText(viewProductos.jt_vista.getValueAt(modelProductos.getRec(), 0).toString());
@@ -133,7 +136,7 @@ public class ControllerProductos {
     }
    
     //***************** BOTONES Nuevo, Borrar, Guardar y Modificar**************************
-     public void borrar_productos(){
+     public void nuevo_productos(){
         viewProductos.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
         viewProductos.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
         //limpiar cada caja de la Interfaz 
@@ -148,5 +151,18 @@ public class ControllerProductos {
         viewProductos.jl_existencia_total.setText(Integer.toString(modelProductos.getCantidad())); 
         cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
      } 
-      
+     
+     public void modificar_productos(){
+        viewProductos.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
+        viewProductos.jb_nuevo.setEnabled(false);//El boton modificar aparecera inhabilitado
+        //limpiar cada caja de la Interfaz 
+        viewProductos.jtf_codigo_prod.setEditable(false); // el codigo no se puede modificar
+        viewProductos.jtf_nom_prod.setEditable(true);
+        viewProductos.jtf_tipo_prod.setEditable(true);
+        viewProductos.jtf_marca.setEditable(true);
+        viewProductos.jtf_precio_unitario.setEditable(true);
+        viewProductos.jtf_nom_prod.setEditable(true);
+        viewProductos.jtf_unidad_medida.setEditable(true);
+        viewProductos.jta_descripcion.setEditable(true);
+     }      
 }
