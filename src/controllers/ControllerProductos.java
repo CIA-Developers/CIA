@@ -26,7 +26,9 @@ public class ControllerProductos {
                 nuevo_productos();
             }else if (e.getSource() == viewProductos.jb_modificar) {
                 modificar_productos();
-            }       
+            }else if (e.getSource() == viewProductos.jb_guardar) {
+                Guardar();
+            }              
         }
         
     };
@@ -140,6 +142,7 @@ public class ControllerProductos {
         viewProductos.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
         viewProductos.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
         //limpiar cada caja de la Interfaz 
+        modelProductos.setVerificar(0);// le da el valor a verificar de cero para identificar un nuevo registro
         viewProductos.jtf_codigo_prod.setText(modelProductos.getLimpiar());
         viewProductos.jtf_nom_prod.setText(modelProductos.getLimpiar());
         viewProductos.jtf_tipo_prod.setText(modelProductos.getLimpiar());
@@ -156,6 +159,7 @@ public class ControllerProductos {
         viewProductos.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
         viewProductos.jb_nuevo.setEnabled(false);//El boton modificar aparecera inhabilitado
         //limpiar cada caja de la Interfaz 
+         modelProductos.setVerificar(1);// le da el valor a verificar de uno para identificar Modifiar registro
         viewProductos.jtf_codigo_prod.setEditable(false); // el codigo no se puede modificar
         viewProductos.jtf_nom_prod.setEditable(true);
         viewProductos.jtf_tipo_prod.setEditable(true);
@@ -164,5 +168,35 @@ public class ControllerProductos {
         viewProductos.jtf_nom_prod.setEditable(true);
         viewProductos.jtf_unidad_medida.setEditable(true);
         viewProductos.jta_descripcion.setEditable(true);
-     }      
+    }
+     
+    public void Guardar(){
+        // si la variable verificar es igual a 0 se llama al metodo de guardar Nuevo
+        if (modelProductos.getVerificar() == 0) {
+            // darle el valor a las variables
+            modelProductos.setCodigo_producto(viewProductos.jtf_codigo_prod.getText());
+            modelProductos.setNombre_producto(viewProductos.jtf_nom_prod.getText());
+            modelProductos.setTipo_producto(viewProductos.jtf_tipo_prod.getText());
+            modelProductos.setMarca(viewProductos.jtf_tipo_prod.getText());
+            modelProductos.setPrecio_unitario(Integer.parseInt(viewProductos.jtf_precio_unitario.getText()));
+            modelProductos.setUnidad_medida(viewProductos.jtf_unidad_medida.getText());
+            modelProductos.setStatus((String) viewProductos.jcb_status.getSelectedItem());
+            modelProductos.setDescripcion(viewProductos.jta_descripcion.getText());
+            
+            modelProductos.Guardar_Nuevo(); // metodo de  insertar nuevo registro
+        }
+        else{
+            // darle el valor a las variables
+            modelProductos.setCodigo_producto(viewProductos.jtf_codigo_prod.getText());
+            modelProductos.setNombre_producto(viewProductos.jtf_nom_prod.getText());
+            modelProductos.setTipo_producto(viewProductos.jtf_tipo_prod.getText());
+            modelProductos.setMarca(viewProductos.jtf_marca.getText());
+            modelProductos.setPrecio_unitario(Integer.parseInt(viewProductos.jtf_precio_unitario.getText()));
+            modelProductos.setUnidad_medida(viewProductos.jtf_unidad_medida.getText());
+            modelProductos.setStatus((String) viewProductos.jcb_status.getSelectedItem());
+            modelProductos.setDescripcion(viewProductos.jta_descripcion.getText());
+            modelProductos.Guardar_Modificado();// metodo de  Modificar el registro   
+        }
+        
+    }
 }

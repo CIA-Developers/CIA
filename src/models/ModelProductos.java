@@ -40,6 +40,7 @@ public class ModelProductos {
         this.rec = rec;
     } 
     //************************Variables que pertenecen a las cajas de Texto********************************
+    public int verificar; // variable que nos ayudara a ver si se inserto un nuevo registro o se midificara
     public String codigo_producto;
     public String nombre_producto;
     public String tipo_producto;
@@ -48,6 +49,14 @@ public class ModelProductos {
     public String unidad_medida;
     public String status;
     public String descripcion;
+
+    public int getVerificar() {
+        return verificar;
+    }
+
+    public void setVerificar(int verificar) {
+        this.verificar = verificar;
+    }
 
     public String getCodigo_producto() {
         return codigo_producto;
@@ -189,7 +198,7 @@ public class ModelProductos {
         marca=this.getMarca();
         precio_unitario=this.getPrecio_unitario();
         unidad_medida=this.getUnidad_medida();
-        status=this.status;
+        status=this.getStatus();
         descripcion=this.getDescripcion();
         
         int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de Guardar el NUEVO registro?");
@@ -217,7 +226,7 @@ public class ModelProductos {
         status=this.status;
         descripcion=this.getDescripcion();
         
-        int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de Guardar el NUEVO registro?");
+        int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de MODIFICAR registro?");
         
         if(JOptionPane.OK_OPTION==confirmar) {
             try{
