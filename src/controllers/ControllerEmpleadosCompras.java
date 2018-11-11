@@ -22,13 +22,16 @@ public class ControllerEmpleadosCompras {
     
     ActionListener list = new ActionListener(){
         @Override
-        public void actionPerformed(ActionEvent e) {
+       public void actionPerformed(ActionEvent e) {
             if (e.getSource() == viewEmpleadosCompras.jb_nuevo) {
-                jbtn_nuevo_actionPerformed();
-            }       
+                nuevo_productos();
+            }else if (e.getSource() == viewEmpleadosCompras.jb_modificar) {
+                modificar_productos();
+            }else if (e.getSource() == viewEmpleadosCompras.jb_guardar) {
+                Guardar();
+            }              
         }
     };
-    
     MouseListener ml = new MouseListener(){
         @Override
         public void mouseClicked(MouseEvent e) {
