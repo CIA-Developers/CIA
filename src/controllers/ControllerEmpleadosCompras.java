@@ -114,9 +114,10 @@ public class ControllerEmpleadosCompras {
         viewEmpleadosCompras.jtf_usuario.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 8).toString());
     }        
 
-   
-
-    private void cajas_deshabilitadas() {
+   /***
+     * Metodos Habilitar y deshabilitar cajas 
+     */
+     public void cajas_deshabilitadas(){
         viewEmpleadosCompras.jtf_rfc.setEditable(false);
         viewEmpleadosCompras.jtf_nombre.setEditable(false);
         viewEmpleadosCompras.jtf_ap_pat.setEditable(false);
@@ -126,10 +127,8 @@ public class ControllerEmpleadosCompras {
         viewEmpleadosCompras.jtf_Telefono.setEditable(false);
         viewEmpleadosCompras.jtf_correo.setEditable(false);
         viewEmpleadosCompras.jtf_usuario.setEditable(false);
-
     }
-    
-    public void cajas_habilitadas(){
+        public void cajas_habilitadas(){
         viewEmpleadosCompras.jtf_rfc.setEditable(true);
         viewEmpleadosCompras.jtf_nombre.setEditable(true);
         viewEmpleadosCompras.jtf_ap_pat.setEditable(true);
@@ -140,6 +139,7 @@ public class ControllerEmpleadosCompras {
         viewEmpleadosCompras.jtf_correo.setEditable(true);
         viewEmpleadosCompras.jtf_usuario.setEditable(true);
     }
+    
     
      //***************** BOTONES Nuevo, Borrar, Guardar y Modificar**************************
     /**
