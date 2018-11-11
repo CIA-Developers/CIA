@@ -107,7 +107,7 @@ public class ControllerEmpleadosCompras {
         viewEmpleadosCompras.jtf_nombre.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 1).toString());
         viewEmpleadosCompras.jtf_ap_pat.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 2).toString());
         viewEmpleadosCompras.jtf_apt_mat.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 3).toString());
-        viewEmpleadosCompras.jtf_sexo.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 4).toString());
+        viewEmpleadosCompras.jCB_sexo.setSelectedItem(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 4).toString());
         viewEmpleadosCompras.jtf_estado_civil.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 5).toString());
         viewEmpleadosCompras.jtf_Telefono.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 6).toString());
         viewEmpleadosCompras.jtf_correo.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 7).toString());
