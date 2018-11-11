@@ -24,9 +24,9 @@ public class ControllerEmpleadosCompras {
         @Override
        public void actionPerformed(ActionEvent e) {
             if (e.getSource() == viewEmpleadosCompras.jb_nuevo) {
-                nuevo_productos();
+                nuevo_empleado();
             }else if (e.getSource() == viewEmpleadosCompras.jb_modificar) {
-                modificar_productos();
+                modificar_empleado();
             }else if (e.getSource() == viewEmpleadosCompras.jb_guardar) {
                 Guardar();
             }              
@@ -145,24 +145,31 @@ public class ControllerEmpleadosCompras {
     /**
      * Metodo para limpiar las cajas de texto para ingresar nuevos datos. 
      */
-    
-     private void jbtn_nuevo_actionPerformed() {
-         //El boton guardar aparecera habilitado
-         viewEmpleadosCompras.jb_guardar.setEnabled(true);
-         //El boton modificar aparecera inhabilitado
-        viewEmpleadosCompras.jb_modificar.setEnabled(false);
+        
+        private void nuevo_empleado() {
+        viewEmpleadosCompras.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
+        viewEmpleadosCompras.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
         //limpiar cada caja de la Interfaz 
-        // la caja de texto CODIGO_PRODUCTO recibe el valor de cero
-        viewEmpleadosCompras.jtf_rfc.setText(Integer.toString(modelEmpleadosCompras.getCodigo()));
+        modelEmpleadosCompras.setVerificar(1);// le da el valor a verificar de cero para identificar un nuevo registro
+        viewEmpleadosCompras.jtf_rfc.setText(modelEmpleadosCompras.getLimpiar());
         viewEmpleadosCompras.jtf_nombre.setText(modelEmpleadosCompras.getLimpiar());
         viewEmpleadosCompras.jtf_ap_pat.setText(modelEmpleadosCompras.getLimpiar());
         viewEmpleadosCompras.jtf_apt_mat.setText(modelEmpleadosCompras.getLimpiar());
         viewEmpleadosCompras.jtf_sexo.setText(modelEmpleadosCompras.getLimpiar());
         viewEmpleadosCompras.jtf_estado_civil.setText(modelEmpleadosCompras.getLimpiar());
         viewEmpleadosCompras.jtf_Telefono.setText(modelEmpleadosCompras.getLimpiar());
-        viewEmpleadosCompras.jtf_correo.setText(modelEmpleadosCompras.getLimpiar());  
-        viewEmpleadosCompras.jtf_usuario.setText(modelEmpleadosCompras.getLimpiar());  
-        //llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
-        cajas_habilitadas();
+        viewEmpleadosCompras.jtf_correo.setText(modelEmpleadosCompras.getLimpiar()); 
+        viewEmpleadosCompras.jtf_usuario.setText(modelEmpleadosCompras.getLimpiar()); 
+        cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
         }
+
+        private void modificar_empleado() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private void Guardar() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        } 
+    
+    
 }
