@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Familia%20Hernández/Desktop/StockCia/src/controllers/ControllerClientes.java</file>
-            <file>file:/C:/Users/Familia%20Hernández/Desktop/StockCia/src/views/ViewClientes.java</file>
-            <file>file:/C:/Users/Familia%20Hernández/Desktop/StockCia/src/models/ModelProveedores.java</file>
             <file>file:/C:/Users/Familia%20Hernández/Desktop/StockCia/src/controllers/ControllerProveedores.java</file>
-            <file>file:/C:/Users/Familia%20Hernández/Desktop/StockCia/src/models/ModelClientes.java</file>
+            <file>file:/C:/Users/Familia%20Hernández/Desktop/StockCia/src/controllers/ControllerProductos.java</file>
+            <file>file:/C:/Users/Familia%20Hernández/Desktop/StockCia/src/models/ModelProductos.java</file>
+            <file>file:/C:/Users/Familia%20Hernández/Desktop/StockCia/src/models/ModelProveedores.java</file>
+            <file>file:/C:/Users/Familia%20Hernández/Desktop/StockCia/src/controllers/ControllerEmpleadosCompras.java</file>
         </group>
     </open-files>
 </project-private>

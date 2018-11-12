@@ -165,20 +165,5 @@ public class ControllerProveedores {
         cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
     }
 
-    public void modificar_proveedores() {
-        viewProveedores.jb_guardar.setEnabled(true);
-//El boton guardar aparecera habilitado
-        viewProveedores.jb_nuevo.setEnabled(false);
-//El boton modificar aparecera inhabilitado
-        //limpiar cada caja de la Interfaz 
-        viewProveedores.jtf_id.setEditable(true);
-        viewProveedores.jtf_nombre.setEditable(true);
-        viewProveedores.jtf_ap_pat.setEditable(true);
-        viewProveedores.jtf_apt_mat.setEditable(true);
-        viewProveedores.jtf_telefono.setEditable(true);
-        viewProveedores.jtf_colonia.setEditable(true);
-        viewProveedores.jtf_numero.setEditable(true);
-        viewProveedores.jtf_provincia.setEditable(true);
-        viewProveedores.jtf_correo.setEditable(true);
-    }
 }
+

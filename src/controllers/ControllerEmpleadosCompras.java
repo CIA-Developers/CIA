@@ -122,7 +122,7 @@ public class ControllerEmpleadosCompras {
         viewEmpleadosCompras.jtf_nombre.setEditable(false);
         viewEmpleadosCompras.jtf_ap_pat.setEditable(false);
         viewEmpleadosCompras.jtf_apt_mat.setEditable(false);
-        viewEmpleadosCompras.jtf_sexo.setEditable(false);
+        viewEmpleadosCompras.jCB_sexo.setEditable(false);
         viewEmpleadosCompras.jtf_estado_civil.setEditable(false);
         viewEmpleadosCompras.jtf_Telefono.setEditable(false);
         viewEmpleadosCompras.jtf_correo.setEditable(false);
@@ -133,7 +133,7 @@ public class ControllerEmpleadosCompras {
         viewEmpleadosCompras.jtf_nombre.setEditable(true);
         viewEmpleadosCompras.jtf_ap_pat.setEditable(true);
         viewEmpleadosCompras.jtf_apt_mat.setEditable(true);
-        viewEmpleadosCompras.jtf_sexo.setEditable(true);
+        viewEmpleadosCompras.jCB_sexo.setEditable(true);
         viewEmpleadosCompras.jtf_estado_civil.setEditable(true);
         viewEmpleadosCompras.jtf_Telefono.setEditable(true);
         viewEmpleadosCompras.jtf_correo.setEditable(true);
@@ -155,7 +155,7 @@ public class ControllerEmpleadosCompras {
         viewEmpleadosCompras.jtf_nombre.setText(modelEmpleadosCompras.getLimpiar());
         viewEmpleadosCompras.jtf_ap_pat.setText(modelEmpleadosCompras.getLimpiar());
         viewEmpleadosCompras.jtf_apt_mat.setText(modelEmpleadosCompras.getLimpiar());
-        viewEmpleadosCompras.jtf_sexo.setText(modelEmpleadosCompras.getLimpiar());
+        viewEmpleadosCompras.jCB_sexo.setText(modelEmpleadosCompras.getLimpiar());
         viewEmpleadosCompras.jtf_estado_civil.setText(modelEmpleadosCompras.getLimpiar());
         viewEmpleadosCompras.jtf_Telefono.setText(modelEmpleadosCompras.getLimpiar());
         viewEmpleadosCompras.jtf_correo.setText(modelEmpleadosCompras.getLimpiar()); 
@@ -172,7 +172,7 @@ public class ControllerEmpleadosCompras {
         viewEmpleadosCompras.jtf_nombre.setEditable(true);
         viewEmpleadosCompras.jtf_ap_pat.setEditable(true);
         viewEmpleadosCompras.jtf_apt_mat.setEditable(true);
-        viewEmpleadosCompras.jtf_sexo.setEditable(true);
+        viewEmpleadosCompras.jCB_sexo.setEditable(true);
         viewEmpleadosCompras.jtf_estado_civil.setEditable(true);
         viewEmpleadosCompras.jtf_Telefono.setEditable(true);
         viewEmpleadosCompras.jtf_correo.setEditable(true);

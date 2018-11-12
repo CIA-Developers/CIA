@@ -95,12 +95,12 @@ public class ModelProveedores {
         this.modelo_proveedores = modelo_proveedores;
     }
 
-    public String getRfc() {
+    public String getId() {
         return id;
     }
 
-    public void setRfc(String rfc) {
-        this.id = rfc;
+    public void setRfc(String id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -139,8 +139,8 @@ public class ModelProveedores {
         return provincia;
     }
 
-    public void setprovincia(String municipio) {
-        this.provincia = municipio;
+    public void setprovincia(String provincia) {
+        this.provincia = provincia;
     }
 
     public String getCalle() {
@@ -268,6 +268,36 @@ public class ModelProveedores {
             JOptionPane.showMessageDialog(null, "Error " + err.getMessage());
         }
     }
+
+    public void Guardar_Nuevo() {
+        //cada variable obtendra el valor actual de las cajas de texto 
+        id = this.getId();
+        nombre = this.getNombre();
+        ap_pat = this.getAp_pat();
+        ap_mat = this.getAp_mat();
+        Telefono = this.getTelefono();
+        calle = this.getCalle();
+        colonia = this.getColonia();
+        numero = this.getNumero();
+        provincia = this.getprovincia();
+        correo = this.getCorreo();
+
+        int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de Guardar el NUEVO registro?");
+
+        if (JOptionPane.OK_OPTION == confirmar) {
+            try {
+                st.executeUpdate("insert into productos (id_proveedor,nombre_prov,ap_pat_prov,ap_mat_prov,telefono_prov,calle_prov,colonia_prov,numero_prov,provincia_prov) values"
+                        + "('" + id + "','" + nombre + "','" + ap_pat + "','" + ap_mat + "','" + Telefono + "','" + calle + "','" + colonia + "','" + numero + "','" + provincia + "','" + correo+"');"); 
+                JOptionPane.showMessageDialog(null, "Guardado con exito ");
+            } catch (Exception err) {
+                JOptionPane.showMessageDialog(null, "Error Nuevo no se puede guardar " + err.getMessage());
+            }
+        }
+    }
+
+    
+    
+    
 //Metodo Buscar 
     public void mostrar() {
         ResultSet rs = Database.getTabla("SELECT id_proveedor, nombre_prov, ap_pat_prov, ap_mat_prov, telefono_prov, calle_prov, colonia_prov, numero_prov, provincia_prov, correo_prov FROM proveedores;");
@@ -292,6 +322,7 @@ public class ModelProveedores {
         }
     }
 //Meotod de Busqueda 
+
     public void busqueda() {
         // consulta de la Base de datos 
         sql = "SELECT id_proveedor, nombre_prov, ap_pat_prov, ap_mat_prov, telefono_prov, calle_prov, colonia_prov, numero_prov, provincia_prov, correo_prov FROM proveedores;"
@@ -304,7 +335,7 @@ public class ModelProveedores {
                 + "OR colonia_prov LIKE '%" + colonia + "%'"
                 + "OR numero_prov LIKE '%" + numero + "%'"
                 + "OR provincia_prov LIKE '%" + provincia + "%'"
-                + "OR correo_prov LIKE '%" + correo + "%'";               
+                + "OR correo_prov LIKE '%" + correo + "%'";
         model = new DefaultTableModel(null, titulos);
         Database cc = new Database();
         Connection cn = getConexion();
