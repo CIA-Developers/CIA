@@ -107,7 +107,7 @@ public class ControllerEmpleadosCompras {
         viewEmpleadosCompras.jtf_nombre.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 1).toString());
         viewEmpleadosCompras.jtf_ap_pat.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 2).toString());
         viewEmpleadosCompras.jtf_apt_mat.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 3).toString());
-        viewEmpleadosCompras.jtf_sexo.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 4).toString());
+        viewEmpleadosCompras.jCB_sexo.setSelectedItem(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 4).toString());
         viewEmpleadosCompras.jtf_estado_civil.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 5).toString());
         viewEmpleadosCompras.jtf_Telefono.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 6).toString());
         viewEmpleadosCompras.jtf_correo.setText(viewEmpleadosCompras.jt_vista.getValueAt(modelEmpleadosCompras.getRec(), 7).toString());
@@ -122,7 +122,7 @@ public class ControllerEmpleadosCompras {
         viewEmpleadosCompras.jtf_nombre.setEditable(false);
         viewEmpleadosCompras.jtf_ap_pat.setEditable(false);
         viewEmpleadosCompras.jtf_apt_mat.setEditable(false);
-        viewEmpleadosCompras.jtf_sexo.setEditable(false);
+        viewEmpleadosCompras.jCB_sexo.setEditable(false);
         viewEmpleadosCompras.jtf_estado_civil.setEditable(false);
         viewEmpleadosCompras.jtf_Telefono.setEditable(false);
         viewEmpleadosCompras.jtf_correo.setEditable(false);
@@ -133,7 +133,7 @@ public class ControllerEmpleadosCompras {
         viewEmpleadosCompras.jtf_nombre.setEditable(true);
         viewEmpleadosCompras.jtf_ap_pat.setEditable(true);
         viewEmpleadosCompras.jtf_apt_mat.setEditable(true);
-        viewEmpleadosCompras.jtf_sexo.setEditable(true);
+        viewEmpleadosCompras.jCB_sexo.setEditable(true);
         viewEmpleadosCompras.jtf_estado_civil.setEditable(true);
         viewEmpleadosCompras.jtf_Telefono.setEditable(true);
         viewEmpleadosCompras.jtf_correo.setEditable(true);
@@ -171,7 +171,7 @@ public class ControllerEmpleadosCompras {
         viewEmpleadosCompras.jtf_nombre.setEditable(true);
         viewEmpleadosCompras.jtf_ap_pat.setEditable(true);
         viewEmpleadosCompras.jtf_apt_mat.setEditable(true);
-        viewEmpleadosCompras.jtf_sexo.setEditable(true);
+        viewEmpleadosCompras.jCB_sexo.setEditable(true);
         viewEmpleadosCompras.jtf_estado_civil.setEditable(true);
         viewEmpleadosCompras.jtf_Telefono.setEditable(true);
         viewEmpleadosCompras.jtf_correo.setEditable(true);
@@ -200,7 +200,7 @@ public class ControllerEmpleadosCompras {
             modelEmpleadosCompras.setNombre(viewEmpleadosCompras.jtf_nombre.getText());
             modelEmpleadosCompras.setApellido_pat(viewEmpleadosCompras.jtf_ap_pat.getText());
             modelEmpleadosCompras.setApellido_mat(viewEmpleadosCompras.jtf_apt_mat.getText());
-            modelEmpleadosCompras.setSexo(viewEmpleadosCompras.jtf_sexo.getText());
+            modelEmpleadosCompras.setSexo((String)viewEmpleadosCompras.jCB_sexo.getSelectedItem());
             modelEmpleadosCompras.setEstado_civil(viewEmpleadosCompras.jtf_estado_civil.getText());
             modelEmpleadosCompras.setTelefono(viewEmpleadosCompras.jtf_Telefono.getText());
             modelEmpleadosCompras.setCorreo((String) viewEmpleadosCompras.jtf_correo.getText());
