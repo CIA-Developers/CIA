@@ -27,9 +27,14 @@ public class ControllerProveedores {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == viewProveedores.jb_nuevo) {
-                jbtn_nuevo_actionPerformed();
+                nuevo_productos();
+            } else if (e.getSource() == viewProductos.jb_modificar) {
+                modificar_productos();
+            } else if (e.getSource() == viewProductos.jb_guardar) {
+                Guardar();
             }
         }
+
     };
 
     MouseListener ml = new MouseListener() {
@@ -94,7 +99,7 @@ public class ControllerProveedores {
 
     public void ConexionBD() {
         modelProveedores.Conectar();
-        
+        modelProveedores.mostrar();
         viewProveedores.jt_vista.setModel(modelProveedores.getModelo_Proveedores()); //asignar a la tabla los valores correspondientes
     }
 
@@ -148,11 +153,12 @@ public class ControllerProveedores {
     /**
      * Metodo que limpiara las cajas de texto para ingresar nuevo datos.
      */
-    public void jbtn_nuevo_actionPerformed() {
+    public void nuevo_productos() {
         viewProveedores.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
         viewProveedores.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
         //limpiar cada caja de la Interfaz 
-        viewProveedores.jtf_id.setText(Integer.toString(modelProveedores.getCodigo()));// la caja de texto CODIGO_PRODUCTO recibe el valor de cero
+        modelProveedores.setVerificar(1);// le da el valor a verificar de cero para identificar un nuevo registro
+        viewProveedores.jtf_id.setText(modelProveedores.getLimpiar());
         viewProveedores.jtf_nombre.setText(modelProveedores.getLimpiar());
         viewProveedores.jtf_ap_pat.setText(modelProveedores.getLimpiar());
         viewProveedores.jtf_apt_mat.setText(modelProveedores.getLimpiar());
@@ -160,10 +166,24 @@ public class ControllerProveedores {
         viewProveedores.jtf_municipio.setText(modelProveedores.getLimpiar());
         viewProveedores.jtf_colonia.setText(modelProveedores.getLimpiar());
         viewProveedores.jtf_numero.setText(modelProveedores.getLimpiar());
-        viewProveedores.jtf_provincia.setText(modelProveedores.getLimpiar());
-        viewProveedores.jtf_correo.setText(modelProveedores.getLimpiar());
+        viewProveedores.jtf_correo.setText(Integer.toString(modelProveedores.getCantidad()));
         cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
     }
 
-}
+    public void modificar_productos() {
+        viewProveedores.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
+        viewProveedores.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
+        //limpiar cada caja de la Interfaz 
+        modelProveedores.setVerificar(2);// le da el valor a verificar de uno para identificar Modifiar registro
+        viewProveedores.jtf_id.setEditable(false); // el codigo no se puede modificar
+        viewProveedores.jtf_nombre.setEditable(true);
+        viewProveedores.jtf_ap_pat.setEditable(true);
+        viewProveedores.jtf_apt_mat.setEditable(true);
+        viewProveedores.jtf_telefono.setEditable(true);
+        viewProveedores.jtf_municipio.setEditable(true);
+        viewProveedores.jtf_colonia.setEditable(true);
+        viewProveedores.jtf_numero.setEditable(true);
+        viewProveedores.jtf_correo.setEditable(true);
+    }
 
+}

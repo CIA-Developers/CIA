@@ -76,6 +76,7 @@ public class ModelProveedores {
         this.sql = sql;
     }
     //Variables que corresponden a cada caja de texto
+    public int verificar;
     public String id;
     public String nombre;
     public String ap_pat;
@@ -93,6 +94,14 @@ public class ModelProveedores {
 
     public void setModelo_proveedores(DefaultTableModel modelo_proveedores) {
         this.modelo_proveedores = modelo_proveedores;
+    }
+
+    public int getVerificar() {
+        return verificar;
+    }
+
+    public void setVerificar(int verificar) {
+        this.verificar = verificar;
     }
 
     public String getId() {
@@ -219,6 +228,11 @@ public class ModelProveedores {
 
     public String Limpiar = " "; // variables para boton limpiar
     public int codigo = 0;
+    public int cantidad = 0;
+
+    public int getCantidad() {
+        return cantidad;
+    }
 
     public String getLimpiar() {
         return Limpiar;
@@ -287,7 +301,7 @@ public class ModelProveedores {
         if (JOptionPane.OK_OPTION == confirmar) {
             try {
                 st.executeUpdate("insert into productos (id_proveedor,nombre_prov,ap_pat_prov,ap_mat_prov,telefono_prov,calle_prov,colonia_prov,numero_prov,provincia_prov) values"
-                        + "('" + id + "','" + nombre + "','" + ap_pat + "','" + ap_mat + "','" + Telefono + "','" + calle + "','" + colonia + "','" + numero + "','" + provincia + "','" + correo+"');"); 
+                        + "('" + id + "','" + nombre + "','" + ap_pat + "','" + ap_mat + "','" + Telefono + "','" + calle + "','" + colonia + "','" + numero + "','" + provincia + "','" + correo + "');");
                 JOptionPane.showMessageDialog(null, "Guardado con exito ");
             } catch (Exception err) {
                 JOptionPane.showMessageDialog(null, "Error Nuevo no se puede guardar " + err.getMessage());
@@ -295,9 +309,9 @@ public class ModelProveedores {
         }
     }
 
-        public void Guardar_Modificado(){
+    public void Guardar_Modificado() {
         //cada variable obtendra el valor actual de las cajas de texto 
-      id = this.getId();
+        id = this.getId();
         nombre = this.getNombre();
         ap_pat = this.getAp_pat();
         ap_mat = this.getAp_mat();
@@ -307,19 +321,41 @@ public class ModelProveedores {
         numero = this.getNumero();
         provincia = this.getprovincia();
         correo = this.getCorreo();
-        
+
         int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de MODIFICAR registro?");
-        
-        if(JOptionPane.OK_OPTION==confirmar) {
-            try{
-               st.executeUpdate("UPDATE productos SET nombre_prov='"+nombre+"',ap_pat_prov='"+ap_pat+"',ap_mat_prov='"+ap_mat+"',telefono_prov='"+Telefono+"',calle_prov='"+calle+"',colonia_prov='"+colonia+",numero_prov='"+numero+"' WHERE id_proveedor='"+id+"';");
-               JOptionPane.showMessageDialog(null,"El registro se modifico correctamente");
-            } catch(Exception err) 
-            { 
-                JOptionPane.showMessageDialog(null,"Error Nuevo no se puede guardar "+err.getMessage()); 
+
+        if (JOptionPane.OK_OPTION == confirmar) {
+            try {
+                st.executeUpdate("UPDATE productos SET nombre_prov='" + nombre + "',ap_pat_prov='" + ap_pat + "',ap_mat_prov='" + ap_mat + "',telefono_prov='" + Telefono + "',calle_prov='" + calle + "',colonia_prov='" + colonia + ",numero_prov='" + numero + "' WHERE id_proveedor='" + id + "';");
+                JOptionPane.showMessageDialog(null, "El registro se modifico correctamente");
+            } catch (Exception err) {
+                JOptionPane.showMessageDialog(null, "Error Nuevo no se puede guardar " + err.getMessage());
             }
         }
-    }   
+    }
 
-    
+//Metodo mostar
+    public void mostrar() {
+        ResultSet rs = Database.getTabla("SELECT id_proveedor, nombre_prov, ap_pat_prov, ap_mat_prov, telefono_prov, calle_prov, colonia_prov, numero_prov, provincia_prov, correo_prov FROM proveedores;");
+        modelo_proveedores.setColumnIdentifiers(new Object[]{"ID", "Nombre", "Apellido Paterno", "Apellido Materno", "telefono", "calle", "Colonia", "Numero", "Provincia", "Correo"});
+        try {
+            while (rs.next()) {
+                // añade los resultado a al modelo de tabla 
+                modelo_proveedores.addRow(new Object[]{
+                    rs.getString("id_proveedor"),
+                    rs.getString("nombre_prov"),
+                    rs.getString("ap_pat_prov"),
+                    rs.getString("ap_mat_prov"),
+                    rs.getString("telefono_prov"),
+                    rs.getString("calle_prov"),
+                    rs.getString("colonia_prov"),
+                    rs.getString("numero_prov"),
+                    rs.getString("provincia_prov"),
+                    rs.getString("correo_prov")});
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
 }
