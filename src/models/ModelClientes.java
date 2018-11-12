@@ -77,6 +77,7 @@ public class ModelClientes {
         this.sql = sql;
     }
     //Variables que corresponden a cada caja de texto
+    public int verificar;
     public String puntos;
     public String rfc;
     public String nombre;
@@ -103,6 +104,14 @@ public class ModelClientes {
 
     public void setPuntos(String rfc) {
         this.puntos = puntos;
+    }
+
+    public int getVerificar() {
+        return verificar;
+    }
+
+    public void setVerificar(int verificar) {
+        this.verificar = verificar;
     }
 
     public String getRfc() {
@@ -318,7 +327,7 @@ public class ModelClientes {
         numero = this.getNumero();
         municipio = this.getMunicipio();
         correo = this.getCorreo();
-                puntos = this.getPuntos();
+        puntos = this.getPuntos();
 
         int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de Guardar el NUEVO registro?");
 

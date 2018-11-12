@@ -160,6 +160,27 @@ public class ControllerClientes {
         viewClientes.jtf_numero.setText(modelClientes.getLimpiar());
         viewClientes.jtf_correo.setText(modelClientes.getLimpiar());
         cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
-    }
+    }    //***************** BOTONES Nuevo, Borrar, Guardar y Modificar**************************
 
+    /**
+     * Metodo que limpiara las cajas de texto para ingresar nuevo datos.
+     */
+    public void nuevo_proveedores() {
+        viewClientes.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
+        viewClientes.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
+        //limpiar cada caja de la Interfaz 
+        modelClientes.setVerificar(1);// le da el valor a verificar de cero para identificar un nuevo registro
+        viewClientes.jtf_nombre.setText(modelClientes.getLimpiar());
+        viewClientes.jtf_ap_pat.setText(modelClientes.getLimpiar());
+        viewClientes.jtf_apt_mat.setText(modelClientes.getLimpiar());
+        viewClientes.jtf_telefono.setText(modelClientes.getLimpiar());
+        viewClientes.jtf_municipio.setText(modelClientes.getLimpiar());
+        viewClientes.jtf_municipio.setText(modelClientes.getLimpiar());
+        viewClientes.jtf_colonia.setText(modelClientes.getLimpiar());
+        viewClientes.jtf_numero.setText(modelClientes.getLimpiar());
+        viewClientes.jtf_correo.setText(modelClientes.getLimpiar());
+        cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
+    }
 }
+
+
