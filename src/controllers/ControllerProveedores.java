@@ -94,7 +94,7 @@ public class ControllerProveedores {
 
     public void ConexionBD() {
         modelProveedores.Conectar();
-        modelProveedores.mostrar();
+        
         viewProveedores.jt_vista.setModel(modelProveedores.getModelo_Proveedores()); //asignar a la tabla los valores correspondientes
     }
 
