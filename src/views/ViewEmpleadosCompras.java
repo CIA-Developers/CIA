@@ -145,7 +145,7 @@ public class ViewEmpleadosCompras extends javax.swing.JPanel {
         jl_correo1.setForeground(new java.awt.Color(51, 51, 51));
         jl_correo1.setText("año-mes-dia");
 
-        jCB_sexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona uno", "Femenino", "Masculino" }));
+        jCB_sexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona uno", "Mujer", "Hombre" }));
 
         javax.swing.GroupLayout jp_datosLayout = new javax.swing.GroupLayout(jp_datos);
         jp_datos.setLayout(jp_datosLayout);
