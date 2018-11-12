@@ -206,7 +206,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jtf_nombre" min="-2" pref="148" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
-                          <Component id="jtf_sexo" min="-2" pref="148" max="-2" attributes="0"/>
+                          <Component id="jCB_sexo" min="-2" pref="148" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
@@ -262,11 +262,11 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jl_telefono" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jtf_sexo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jl_telefono" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jCB_sexo" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jtf_estado_civil" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jl_calle" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -496,8 +496,18 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtf_sexo">
+        <Component class="javax.swing.JComboBox" name="jCB_sexo">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="Seleccione uno"/>
+                <StringItem index="1" value="Femenino"/>
+                <StringItem index="2" value="Masculino"/>
+              </StringArray>
+            </Property>
+          </Properties>
           <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
