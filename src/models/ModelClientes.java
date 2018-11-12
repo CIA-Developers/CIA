@@ -137,11 +137,11 @@ public class ModelClientes {
         this.Telefono = Telefono;
     }
 
-    public String getmunicipio() {
+    public String getMunicipio() {
         return municipio;
     }
 
-    public void setprovincia(String municipio) {
+    public void setMunicipio(String municipio) {
         this.municipio = municipio;
     }
 
@@ -296,5 +296,29 @@ public class ModelClientes {
         }
 
     }
+    public void Guardar_Nuevo() {
+        //cada variable obtendra el valor actual de las cajas de texto 
+        rfc = this.getRfc();
+        nombre = this.getNombre();
+        ap_pat = this.getAp_pat();
+        ap_mat = this.getAp_mat();
+        Telefono = this.getTelefono();
+        calle = this.getCalle();
+        colonia = this.getColonia();
+        numero = this.getNumero();
+        municipio = this.getMunicipio();
+        correo = this.getCorreo();
 
+        int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de Guardar el NUEVO registro?");
+
+        if (JOptionPane.OK_OPTION == confirmar) {
+            try {
+                st.executeUpdate("insert into clientes (RFC_cliente,nombre_client,ap_pat_client,ap_mat_client,telefono_client,calle_client,colonia_client,numero_client,municipio_client) values"
+                        + "('" + rfc + "','" + nombre + "','" + ap_pat + "','" + ap_mat + "','" + Telefono + "','" + calle + "','" + colonia + "','" + numero + "','" + municipio + "');");
+                JOptionPane.showMessageDialog(null, "Guardado con exito ");
+            } catch (Exception err) {
+                JOptionPane.showMessageDialog(null, "Error Nuevo no se puede guardar " + err.getMessage());
+            }
+        }
+    }
 }
