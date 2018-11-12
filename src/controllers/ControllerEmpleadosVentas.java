@@ -152,7 +152,7 @@ public class ControllerEmpleadosVentas {
         viewsEmpleadosVentas.jtf_estado_civil.setText(modelEmpleadosVentas.getLimpiar());
         viewsEmpleadosVentas.jtf_telefono.setText(modelEmpleadosVentas.getLimpiar());
         viewsEmpleadosVentas.jtf_correo.setText(modelEmpleadosVentas.getLimpiar()); 
-        viewsEmpleadosVentas.jtf_usuario.setText(Integer.toString(modelEmpleadosVentas.getCantidad())); 
+        viewsEmpleadosVentas.jtf_usuario.setText(modelEmpleadosVentas.getLimpiar()); 
         cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
      } 
      
