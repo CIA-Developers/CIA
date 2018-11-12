@@ -9,12 +9,12 @@ package views;
  *
  * @author Octaviano
  */
-public class viewMenuEmpleadoCompras extends javax.swing.JFrame {
+public class viewMenuEmpleadoVentas extends javax.swing.JFrame {
 
     /**
      * Creates new form viewMenuEmpleado
      */
-    public viewMenuEmpleadoCompras() {
+    public viewMenuEmpleadoVentas() {
         initComponents();
     }
 
@@ -79,8 +79,8 @@ public class viewMenuEmpleadoCompras extends javax.swing.JFrame {
         jm_acciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/acciones.png"))); // NOI18N
         jm_acciones.setText("Acciones");
 
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/compras.png"))); // NOI18N
-        jMenuItem1.setText("COMPRAS");
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/Ventas.png"))); // NOI18N
+        jMenuItem1.setText("VENTAS");
         jm_acciones.add(jMenuItem1);
 
         jMenuBar1.add(jm_acciones);
@@ -124,21 +124,23 @@ public class viewMenuEmpleadoCompras extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(viewMenuEmpleadoCompras.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(viewMenuEmpleadoVentas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(viewMenuEmpleadoCompras.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(viewMenuEmpleadoVentas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(viewMenuEmpleadoCompras.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(viewMenuEmpleadoVentas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(viewMenuEmpleadoCompras.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(viewMenuEmpleadoVentas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new viewMenuEmpleadoCompras().setVisible(true);
+                new viewMenuEmpleadoVentas().setVisible(true);
             }
         });
     }
