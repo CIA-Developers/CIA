@@ -18,6 +18,20 @@ public class ControllerEmpleadosVentas {
     public ModelEmpleadosVentas modelEmpleadosVentas;
     public ViewEmpleadosVentas viewsEmpleadosVentas;
     
+    ActionListener list = new ActionListener(){
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (e.getSource() == viewsEmpleadosVentas.jb_nuevo) {
+                nuevo_ventas();
+            }else if (e.getSource() == viewsEmpleadosVentas.jb_modificar) {
+                modificar_ventas();
+            }else if (e.getSource() == viewsEmpleadosVentas.jb_guardar) {
+                Guardar();
+            }              
+        }
+        
+    };
+    
    MouseListener ml = new MouseListener(){
         @Override
         public void mouseClicked(MouseEvent e) {
