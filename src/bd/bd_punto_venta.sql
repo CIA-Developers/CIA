@@ -214,7 +214,7 @@ CREATE TABLE clientes (
     puntos INT NULL);
     
     insert into clientes values 
-        ("CLIENTEGENERA","cliente_general","desconocido","desconocido","desconocido","desconocido","desconocido","desconocido","desconocido","desconocido",0),
+        ("CLIENTEGENERA","cliente_general","desconocido","desconocido","desconocido","desconocido","desconocido","desconocido","desco","desconocido",0),
         ("HEOI231DFR456","Ivan","Hernandez","Osornio","7757538907","Tulancingo","rio balsas","Francisco villa","5","ivan.herdez@outlook.com",50),
         ("GAOA123EDFR4","Angeles","Gayosso","Octaviano","5575285877","Tulancingo","gomez palacio","Francisco i madero","307","annggii199@gmail.com",200),
         ("DIRA123DFR56T","Amairani","Diaz","Ramirez","7757583454","Tulancingo","lucerna","pajaritos","15","1717110615@utectulancingo.edu.mx",100),
