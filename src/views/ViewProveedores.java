@@ -266,6 +266,11 @@ public class ViewProveedores extends javax.swing.JPanel {
         jl_eliminar.setText("Eliminar");
 
         jb_guardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Guardar.png"))); // NOI18N
+        jb_guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_guardarActionPerformed(evt);
+            }
+        });
 
         jl_guadar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jl_guadar.setForeground(new java.awt.Color(51, 51, 51));
@@ -375,6 +380,10 @@ public class ViewProveedores extends javax.swing.JPanel {
                 .addGap(51, 51, 51))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jb_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_guardarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_guardarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -7,11 +7,8 @@ package controllers;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import static java.util.Collections.list;
 import models.ModelProveedores;
 import views.ViewProveedores;
 
@@ -27,10 +24,10 @@ public class ControllerProveedores {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == viewProveedores.jb_nuevo) {
-                nuevo_productos();
-            } else if (e.getSource() == viewProductos.jb_modificar) {
-                modificar_productos();
-            } else if (e.getSource() == viewProductos.jb_guardar) {
+                nuevo_proveedores();
+            } else if (e.getSource() == viewProveedores.jb_modificar) {
+                modificar_proveedores();
+            } else if (e.getSource() == viewProveedores.jb_guardar) {
                 Guardar();
             }
         }
@@ -95,6 +92,9 @@ public class ControllerProveedores {
     private void setActionListener() {
 
         viewProveedores.jb_nuevo.addActionListener(list);
+        viewProveedores.jb_modificar.addActionListener(list);
+        viewProveedores.jb_guardar.addActionListener(list);
+
     }
 
     public void ConexionBD() {
@@ -153,24 +153,24 @@ public class ControllerProveedores {
     /**
      * Metodo que limpiara las cajas de texto para ingresar nuevo datos.
      */
-    public void nuevo_productos() {
+    public void nuevo_proveedores() {
         viewProveedores.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
         viewProveedores.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
         //limpiar cada caja de la Interfaz 
         modelProveedores.setVerificar(1);// le da el valor a verificar de cero para identificar un nuevo registro
-        viewProveedores.jtf_id.setText(modelProveedores.getLimpiar());
         viewProveedores.jtf_nombre.setText(modelProveedores.getLimpiar());
         viewProveedores.jtf_ap_pat.setText(modelProveedores.getLimpiar());
         viewProveedores.jtf_apt_mat.setText(modelProveedores.getLimpiar());
         viewProveedores.jtf_telefono.setText(modelProveedores.getLimpiar());
+        viewProveedores.jtf_provincia.setText(modelProveedores.getLimpiar());
         viewProveedores.jtf_municipio.setText(modelProveedores.getLimpiar());
         viewProveedores.jtf_colonia.setText(modelProveedores.getLimpiar());
         viewProveedores.jtf_numero.setText(modelProveedores.getLimpiar());
-        viewProveedores.jtf_correo.setText(Integer.toString(modelProveedores.getCantidad()));
+        viewProveedores.jtf_correo.setText(modelProveedores.getLimpiar());
         cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
     }
 
-    public void modificar_productos() {
+    public void modificar_proveedores() {
         viewProveedores.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
         viewProveedores.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
         //limpiar cada caja de la Interfaz 
@@ -180,10 +180,47 @@ public class ControllerProveedores {
         viewProveedores.jtf_ap_pat.setEditable(true);
         viewProveedores.jtf_apt_mat.setEditable(true);
         viewProveedores.jtf_telefono.setEditable(true);
+        viewProveedores.jtf_provincia.setEditable(true);
         viewProveedores.jtf_municipio.setEditable(true);
         viewProveedores.jtf_colonia.setEditable(true);
         viewProveedores.jtf_numero.setEditable(true);
         viewProveedores.jtf_correo.setEditable(true);
     }
 
+    public void Guardar() {
+        // si la variable verificar es igual a 0 se llama al metodo de guardar Nuevo
+        if (modelProveedores.getVerificar() == 1) {
+            // darle el valor a las variables
+            modelProveedores.setId(viewProveedores.jtf_id.getText());
+            modelProveedores.setNombre(viewProveedores.jtf_nombre.getText());
+            modelProveedores.setAp_pat(viewProveedores.jtf_ap_pat.getText());
+            modelProveedores.setAp_mat(viewProveedores.jtf_apt_mat.getText());
+            modelProveedores.setTelefono(viewProveedores.jtf_telefono.getText());
+            modelProveedores.setProvincia(viewProveedores.jtf_provincia.getText());
+            modelProveedores.setColonia(viewProveedores.jtf_colonia.getText());
+            modelProveedores.setNumero(viewProveedores.jtf_numero.getText());
+            modelProveedores.setCorreo(viewProveedores.jtf_correo.getText());
+
+            modelProveedores.Guardar_Nuevo(); // metodo de  insertar nuevo registro           
+        } else {
+            // darle el valor a las variables
+            modelProveedores.setId(viewProveedores.jtf_id.getText());
+            modelProveedores.setNombre(viewProveedores.jtf_nombre.getText());
+            modelProveedores.setAp_pat(viewProveedores.jtf_ap_pat.getText());
+            modelProveedores.setAp_mat(viewProveedores.jtf_apt_mat.getText());
+            modelProveedores.setTelefono(viewProveedores.jtf_telefono.getText());
+            modelProveedores.setProvincia(viewProveedores.jtf_provincia.getText());
+            modelProveedores.setColonia(viewProveedores.jtf_colonia.getText());
+            modelProveedores.setNumero(viewProveedores.jtf_numero.getText());
+            modelProveedores.setCorreo(viewProveedores.jtf_correo.getText());
+            modelProveedores.Guardar_Modificado();// metodo de  Modificar el registro
+        }
+        //LIMPIAR TABLA 
+        for (int i = 0; i < viewProveedores.jt_vista.getRowCount(); i++) {
+            modelProveedores.getModelo_Proveedores().removeRow(i);
+            i -= 1;
+        }
+        //mostrar los nuevos datos 
+        modelProveedores.mostrar();
+    }
 }

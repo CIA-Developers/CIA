@@ -108,7 +108,7 @@ public class ModelProveedores {
         return id;
     }
 
-    public void setRfc(String id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -144,11 +144,11 @@ public class ModelProveedores {
         this.Telefono = Telefono;
     }
 
-    public String getprovincia() {
+    public String getProvincia() {
         return provincia;
     }
 
-    public void setprovincia(String provincia) {
+    public void setProvincia(String provincia) {
         this.provincia = provincia;
     }
 
@@ -293,7 +293,7 @@ public class ModelProveedores {
         calle = this.getCalle();
         colonia = this.getColonia();
         numero = this.getNumero();
-        provincia = this.getprovincia();
+        provincia = this.getProvincia();
         correo = this.getCorreo();
 
         int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de Guardar el NUEVO registro?");
@@ -319,7 +319,7 @@ public class ModelProveedores {
         calle = this.getCalle();
         colonia = this.getColonia();
         numero = this.getNumero();
-        provincia = this.getprovincia();
+        provincia = this.getProvincia();
         correo = this.getCorreo();
 
         int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de MODIFICAR registro?");
