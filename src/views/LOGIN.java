@@ -17,7 +17,8 @@ public class LOGIN extends javax.swing.JFrame {
     public LOGIN() {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.setOpacity(0.5f);
+        
+        this.setOpacity(0.95f);
     }
 
     /**
@@ -29,19 +30,66 @@ public class LOGIN extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
+        jLabel1 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jpf_passwd = new javax.swing.JPasswordField();
+        jtf_usuario = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jl_fondo = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 387, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 477, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(364, 523));
+        setMinimumSize(new java.awt.Dimension(364, 523));
+        setUndecorated(true);
+        getContentPane().setLayout(null);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setText("Contraseña:");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(40, 330, 80, 25);
+
+        jComboBox1.setBackground(new java.awt.Color(204, 204, 204));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Empleado Ventas ", "Empleado Compras " }));
+        jComboBox1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        getContentPane().add(jComboBox1);
+        jComboBox1.setBounds(150, 220, 140, 30);
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setText("TIPO:");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(110, 220, 40, 25);
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setText("Usuario:");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(60, 280, 60, 25);
+
+        jpf_passwd.setText("jPasswordField1");
+        getContentPane().add(jpf_passwd);
+        jpf_passwd.setBounds(120, 330, 180, 30);
+        getContentPane().add(jtf_usuario);
+        jtf_usuario.setBounds(120, 280, 180, 30);
+
+        jButton1.setBackground(new java.awt.Color(204, 204, 204));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/aceptar.png"))); // NOI18N
+        jButton1.setText("Aceptar");
+        getContentPane().add(jButton1);
+        jButton1.setBounds(60, 400, 120, 39);
+
+        jButton2.setBackground(new java.awt.Color(204, 204, 204));
+        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/cerrar.png"))); // NOI18N
+        jButton2.setText("cancelar");
+        getContentPane().add(jButton2);
+        jButton2.setBounds(190, 400, 120, 39);
+
+        jl_fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo_login2.png"))); // NOI18N
+        getContentPane().add(jl_fondo);
+        jl_fondo.setBounds(0, 0, 370, 523);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -82,5 +130,14 @@ public class LOGIN extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jl_fondo;
+    private javax.swing.JPasswordField jpf_passwd;
+    private javax.swing.JTextField jtf_usuario;
     // End of variables declaration//GEN-END:variables
 }
