@@ -137,4 +137,22 @@ public class ControllerEmpleadosVentas {
         viewsEmpleadosVentas.jtf_correo.setEditable(true);
         viewsEmpleadosVentas.jtf_usuario.setEditable(true);
     }
+    
+    //***************** BOTONES Nuevo, Borrar, Guardar y Modificar**************************
+     public void nuevo_ventas(){
+        viewsEmpleadosVentas.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
+        viewsEmpleadosVentas.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
+        //limpiar cada caja de la Interfaz 
+        modelEmpleadosVentas.setVerificar(1);// le da el valor a verificar de cero para identificar un nuevo registro
+        viewsEmpleadosVentas.jtf_rfc.setText(modelEmpleadosVentas.getLimpiar());
+        viewsEmpleadosVentas.jtf_nombre.setText(modelEmpleadosVentas.getLimpiar());
+        viewsEmpleadosVentas.jtf_ap_pat.setText(modelEmpleadosVentas.getLimpiar());
+        viewsEmpleadosVentas.jtf_apt_mat.setText(modelEmpleadosVentas.getLimpiar());
+        viewsEmpleadosVentas.jtf_sexo.setText(modelEmpleadosVentas.getLimpiar());
+        viewsEmpleadosVentas.jtf_estado_civil.setText(modelEmpleadosVentas.getLimpiar());
+        viewsEmpleadosVentas.jtf_telefono.setText(modelEmpleadosVentas.getLimpiar());
+        viewsEmpleadosVentas.jtf_correo.setText(modelEmpleadosVentas.getLimpiar()); 
+        viewsEmpleadosVentas.jtf_usuario.setText(Integer.toString(modelEmpleadosVentas.getCantidad())); 
+        cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
+     } 
 }
