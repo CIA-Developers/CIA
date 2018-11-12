@@ -20,13 +20,13 @@ public class ControllerClientes {
 
     public ModelClientes modelClientes;
     public ViewClientes viewClientes;
-      ActionListener list = new ActionListener() {
+    ActionListener list = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == viewClientes.jb_nuevo) {
                 nuevo_clientes();
             } else if (e.getSource() == viewClientes.jb_modificar) {
-                modificar_cientes();
+                modificar_clientes();
             } else if (e.getSource() == viewClientes.jb_guardar) {
                 Guardar();
             }
@@ -175,17 +175,31 @@ public class ControllerClientes {
         viewClientes.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
         //limpiar cada caja de la Interfaz 
         modelClientes.setVerificar(1);// le da el valor a verificar de cero para identificar un nuevo registro
+        viewClientes.jtf_rfc.setText(modelClientes.getLimpiar());
         viewClientes.jtf_nombre.setText(modelClientes.getLimpiar());
         viewClientes.jtf_ap_pat.setText(modelClientes.getLimpiar());
         viewClientes.jtf_apt_mat.setText(modelClientes.getLimpiar());
         viewClientes.jtf_telefono.setText(modelClientes.getLimpiar());
-        viewClientes.jtf_municipio.setText(modelClientes.getLimpiar());
         viewClientes.jtf_municipio.setText(modelClientes.getLimpiar());
         viewClientes.jtf_colonia.setText(modelClientes.getLimpiar());
         viewClientes.jtf_numero.setText(modelClientes.getLimpiar());
         viewClientes.jtf_correo.setText(modelClientes.getLimpiar());
         cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
     }
+
+    public void modificar_clientes() {
+        viewClientes.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
+        viewClientes.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
+        //limpiar cada caja de la Interfaz 
+        modelClientes.setVerificar(2);// le da el valor a verificar de uno para identificar Modifiar registro
+        viewClientes.jtf_rfc.setEditable(false); // el codigo no se puede modificar
+        viewClientes.jtf_nombre.setEditable(true);
+        viewClientes.jtf_ap_pat.setEditable(true);
+        viewClientes.jtf_apt_mat.setEditable(true);
+
+        viewClientes.jtf_municipio.setEditable(true);
+        viewClientes.jtf_colonia.setEditable(true);
+        viewClientes.jtf_numero.setEditable(true);
+        viewClientes.jtf_correo.setEditable(true);
+    }
 }
-
-
