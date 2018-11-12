@@ -202,4 +202,40 @@ public class ControllerClientes {
         viewClientes.jtf_numero.setEditable(true);
         viewClientes.jtf_correo.setEditable(true);
     }
+public void Guardar() {
+        // si la variable verificar es igual a 0 se llama al metodo de guardar Nuevo
+        if (modelClientes.getVerificar() == 1) {
+            // darle el valor a las variables
+            modelClientes.setRfc(viewClientes.jtf_rfc.getText());
+            modelClientes.setNombre(viewClientes.jtf_nombre.getText());
+            modelClientes.setAp_pat(viewClientes.jtf_ap_pat.getText());
+            modelClientes.setAp_mat(viewClientes.jtf_apt_mat.getText());
+            modelClientes.setTelefono(viewClientes.jtf_telefono.getText());
+            modelClientes.setMunicipio(viewClientes.jtf_municipio.getText());
+            modelClientes.setColonia(viewClientes.jtf_colonia.getText());
+            modelClientes.setNumero(viewClientes.jtf_numero.getText());
+            modelClientes.setCorreo(viewClientes.jtf_correo.getText());
+
+            modelClientes.Guardar_Nuevo(); // metodo de  insertar nuevo registro           
+        } else {
+            // darle el valor a las variables
+            modelClientes.setRfc(viewClientes.jtf_rfc.getText());
+            modelClientes.setNombre(viewClientes.jtf_nombre.getText());
+            modelClientes.setAp_pat(viewClientes.jtf_ap_pat.getText());
+            modelClientes.setAp_mat(viewClientes.jtf_apt_mat.getText());
+            modelClientes.setTelefono(viewClientes.jtf_telefono.getText());
+            modelClientes.setMunicipio(viewClientes.jtf_municipio.getText());
+            modelClientes.setColonia(viewClientes.jtf_colonia.getText());
+            modelClientes.setNumero(viewClientes.jtf_numero.getText());
+            modelClientes.setCorreo(viewClientes.jtf_correo.getText());
+            modelClientes.Guardar_Modificado();// metodo de  Modificar el registro
+        }
+        //LIMPIAR TABLA 
+        for (int i = 0; i < viewClientes.jt_vista.getRowCount(); i++) {
+            modelClientes.getModelo_Proveedores().removeRow(i);
+            i -= 1;
+        }
+        //mostrar los nuevos datos 
+        modelClientes.mostrar();
+    }
 }
