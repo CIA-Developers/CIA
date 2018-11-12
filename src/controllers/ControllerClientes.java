@@ -20,13 +20,18 @@ public class ControllerClientes {
 
     public ModelClientes modelClientes;
     public ViewClientes viewClientes;
-    ActionListener list = new ActionListener() {
+      ActionListener list = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == viewClientes.jb_nuevo) {
-                jbtn_nuevo_actionPerformed();
+                nuevo_clientes();
+            } else if (e.getSource() == viewClientes.jb_modificar) {
+                modificar_cientes();
+            } else if (e.getSource() == viewClientes.jb_guardar) {
+                Guardar();
             }
         }
+
     };
     MouseListener ml = new MouseListener() {
         @Override
@@ -165,7 +170,7 @@ public class ControllerClientes {
     /**
      * Metodo que limpiara las cajas de texto para ingresar nuevo datos.
      */
-    public void nuevo_proveedores() {
+    public void nuevo_clientes() {
         viewClientes.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
         viewClientes.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
         //limpiar cada caja de la Interfaz 
