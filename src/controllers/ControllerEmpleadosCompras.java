@@ -200,6 +200,7 @@ public class ControllerEmpleadosCompras {
             modelEmpleadosCompras.setNombre(viewEmpleadosCompras.jtf_nombre.getText());
             modelEmpleadosCompras.setApellido_pat(viewEmpleadosCompras.jtf_ap_pat.getText());
             modelEmpleadosCompras.setApellido_mat(viewEmpleadosCompras.jtf_apt_mat.getText());
+            modelEmpleadosCompras.setSexo(viewEmpleadosCompras.jtf_sexo.getText());
             modelEmpleadosCompras.setEstado_civil(viewEmpleadosCompras.jtf_estado_civil.getText());
             modelEmpleadosCompras.setTelefono(viewEmpleadosCompras.jtf_Telefono.getText());
             modelEmpleadosCompras.setCorreo((String) viewEmpleadosCompras.jtf_correo.getText());
