@@ -64,14 +64,6 @@ public class ModelEmpleadosCompras {
     public String usuario;
     public String password = "stockcia";
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public int getVerificar() {
         return verificar;
     }
@@ -240,8 +232,8 @@ public class ModelEmpleadosCompras {
         
         if(JOptionPane.OK_OPTION==confirmar) {
             try{
-            st.executeUpdate("insert into empleados_compras (RFC_empl_comp,nombre_empl_comp,ap_pat_comp,ap_mat_comp,sexo_comp,estado_civil_comp,telefono_comp,correo_comp,usuario_comp) values"
-                    + "('"+rfc+"','"+nombre+"','"+apellido_pat+"','"+apellido_mat+"','"+sexo+"','"+estado_civil+"','"+telefono+"','"+correo+"','"+usuario+"');"); 
+            st.executeUpdate("insert into empleados_compras (RFC_empl_comp,nombre_empl_comp,ap_pat_comp,ap_mat_comp,sexo_comp,estado_civil_comp,telefono_comp,correo_comp,usuario_comp, passwd_comp) values"
+                    + "('"+rfc+"','"+nombre+"','"+apellido_pat+"','"+apellido_mat+"','"+sexo+"','"+estado_civil+"','"+telefono+"','"+correo+"','"+usuario+"','"+password+"');"); 
                 JOptionPane.showMessageDialog(null,"Guardado con exito ");
             } catch(Exception err) 
             { 
