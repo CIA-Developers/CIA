@@ -156,7 +156,7 @@ public class ControllerEmpleadosVentas {
         cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
      } 
      
-      public void modificar_productos(){
+      public void modificar_ventas(){
         viewsEmpleadosVentas.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
         viewsEmpleadosVentas.jb_nuevo.setEnabled(false);//El boton modificar aparecera inhabilitado
         //limpiar cada caja de la Interfaz 
@@ -171,5 +171,42 @@ public class ControllerEmpleadosVentas {
         viewsEmpleadosVentas.jtf_correo.setEditable(true);
         viewsEmpleadosVentas.jtf_usuario.setEditable(true);
     }
-     
+      
+       public void Guardar(){
+        // si la variable verificar es igual a 0 se llama al metodo de guardar Nuevo
+        if (modelEmpleadosVentas.getVerificar() == 1) {
+            // darle el valor a las variables
+            modelEmpleadosVentas.setRfc(viewsEmpleadosVentas.jtf_rfc.getText());
+            modelEmpleadosVentas.setNombre(viewsEmpleadosVentas.jtf_nombre.getText());
+            modelEmpleadosVentas.setApellido_pat(viewsEmpleadosVentas.jtf_ap_pat.getText());
+            modelEmpleadosVentas.setApellido_mat(viewsEmpleadosVentas.jtf_apt_mat.getText());
+            modelEmpleadosVentas.setSexo(viewsEmpleadosVentas.jtf_sexo.getText());
+            modelEmpleadosVentas.setEstado_civil(viewsEmpleadosVentas.jtf_estado_civil.getText());
+            modelEmpleadosVentas.setTelefono(viewsEmpleadosVentas.jtf_telefono.getText());
+            modelEmpleadosVentas.setCorreo(viewsEmpleadosVentas.jtf_correo.getText()); 
+            modelEmpleadosVentas.setUsuario(viewsEmpleadosVentas.jtf_usuario.getText()); 
+            
+            modelEmpleadosVentas.Guardar_Nuevo(); // metodo de  insertar nuevo registro           
+        }
+        else{
+            // darle el valor a las variables
+            modelEmpleadosVentas.setRfc(viewsEmpleadosVentas.jtf_rfc.getText());
+            modelEmpleadosVentas.setNombre(viewsEmpleadosVentas.jtf_nombre.getText());
+            modelEmpleadosVentas.setApellido_pat(viewsEmpleadosVentas.jtf_ap_pat.getText());
+            modelEmpleadosVentas.setApellido_mat(viewsEmpleadosVentas.jtf_apt_mat.getText());
+            modelEmpleadosVentas.setSexo(viewsEmpleadosVentas.jtf_sexo.getText());
+            modelEmpleadosVentas.setEstado_civil(viewsEmpleadosVentas.jtf_estado_civil.getText());
+            modelEmpleadosVentas.setTelefono(viewsEmpleadosVentas.jtf_telefono.getText());
+            modelEmpleadosVentas.setCorreo(viewsEmpleadosVentas.jtf_correo.getText());
+            modelEmpleadosVentas.setUsuario(viewsEmpleadosVentas.jtf_usuario.getText());
+            modelEmpleadosVentas.Guardar_Modificado();// metodo de  Modificar el registro
+        }
+        //LIMPIAR TABLA 
+        for (int i = 0; i <  viewsEmpleadosVentas.jt_vista.getRowCount(); i++) {
+           modelEmpleadosVentas.getModelo_EmVentas().removeRow(i);
+            i-=1;
+        }
+        //mostrar los nuevos datos 
+        modelEmpleadosVentas.mostrar();
+    }
 }
