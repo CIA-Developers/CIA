@@ -251,7 +251,7 @@ public class ModelEmpleadosVentas {
         
         if(JOptionPane.OK_OPTION==confirmar) {
             try{
-               st.executeUpdate("UPDATE empleados_ventas SET nombre_empl_comp='"+nombre+"',ap_pat_comp='"+apellido_pat+"',ap_mat_comp='"+apellido_mat+"',sexo_comp='"+sexo+"',estado_civil_comp='"+estado_civil+"',telefono_comp='"+telefono+"', correo_comp='"+correo+"',usuario_comp='"+usuario+"' WHERE RFC_empl_comp='"+rfc+"';");
+               st.executeUpdate("UPDATE empleados_ventas SET nombre_empl_vent='"+nombre+"',ap_pat_vent='"+apellido_pat+"',ap_mat_vent='"+apellido_mat+"',sexo_vent='"+sexo+"',estado_civil_vent='"+estado_civil+"',telefono_vent='"+telefono+"', correo_vent='"+correo+"',usuario_vent='"+usuario+"' WHERE RFC_empl_vent='"+rfc+"';");
                JOptionPane.showMessageDialog(null,"El registro se modifico correctamente");
             } catch(Exception err) 
             { 
