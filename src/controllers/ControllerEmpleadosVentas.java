@@ -125,4 +125,16 @@ public class ControllerEmpleadosVentas {
         viewsEmpleadosVentas.jtf_correo.setEditable(false);
         viewsEmpleadosVentas.jtf_usuario.setEditable(false);
     }
+    
+    public void cajas_habilitadas(){
+        viewsEmpleadosVentas.jtf_rfc.setEditable(true);
+        viewsEmpleadosVentas.jtf_nombre.setEditable(true);
+        viewsEmpleadosVentas.jtf_ap_pat.setEditable(true);
+        viewsEmpleadosVentas.jtf_apt_mat.setEditable(true);
+        viewsEmpleadosVentas.jtf_sexo.setEditable(true);
+        viewsEmpleadosVentas.jtf_estado_civil.setEditable(true);
+        viewsEmpleadosVentas.jtf_telefono.setEditable(true);
+        viewsEmpleadosVentas.jtf_correo.setEditable(true);
+        viewsEmpleadosVentas.jtf_usuario.setEditable(true);
+    }
 }
