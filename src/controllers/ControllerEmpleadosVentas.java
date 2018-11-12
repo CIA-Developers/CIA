@@ -95,7 +95,11 @@ public class ControllerEmpleadosVentas {
     
     //variable que se le asigna el elemento seleccionado en la tabla
     private void jt_vista_MouseClicked() {
-            modelEmpleadosVentas.setRec(viewsEmpleadosVentas.jt_vista.getSelectedRow());
+        viewsEmpleadosVentas.jb_guardar.setEnabled(false);
+        viewsEmpleadosVentas.jb_modificar.setEnabled(true);//El boton modificar aparecera habilitado
+        viewsEmpleadosVentas.jb_nuevo.setEnabled(true);//El boton nuevo aparecera habilitado
+        cajas_deshabilitadas();
+        modelEmpleadosVentas.setRec(viewsEmpleadosVentas.jt_vista.getSelectedRow());//a la variable se le asigna el elemento seleccionado en la tabla
         viewsEmpleadosVentas.jtf_rfc.setText(viewsEmpleadosVentas.jt_vista.getValueAt(modelEmpleadosVentas.getRec(), 0).toString());
         viewsEmpleadosVentas.jtf_nombre.setText(viewsEmpleadosVentas.jt_vista.getValueAt(modelEmpleadosVentas.getRec(), 1).toString());
         viewsEmpleadosVentas.jtf_ap_pat.setText(viewsEmpleadosVentas.jt_vista.getValueAt(modelEmpleadosVentas.getRec(), 2).toString());
@@ -105,6 +109,9 @@ public class ControllerEmpleadosVentas {
         viewsEmpleadosVentas.jtf_telefono.setText(viewsEmpleadosVentas.jt_vista.getValueAt(modelEmpleadosVentas.getRec(), 6).toString());
         viewsEmpleadosVentas.jtf_correo.setText(viewsEmpleadosVentas.jt_vista.getValueAt(modelEmpleadosVentas.getRec(), 7).toString());
         viewsEmpleadosVentas.jtf_usuario.setText(viewsEmpleadosVentas.jt_vista.getValueAt(modelEmpleadosVentas.getRec(), 8).toString());
-    }       
-    
+    }
+
+    private void cajas_deshabilitadas() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
