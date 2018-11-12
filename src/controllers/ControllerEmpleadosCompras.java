@@ -155,7 +155,6 @@ public class ControllerEmpleadosCompras {
         viewEmpleadosCompras.jtf_nombre.setText(modelEmpleadosCompras.getLimpiar());
         viewEmpleadosCompras.jtf_ap_pat.setText(modelEmpleadosCompras.getLimpiar());
         viewEmpleadosCompras.jtf_apt_mat.setText(modelEmpleadosCompras.getLimpiar());
-        viewEmpleadosCompras.jCB_sexo.setText(modelEmpleadosCompras.getLimpiar());
         viewEmpleadosCompras.jtf_estado_civil.setText(modelEmpleadosCompras.getLimpiar());
         viewEmpleadosCompras.jtf_Telefono.setText(modelEmpleadosCompras.getLimpiar());
         viewEmpleadosCompras.jtf_correo.setText(modelEmpleadosCompras.getLimpiar()); 
