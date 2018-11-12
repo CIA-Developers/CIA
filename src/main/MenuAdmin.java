@@ -35,7 +35,7 @@ import controllers.ControllerSucursales;
  *
  * @author Salvador Hernández Mendoza
  */
-public class Main {
+public class MenuAdmin {
 
     /**
      * @param args the command line arguments
