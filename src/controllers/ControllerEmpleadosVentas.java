@@ -111,7 +111,18 @@ public class ControllerEmpleadosVentas {
         viewsEmpleadosVentas.jtf_usuario.setText(viewsEmpleadosVentas.jt_vista.getValueAt(modelEmpleadosVentas.getRec(), 8).toString());
     }
 
+    /***
+     * Metodos Habilitar y deshabilitar cajas 
+     */
     private void cajas_deshabilitadas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        viewsEmpleadosVentas.jtf_rfc.setEditable(false);
+        viewsEmpleadosVentas.jtf_nombre.setEditable(false);
+        viewsEmpleadosVentas.jtf_ap_pat.setEditable(false);
+        viewsEmpleadosVentas.jtf_apt_mat.setEditable(false);
+        viewsEmpleadosVentas.jtf_sexo.setEditable(false);
+        viewsEmpleadosVentas.jtf_estado_civil.setEditable(false);
+        viewsEmpleadosVentas.jtf_telefono.setEditable(false);
+        viewsEmpleadosVentas.jtf_correo.setEditable(false);
+        viewsEmpleadosVentas.jtf_usuario.setEditable(false);
     }
 }
