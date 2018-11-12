@@ -72,6 +72,15 @@ public class ControllerEmpleadosVentas {
         setActionListener();
     }
     
+     /***
+     * agregar eventos de actionlistener a botones 
+     */
+    private void setActionListener(){
+        viewsEmpleadosVentas.jb_nuevo.addActionListener(list);
+        viewsEmpleadosVentas.jb_modificar.addActionListener(list);
+        viewsEmpleadosVentas.jb_guardar.addActionListener(list);
+    }
+    
      /**
      * este metodo hace la conexion a la base de datos 
      * llama a los metodos conectar, mostrar  dentro del modelo 
