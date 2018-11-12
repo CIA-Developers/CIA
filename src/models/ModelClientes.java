@@ -26,7 +26,6 @@ public class ModelClientes {
 
     DefaultTableModel modelo_clientes = new DefaultTableModel(); //la variable modelo almacenara los tados de la tabla
 
-
     public DefaultTableModel getModelo_Proveedores() {
         return modelo_clientes;
     }
@@ -78,6 +77,7 @@ public class ModelClientes {
         this.sql = sql;
     }
     //Variables que corresponden a cada caja de texto
+    public String puntos;
     public String rfc;
     public String nombre;
     public String ap_pat;
@@ -95,6 +95,14 @@ public class ModelClientes {
 
     public void setModelo_clientes(DefaultTableModel modelo_proveedores) {
         this.modelo_clientes = modelo_proveedores;
+    }
+
+    public String getPuntos() {
+        return puntos;
+    }
+
+    public void setPuntos(String rfc) {
+        this.puntos = puntos;
     }
 
     public String getRfc() {
@@ -238,7 +246,7 @@ public class ModelClientes {
         this.codigo = codigo;
     }
 
-    private DefaultTableModel model_clientes= new DefaultTableModel(); // variable que usa para el metodo de buscar
+    private DefaultTableModel model_clientes = new DefaultTableModel(); // variable que usa para el metodo de buscar
 
     public DefaultTableModel getModel_prov() {
         return model_clientes;
@@ -252,6 +260,7 @@ public class ModelClientes {
     private Statement st;
     private ResultSet rs;
     PreparedStatement ps;
+
     /**
      * se hace la conexion a la Base de datos y se hace la consulta hacia la
      * tabla de EmpleadosCompras que tiene una union con la tabla de compra
@@ -296,6 +305,7 @@ public class ModelClientes {
         }
 
     }
+
     public void Guardar_Nuevo() {
         //cada variable obtendra el valor actual de las cajas de texto 
         rfc = this.getRfc();
@@ -308,17 +318,45 @@ public class ModelClientes {
         numero = this.getNumero();
         municipio = this.getMunicipio();
         correo = this.getCorreo();
+                puntos = this.getPuntos();
 
         int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de Guardar el NUEVO registro?");
 
         if (JOptionPane.OK_OPTION == confirmar) {
             try {
-                st.executeUpdate("insert into clientes (RFC_cliente,nombre_client,ap_pat_client,ap_mat_client,telefono_client,calle_client,colonia_client,numero_client,municipio_client) values"
-                        + "('" + rfc + "','" + nombre + "','" + ap_pat + "','" + ap_mat + "','" + Telefono + "','" + calle + "','" + colonia + "','" + numero + "','" + municipio + "');");
+                st.executeUpdate("insert into clientes (RFC_cliente,nombre_client,ap_pat_client,ap_mat_client,telefono_client,calle_client,colonia_client,numero_client,municipio_client,puntos) values"
+                        + "('" + rfc + "','" + nombre + "','" + ap_pat + "','" + ap_mat + "','" + Telefono + "','" + calle + "','" + colonia + "','" + numero + "','" + municipio + "','" + puntos + "');");
                 JOptionPane.showMessageDialog(null, "Guardado con exito ");
             } catch (Exception err) {
                 JOptionPane.showMessageDialog(null, "Error Nuevo no se puede guardar " + err.getMessage());
             }
         }
     }
+
+    public void Guardar_Modificado() {
+        //cada variable obtendra el valor actual de las cajas de texto 
+        rfc = this.getRfc();
+        nombre = this.getNombre();
+        ap_pat = this.getAp_pat();
+        ap_mat = this.getAp_mat();
+        Telefono = this.getTelefono();
+        calle = this.getCalle();
+        colonia = this.getColonia();
+        numero = this.getNumero();
+        municipio = this.getMunicipio();
+        correo = this.getCorreo();
+        puntos = this.getPuntos();
+
+        int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de MODIFICAR registro?");
+
+        if (JOptionPane.OK_OPTION == confirmar) {
+            try {
+                st.executeUpdate("UPDATE productos SET nombre_client='" + nombre + "',ap_pat_client='" + ap_pat + "',ap_mat_client='" + ap_mat + "',telefono_client='" + Telefono + "',calle_client='" + calle + "',colonia_client='" + colonia + ",numero_client='" + numero + " , puntos=' + puntos + ' WHERE RFC_client='" + rfc + "';");
+                JOptionPane.showMessageDialog(null, "El registro se modifico correctamente");
+            } catch (Exception err) {
+                JOptionPane.showMessageDialog(null, "Error Nuevo no se puede guardar " + err.getMessage());
+            }
+        }
+    }
+
 }
