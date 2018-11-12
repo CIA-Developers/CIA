@@ -155,4 +155,21 @@ public class ControllerEmpleadosVentas {
         viewsEmpleadosVentas.jtf_usuario.setText(Integer.toString(modelEmpleadosVentas.getCantidad())); 
         cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
      } 
+     
+      public void modificar_productos(){
+        viewsEmpleadosVentas.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
+        viewsEmpleadosVentas.jb_nuevo.setEnabled(false);//El boton modificar aparecera inhabilitado
+        //limpiar cada caja de la Interfaz 
+         modelEmpleadosVentas.setVerificar(2);// le da el valor a verificar de uno para identificar Modifiar registro
+         viewsEmpleadosVentas.jtf_rfc.setEditable(false); // el RFC no se puede modificar
+         viewsEmpleadosVentas.jtf_nombre.setEditable(true); 
+        viewsEmpleadosVentas.jtf_ap_pat.setEditable(true);
+        viewsEmpleadosVentas.jtf_apt_mat.setEditable(true);
+        viewsEmpleadosVentas.jtf_sexo.setEditable(true);
+        viewsEmpleadosVentas.jtf_estado_civil.setEditable(true);
+        viewsEmpleadosVentas.jtf_telefono.setEditable(true);
+        viewsEmpleadosVentas.jtf_correo.setEditable(true);
+        viewsEmpleadosVentas.jtf_usuario.setEditable(true);
+    }
+     
 }
