@@ -231,7 +231,7 @@ public class ModelEmpleadosCompras {
         
         if(JOptionPane.OK_OPTION==confirmar) {
             try{
-            st.executeUpdate("insert into empleados_compras (RFC_empl_vent,nombre_empl_vent,ap_pat_vent,ap_mat_vent,sexo_vent,estado_civil_vent,telefono_vent,correo_vent,usuario_vent) values"
+            st.executeUpdate("insert into empleados_compras (RFC_empl_comp,nombre_empl_comp,ap_pat_comp,ap_mat_comp,sexo_comp,estado_civil_comp,telefono_comp,correo_comp,usuario_comp) values"
                     + "('"+rfc+"','"+nombre+"','"+apellido_pat+"','"+apellido_mat+"','"+sexo+"','"+estado_civil+"','"+telefono+"','"+correo+"','"+usuario+"');"); 
                 JOptionPane.showMessageDialog(null,"Guardado con exito ");
             } catch(Exception err) 
