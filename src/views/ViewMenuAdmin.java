@@ -27,7 +27,7 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jl_CiaLogo = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jm_catalogos = new javax.swing.JMenu();
         jmi_proveedores = new javax.swing.JMenuItem();
@@ -40,6 +40,8 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 153));
         setMaximumSize(new java.awt.Dimension(32767, 32767));
+
+        jl_CiaLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CIA-Developers.png"))); // NOI18N
 
         jMenuBar1.setBackground(new java.awt.Color(102, 102, 102));
         jMenuBar1.setPreferredSize(new java.awt.Dimension(88, 35));
@@ -88,16 +90,16 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1129, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap(880, Short.MAX_VALUE)
+                .addComponent(jl_CiaLogo)
+                .addGap(27, 27, 27))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 635, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(423, Short.MAX_VALUE)
+                .addComponent(jl_CiaLogo)
+                .addGap(34, 34, 34))
         );
 
         pack();
@@ -140,8 +142,8 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     public javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JLabel jl_CiaLogo;
     public javax.swing.JMenu jm_catalogos;
     public javax.swing.JMenuItem jmi_clientes;
     public javax.swing.JMenuItem jmi_empleados_compras;

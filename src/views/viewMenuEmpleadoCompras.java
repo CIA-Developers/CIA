@@ -28,6 +28,7 @@ public class viewMenuEmpleadoCompras extends javax.swing.JFrame {
     private void initComponents() {
 
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
+        jl_CiaLogo = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jm_catalogos = new javax.swing.JMenu();
         jmi_proveedores = new javax.swing.JMenuItem();
@@ -41,6 +42,8 @@ public class viewMenuEmpleadoCompras extends javax.swing.JFrame {
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jl_CiaLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CIA-Developers.png"))); // NOI18N
 
         jMenuBar1.setBackground(new java.awt.Color(102, 102, 102));
         jMenuBar1.setPreferredSize(new java.awt.Dimension(88, 35));
@@ -88,11 +91,17 @@ public class viewMenuEmpleadoCompras extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1125, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(926, Short.MAX_VALUE)
+                .addComponent(jl_CiaLogo)
+                .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 613, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(422, Short.MAX_VALUE)
+                .addComponent(jl_CiaLogo)
+                .addGap(35, 35, 35))
         );
 
         pack();
@@ -138,6 +147,7 @@ public class viewMenuEmpleadoCompras extends javax.swing.JFrame {
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     public javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JLabel jl_CiaLogo;
     public javax.swing.JMenu jm_acciones;
     public javax.swing.JMenu jm_catalogos;
     public javax.swing.JMenuItem jmi_clientes;
