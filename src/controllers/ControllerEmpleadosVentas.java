@@ -61,9 +61,15 @@ public class ControllerEmpleadosVentas {
     public ControllerEmpleadosVentas(ModelEmpleadosVentas modelEmpleadosVentas, ViewEmpleadosVentas viewsEmpleadosVentas) {
         this.modelEmpleadosVentas = modelEmpleadosVentas;
         this.viewsEmpleadosVentas = viewsEmpleadosVentas;
+        //agregar a la table el evento de MouseListener
         this.viewsEmpleadosVentas.jt_vista.addMouseListener(ml);
+        
+        viewsEmpleadosVentas.jb_guardar.setEnabled(false);//El boton guardar aparecera inhabilitado
+        viewsEmpleadosVentas.jb_eliminar.setEnabled(false);//El boton guardar aparecera inhabilitado
+        
         ConexionBD();
-       
+        cajas_deshabilitadas();
+        setActionListener();
     }
     
      /**
