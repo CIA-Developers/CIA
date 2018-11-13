@@ -306,7 +306,7 @@ public class ModelClientes {
                     rs.getString("calle_client"),
                     rs.getString("colonia_client"),
                     rs.getString("numero_client"),
-                    rs.getString("numero_client"),
+                    rs.getString("correo_client"),
                     rs.getString("puntos")});
             }
         } catch (Exception e) {
@@ -327,14 +327,14 @@ public class ModelClientes {
         numero = this.getNumero();
         municipio = this.getMunicipio();
         correo = this.getCorreo();
-        puntos = this.getPuntos();
+      
 
         int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de Guardar el NUEVO registro?");
 
         if (JOptionPane.OK_OPTION == confirmar) {
             try {
-                st.executeUpdate("insert into clientes (RFC_cliente,nombre_client,ap_pat_client,ap_mat_client,telefono_client,calle_client,colonia_client,numero_client,municipio_client,puntos) values"
-                        + "('" + rfc + "','" + nombre + "','" + ap_pat + "','" + ap_mat + "','" + Telefono + "','" + calle + "','" + colonia + "','" + numero + "','" + municipio + "','" + puntos + "');");
+                st.executeUpdate("insert into clientes (RFC_cliente,nombre_client,ap_pat_client,ap_mat_client,telefono_client,municipio_client,calle_client,colonia_client,numero_client,correo_client) values"
+                        + "('" + rfc + "','" + nombre + "','" + ap_pat + "','" + ap_mat + "','" + Telefono + "','" + municipio + "','" + calle + "','" + colonia + "','" + numero + "','" + correo + "');");
                 JOptionPane.showMessageDialog(null, "Guardado con exito ");
             } catch (Exception err) {
                 JOptionPane.showMessageDialog(null, "Error Nuevo no se puede guardar " + err.getMessage());
@@ -354,18 +354,19 @@ public class ModelClientes {
         numero = this.getNumero();
         municipio = this.getMunicipio();
         correo = this.getCorreo();
-        puntos = this.getPuntos();
+    
 
+        
         int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de MODIFICAR registro?");
-
-        if (JOptionPane.OK_OPTION == confirmar) {
-            try {
-                st.executeUpdate("UPDATE productos SET nombre_client='" + nombre + "',ap_pat_client='" + ap_pat + "',ap_mat_client='" + ap_mat + "',telefono_client='" + Telefono + "',calle_client='" + calle + "',colonia_client='" + colonia + ",numero_client='" + numero + " , puntos=' + puntos + ' WHERE RFC_client='" + rfc + "';");
-                JOptionPane.showMessageDialog(null, "El registro se modifico correctamente");
-            } catch (Exception err) {
-                JOptionPane.showMessageDialog(null, "Error Nuevo no se puede guardar " + err.getMessage());
+        
+        if(JOptionPane.OK_OPTION==confirmar) {
+            try{
+               st.executeUpdate("UPDATE clientes SET nombre_client='"+nombre+"',ap_pat_client='"+ap_pat+"',ap_mat_client='"+ap_mat+"',telefono_client='"+Telefono+"',municipio_client='"+municipio+"',calle_client='"+calle+"',colonia_client='"+colonia+"' ,numero_client='"+numero+"',correo_client='"+correo+"'WHERE RFC_cliente='"+rfc+"';");
+               JOptionPane.showMessageDialog(null,"El registro se modifico correctamente");
+            } catch(Exception err) 
+            { 
+                JOptionPane.showMessageDialog(null,"Error Nuevo no se puede guardar "+err.getMessage()); 
             }
         }
-    }
-
+    }  
 }

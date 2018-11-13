@@ -92,6 +92,9 @@ public class ControllerClientes {
     private void setActionListener() {
 
         viewClientes.jb_nuevo.addActionListener(list);
+        viewClientes.jb_modificar.addActionListener(list);
+        viewClientes.jb_guardar.addActionListener(list);
+
     }
 
     public void ConexionBD() {
@@ -116,7 +119,7 @@ public class ControllerClientes {
         viewClientes.jtf_colonia.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 7).toString());
         viewClientes.jtf_numero.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 8).toString());
         viewClientes.jtf_correo.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 9).toString());
-        viewClientes.jl_puntos.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 10).toString());
+      
 
     }
 
@@ -131,6 +134,7 @@ public class ControllerClientes {
         viewClientes.jtf_calle.setEditable(false);
         viewClientes.jtf_numero.setEditable(false);
         viewClientes.jtf_correo.setEditable(false);
+
     }
 
     private void cajas_habilitadas() {
@@ -150,26 +154,6 @@ public class ControllerClientes {
     /**
      * Metodo que limpiara las cajas de texto para ingresar nuevo datos.
      */
-    public void jbtn_nuevo_actionPerformed() {
-        viewClientes.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
-        viewClientes.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
-        //limpiar cada caja de la Interfaz 
-        viewClientes.jtf_rfc.setText(Integer.toString(modelClientes.getCodigo()));// la caja de texto CODIGO_PRODUCTO recibe el valor de cero
-        viewClientes.jtf_nombre.setText(modelClientes.getLimpiar());
-        viewClientes.jtf_ap_pat.setText(modelClientes.getLimpiar());
-        viewClientes.jtf_apt_mat.setText(modelClientes.getLimpiar());
-        viewClientes.jtf_telefono.setText(modelClientes.getLimpiar());
-        viewClientes.jtf_municipio.setText(modelClientes.getLimpiar());
-        viewClientes.jtf_colonia.setText(modelClientes.getLimpiar());
-        viewClientes.jtf_calle.setText(modelClientes.getLimpiar());
-        viewClientes.jtf_numero.setText(modelClientes.getLimpiar());
-        viewClientes.jtf_correo.setText(modelClientes.getLimpiar());
-        cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
-    }    //***************** BOTONES Nuevo, Borrar, Guardar y Modificar**************************
-
-    /**
-     * Metodo que limpiara las cajas de texto para ingresar nuevo datos.
-     */
     public void nuevo_clientes() {
         viewClientes.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
         viewClientes.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
@@ -181,6 +165,7 @@ public class ControllerClientes {
         viewClientes.jtf_apt_mat.setText(modelClientes.getLimpiar());
         viewClientes.jtf_telefono.setText(modelClientes.getLimpiar());
         viewClientes.jtf_municipio.setText(modelClientes.getLimpiar());
+        viewClientes.jtf_calle.setText(modelClientes.getLimpiar());
         viewClientes.jtf_colonia.setText(modelClientes.getLimpiar());
         viewClientes.jtf_numero.setText(modelClientes.getLimpiar());
         viewClientes.jtf_correo.setText(modelClientes.getLimpiar());
@@ -196,13 +181,15 @@ public class ControllerClientes {
         viewClientes.jtf_nombre.setEditable(true);
         viewClientes.jtf_ap_pat.setEditable(true);
         viewClientes.jtf_apt_mat.setEditable(true);
-
+        viewClientes.jtf_telefono.setEditable(true);
         viewClientes.jtf_municipio.setEditable(true);
+        viewClientes.jtf_calle.setEditable(true);
         viewClientes.jtf_colonia.setEditable(true);
         viewClientes.jtf_numero.setEditable(true);
         viewClientes.jtf_correo.setEditable(true);
     }
-public void Guardar() {
+
+    public void Guardar() {
         // si la variable verificar es igual a 0 se llama al metodo de guardar Nuevo
         if (modelClientes.getVerificar() == 1) {
             // darle el valor a las variables
@@ -212,6 +199,7 @@ public void Guardar() {
             modelClientes.setAp_mat(viewClientes.jtf_apt_mat.getText());
             modelClientes.setTelefono(viewClientes.jtf_telefono.getText());
             modelClientes.setMunicipio(viewClientes.jtf_municipio.getText());
+            modelClientes.setColonia(viewClientes.jtf_calle.getText());
             modelClientes.setColonia(viewClientes.jtf_colonia.getText());
             modelClientes.setNumero(viewClientes.jtf_numero.getText());
             modelClientes.setCorreo(viewClientes.jtf_correo.getText());
@@ -225,6 +213,7 @@ public void Guardar() {
             modelClientes.setAp_mat(viewClientes.jtf_apt_mat.getText());
             modelClientes.setTelefono(viewClientes.jtf_telefono.getText());
             modelClientes.setMunicipio(viewClientes.jtf_municipio.getText());
+            modelClientes.setColonia(viewClientes.jtf_calle.getText());
             modelClientes.setColonia(viewClientes.jtf_colonia.getText());
             modelClientes.setNumero(viewClientes.jtf_numero.getText());
             modelClientes.setCorreo(viewClientes.jtf_correo.getText());
