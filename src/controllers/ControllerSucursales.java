@@ -6,10 +6,13 @@
 package controllers;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.RowFilter;
+import javax.swing.table.TableRowSorter;
 import models.ModelSucursales;
 import views.ViewSucursales;
 
@@ -65,19 +68,24 @@ public class ControllerSucursales {
     KeyListener key = new KeyListener(){
         @Override
         public void keyTyped(KeyEvent e) {
-
+            if (e.getSource() == viewSucursales.jtf_buscar) {
+                modelSucursales.setTrsFiltro(new TableRowSorter(viewSucursales.jt_vista.getModel()));
+                viewSucursales.jt_vista.setRowSorter(modelSucursales.getTrsFiltro());
+            } 
         }
 
         @Override
         public void keyPressed(KeyEvent e) {
-           if (e.getSource() == viewSucursales.jtf_buscar) {
-                jtf_buscar_KeyPressed();
-            }  
+ 
         }
 
         @Override
         public void keyReleased(KeyEvent e) {
-
+            if (e.getSource() == viewSucursales.jtf_buscar) {
+                modelSucursales.setCadena(viewSucursales.jtf_buscar.getText());
+                viewSucursales.jtf_buscar.setText(modelSucursales.getCadena());
+                filtro();
+            }    
         }    
     };
     
@@ -85,8 +93,7 @@ public class ControllerSucursales {
         this.modelSucursales = modelSucursales;
         this.viewSucursales = viewSucursales;
         this.viewSucursales.jt_vista.addMouseListener(ml);//agregar a la table el evento de MouseListener
-        this.viewSucursales.jtf_buscar.addKeyListener(key);
-        
+        this.viewSucursales.jtf_buscar.addKeyListener(key); //agregar elevento de keylistener en la tabla
         viewSucursales.jb_guardar.setEnabled(false);//El boton guardar aparecera inhabilitado
         viewSucursales.jb_eliminar.setEnabled(false);//El boton guardar aparecera inhabilitado
        
@@ -130,26 +137,25 @@ public class ControllerSucursales {
         viewSucursales.jtf_stock_max.setText(viewSucursales.jt_vista.getValueAt(modelSucursales.getRec(), 8).toString());
         viewSucursales.jtf_stock_min.setText(viewSucursales.jt_vista.getValueAt(modelSucursales.getRec(), 9).toString());  
     }
-    
-    
-    public void jtf_buscar_KeyPressed(){
-        modelSucursales.Conectar(); //llamar al metodo de conectar
-        modelSucursales.busqueda(); //llamar al metodo de busqueda
-        // asignar a cada variable el Valor de la caja de texto Buscar para realizar la busqueda 
-        modelSucursales.setSucursal(viewSucursales.jtf_buscar.getText());
-        modelSucursales.setCalle(viewSucursales.jtf_buscar.getText());
-        modelSucursales.setColonia(viewSucursales.jtf_buscar.getText());
-        modelSucursales.setNumero(viewSucursales.jtf_buscar.getText());
-        modelSucursales.setTelefono(viewSucursales.jtf_buscar.getText());
-        modelSucursales.setCodigo_producto(viewSucursales.jtf_buscar.getText());
-        modelSucursales.setNombre_producto(viewSucursales.jtf_buscar.getText());
-        modelSucursales.setStock(viewSucursales.jtf_buscar.getText());
-        modelSucursales.setStock_maximo(viewSucursales.jtf_buscar.getText());
-        modelSucursales.setStrock_minimo(viewSucursales.jtf_buscar.getText());
-        
-        viewSucursales.jt_vista.setModel(modelSucursales.getModel()); //Realizar la busqueda        
+ // ********************************* M E T O D O   D E   B U S Q U E D A    *******************************************
+    /***
+     * Metodo para filtar los datos de la busqueda
+     */
+    public void filtro() {
+        //depende del numero de items en el jcb
+                
+        if (viewSucursales.jcb_buscar.getSelectedItem() == "codigo producto") {
+            modelSucursales.setColumnaABuscar(5); //numero de columna en la tabla donde se encuentra el registro
+        }
+        else if (viewSucursales.jcb_buscar.getSelectedItem().toString() == "nombre producto") {
+            modelSucursales.setColumnaABuscar(7); //numero de columna en la tabla donde se encuentra el registro
+        }
+        else if (viewSucursales.jcb_buscar.getSelectedItem() == "numero sucursal") {
+            modelSucursales.setColumnaABuscar(0); //numero de columna en la tabla donde se encuentra el registro
+        }
+        modelSucursales.getTrsFiltro().setRowFilter(RowFilter.regexFilter(viewSucursales.jtf_buscar.getText(), modelSucursales.getColumnaABuscar()));
     }
-    
+  
     public void cajas_deshabilitadas(){
         viewSucursales.jtf_calle.setEditable(false);
         viewSucursales.jtf_colonia.setEditable(false);
