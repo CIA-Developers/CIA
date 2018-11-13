@@ -21,6 +21,7 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 public class ModelEmpleadosVentas {
     
@@ -45,7 +46,37 @@ public class ModelEmpleadosVentas {
     public void setRec(int rec) {
         this.rec = rec;
     }
+        /**
+     * Variables para el metodo de busqueda
+     */   
+    private TableRowSorter trsFiltro; // sirve para filtar los datos dentro de la tabla
+
+    public TableRowSorter getTrsFiltro() {
+        return trsFiltro;
+    }
+
+    public void setTrsFiltro(TableRowSorter trsFiltro) {
+        this.trsFiltro = trsFiltro;
+    }
     
+    public int columnaABuscar = 0; //solo buscara en la primer columa que pertenece al codigo de producto
+    public String cadena;
+
+    public String getCadena() {
+        return cadena;
+    }
+
+    public void setCadena(String cadena) {
+        this.cadena = cadena;
+    }
+    
+    public int getColumnaABuscar() {
+        return columnaABuscar;
+    }
+
+    public void setColumnaABuscar(int columnaABuscar) {
+        this.columnaABuscar = columnaABuscar;
+    }
      //Variables que corresponden a cada caja de texto
      public int verificar; // variable que nos ayudara a ver si se inserto un nuevo registro o se midificara
     public String rfc;

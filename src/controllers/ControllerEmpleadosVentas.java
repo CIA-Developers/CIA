@@ -85,7 +85,7 @@ public class ControllerEmpleadosVentas {
 
         @Override
         public void keyReleased(KeyEvent e) {
-            modelEmpleadosVentas.setCadena(viewsEmpleadosventas.jtf_buscar.getText());
+            modelEmpleadosVentas.setCadena(viewsEmpleadosVentas.jtf_buscar.getText());
             viewsEmpleadosVentas.jtf_buscar.setText(modelEmpleadosVentas.getCadena());
             modelEmpleadosVentas.getTrsFiltro().setRowFilter(RowFilter.regexFilter(viewsEmpleadosVentas.jtf_buscar.getText(), modelEmpleadosVentas.getColumnaABuscar()));
         }
