@@ -57,6 +57,15 @@ public class ModelEmpleadosVentas {
     public String telefono;
     public String correo;
     public String usuario;
+    public String password = "stockcia";
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public int getVerificar() {
         return verificar;
