@@ -10,6 +10,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.RowFilter;
 import javax.swing.table.TableRowSorter;
 import models.ModelProductos;
 import views.ViewProductos;
@@ -64,20 +65,30 @@ public class ControllerProductos {
 
         }
 
-    };
+    }; 
+  /**
+   * Busar solo con un compo, no es necesario el metodo de filtro 
+   * toda la accion de buscar esta dentro del evento keyListener 
+   */
   KeyListener key = new KeyListener(){
         @Override
-        public void keyTyped(KeyEvent e) { 
+        public void keyTyped(KeyEvent e) {
+            if (e.getSource() == viewProductos.jtf_buscar) {
+                modelProductos.setTrsFiltro(new TableRowSorter(viewProductos.jt_vista.getModel()));
+                viewProductos.jt_vista.setRowSorter(modelProductos.getTrsFiltro());
+            }
         }
 
         @Override
         public void keyPressed(KeyEvent e) {
- 
+            
         }
 
         @Override
         public void keyReleased(KeyEvent e) {
-            
+        modelProductos.setCadena(viewProductos.jtf_buscar.getText());
+        viewProductos.jtf_buscar.setText(modelProductos.getCadena());    
+        modelProductos.getTrsFiltro().setRowFilter(RowFilter.regexFilter(viewProductos.jtf_buscar.getText(), modelProductos.getColumnaABuscar()));   
         }    
     };
 
@@ -85,7 +96,7 @@ public class ControllerProductos {
         this.modelProductos = modelProductos;
         this.viewProductos = viewProductos;
         this.viewProductos.jt_vista.addMouseListener(ml);//agregar a la table el evento de MouseListener
-        
+        this.viewProductos.jtf_buscar.addKeyListener(key); //agregar elevento de keylistener en la caja e texto buscar
         viewProductos.jb_guardar.setEnabled(false);//El boton guardar aparecera inhabilitado
         viewProductos.jb_eliminar.setEnabled(false);//El boton guardar aparecera inhabilitado
         
