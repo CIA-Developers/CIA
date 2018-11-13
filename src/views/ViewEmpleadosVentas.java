@@ -35,7 +35,6 @@ public class ViewEmpleadosVentas extends javax.swing.JPanel {
         jl_telefono = new javax.swing.JLabel();
         jtf_apt_mat = new javax.swing.JTextField();
         jl_ap_pat = new javax.swing.JLabel();
-        jtf_sexo = new javax.swing.JTextField();
         jl_rfc = new javax.swing.JLabel();
         jtf_rfc = new javax.swing.JTextField();
         jl_ap_mat = new javax.swing.JLabel();
@@ -52,6 +51,7 @@ public class ViewEmpleadosVentas extends javax.swing.JPanel {
         jtf_usuario = new javax.swing.JTextField();
         jl_colonia = new javax.swing.JLabel();
         jl_correo1 = new javax.swing.JLabel();
+        jCB_sexo = new javax.swing.JComboBox<>();
         jp_botones = new javax.swing.JPanel();
         jb_nuevo = new javax.swing.JButton();
         jl_nuevo = new javax.swing.JLabel();
@@ -143,23 +143,15 @@ public class ViewEmpleadosVentas extends javax.swing.JPanel {
         jl_correo1.setForeground(new java.awt.Color(51, 51, 51));
         jl_correo1.setText("año-mes-dia");
 
+        jCB_sexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione uno", "Femenino", "Masculino" }));
+
         javax.swing.GroupLayout jp_datosLayout = new javax.swing.GroupLayout(jp_datos);
         jp_datos.setLayout(jp_datosLayout);
         jp_datosLayout.setHorizontalGroup(
             jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_datosLayout.createSequentialGroup()
-                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jp_datosLayout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jl_nombre)
-                            .addComponent(jl_rfc))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtf_rfc, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jp_datosLayout.createSequentialGroup()
+                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_datosLayout.createSequentialGroup()
                         .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jp_datosLayout.createSequentialGroup()
                                 .addComponent(jl_ap_mat)
@@ -173,26 +165,36 @@ public class ViewEmpleadosVentas extends javax.swing.JPanel {
                         .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jl_telefono)
                             .addComponent(jl_calle)
-                            .addComponent(jl_colonia))
+                            .addComponent(jl_colonia)))
+                    .addGroup(jp_datosLayout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jl_nombre)
+                            .addComponent(jl_rfc))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtf_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtf_estado_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtf_sexo, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(51, 51, 51)
+                            .addComponent(jtf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtf_rfc, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(130, 130, 130)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jtf_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtf_estado_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCB_sexo, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(51, 51, 51)
+                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp_datosLayout.createSequentialGroup()
+                        .addComponent(jl_correo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jl_correo1))
+                    .addGroup(jp_datosLayout.createSequentialGroup()
+                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jl_numero)
+                            .addComponent(jl_Provincia))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jp_datosLayout.createSequentialGroup()
-                                .addComponent(jl_correo)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jl_correo1))
-                            .addGroup(jp_datosLayout.createSequentialGroup()
-                                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jl_numero)
-                                    .addComponent(jl_Provincia))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jtf_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jtf_correo, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                            .addComponent(jtf_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtf_correo, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(158, 158, 158))
         );
         jp_datosLayout.setVerticalGroup(
@@ -225,8 +227,8 @@ public class ViewEmpleadosVentas extends javax.swing.JPanel {
                         .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jp_datosLayout.createSequentialGroup()
                                 .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jtf_sexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jl_telefono))
+                                    .addComponent(jl_telefono)
+                                    .addComponent(jCB_sexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(16, 16, 16)
                                 .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jtf_estado_civil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -382,6 +384,7 @@ public class ViewEmpleadosVentas extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> jCB_sexo;
     public javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JButton jb_eliminar;
     public javax.swing.JButton jb_guardar;
@@ -416,7 +419,6 @@ public class ViewEmpleadosVentas extends javax.swing.JPanel {
     public javax.swing.JTextField jtf_estado_civil;
     public javax.swing.JTextField jtf_nombre;
     public javax.swing.JTextField jtf_rfc;
-    public javax.swing.JTextField jtf_sexo;
     public javax.swing.JTextField jtf_telefono;
     public javax.swing.JTextField jtf_usuario;
     // End of variables declaration//GEN-END:variables

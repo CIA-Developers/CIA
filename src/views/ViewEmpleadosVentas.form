@@ -166,21 +166,8 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jl_nombre" min="-2" max="-2" attributes="0"/>
-                              <Component id="jl_rfc" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jtf_nombre" min="-2" pref="148" max="-2" attributes="0"/>
-                              <Component id="jtf_rfc" min="-2" pref="148" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="jl_ap_mat" min="-2" max="-2" attributes="0"/>
@@ -199,30 +186,43 @@
                               <Component id="jl_calle" min="-2" max="-2" attributes="0"/>
                               <Component id="jl_colonia" min="-2" max="-2" attributes="0"/>
                           </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jl_nombre" min="-2" max="-2" attributes="0"/>
+                              <Component id="jl_rfc" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jtf_telefono" min="-2" pref="148" max="-2" attributes="0"/>
-                              <Component id="jtf_estado_civil" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
-                              <Component id="jtf_sexo" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
+                              <Component id="jtf_nombre" min="-2" pref="148" max="-2" attributes="0"/>
+                              <Component id="jtf_rfc" min="-2" pref="148" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jtf_telefono" min="-2" pref="148" max="-2" attributes="0"/>
+                      <Component id="jtf_estado_civil" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
+                      <Component id="jCB_sexo" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jl_correo" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jl_correo1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jl_numero" min="-2" max="-2" attributes="0"/>
+                              <Component id="jl_Provincia" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="jl_correo" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jl_correo1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="jl_numero" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jl_Provincia" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jtf_usuario" min="-2" pref="148" max="-2" attributes="0"/>
-                                      <Component id="jtf_correo" min="-2" pref="173" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <Component id="jtf_usuario" min="-2" pref="148" max="-2" attributes="0"/>
+                              <Component id="jtf_correo" min="-2" pref="173" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -267,8 +267,8 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jtf_sexo" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jl_telefono" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jCB_sexo" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -330,11 +330,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Apellido Paterno:"/>
           </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-          </AuxValues>
-        </Component>
-        <Component class="javax.swing.JTextField" name="jtf_sexo">
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
@@ -498,6 +493,20 @@
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jCB_sexo">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="Seleccione uno"/>
+                <StringItem index="1" value="Femenino"/>
+                <StringItem index="2" value="Masculino"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
       </SubComponents>
