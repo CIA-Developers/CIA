@@ -7,8 +7,12 @@ package controllers;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.RowFilter;
+import javax.swing.table.TableRowSorter;
 import models.ModelClientes;
 import views.ViewClientes;
 
@@ -69,6 +73,32 @@ public class ControllerClientes {
 
         }
 
+    };
+    
+    /**
+     * Busar solo con un compo, no es necesario el metodo de filtro toda la
+     * accion de buscar esta dentro del evento keyListener
+     */
+    KeyListener key = new KeyListener() {
+        @Override
+        public void keyTyped(KeyEvent e) {
+            if (e.getSource() == viewProveedores.jtf_buscar) {
+                modelProveedores.setTrsFiltro(new TableRowSorter(viewProveedores.jt_vista.getModel()));
+                viewProveedores.jt_vista.setRowSorter(modelProveedores.getTrsFiltro());
+            }
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            modelProveedores.setCadena(viewProveedores.jtf_buscar.getText());
+            viewProveedores.jtf_buscar.setText(modelProveedores.getCadena());
+            modelProveedores.getTrsFiltro().setRowFilter(RowFilter.regexFilter(viewProveedores.jtf_buscar.getText(), modelProveedores.getColumnaABuscar()));
+        }
     };
 
     public ControllerClientes(ModelClientes modelClientes, ViewClientes viewClientes) {
