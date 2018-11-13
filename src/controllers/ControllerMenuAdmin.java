@@ -17,7 +17,7 @@ public class ControllerMenuAdmin {
     private final ModelMenuAdmin ModelMenuAdmin;
     private final ViewMenuAdmin  viewMenuAdmin;
     
-     /**
+    /**
      * Esta variable almacena los controladores de cada vista de catalogos
      * para poder utilizarlos dentro del mismo JFrame.
      */
