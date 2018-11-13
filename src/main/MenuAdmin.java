@@ -4,33 +4,10 @@
  * and open the template in the editor.
  */
 package main;
-import views.ViewClientes;
-import models.ModelClientes;
-import controllers.ControllerClientes;
+import views.*;
+import models.*;
+import controllers.*;
 
-import views.ViewEmpleadosCompras;
-import models.ModelEmpleadosCompras;
-import controllers.ControllerEmpleadosCompras;
-
-import views.ViewEmpleadosVentas;
-import models.ModelEmpleadosVentas;
-import controllers.ControllerEmpleadosVentas;
-
-import views.ViewMenuAdmin;
-import models.ModelMenuAdmin;
-import controllers.ControllerMenuAdmin;
-
-import views.ViewProductos;
-import models.ModelProductos;
-import controllers.ControllerProductos;
-
-import views.ViewProveedores;
-import models.ModelProveedores;
-import controllers.ControllerProveedores;
-
-import views.ViewSucursales;
-import models.ModelSucursales;
-import controllers.ControllerSucursales;
 /**
  *
  * @author Salvador Hernández Mendoza
