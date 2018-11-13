@@ -6,8 +6,12 @@
 package controllers;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.RowFilter;
+import javax.swing.table.TableRowSorter;
 import models.ModelEmpleadosVentas;
 import views.ViewEmpleadosVentas;
 /**
@@ -56,6 +60,32 @@ public class ControllerEmpleadosVentas {
         public void mouseExited(MouseEvent e) {
         }
 
+    };
+   
+    /**
+     * Busar solo con un compo, no es necesario el metodo de filtro toda la
+     * accion de buscar esta dentro del evento keyListener
+     */
+    KeyListener key = new KeyListener() {
+        @Override
+        public void keyTyped(KeyEvent e) {
+            if (e.getSource() == viewsEmpleadosVentas.jtf_buscar) {
+                modelEmpleadosVentas.setTrsFiltro(new TableRowSorter(viewsEmpleadosVentas.jt_vista.getModel()));
+               viewsEmpleadosVentas.jt_vista.setRowSorter(modelEmpleadosVentas.getTrsFiltro());
+            }
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            modelEmpleadosVentas.setCadena(viewsEmpleadosventas.jtf_buscar.getText());
+            viewsEmpleadosVentas.jtf_buscar.setText(modelEmpleadosVentas.getCadena());
+            modelEmpleadosVentas.getTrsFiltro().setRowFilter(RowFilter.regexFilter(viewsEmpleadosVentas.jtf_buscar.getText(), modelEmpleadosVentas.getColumnaABuscar()));
+        }
     };
 
     public ControllerEmpleadosVentas(ModelEmpleadosVentas modelEmpleadosVentas, ViewEmpleadosVentas viewsEmpleadosVentas) {
