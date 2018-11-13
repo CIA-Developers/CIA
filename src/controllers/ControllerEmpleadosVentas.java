@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package controllers;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -14,34 +15,36 @@ import javax.swing.RowFilter;
 import javax.swing.table.TableRowSorter;
 import models.ModelEmpleadosVentas;
 import views.ViewEmpleadosVentas;
+
 /**
  *
  * @author Octaviano
  */
 public class ControllerEmpleadosVentas {
+
     public ModelEmpleadosVentas modelEmpleadosVentas;
     public ViewEmpleadosVentas viewsEmpleadosVentas;
-    
-    ActionListener list = new ActionListener(){
+
+    ActionListener list = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == viewsEmpleadosVentas.jb_nuevo) {
                 nuevo_ventas();
-            }else if (e.getSource() == viewsEmpleadosVentas.jb_modificar) {
+            } else if (e.getSource() == viewsEmpleadosVentas.jb_modificar) {
                 modificar_ventas();
-            }else if (e.getSource() == viewsEmpleadosVentas.jb_guardar) {
+            } else if (e.getSource() == viewsEmpleadosVentas.jb_guardar) {
                 Guardar();
-            }              
+            }
         }
-        
+
     };
-    
-   MouseListener ml = new MouseListener(){
+
+    MouseListener ml = new MouseListener() {
         @Override
         public void mouseClicked(MouseEvent e) {
-          if (e.getSource() == viewsEmpleadosVentas.jt_vista) {
+            if (e.getSource() == viewsEmpleadosVentas.jt_vista) {
                 jt_vista_MouseClicked();
-            }  
+            }
         }
 
         @Override
@@ -61,7 +64,7 @@ public class ControllerEmpleadosVentas {
         }
 
     };
-   
+
     /**
      * Busar solo con un compo, no es necesario el metodo de filtro toda la
      * accion de buscar esta dentro del evento keyListener
@@ -71,7 +74,7 @@ public class ControllerEmpleadosVentas {
         public void keyTyped(KeyEvent e) {
             if (e.getSource() == viewsEmpleadosVentas.jtf_buscar) {
                 modelEmpleadosVentas.setTrsFiltro(new TableRowSorter(viewsEmpleadosVentas.jt_vista.getModel()));
-               viewsEmpleadosVentas.jt_vista.setRowSorter(modelEmpleadosVentas.getTrsFiltro());
+                viewsEmpleadosVentas.jt_vista.setRowSorter(modelEmpleadosVentas.getTrsFiltro());
             }
         }
 
@@ -91,38 +94,41 @@ public class ControllerEmpleadosVentas {
     public ControllerEmpleadosVentas(ModelEmpleadosVentas modelEmpleadosVentas, ViewEmpleadosVentas viewsEmpleadosVentas) {
         this.modelEmpleadosVentas = modelEmpleadosVentas;
         this.viewsEmpleadosVentas = viewsEmpleadosVentas;
+        //agregar elevento de keylistener en la caja e texto buscar
+        this.viewsEmpleadosVentas.jtf_buscar.addKeyListener(key);
         //agregar a la table el evento de MouseListener
         this.viewsEmpleadosVentas.jt_vista.addMouseListener(ml);
-        
+
         viewsEmpleadosVentas.jb_guardar.setEnabled(false);//El boton guardar aparecera inhabilitado
         viewsEmpleadosVentas.jb_eliminar.setEnabled(false);//El boton guardar aparecera inhabilitado
-        
+
         ConexionBD();
         cajas_deshabilitadas();
         setActionListener();
     }
-    
-     /***
-     * agregar eventos de actionlistener a botones 
+
+    /**
+     * *
+     * agregar eventos de actionlistener a botones
      */
-    private void setActionListener(){
+    private void setActionListener() {
         viewsEmpleadosVentas.jb_nuevo.addActionListener(list);
         viewsEmpleadosVentas.jb_modificar.addActionListener(list);
         viewsEmpleadosVentas.jb_guardar.addActionListener(list);
     }
-    
-     /**
-     * este metodo hace la conexion a la base de datos 
-     * llama a los metodos conectar, mostrar  dentro del modelo 
-     * muestra en la tabla los datos que contiene la variable de modelo_EmpleadosCompras
+
+    /**
+     * este metodo hace la conexion a la base de datos llama a los metodos
+     * conectar, mostrar dentro del modelo muestra en la tabla los datos que
+     * contiene la variable de modelo_EmpleadosCompras
      */
-    public void ConexionBD(){
-         modelEmpleadosVentas.Conectar();
+    public void ConexionBD() {
+        modelEmpleadosVentas.Conectar();
         modelEmpleadosVentas.mostrar();
         //asignar a la tabla los valores correspondientes
-        viewsEmpleadosVentas.jt_vista.setModel(modelEmpleadosVentas.getModelo_EmVentas()); 
+        viewsEmpleadosVentas.jt_vista.setModel(modelEmpleadosVentas.getModelo_EmVentas());
     }
-    
+
     //variable que se le asigna el elemento seleccionado en la tabla
     private void jt_vista_MouseClicked() {
         viewsEmpleadosVentas.jb_guardar.setEnabled(false);
@@ -141,8 +147,9 @@ public class ControllerEmpleadosVentas {
         viewsEmpleadosVentas.jtf_usuario.setText(viewsEmpleadosVentas.jt_vista.getValueAt(modelEmpleadosVentas.getRec(), 8).toString());
     }
 
-    /***
-     * Metodos Habilitar y deshabilitar cajas 
+    /**
+     * *
+     * Metodos Habilitar y deshabilitar cajas
      */
     private void cajas_deshabilitadas() {
         viewsEmpleadosVentas.jtf_rfc.setEditable(false);
@@ -155,8 +162,8 @@ public class ControllerEmpleadosVentas {
         viewsEmpleadosVentas.jtf_correo.setEditable(false);
         viewsEmpleadosVentas.jtf_usuario.setEditable(false);
     }
-    
-    public void cajas_habilitadas(){
+
+    public void cajas_habilitadas() {
         viewsEmpleadosVentas.jtf_rfc.setEditable(true);
         viewsEmpleadosVentas.jtf_nombre.setEditable(true);
         viewsEmpleadosVentas.jtf_ap_pat.setEditable(true);
@@ -167,9 +174,9 @@ public class ControllerEmpleadosVentas {
         viewsEmpleadosVentas.jtf_correo.setEditable(true);
         viewsEmpleadosVentas.jtf_usuario.setEditable(true);
     }
-    
+
     //***************** BOTONES Nuevo, Borrar, Guardar y Modificar**************************
-     public void nuevo_ventas(){
+    public void nuevo_ventas() {
         viewsEmpleadosVentas.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
         viewsEmpleadosVentas.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
         //limpiar cada caja de la Interfaz 
@@ -180,18 +187,18 @@ public class ControllerEmpleadosVentas {
         viewsEmpleadosVentas.jtf_apt_mat.setText(modelEmpleadosVentas.getLimpiar());
         viewsEmpleadosVentas.jtf_estado_civil.setText(modelEmpleadosVentas.getLimpiar());
         viewsEmpleadosVentas.jtf_telefono.setText(modelEmpleadosVentas.getLimpiar());
-        viewsEmpleadosVentas.jtf_correo.setText(modelEmpleadosVentas.getLimpiar()); 
-        viewsEmpleadosVentas.jtf_usuario.setText(modelEmpleadosVentas.getLimpiar()); 
+        viewsEmpleadosVentas.jtf_correo.setText(modelEmpleadosVentas.getLimpiar());
+        viewsEmpleadosVentas.jtf_usuario.setText(modelEmpleadosVentas.getLimpiar());
         cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
-     } 
-     
-      public void modificar_ventas(){
+    }
+
+    public void modificar_ventas() {
         viewsEmpleadosVentas.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
         viewsEmpleadosVentas.jb_nuevo.setEnabled(false);//El boton modificar aparecera inhabilitado
         //limpiar cada caja de la Interfaz 
-         modelEmpleadosVentas.setVerificar(2);// le da el valor a verificar de uno para identificar Modifiar registro
-         viewsEmpleadosVentas.jtf_rfc.setEditable(false); // el RFC no se puede modificar
-         viewsEmpleadosVentas.jtf_nombre.setEditable(true); 
+        modelEmpleadosVentas.setVerificar(2);// le da el valor a verificar de uno para identificar Modifiar registro
+        viewsEmpleadosVentas.jtf_rfc.setEditable(false); // el RFC no se puede modificar
+        viewsEmpleadosVentas.jtf_nombre.setEditable(true);
         viewsEmpleadosVentas.jtf_ap_pat.setEditable(true);
         viewsEmpleadosVentas.jtf_apt_mat.setEditable(true);
         viewsEmpleadosVentas.jCB_sexo.setEditable(true);
@@ -200,8 +207,8 @@ public class ControllerEmpleadosVentas {
         viewsEmpleadosVentas.jtf_correo.setEditable(true);
         viewsEmpleadosVentas.jtf_usuario.setEditable(true);
     }
-      
-       public void Guardar(){
+
+    public void Guardar() {
         // si la variable verificar es igual a 0 se llama al metodo de guardar Nuevo
         if (modelEmpleadosVentas.getVerificar() == 1) {
             // darle el valor a las variables
@@ -209,21 +216,20 @@ public class ControllerEmpleadosVentas {
             modelEmpleadosVentas.setNombre(viewsEmpleadosVentas.jtf_nombre.getText());
             modelEmpleadosVentas.setApellido_pat(viewsEmpleadosVentas.jtf_ap_pat.getText());
             modelEmpleadosVentas.setApellido_mat(viewsEmpleadosVentas.jtf_apt_mat.getText());
-            modelEmpleadosVentas.setSexo((String)viewsEmpleadosVentas.jCB_sexo.getSelectedItem());
+            modelEmpleadosVentas.setSexo((String) viewsEmpleadosVentas.jCB_sexo.getSelectedItem());
             modelEmpleadosVentas.setEstado_civil(viewsEmpleadosVentas.jtf_estado_civil.getText());
             modelEmpleadosVentas.setTelefono(viewsEmpleadosVentas.jtf_telefono.getText());
-            modelEmpleadosVentas.setCorreo(viewsEmpleadosVentas.jtf_correo.getText()); 
-            modelEmpleadosVentas.setUsuario(viewsEmpleadosVentas.jtf_usuario.getText()); 
-            
+            modelEmpleadosVentas.setCorreo(viewsEmpleadosVentas.jtf_correo.getText());
+            modelEmpleadosVentas.setUsuario(viewsEmpleadosVentas.jtf_usuario.getText());
+
             modelEmpleadosVentas.Guardar_Nuevo(); // metodo de  insertar nuevo registro           
-        }
-        else{
+        } else {
             // darle el valor a las variables
             modelEmpleadosVentas.setRfc(viewsEmpleadosVentas.jtf_rfc.getText());
             modelEmpleadosVentas.setNombre(viewsEmpleadosVentas.jtf_nombre.getText());
             modelEmpleadosVentas.setApellido_pat(viewsEmpleadosVentas.jtf_ap_pat.getText());
             modelEmpleadosVentas.setApellido_mat(viewsEmpleadosVentas.jtf_apt_mat.getText());
-            modelEmpleadosVentas.setSexo((String)viewsEmpleadosVentas.jCB_sexo.getSelectedItem());
+            modelEmpleadosVentas.setSexo((String) viewsEmpleadosVentas.jCB_sexo.getSelectedItem());
             modelEmpleadosVentas.setEstado_civil(viewsEmpleadosVentas.jtf_estado_civil.getText());
             modelEmpleadosVentas.setTelefono(viewsEmpleadosVentas.jtf_telefono.getText());
             modelEmpleadosVentas.setCorreo(viewsEmpleadosVentas.jtf_correo.getText());
@@ -231,9 +237,9 @@ public class ControllerEmpleadosVentas {
             modelEmpleadosVentas.Guardar_Modificado();// metodo de  Modificar el registro
         }
         //LIMPIAR TABLA 
-        for (int i = 0; i <  viewsEmpleadosVentas.jt_vista.getRowCount(); i++) {
-           modelEmpleadosVentas.getModelo_EmVentas().removeRow(i);
-            i-=1;
+        for (int i = 0; i < viewsEmpleadosVentas.jt_vista.getRowCount(); i++) {
+            modelEmpleadosVentas.getModelo_EmVentas().removeRow(i);
+            i -= 1;
         }
         //mostrar los nuevos datos 
         modelEmpleadosVentas.mostrar();
