@@ -6,8 +6,11 @@
 package controllers;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.table.TableRowSorter;
 import models.ModelProductos;
 import views.ViewProductos;
 
@@ -61,6 +64,21 @@ public class ControllerProductos {
 
         }
 
+    };
+  KeyListener key = new KeyListener(){
+        @Override
+        public void keyTyped(KeyEvent e) { 
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+ 
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            
+        }    
     };
 
     public ControllerProductos(ModelProductos modelProductos, ViewProductos viewProductos) {
