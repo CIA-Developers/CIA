@@ -235,7 +235,7 @@ public class ModelEmpleadosVentas {
         if(JOptionPane.OK_OPTION==confirmar) {
             try{
             st.executeUpdate("insert into empleados_ventas (RFC_empl_vent,nombre_empl_vent,ap_pat_vent,ap_mat_vent,sexo_vent,estado_civil_vent,telefono_vent,correo_vent,usuario_vent, passwd_vent) values"
-                    + "('"+rfc+"','"+nombre+"','"+apellido_pat+"','"+apellido_mat+"','"+sexo+"','"+estado_civil+"','"+telefono+"','"+correo+"','"+usuario+",'"+password+"');"); 
+                    + "('"+rfc+"','"+nombre+"','"+apellido_pat+"','"+apellido_mat+"','"+sexo+"','"+estado_civil+"','"+telefono+"','"+correo+"','"+usuario+"','"+password+"');"); 
                 JOptionPane.showMessageDialog(null,"Guardado con exito ");
             } catch(Exception err) 
             { 
@@ -243,7 +243,6 @@ public class ModelEmpleadosVentas {
             }
         }
     }
-    
      public void Guardar_Modificado(){
         //cada variable obtendra el valor actual de las cajas de texto 
        rfc=this.getRfc();
