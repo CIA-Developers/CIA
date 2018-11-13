@@ -75,12 +75,11 @@ public class ControllerProveedores {
         }
     };
 
-      /**
-   * Busar solo con un compo, no es necesario el metodo de filtro 
-   * toda la accion de buscar esta dentro del evento keyListener 
-   */
-    
-  KeyListener key = new KeyListener(){
+    /**
+     * Busar solo con un compo, no es necesario el metodo de filtro toda la
+     * accion de buscar esta dentro del evento keyListener
+     */
+    KeyListener key = new KeyListener() {
         @Override
         public void keyTyped(KeyEvent e) {
             if (e.getSource() == viewProveedores.jtf_buscar) {
@@ -91,28 +90,21 @@ public class ControllerProveedores {
 
         @Override
         public void keyPressed(KeyEvent e) {
-            
+
         }
 
         @Override
         public void keyReleased(KeyEvent e) {
-        modelProveedores.setCadena(viewProveedores.jtf_buscar.getText());
-        viewProveedores.jtf_buscar.setText(modelProveedores.getCadena());    
-        modelProveedores.getTrsFiltro().setRowFilter(RowFilter.regexFilter(viewProveedores.jtf_buscar.getText(), modelProveedores.getColumnaABuscar()));   
-        }    
+            modelProveedores.setCadena(viewProveedores.jtf_buscar.getText());
+            viewProveedores.jtf_buscar.setText(modelProveedores.getCadena());
+            modelProveedores.getTrsFiltro().setRowFilter(RowFilter.regexFilter(viewProveedores.jtf_buscar.getText(), modelProveedores.getColumnaABuscar()));
+        }
     };
-  
-  
-    
-    
-    
-    
-    
-    
-    
+
     public ControllerProveedores(ModelProveedores modelProveedores, ViewProveedores viewProveedores) {
         this.modelProveedores = modelProveedores;
         this.viewProveedores = viewProveedores;
+        this.viewProveedores.jtf_buscar.addKeyListener(key); //agregar elevento de keylistener en la caja e texto buscar
         this.viewProveedores.jt_vista.addMouseListener(ml);//agregar a la table el evento de MouseListener
 
         viewProveedores.jb_guardar.setEnabled(false);
