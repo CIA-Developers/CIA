@@ -79,6 +79,7 @@ public class ControllerProveedores {
    * Busar solo con un compo, no es necesario el metodo de filtro 
    * toda la accion de buscar esta dentro del evento keyListener 
    */
+    
   KeyListener key = new KeyListener(){
         @Override
         public void keyTyped(KeyEvent e) {
