@@ -82,9 +82,9 @@ public class ControllerClientes {
     KeyListener key = new KeyListener() {
         @Override
         public void keyTyped(KeyEvent e) {
-            if (e.getSource() == viewProveedores.jtf_buscar) {
-                modelProveedores.setTrsFiltro(new TableRowSorter(viewProveedores.jt_vista.getModel()));
-                viewProveedores.jt_vista.setRowSorter(modelProveedores.getTrsFiltro());
+            if (e.getSource() == viewClientes.jtf_buscar) {
+                modelClientes.setTrsFiltro(new TableRowSorter(viewClientes.jt_vista.getModel()));
+                viewClientes.jt_vista.setRowSorter(modelClientes.getTrsFiltro());
             }
         }
 
@@ -95,9 +95,9 @@ public class ControllerClientes {
 
         @Override
         public void keyReleased(KeyEvent e) {
-            modelProveedores.setCadena(viewProveedores.jtf_buscar.getText());
-            viewProveedores.jtf_buscar.setText(modelProveedores.getCadena());
-            modelProveedores.getTrsFiltro().setRowFilter(RowFilter.regexFilter(viewProveedores.jtf_buscar.getText(), modelProveedores.getColumnaABuscar()));
+            modelClientes.setCadena(viewClientes.jtf_buscar.getText());
+            viewClientes.jtf_buscar.setText(modelClientes.getCadena());
+            modelClientes.getClientes().setRowFilter(RowFilter.regexFilter(viewClientes.jtf_buscar.getText(), modelClientes.getColumnaABuscar()));
         }
     };
 
