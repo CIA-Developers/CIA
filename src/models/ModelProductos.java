@@ -40,6 +40,10 @@ public class ModelProductos {
     public void setRec(int rec) {
         this.rec = rec;
     } 
+    
+    
+    
+    
      /**
      * Variables para el metodo de busqueda
      */   
@@ -71,6 +75,9 @@ public class ModelProductos {
     public void setColumnaABuscar(int columnaABuscar) {
         this.columnaABuscar = columnaABuscar;
     }
+    
+    
+    
     
     //************************Variables que pertenecen a las cajas de Texto********************************
     public int verificar; // variable que nos ayudara a ver si se inserto un nuevo registro o se midificara

@@ -66,6 +66,9 @@ public class ControllerProductos {
         }
 
     }; 
+  
+  
+  
   /**
    * Busar solo con un compo, no es necesario el metodo de filtro 
    * toda la accion de buscar esta dentro del evento keyListener 
@@ -91,6 +94,8 @@ public class ControllerProductos {
         modelProductos.getTrsFiltro().setRowFilter(RowFilter.regexFilter(viewProductos.jtf_buscar.getText(), modelProductos.getColumnaABuscar()));   
         }    
     };
+  
+  
 
     public ControllerProductos(ModelProductos modelProductos, ViewProductos viewProductos) {
         this.modelProductos = modelProductos;
