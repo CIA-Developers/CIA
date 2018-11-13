@@ -157,15 +157,16 @@ public class ControllerProveedores {
         viewProveedores.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
         viewProveedores.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
         //limpiar cada caja de la Interfaz 
-        modelProveedores.setVerificar(1);// le da el valor a verificar de cero para identificar un nuevo registro
+        modelProveedores.setVerificar(1);// le da el valor a verificar de cero para identificar un nuevo registroç
+        viewProveedores.jtf_id.setText(modelProveedores.getLimpiar());
         viewProveedores.jtf_nombre.setText(modelProveedores.getLimpiar());
         viewProveedores.jtf_ap_pat.setText(modelProveedores.getLimpiar());
         viewProveedores.jtf_apt_mat.setText(modelProveedores.getLimpiar());
         viewProveedores.jtf_telefono.setText(modelProveedores.getLimpiar());
-        viewProveedores.jtf_provincia.setText(modelProveedores.getLimpiar());
         viewProveedores.jtf_municipio.setText(modelProveedores.getLimpiar());
         viewProveedores.jtf_colonia.setText(modelProveedores.getLimpiar());
         viewProveedores.jtf_numero.setText(modelProveedores.getLimpiar());
+        viewProveedores.jtf_provincia.setText(modelProveedores.getLimpiar());
         viewProveedores.jtf_correo.setText(modelProveedores.getLimpiar());
         cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
     }
@@ -180,10 +181,10 @@ public class ControllerProveedores {
         viewProveedores.jtf_ap_pat.setEditable(true);
         viewProveedores.jtf_apt_mat.setEditable(true);
         viewProveedores.jtf_telefono.setEditable(true);
-        viewProveedores.jtf_provincia.setEditable(true);
         viewProveedores.jtf_municipio.setEditable(true);
         viewProveedores.jtf_colonia.setEditable(true);
         viewProveedores.jtf_numero.setEditable(true);
+        viewProveedores.jtf_provincia.setEditable(true);
         viewProveedores.jtf_correo.setEditable(true);
     }
 
@@ -196,11 +197,11 @@ public class ControllerProveedores {
             modelProveedores.setAp_pat(viewProveedores.jtf_ap_pat.getText());
             modelProveedores.setAp_mat(viewProveedores.jtf_apt_mat.getText());
             modelProveedores.setTelefono(viewProveedores.jtf_telefono.getText());
-            modelProveedores.setProvincia(viewProveedores.jtf_provincia.getText());
+            modelProveedores.setCalle(viewProveedores.jtf_municipio.getText());
             modelProveedores.setColonia(viewProveedores.jtf_colonia.getText());
             modelProveedores.setNumero(viewProveedores.jtf_numero.getText());
+            modelProveedores.setProvincia(viewProveedores.jtf_provincia.getText());
             modelProveedores.setCorreo(viewProveedores.jtf_correo.getText());
-
             modelProveedores.Guardar_Nuevo(); // metodo de  insertar nuevo registro           
         } else {
             // darle el valor a las variables
@@ -209,9 +210,10 @@ public class ControllerProveedores {
             modelProveedores.setAp_pat(viewProveedores.jtf_ap_pat.getText());
             modelProveedores.setAp_mat(viewProveedores.jtf_apt_mat.getText());
             modelProveedores.setTelefono(viewProveedores.jtf_telefono.getText());
-            modelProveedores.setProvincia(viewProveedores.jtf_provincia.getText());
+            modelProveedores.setCalle(viewProveedores.jtf_municipio.getText());
             modelProveedores.setColonia(viewProveedores.jtf_colonia.getText());
             modelProveedores.setNumero(viewProveedores.jtf_numero.getText());
+            modelProveedores.setProvincia(viewProveedores.jtf_provincia.getText());
             modelProveedores.setCorreo(viewProveedores.jtf_correo.getText());
             modelProveedores.Guardar_Modificado();// metodo de  Modificar el registro
         }

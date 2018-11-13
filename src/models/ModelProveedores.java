@@ -274,7 +274,7 @@ public class ModelProveedores {
         try {
             conexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia", "root", "");
             st = conexion.createStatement();
-            rs = st.executeQuery("SELECT id_proveedor, nombre_prov, ap_pat_prov, ap_mat_prov, telefono_prov, calle_prov,colonia_prov, numero_prov, provincia_prov, correo_prov FROM proveedores;");
+            rs = st.executeQuery("SELECT * FROM proveedores;");
 
             rs.first();
 
@@ -283,7 +283,7 @@ public class ModelProveedores {
         }
     }
 
-    public void Guardar_Nuevo() {
+   public void Guardar_Nuevo() {
         //cada variable obtendra el valor actual de las cajas de texto 
         id = this.getId();
         nombre = this.getNombre();
@@ -300,7 +300,7 @@ public class ModelProveedores {
 
         if (JOptionPane.OK_OPTION == confirmar) {
             try {
-                st.executeUpdate("insert into productos (id_proveedor,nombre_prov,ap_pat_prov,ap_mat_prov,telefono_prov,calle_prov,colonia_prov,numero_prov,provincia_prov) values"
+                st.executeUpdate("insert into proveedores (id_proveedor,nombre_prov,ap_pat_prov,ap_mat_prov,telefono_prov,calle_prov,colonia_prov,numero_prov,provincia_prov,correo_prov) values"
                         + "('" + id + "','" + nombre + "','" + ap_pat + "','" + ap_mat + "','" + Telefono + "','" + calle + "','" + colonia + "','" + numero + "','" + provincia + "','" + correo + "');");
                 JOptionPane.showMessageDialog(null, "Guardado con exito ");
             } catch (Exception err) {
@@ -308,7 +308,7 @@ public class ModelProveedores {
             }
         }
     }
-
+//nuevo
     public void Guardar_Modificado() {
         //cada variable obtendra el valor actual de las cajas de texto 
         id = this.getId();
@@ -322,17 +322,19 @@ public class ModelProveedores {
         provincia = this.getProvincia();
         correo = this.getCorreo();
 
+        
         int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de MODIFICAR registro?");
-
-        if (JOptionPane.OK_OPTION == confirmar) {
-            try {
-                st.executeUpdate("UPDATE productos SET nombre_prov='" + nombre + "',ap_pat_prov='" + ap_pat + "',ap_mat_prov='" + ap_mat + "',telefono_prov='" + Telefono + "',calle_prov='" + calle + "',colonia_prov='" + colonia + ",numero_prov='" + numero + "' WHERE id_proveedor='" + id + "';");
-                JOptionPane.showMessageDialog(null, "El registro se modifico correctamente");
-            } catch (Exception err) {
-                JOptionPane.showMessageDialog(null, "Error Nuevo no se puede guardar " + err.getMessage());
+        
+        if(JOptionPane.OK_OPTION==confirmar) {
+            try{
+               st.executeUpdate("UPDATE proveedores SET nombre_prov='"+nombre+"',ap_pat_prov='"+ap_pat+"',ap_mat_prov='"+ap_mat+"',telefono_prov='"+Telefono+"',calle_prov='"+calle+"',colonia_prov='"+colonia+"',numero_prov='"+numero+"' ,provincia_prov='"+provincia+"',correo_prov='"+correo+"'WHERE id_proveedor='"+id+"';");
+               JOptionPane.showMessageDialog(null,"El registro se modifico correctamente");
+            } catch(Exception err) 
+            { 
+                JOptionPane.showMessageDialog(null,"Error Nuevo no se puede guardar "+err.getMessage()); 
             }
         }
-    }
+    }  
 
 //Metodo mostar
     public void mostrar() {
