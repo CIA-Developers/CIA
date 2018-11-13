@@ -74,7 +74,7 @@ public class ControllerClientes {
         }
 
     };
-    
+
     /**
      * Busar solo con un compo, no es necesario el metodo de filtro toda la
      * accion de buscar esta dentro del evento keyListener
@@ -97,13 +97,14 @@ public class ControllerClientes {
         public void keyReleased(KeyEvent e) {
             modelClientes.setCadena(viewClientes.jtf_buscar.getText());
             viewClientes.jtf_buscar.setText(modelClientes.getCadena());
-            modelClientes.getClientes().setRowFilter(RowFilter.regexFilter(viewClientes.jtf_buscar.getText(), modelClientes.getColumnaABuscar()));
+            modelClientes.getTrsFiltro().setRowFilter(RowFilter.regexFilter(viewClientes.jtf_buscar.getText(), modelClientes.getColumnaABuscar()));
         }
     };
 
     public ControllerClientes(ModelClientes modelClientes, ViewClientes viewClientes) {
         this.modelClientes = modelClientes;
         this.viewClientes = viewClientes;
+        this.viewClientes.jtf_buscar.addKeyListener(key); //agregar elevento de keylistener en la caja e texto buscar
         this.viewClientes.jt_vista.addMouseListener(ml);//agregar a la table el evento de MouseListener
 
         viewClientes.jb_guardar.setEnabled(false);
@@ -149,7 +150,6 @@ public class ControllerClientes {
         viewClientes.jtf_colonia.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 7).toString());
         viewClientes.jtf_numero.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 8).toString());
         viewClientes.jtf_correo.setText(viewClientes.jt_vista.getValueAt(modelClientes.getRec(), 9).toString());
-      
 
     }
 
