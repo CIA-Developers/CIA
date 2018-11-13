@@ -44,35 +44,25 @@ public class ModelSucursales {
     /**
      * Variables para el metodo de busqueda
      */   
-    public String[] titulos = {"No sucursal", "Calle", "Colonia", "Numero","Telefono", "Codigo_producto", "Nombre Producto", "Stock", "Stok maximo", "Stock minimo"}; //columnas de la tabla
+    public int columnaABuscar;
+    public String cadena;
 
-    public String[] getTitulos() {
-        return titulos;
+    public String getCadena() {
+        return cadena;
     }
 
-    public void setTitulos(String[] titulos) {
-        this.titulos = titulos;
-    }
-    
-    public String[] registros = new String[50];
-
-    public String[] getRegistros() {
-        return registros;
-    }
-
-    public void setRegistros(String[] registros) {
-        this.registros = registros;
+    public void setCadena(String cadena) {
+        this.cadena = cadena;
     }
     
-    public String sql; //conexion a la Base de datos para la busqueda 
-
-    public String getSql() {
-        return sql;
+    public int getColumnaABuscar() {
+        return columnaABuscar;
     }
 
-    public void setSql(String sql) {
-        this.sql = sql;
+    public void setColumnaABuscar(int columnaABuscar) {
+        this.columnaABuscar = columnaABuscar;
     }
+    
     //Variables que corresponden a cada caja de texto
     public String sucursal;
     public String calle;
@@ -245,44 +235,6 @@ public class ModelSucursales {
         }
     }
     
-    public void busqueda(){
-        // consulta de la Base de datos 
-        sql= "SELECT sucursal.no_sucursal,productos.nom_producto, calle, colonia, numero, telefono,sucursal_productos.codigo_producto, existencias, limite_maximo, limite_minimo from sucursal inner join sucursal_productos on sucursal.no_sucursal = sucursal_productos.no_sucursal inner join productos on productos.codigo_producto = sucursal_productos.codigo_producto "
-                + "WHERE sucursal.no_sucursal'%" + sucursal + "%' "
-                + "OR productos.nom_producto LIKE '%" + nombre_producto+ "%'"
-                + "OR calle LIKE '%" + calle + "%'"
-                + "OR colonia LIKE '%" + colonia + "%'"
-                + "OR calle LIKE '%" + calle + "%'"
-                + "OR telefono LIKE '%" + colonia + "%'"
-                + "OR numero LIKE '%" + numero + "%'"
-                + "OR telefono LIKE '%" + Telefono + "%'"
-                + "OR sucursal_productos.codigo_producto LIKE '%" + codigo_producto + "%'"
-                + "OR existencias LIKE '%" + stock + "%'"
-                + "OR limite_maximo LIKE '%" + stock_maximo + "%'"
-                + "OR limite_minimo LIKE '%" + Strock_minimo + "%'";
-        model = new DefaultTableModel(null, titulos);
-        Database cc = new Database();
-        Connection cn = getConexion();
-        try {
-            Statement st = (Statement) cn.createStatement();
-            ResultSet rs = st.executeQuery(sql);
-            while (rs.next()) { //Registros sobre a los que se les realizara una busqueda 
-                registros[0] = rs.getString("sucursal.no_sucursal");
-                registros[1] = rs.getString("calle");
-                registros[2] = rs.getString("colonia");
-                registros[3] = rs.getString("numero"); 
-                registros[4] = rs.getString("telefono");
-                registros[5] = rs.getString("sucursal_productos.codigo_producto");
-                registros[6] = rs.getString("productos.nom_producto");
-                registros[7] = rs.getString("existencias");
-                registros[8] = rs.getString("limite_maximo");
-                registros[9] = rs.getString("limite_minimo");
-                model.addRow(registros);
-            }
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null,"error00"+ ex);
-        }         
-    }
     //*****************METODOS DE BOTONES Nuevo, Borrar, Guardar y Modificar**************************
     
 }
