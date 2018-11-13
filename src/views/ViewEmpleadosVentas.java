@@ -384,7 +384,7 @@ public class ViewEmpleadosVentas extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jCB_sexo;
+    public javax.swing.JComboBox<String> jCB_sexo;
     public javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JButton jb_eliminar;
     public javax.swing.JButton jb_guardar;

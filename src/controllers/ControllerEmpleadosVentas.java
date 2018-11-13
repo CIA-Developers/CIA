@@ -104,7 +104,7 @@ public class ControllerEmpleadosVentas {
         viewsEmpleadosVentas.jtf_nombre.setText(viewsEmpleadosVentas.jt_vista.getValueAt(modelEmpleadosVentas.getRec(), 1).toString());
         viewsEmpleadosVentas.jtf_ap_pat.setText(viewsEmpleadosVentas.jt_vista.getValueAt(modelEmpleadosVentas.getRec(), 2).toString());
         viewsEmpleadosVentas.jtf_apt_mat.setText(viewsEmpleadosVentas.jt_vista.getValueAt(modelEmpleadosVentas.getRec(), 3).toString());
-        viewsEmpleadosVentas.jtf_sexo.setText(viewsEmpleadosVentas.jt_vista.getValueAt(modelEmpleadosVentas.getRec(), 4).toString());
+        viewsEmpleadosVentas.jCB_sexo.setSelectedItem(viewsEmpleadosVentas.jt_vista.getValueAt(modelEmpleadosVentas.getRec(), 4).toString());
         viewsEmpleadosVentas.jtf_estado_civil.setText(viewsEmpleadosVentas.jt_vista.getValueAt(modelEmpleadosVentas.getRec(), 5).toString());
         viewsEmpleadosVentas.jtf_telefono.setText(viewsEmpleadosVentas.jt_vista.getValueAt(modelEmpleadosVentas.getRec(), 6).toString());
         viewsEmpleadosVentas.jtf_correo.setText(viewsEmpleadosVentas.jt_vista.getValueAt(modelEmpleadosVentas.getRec(), 7).toString());
@@ -119,7 +119,7 @@ public class ControllerEmpleadosVentas {
         viewsEmpleadosVentas.jtf_nombre.setEditable(false);
         viewsEmpleadosVentas.jtf_ap_pat.setEditable(false);
         viewsEmpleadosVentas.jtf_apt_mat.setEditable(false);
-        viewsEmpleadosVentas.jtf_sexo.setEditable(false);
+        viewsEmpleadosVentas.jCB_sexo.setEditable(false);
         viewsEmpleadosVentas.jtf_estado_civil.setEditable(false);
         viewsEmpleadosVentas.jtf_telefono.setEditable(false);
         viewsEmpleadosVentas.jtf_correo.setEditable(false);
@@ -131,7 +131,7 @@ public class ControllerEmpleadosVentas {
         viewsEmpleadosVentas.jtf_nombre.setEditable(true);
         viewsEmpleadosVentas.jtf_ap_pat.setEditable(true);
         viewsEmpleadosVentas.jtf_apt_mat.setEditable(true);
-        viewsEmpleadosVentas.jtf_sexo.setEditable(true);
+        viewsEmpleadosVentas.jCB_sexo.setEditable(true);
         viewsEmpleadosVentas.jtf_estado_civil.setEditable(true);
         viewsEmpleadosVentas.jtf_telefono.setEditable(true);
         viewsEmpleadosVentas.jtf_correo.setEditable(true);
@@ -148,7 +148,6 @@ public class ControllerEmpleadosVentas {
         viewsEmpleadosVentas.jtf_nombre.setText(modelEmpleadosVentas.getLimpiar());
         viewsEmpleadosVentas.jtf_ap_pat.setText(modelEmpleadosVentas.getLimpiar());
         viewsEmpleadosVentas.jtf_apt_mat.setText(modelEmpleadosVentas.getLimpiar());
-        viewsEmpleadosVentas.jtf_sexo.setText(modelEmpleadosVentas.getLimpiar());
         viewsEmpleadosVentas.jtf_estado_civil.setText(modelEmpleadosVentas.getLimpiar());
         viewsEmpleadosVentas.jtf_telefono.setText(modelEmpleadosVentas.getLimpiar());
         viewsEmpleadosVentas.jtf_correo.setText(modelEmpleadosVentas.getLimpiar()); 
@@ -165,7 +164,7 @@ public class ControllerEmpleadosVentas {
          viewsEmpleadosVentas.jtf_nombre.setEditable(true); 
         viewsEmpleadosVentas.jtf_ap_pat.setEditable(true);
         viewsEmpleadosVentas.jtf_apt_mat.setEditable(true);
-        viewsEmpleadosVentas.jtf_sexo.setEditable(true);
+        viewsEmpleadosVentas.jCB_sexo.setEditable(true);
         viewsEmpleadosVentas.jtf_estado_civil.setEditable(true);
         viewsEmpleadosVentas.jtf_telefono.setEditable(true);
         viewsEmpleadosVentas.jtf_correo.setEditable(true);
@@ -180,7 +179,7 @@ public class ControllerEmpleadosVentas {
             modelEmpleadosVentas.setNombre(viewsEmpleadosVentas.jtf_nombre.getText());
             modelEmpleadosVentas.setApellido_pat(viewsEmpleadosVentas.jtf_ap_pat.getText());
             modelEmpleadosVentas.setApellido_mat(viewsEmpleadosVentas.jtf_apt_mat.getText());
-            modelEmpleadosVentas.setSexo(viewsEmpleadosVentas.jtf_sexo.getText());
+            modelEmpleadosVentas.setSexo((String)viewsEmpleadosVentas.jCB_sexo.getSelectedItem());
             modelEmpleadosVentas.setEstado_civil(viewsEmpleadosVentas.jtf_estado_civil.getText());
             modelEmpleadosVentas.setTelefono(viewsEmpleadosVentas.jtf_telefono.getText());
             modelEmpleadosVentas.setCorreo(viewsEmpleadosVentas.jtf_correo.getText()); 
@@ -194,7 +193,7 @@ public class ControllerEmpleadosVentas {
             modelEmpleadosVentas.setNombre(viewsEmpleadosVentas.jtf_nombre.getText());
             modelEmpleadosVentas.setApellido_pat(viewsEmpleadosVentas.jtf_ap_pat.getText());
             modelEmpleadosVentas.setApellido_mat(viewsEmpleadosVentas.jtf_apt_mat.getText());
-            modelEmpleadosVentas.setSexo(viewsEmpleadosVentas.jtf_sexo.getText());
+            modelEmpleadosVentas.setSexo((String)viewsEmpleadosVentas.jCB_sexo.getSelectedItem());
             modelEmpleadosVentas.setEstado_civil(viewsEmpleadosVentas.jtf_estado_civil.getText());
             modelEmpleadosVentas.setTelefono(viewsEmpleadosVentas.jtf_telefono.getText());
             modelEmpleadosVentas.setCorreo(viewsEmpleadosVentas.jtf_correo.getText());
