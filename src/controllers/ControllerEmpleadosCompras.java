@@ -66,6 +66,8 @@ public class ControllerEmpleadosCompras {
     public ControllerEmpleadosCompras(ModelEmpleadosCompras modelEmpleadosCompras, ViewEmpleadosCompras viewEmpleadosCompras) {
         this.modelEmpleadosCompras = modelEmpleadosCompras;
         this.viewEmpleadosCompras = viewEmpleadosCompras;
+          this.viewEmpleadosCompras.jtf_buscar.addKeyListener(key); 
+//agregar elevento de keylistener en la caja e texto buscar
         //agregar a la table el evento de MouseListener
         this.viewEmpleadosCompras.jt_vista.addMouseListener(ml);
         
