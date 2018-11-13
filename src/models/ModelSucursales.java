@@ -15,6 +15,7 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 
 /**
@@ -44,6 +45,16 @@ public class ModelSucursales {
     /**
      * Variables para el metodo de busqueda
      */   
+    private TableRowSorter trsFiltro; // sirve para filtar los datos dentro de la tabla
+
+    public TableRowSorter getTrsFiltro() {
+        return trsFiltro;
+    }
+
+    public void setTrsFiltro(TableRowSorter trsFiltro) {
+        this.trsFiltro = trsFiltro;
+    }
+    
     public int columnaABuscar;
     public String cadena;
 
