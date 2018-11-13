@@ -53,7 +53,7 @@ public class ModelProductos {
         this.trsFiltro = trsFiltro;
     }
     
-    public int columnaABuscar;
+    public int columnaABuscar = 0; //solo buscara en la primer columa que pertenece al codigo de producto
     public String cadena;
 
     public String getCadena() {
