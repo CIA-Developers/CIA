@@ -342,7 +342,7 @@ public class ViewSucursales extends javax.swing.JPanel {
 
         jcb_buscar.setBackground(new java.awt.Color(153, 204, 255));
         jcb_buscar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jcb_buscar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "codigo producto", "nombre producto ", "numero sucursal", " ", " " }));
+        jcb_buscar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "codigo producto", "numero sucursal", " ", " " }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

@@ -147,9 +147,6 @@ public class ControllerSucursales {
         if (viewSucursales.jcb_buscar.getSelectedItem() == "codigo producto") {
             modelSucursales.setColumnaABuscar(5); //numero de columna en la tabla donde se encuentra el registro
         }
-        else if (viewSucursales.jcb_buscar.getSelectedItem().toString() == "nombre producto") {
-            modelSucursales.setColumnaABuscar(7); //numero de columna en la tabla donde se encuentra el registro
-        }
         else if (viewSucursales.jcb_buscar.getSelectedItem() == "numero sucursal") {
             modelSucursales.setColumnaABuscar(0); //numero de columna en la tabla donde se encuentra el registro
         }
