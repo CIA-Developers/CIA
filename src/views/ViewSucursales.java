@@ -53,13 +53,6 @@ public class ViewSucursales extends javax.swing.JPanel {
         jtf_nom_prod = new javax.swing.JTextField();
         jp_botones = new javax.swing.JPanel();
         jb_nuevo = new javax.swing.JButton();
-        jl_nuevo = new javax.swing.JLabel();
-        jb_modificar = new javax.swing.JButton();
-        jl_modificar = new javax.swing.JLabel();
-        jb_eliminar = new javax.swing.JButton();
-        jl_eliminar = new javax.swing.JLabel();
-        jb_guardar = new javax.swing.JButton();
-        jl_guadar = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jt_vista = new javax.swing.JTable();
         jl_buscar = new javax.swing.JLabel();
@@ -111,6 +104,12 @@ public class ViewSucursales extends javax.swing.JPanel {
         jl_ap_mat.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jl_ap_mat.setForeground(new java.awt.Color(51, 51, 51));
         jl_ap_mat.setText("Stock:");
+
+        jtf_colonia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtf_coloniaActionPerformed(evt);
+            }
+        });
 
         jl_cod_prod.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jl_cod_prod.setForeground(new java.awt.Color(51, 51, 51));
@@ -249,73 +248,23 @@ public class ViewSucursales extends javax.swing.JPanel {
         jp_botones.setBackground(new java.awt.Color(255, 255, 51));
 
         jb_nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/nuevo.png"))); // NOI18N
-
-        jl_nuevo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jl_nuevo.setForeground(new java.awt.Color(51, 51, 51));
-        jl_nuevo.setText("Nuevo");
-
-        jb_modificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Modificar.png"))); // NOI18N
-
-        jl_modificar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jl_modificar.setForeground(new java.awt.Color(51, 51, 51));
-        jl_modificar.setText("Modificar");
-
-        jb_eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/eliminar.png"))); // NOI18N
-
-        jl_eliminar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jl_eliminar.setForeground(new java.awt.Color(51, 51, 51));
-        jl_eliminar.setText("Eliminar");
-
-        jb_guardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Guardar.png"))); // NOI18N
-
-        jl_guadar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jl_guadar.setForeground(new java.awt.Color(51, 51, 51));
-        jl_guadar.setText("Guardar");
+        jb_nuevo.setText("agregar nueva sucursal");
 
         javax.swing.GroupLayout jp_botonesLayout = new javax.swing.GroupLayout(jp_botones);
         jp_botones.setLayout(jp_botonesLayout);
         jp_botonesLayout.setHorizontalGroup(
             jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_botonesLayout.createSequentialGroup()
-                .addContainerGap(79, Short.MAX_VALUE)
-                .addGroup(jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jl_nuevo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jb_nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(48, 48, 48)
-                .addGroup(jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jb_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jl_modificar))
-                .addGap(28, 28, 28)
-                .addGroup(jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jb_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jl_eliminar))
-                .addGap(34, 34, 34)
-                .addGroup(jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jb_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jl_guadar))
-                .addGap(88, 88, 88))
+            .addGroup(jp_botonesLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jb_nuevo)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         jp_botonesLayout.setVerticalGroup(
             jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_botonesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jp_botonesLayout.createSequentialGroup()
-                        .addGroup(jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jb_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jb_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jp_botonesLayout.createSequentialGroup()
-                        .addGroup(jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jb_nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jb_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jl_nuevo)
-                            .addComponent(jl_modificar)
-                            .addComponent(jl_eliminar)
-                            .addComponent(jl_guadar))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addComponent(jb_nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jt_vista.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
@@ -359,16 +308,13 @@ public class ViewSucursales extends javax.swing.JPanel {
                 .addGap(20, 20, 20))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jp_datos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jp_datos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jp_botones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(185, 185, 185)
-                .addComponent(jp_botones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -384,18 +330,19 @@ public class ViewSucursales extends javax.swing.JPanel {
                 .addComponent(jp_datos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jp_botones, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38))
+                .addGap(18, 18, 18)
+                .addComponent(jp_botones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jtf_coloniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_coloniaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtf_coloniaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JButton jb_eliminar;
-    public javax.swing.JButton jb_guardar;
-    public javax.swing.JButton jb_modificar;
     public javax.swing.JButton jb_nuevo;
     public javax.swing.JComboBox<String> jcb_buscar;
     public javax.swing.JLabel jl_ap_mat;
@@ -403,13 +350,9 @@ public class ViewSucursales extends javax.swing.JPanel {
     public javax.swing.JLabel jl_calle;
     public javax.swing.JLabel jl_cod_prod;
     public javax.swing.JLabel jl_colonia;
-    public javax.swing.JLabel jl_eliminar;
-    public javax.swing.JLabel jl_guadar;
     public javax.swing.JLabel jl_imagen;
-    public javax.swing.JLabel jl_modificar;
     public javax.swing.JLabel jl_no_sucursal;
     public javax.swing.JLabel jl_nom_prod;
-    public javax.swing.JLabel jl_nuevo;
     public javax.swing.JLabel jl_numero;
     public javax.swing.JLabel jl_stock_max;
     public javax.swing.JLabel jl_stock_min;

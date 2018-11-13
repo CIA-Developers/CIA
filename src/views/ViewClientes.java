@@ -65,6 +65,8 @@ public class ViewClientes extends javax.swing.JPanel {
         jl_guadar = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jt_vista = new javax.swing.JTable();
+        jl_icon_buscar1 = new javax.swing.JLabel();
+        jl_icon_buscar2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -96,7 +98,10 @@ public class ViewClientes extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jl_icon_buscar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jl_icon_buscar.setForeground(new java.awt.Color(0, 153, 204));
         jl_icon_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/buscar .png"))); // NOI18N
+        jl_icon_buscar.setText("Buscar por RFC...");
 
         jp_datos.setBackground(new java.awt.Color(255, 255, 255));
         jp_datos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14), new java.awt.Color(0, 153, 255))); // NOI18N
@@ -369,6 +374,16 @@ public class ViewClientes extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jt_vista);
 
+        jl_icon_buscar1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jl_icon_buscar1.setForeground(new java.awt.Color(0, 153, 204));
+        jl_icon_buscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/buscar .png"))); // NOI18N
+        jl_icon_buscar1.setText("Buscar por codigo...");
+
+        jl_icon_buscar2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jl_icon_buscar2.setForeground(new java.awt.Color(0, 153, 204));
+        jl_icon_buscar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/buscar .png"))); // NOI18N
+        jl_icon_buscar2.setText("Buscar por codigo...");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -382,20 +397,30 @@ public class ViewClientes extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jl_icon_buscar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jtf_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(20, 20, 20))
             .addGroup(layout.createSequentialGroup()
                 .addGap(212, 212, 212)
                 .addComponent(jp_botones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jl_icon_buscar1)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(430, 430, 430)
+                    .addComponent(jl_icon_buscar2)
+                    .addContainerGap(430, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jp_barra, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtf_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jl_icon_buscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -405,6 +430,16 @@ public class ViewClientes extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jp_botones, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jl_icon_buscar1)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(341, 341, 341)
+                    .addComponent(jl_icon_buscar2)
+                    .addContainerGap(342, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -424,6 +459,8 @@ public class ViewClientes extends javax.swing.JPanel {
     public javax.swing.JLabel jl_eliminar;
     public javax.swing.JLabel jl_guadar;
     public javax.swing.JLabel jl_icon_buscar;
+    public javax.swing.JLabel jl_icon_buscar1;
+    public javax.swing.JLabel jl_icon_buscar2;
     public javax.swing.JLabel jl_imagen;
     public javax.swing.JLabel jl_modificar;
     public javax.swing.JLabel jl_municipio;

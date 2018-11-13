@@ -24,16 +24,15 @@ public class ControllerSucursales {
     public ModelSucursales modelSucursales;
     public ViewSucursales viewSucursales;
      
-    ActionListener list = new ActionListener(){
+    ActionListener list = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == viewSucursales.jb_nuevo) {
-                jbtn_nuevo_actionPerformed();
-            }else if (e.getSource() == viewSucursales.jb_modificar) {
-                modificar_sucursales();
-            }       
+                nuevo_sucursales();
+          
+            }
         }
-        
+
     };
     
     MouseListener ml = new MouseListener(){
@@ -94,8 +93,7 @@ public class ControllerSucursales {
         this.viewSucursales = viewSucursales;
         this.viewSucursales.jt_vista.addMouseListener(ml);//agregar a la table el evento de MouseListener
         this.viewSucursales.jtf_buscar.addKeyListener(key); //agregar elevento de keylistener en la tabla
-        viewSucursales.jb_guardar.setEnabled(false);//El boton guardar aparecera inhabilitado
-        viewSucursales.jb_eliminar.setEnabled(false);//El boton guardar aparecera inhabilitado
+        
        
         ConexionBD();
         setActionListener();
@@ -107,8 +105,7 @@ public class ControllerSucursales {
      */
     private void setActionListener(){
         viewSucursales.jb_nuevo.addActionListener(list);
-        viewSucursales.jb_modificar.addActionListener(list);
-        viewSucursales.jb_guardar.addActionListener(list);
+     
     }
     /**
      * este metodo hace la conexion a la base de datos 
@@ -121,8 +118,7 @@ public class ControllerSucursales {
         viewSucursales.jt_vista.setModel(modelSucursales.getModelo_sucursal()); //asignar a la tabla los valores correspondientes
     }
     public void jt_vista_MouseClicked(){
-        viewSucursales.jb_guardar.setEnabled(false);
-        viewSucursales.jb_modificar.setEnabled(true);//El boton modificar aparecera habilitado
+      
         viewSucursales.jb_nuevo.setEnabled(true);//El boton nuevo aparecera habilitado
         cajas_deshabilitadas(); // cuando se haga clic en la tabla, las cajas se volveran a deshabilitar 
         modelSucursales.setRec(viewSucursales.jt_vista.getSelectedRow());//a la variable se le asigna el elemento seleccionado en la tabla
@@ -179,9 +175,8 @@ public class ControllerSucursales {
     /**
      * Metodo que limpiara las cajas de texto para ingresar nuevo datos. 
      */
-    public void jbtn_nuevo_actionPerformed(){
-        viewSucursales.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
-        viewSucursales.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
+    public void nuevo_sucursales(){
+       
         //limpiar cada caja de la Interfaz 
         viewSucursales.jtf_no_sucursal.setText(Integer.toString(modelSucursales.getCodigo()));// la caja de texto CODIGO_PRODUCTO recibe el valor de cero
         viewSucursales.jtf_calle.setText(modelSucursales.getLimpiar());
@@ -196,11 +191,10 @@ public class ControllerSucursales {
         cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
     }
     
+  
+    
     public void modificar_sucursales(){
-        viewSucursales.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
-        viewSucursales.jb_nuevo.setEnabled(false);//El boton modificar aparecera inhabilitado
-        //limpiar cada caja de la Interfaz 
-        viewSucursales.jtf_calle.setEditable(true);
+     
         viewSucursales.jtf_colonia.setEditable(true);
         viewSucursales.jtf_numero.setEditable(true);
         viewSucursales.jtf_telefono.setEditable(true);
@@ -210,4 +204,42 @@ public class ControllerSucursales {
         viewSucursales.jtf_stock_max.setEditable(true);
         viewSucursales.jtf_stock_min.setEditable(true);  
     }
+    public void Guardar() {
+        // si la variable verificar es igual a 0 se llama al metodo de guardar Nuevo
+        if (modelSucursales.getVerificar() == 1) {
+            // darle el valor a las variables
+            modelSucursales.setSucursal(viewSucursales.jtf_no_sucursal.getText());
+            modelSucursales.setCalle(viewSucursales.jtf_calle.getText());
+            modelSucursales.setColonia(viewSucursales.jtf_colonia.getText());
+            modelSucursales.setNumero(viewSucursales.jtf_numero.getText());
+            modelSucursales.setTelefono(viewSucursales.jtf_telefono.getText());
+            modelSucursales.setCodigo_producto(viewSucursales.jtf_codigo_prod.getText());
+            modelSucursales.setNombre_producto(viewSucursales.jtf_nom_prod.getText());
+            modelSucursales.setStock(viewSucursales.jtf_stock.getText());
+            modelSucursales.setStock_maximo(viewSucursales.jtf_stock_max.getText());
+            modelSucursales.setStrock_minimo(viewSucursales.jtf_stock_min.getText());
+            modelSucursales.Guardar_Nuevo(); // metodo de  insertar nuevo registro           
+        } else {
+            // darle el valor a las variables
+           modelSucursales.setSucursal(viewSucursales.jtf_no_sucursal.getText());
+            modelSucursales.setCalle(viewSucursales.jtf_calle.getText());
+            modelSucursales.setColonia(viewSucursales.jtf_colonia.getText());
+            modelSucursales.setNumero(viewSucursales.jtf_numero.getText());
+            modelSucursales.setTelefono(viewSucursales.jtf_telefono.getText());
+            modelSucursales.setCodigo_producto(viewSucursales.jtf_codigo_prod.getText());
+            modelSucursales.setNombre_producto(viewSucursales.jtf_nom_prod.getText());
+            modelSucursales.setStock(viewSucursales.jtf_stock.getText());
+            modelSucursales.setStock_maximo(viewSucursales.jtf_stock_max.getText());
+            modelSucursales.setStrock_minimo(viewSucursales.jtf_stock_min.getText());
+            modelSucursales.Guardar_Modificado();// metodo de  Modificar el registro
+        }
+        //LIMPIAR TABLA 
+        for (int i = 0; i < viewSucursales.jt_vista.getRowCount(); i++) {
+            modelSucursales.getModelo_sucursal().removeRow(i);
+            i -= 1;
+        }
+        //mostrar los nuevos datos 
+        modelSucursales.mostrar();
+    }
 }
+

@@ -80,6 +80,7 @@ public class ModelProveedores {
     
     
     
+    
      /**
      * Variables para el metodo de busqueda
      */   

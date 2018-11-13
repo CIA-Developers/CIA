@@ -94,7 +94,10 @@ public class ViewProveedores extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jl_icon_buscar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jl_icon_buscar.setForeground(new java.awt.Color(0, 153, 204));
         jl_icon_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/buscar .png"))); // NOI18N
+        jl_icon_buscar.setText("Buscar por ID...");
 
         jp_datos.setBackground(new java.awt.Color(255, 255, 255));
         jp_datos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14), new java.awt.Color(0, 153, 255))); // NOI18N
