@@ -51,8 +51,6 @@ public class ViewSucursales extends javax.swing.JPanel {
         jl_colonia = new javax.swing.JLabel();
         jl_nom_prod = new javax.swing.JLabel();
         jtf_nom_prod = new javax.swing.JTextField();
-        jp_botones = new javax.swing.JPanel();
-        jb_nuevo = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jt_vista = new javax.swing.JTable();
         jl_buscar = new javax.swing.JLabel();
@@ -245,28 +243,6 @@ public class ViewSucursales extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jp_botones.setBackground(new java.awt.Color(255, 255, 51));
-
-        jb_nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/nuevo.png"))); // NOI18N
-        jb_nuevo.setText("agregar nueva sucursal");
-
-        javax.swing.GroupLayout jp_botonesLayout = new javax.swing.GroupLayout(jp_botones);
-        jp_botones.setLayout(jp_botonesLayout);
-        jp_botonesLayout.setHorizontalGroup(
-            jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_botonesLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jb_nuevo)
-                .addContainerGap(19, Short.MAX_VALUE))
-        );
-        jp_botonesLayout.setVerticalGroup(
-            jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_botonesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jb_nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
         jt_vista.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jt_vista.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -310,10 +286,7 @@ public class ViewSucursales extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jp_datos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jp_botones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane1))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -329,10 +302,8 @@ public class ViewSucursales extends javax.swing.JPanel {
                 .addGap(33, 33, 33)
                 .addComponent(jp_datos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(jp_botones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -343,7 +314,6 @@ public class ViewSucursales extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JButton jb_nuevo;
     public javax.swing.JComboBox<String> jcb_buscar;
     public javax.swing.JLabel jl_ap_mat;
     private javax.swing.JLabel jl_buscar;
@@ -359,7 +329,6 @@ public class ViewSucursales extends javax.swing.JPanel {
     public javax.swing.JLabel jl_telefono;
     public javax.swing.JLabel jl_titulo;
     public javax.swing.JPanel jp_barra;
-    public javax.swing.JPanel jp_botones;
     public javax.swing.JPanel jp_datos;
     public javax.swing.JTable jt_vista;
     public javax.swing.JTextField jtf_buscar;
