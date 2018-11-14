@@ -5,19 +5,19 @@
  */
 package controllers;
 import models.ModelAgregarSucursal;
-import controllers.ControllerAgregarSucursal;
+import views.ViewAgregarSucursal;
 /**
  *
  * @author Octaviano
  */
 public class ControllerAgregarSucursal {
     ModelAgregarSucursal modelAgregarSucursal;
-    ControllerAgregarSucursal controllerAgregarSucursal;
+    ViewAgregarSucursal viewAgregarSucursal;
 
-    public ControllerAgregarSucursal(ModelAgregarSucursal modelAgregarSucursal, ControllerAgregarSucursal controllerAgregarSucursal) {
+    public ControllerAgregarSucursal(ModelAgregarSucursal modelAgregarSucursal, ViewAgregarSucursal viewAgregarSucursal) {
         this.modelAgregarSucursal = modelAgregarSucursal;
-        this.controllerAgregarSucursal = controllerAgregarSucursal;
+        this.viewAgregarSucursal = viewAgregarSucursal;
     }
-    
-    
+
+     
 }
