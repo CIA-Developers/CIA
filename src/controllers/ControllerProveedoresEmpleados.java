@@ -104,20 +104,7 @@ public class ControllerProveedoresEmpleados {
 
    this.viewProveedoresEmpleados.jtf_buscar.addKeyListener(key); //agregar elevento de keylistener en la caja e texto buscar
         this.viewProveedoresEmpleados.jt_vista.addMouseListener(ml);//agregar a la table el evento de MouseListener
-
-       
-
-        
-        setActionListener();
         ConexionBD();
-    }
-
-    /**
-     * Método para agregar el actionListener a cada boton
-     */
-    private void setActionListener() {
-
-     
     }
 
     public void ConexionBD() {
@@ -127,8 +114,6 @@ public class ControllerProveedoresEmpleados {
     }
 
     public void jt_vista_MouseClicked() {
-
-      
         modelProveedoresEmpleados.setRec(viewProveedoresEmpleados.jt_vista.getSelectedRow());//a la variable se le asigna el elemento seleccionado en la tabla
     }
 }
