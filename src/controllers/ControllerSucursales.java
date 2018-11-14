@@ -23,17 +23,6 @@ import views.ViewSucursales;
 public class ControllerSucursales {
     public ModelSucursales modelSucursales;
     public ViewSucursales viewSucursales;
-     
-    ActionListener list = new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if (e.getSource() == viewSucursales.jb_nuevo) {
-                nuevo_sucursales();
-          
-            }
-        }
-
-    };
     
     MouseListener ml = new MouseListener(){
         @Override
@@ -96,16 +85,7 @@ public class ControllerSucursales {
         
        
         ConexionBD();
-        setActionListener();
         cajas_deshabilitadas();
-    }
-    
-    /**
-     * Método para agregar el actionListener a cada boton de la vista
-     */
-    private void setActionListener(){
-        viewSucursales.jb_nuevo.addActionListener(list);
-     
     }
     /**
      * este metodo hace la conexion a la base de datos 
@@ -118,8 +98,6 @@ public class ControllerSucursales {
         viewSucursales.jt_vista.setModel(modelSucursales.getModelo_sucursal()); //asignar a la tabla los valores correspondientes
     }
     public void jt_vista_MouseClicked(){
-      
-        viewSucursales.jb_nuevo.setEnabled(true);//El boton nuevo aparecera habilitado
         cajas_deshabilitadas(); // cuando se haga clic en la tabla, las cajas se volveran a deshabilitar 
         modelSucursales.setRec(viewSucursales.jt_vista.getSelectedRow());//a la variable se le asigna el elemento seleccionado en la tabla
         viewSucursales.jtf_no_sucursal.setText(viewSucursales.jt_vista.getValueAt(modelSucursales.getRec(), 0).toString());
