@@ -202,10 +202,10 @@
                       </Group>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jtf_telefono" min="-2" pref="148" max="-2" attributes="0"/>
-                      <Component id="jtf_estado_civil" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
-                      <Component id="jCB_sexo" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jtf_telefono" pref="148" max="32767" attributes="0"/>
+                      <Component id="jtf_estado_civil" alignment="0" pref="148" max="32767" attributes="0"/>
+                      <Component id="jCB_sexo" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
