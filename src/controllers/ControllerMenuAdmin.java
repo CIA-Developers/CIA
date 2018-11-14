@@ -82,7 +82,7 @@ public class ControllerMenuAdmin {
         viewMenuAdmin.jmi_productos.addActionListener(actionListener);
         viewMenuAdmin.jmi_proveedores.addActionListener(actionListener);
         viewMenuAdmin.jmi_sucursales.addActionListener(actionListener);
-        viewMenuAdmin.jm_nueva_sucursal.addActionListener(actionListener);
+        viewMenuAdmin.jmi_agregar_Sucursal.addActionListener(actionListener);
     }
     /**
     * Evalua el componente que genero el evento y llama a un método en particular.
@@ -103,7 +103,7 @@ public class ControllerMenuAdmin {
            }else if (e.getSource() == viewMenuAdmin.jmi_sucursales) {
                 jmi_sucursales_actionPerformed();
            }
-           else if (e.getSource() == viewMenuAdmin.jm_nueva_sucursal) {
+           else if (e.getSource() == viewMenuAdmin.jmi_agregar_Sucursal) {
                 jm_AgregarSucursales_actionPerformed();
            }
         }    

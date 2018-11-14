@@ -37,6 +37,7 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
         jmi_sucursales = new javax.swing.JMenuItem();
         jmi_productos = new javax.swing.JMenuItem();
         jm_nueva_sucursal = new javax.swing.JMenu();
+        jmi_agregar_Sucursal = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 153));
@@ -85,8 +86,13 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
         jMenuBar1.add(jm_catalogos);
 
         jm_nueva_sucursal.setForeground(new java.awt.Color(255, 255, 255));
-        jm_nueva_sucursal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/agregar.png"))); // NOI18N
-        jm_nueva_sucursal.setText(" Nueva sucursal");
+        jm_nueva_sucursal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/opciones.png"))); // NOI18N
+        jm_nueva_sucursal.setText("Opciones ");
+
+        jmi_agregar_Sucursal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/agregar.png"))); // NOI18N
+        jmi_agregar_Sucursal.setText("Agregar Nueva Sucursal ");
+        jm_nueva_sucursal.add(jmi_agregar_Sucursal);
+
         jMenuBar1.add(jm_nueva_sucursal);
 
         setJMenuBar(jMenuBar1);
@@ -152,6 +158,7 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jl_CiaLogo;
     public javax.swing.JMenu jm_catalogos;
     public javax.swing.JMenu jm_nueva_sucursal;
+    public javax.swing.JMenuItem jmi_agregar_Sucursal;
     public javax.swing.JMenuItem jmi_clientes;
     public javax.swing.JMenuItem jmi_empleados_compras;
     public javax.swing.JMenuItem jmi_empleados_ventas;
