@@ -36,6 +36,7 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
         jmi_empleados_ventas = new javax.swing.JMenuItem();
         jmi_sucursales = new javax.swing.JMenuItem();
         jmi_productos = new javax.swing.JMenuItem();
+        jm_nueva_sucursal = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 153));
@@ -82,6 +83,11 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
         jm_catalogos.add(jmi_productos);
 
         jMenuBar1.add(jm_catalogos);
+
+        jm_nueva_sucursal.setForeground(new java.awt.Color(255, 255, 255));
+        jm_nueva_sucursal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/agregar.png"))); // NOI18N
+        jm_nueva_sucursal.setText(" Nueva sucursal");
+        jMenuBar1.add(jm_nueva_sucursal);
 
         setJMenuBar(jMenuBar1);
 
@@ -145,6 +151,7 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
     public javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JLabel jl_CiaLogo;
     public javax.swing.JMenu jm_catalogos;
+    public javax.swing.JMenu jm_nueva_sucursal;
     public javax.swing.JMenuItem jmi_clientes;
     public javax.swing.JMenuItem jmi_empleados_compras;
     public javax.swing.JMenuItem jmi_empleados_ventas;
