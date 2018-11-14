@@ -36,7 +36,7 @@ public class viewMenuEmpleadoCompras extends javax.swing.JFrame {
         jmi_sucursales = new javax.swing.JMenuItem();
         jmi_productos = new javax.swing.JMenuItem();
         jm_acciones = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jmi_compras = new javax.swing.JMenuItem();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
@@ -79,9 +79,9 @@ public class viewMenuEmpleadoCompras extends javax.swing.JFrame {
         jm_acciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/acciones.png"))); // NOI18N
         jm_acciones.setText("Acciones");
 
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/compras.png"))); // NOI18N
-        jMenuItem1.setText("COMPRAS");
-        jm_acciones.add(jMenuItem1);
+        jmi_compras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/compras.png"))); // NOI18N
+        jmi_compras.setText("COMPRAS");
+        jm_acciones.add(jmi_compras);
 
         jMenuBar1.add(jm_acciones);
 
@@ -146,11 +146,11 @@ public class viewMenuEmpleadoCompras extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     public javax.swing.JMenuBar jMenuBar1;
-    public javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JLabel jl_CiaLogo;
     public javax.swing.JMenu jm_acciones;
     public javax.swing.JMenu jm_catalogos;
     public javax.swing.JMenuItem jmi_clientes;
+    public javax.swing.JMenuItem jmi_compras;
     public javax.swing.JMenuItem jmi_productos;
     public javax.swing.JMenuItem jmi_proveedores;
     public javax.swing.JMenuItem jmi_sucursales;
