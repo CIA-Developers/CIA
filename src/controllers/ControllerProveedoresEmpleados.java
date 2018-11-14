@@ -14,11 +14,11 @@ import views.ViewSucursalesEmpleados;
  */
 public class ControllerProveedoresEmpleados {
      ModelProveedoresEmpleados modelProveedoresEmpleados;
-     ViewSucursalesEmpleados viewSucursalesEmpleados;
+     ViewSucursalesEmpleados viewProveedoresEmpleados;
 
     public ControllerProveedoresEmpleados(ModelProveedoresEmpleados modelProveedoresEmpleados, ViewSucursalesEmpleados viewSucursalesEmpleados) {
         this.modelProveedoresEmpleados = modelProveedoresEmpleados;
-        this.viewSucursalesEmpleados = viewSucursalesEmpleados;
+        this.viewProveedoresEmpleados = viewSucursalesEmpleados;
     }
      
      
