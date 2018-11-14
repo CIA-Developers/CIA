@@ -146,7 +146,7 @@ public class viewMenuEmpleadoCompras extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     public javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
+    public javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JLabel jl_CiaLogo;
     public javax.swing.JMenu jm_acciones;
     public javax.swing.JMenu jm_catalogos;

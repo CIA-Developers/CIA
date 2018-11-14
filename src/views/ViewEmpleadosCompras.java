@@ -45,13 +45,13 @@ public class ViewEmpleadosCompras extends javax.swing.JPanel {
         jl_calle = new javax.swing.JLabel();
         jtf_Telefono = new javax.swing.JTextField();
         jtf_estado_civil = new javax.swing.JTextField();
-        jl_correo = new javax.swing.JLabel();
         jl_numero = new javax.swing.JLabel();
         jtf_correo = new javax.swing.JTextField();
         jtf_usuario = new javax.swing.JTextField();
         jl_colonia = new javax.swing.JLabel();
-        jl_correo1 = new javax.swing.JLabel();
         jCB_sexo = new javax.swing.JComboBox<>();
+        jl_Provincia1 = new javax.swing.JLabel();
+        jl_fecha = new javax.swing.JLabel();
         jp_botones = new javax.swing.JPanel();
         jb_nuevo = new javax.swing.JButton();
         jl_nuevo = new javax.swing.JLabel();
@@ -129,10 +129,6 @@ public class ViewEmpleadosCompras extends javax.swing.JPanel {
         jl_calle.setForeground(new java.awt.Color(51, 51, 51));
         jl_calle.setText("Estado Civil:");
 
-        jl_correo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jl_correo.setForeground(new java.awt.Color(51, 51, 51));
-        jl_correo.setText("Fecha Ingreso:");
-
         jl_numero.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jl_numero.setForeground(new java.awt.Color(51, 51, 51));
         jl_numero.setText("Correo:");
@@ -141,11 +137,15 @@ public class ViewEmpleadosCompras extends javax.swing.JPanel {
         jl_colonia.setForeground(new java.awt.Color(51, 51, 51));
         jl_colonia.setText("Telefono:");
 
-        jl_correo1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jl_correo1.setForeground(new java.awt.Color(51, 51, 51));
-        jl_correo1.setText("año-mes-dia");
-
         jCB_sexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione uno", "Femenino", "Masculino" }));
+
+        jl_Provincia1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jl_Provincia1.setForeground(new java.awt.Color(51, 51, 51));
+        jl_Provincia1.setText("Hora:");
+
+        jl_fecha.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jl_fecha.setForeground(new java.awt.Color(51, 51, 51));
+        jl_fecha.setText("Fecha:");
 
         javax.swing.GroupLayout jp_datosLayout = new javax.swing.GroupLayout(jp_datos);
         jp_datos.setLayout(jp_datosLayout);
@@ -161,7 +161,7 @@ public class ViewEmpleadosCompras extends javax.swing.JPanel {
                         .addComponent(jl_ap_pat)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jtf_ap_pat, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(50, 50, 50)
+                .addGap(42, 42, 42)
                 .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jl_telefono)
                     .addComponent(jl_calle)
@@ -170,11 +170,7 @@ public class ViewEmpleadosCompras extends javax.swing.JPanel {
                 .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jtf_Telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtf_estado_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47)
-                .addComponent(jl_correo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jl_correo1)
-                .addGap(47, 47, 47))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jp_datosLayout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -189,17 +185,24 @@ public class ViewEmpleadosCompras extends javax.swing.JPanel {
                         .addComponent(jtf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(130, 130, 130)
                         .addComponent(jCB_sexo, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47)
-                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(39, 39, 39)
+                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jp_datosLayout.createSequentialGroup()
                                 .addComponent(jl_numero)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jtf_correo, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jp_datosLayout.createSequentialGroup()
-                                .addComponent(jl_Provincia)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jtf_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jl_fecha)
+                                    .addComponent(jl_Provincia))
+                                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jp_datosLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jtf_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_datosLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jl_Provincia1)))))
+                        .addContainerGap(176, Short.MAX_VALUE))))
         );
         jp_datosLayout.setVerticalGroup(
             jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -223,11 +226,6 @@ public class ViewEmpleadosCompras extends javax.swing.JPanel {
                             .addComponent(jl_ap_mat)
                             .addComponent(jtf_apt_mat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jp_datosLayout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtf_Telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jl_colonia)))
-                    .addGroup(jp_datosLayout.createSequentialGroup()
                         .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jp_datosLayout.createSequentialGroup()
                                 .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -245,10 +243,15 @@ public class ViewEmpleadosCompras extends javax.swing.JPanel {
                                 .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jtf_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jl_Provincia))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
+                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jl_Provincia1)
+                            .addComponent(jl_fecha)))
+                    .addGroup(jp_datosLayout.createSequentialGroup()
+                        .addGap(78, 78, 78)
                         .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jl_correo)
-                            .addComponent(jl_correo1))))
+                            .addComponent(jtf_Telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jl_colonia))))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
@@ -392,13 +395,13 @@ public class ViewEmpleadosCompras extends javax.swing.JPanel {
     public javax.swing.JButton jb_modificar;
     public javax.swing.JButton jb_nuevo;
     public javax.swing.JLabel jl_Provincia;
+    public javax.swing.JLabel jl_Provincia1;
     public javax.swing.JLabel jl_ap_mat;
     public javax.swing.JLabel jl_ap_pat;
     public javax.swing.JLabel jl_calle;
     public javax.swing.JLabel jl_colonia;
-    public javax.swing.JLabel jl_correo;
-    public javax.swing.JLabel jl_correo1;
     public javax.swing.JLabel jl_eliminar;
+    public javax.swing.JLabel jl_fecha;
     public javax.swing.JLabel jl_guadar;
     public javax.swing.JLabel jl_icon_buscar;
     public javax.swing.JLabel jl_imagen;
