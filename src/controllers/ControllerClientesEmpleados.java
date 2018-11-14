@@ -17,8 +17,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.RowFilter;
 import javax.swing.table.TableRowSorter;
-import models.ModelProveedoresEmpleados;
-import views.ViewProveedoresEmpleados;
+
 
 /**
  *
