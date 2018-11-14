@@ -29,6 +29,7 @@ public class ControllerMenuAdmin {
     private ControllerProductos controllerProductos;
     private ControllerProveedores controllerProveedores;
     private ControllerSucursales controllerSucursales;
+    private ControllerAgregarSucursal controllerAgregarSucursal;
 
     /**
      * Controlador principal donde se un el modelo y controlador del MenuAdmin
@@ -60,6 +61,7 @@ public class ControllerMenuAdmin {
         controllerProductos = (ControllerProductos) controllers[3];
         controllerProveedores = (ControllerProveedores) controllers[4];
         controllerSucursales = (ControllerSucursales) controllers[5];
+        controllerAgregarSucursal = (ControllerAgregarSucursal) controllers[6]; 
     }
     /**
      * mustra la ventana principal del menuAdmin
@@ -80,6 +82,7 @@ public class ControllerMenuAdmin {
         viewMenuAdmin.jmi_productos.addActionListener(actionListener);
         viewMenuAdmin.jmi_proveedores.addActionListener(actionListener);
         viewMenuAdmin.jmi_sucursales.addActionListener(actionListener);
+        viewMenuAdmin.jm_nueva_sucursal.addActionListener(actionListener);
     }
     /**
     * Evalua el componente que genero el evento y llama a un método en particular.
@@ -99,6 +102,9 @@ public class ControllerMenuAdmin {
                 jmi_proveedores_actionPerformed();
            }else if (e.getSource() == viewMenuAdmin.jmi_sucursales) {
                 jmi_sucursales_actionPerformed();
+           }
+           else if (e.getSource() == viewMenuAdmin.jm_nueva_sucursal) {
+                jm_AgregarSucursales_actionPerformed();
            }
         }    
     };
@@ -133,6 +139,11 @@ public class ControllerMenuAdmin {
     }
     private void jmi_sucursales_actionPerformed(){
         viewMenuAdmin.setContentPane(controllerSucursales.viewSucursales);
+        viewMenuAdmin.revalidate();
+        viewMenuAdmin.repaint();     
+    }
+    private void jm_AgregarSucursales_actionPerformed(){
+        viewMenuAdmin.setContentPane(controllerAgregarSucursal.viewAgregarSucursal);
         viewMenuAdmin.revalidate();
         viewMenuAdmin.repaint();     
     }
