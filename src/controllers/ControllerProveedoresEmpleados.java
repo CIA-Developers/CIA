@@ -4,11 +4,22 @@
  * and open the template in the editor.
  */
 package controllers;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import models.ModelProveedoresEmpleados;
+import views.ViewSucursalesEmpleados;
 /**
  *
  * @author Octaviano
  */
 public class ControllerProveedoresEmpleados {
-    
+     ModelProveedoresEmpleados modelProveedoresEmpleados;
+     ViewSucursalesEmpleados viewSucursalesEmpleados;
+
+    public ControllerProveedoresEmpleados(ModelProveedoresEmpleados modelProveedoresEmpleados, ViewSucursalesEmpleados viewSucursalesEmpleados) {
+        this.modelProveedoresEmpleados = modelProveedoresEmpleados;
+        this.viewSucursalesEmpleados = viewSucursalesEmpleados;
+    }
+     
+     
 }
