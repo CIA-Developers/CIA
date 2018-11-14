@@ -55,6 +55,7 @@ public class ViewAgregarSucursal extends javax.swing.JPanel {
         jl_guadar = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setRequestFocusEnabled(false);
 
         jp_titulo.setBackground(new java.awt.Color(153, 204, 255));
 
