@@ -7,19 +7,20 @@ package controllers;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import models.ModelProveedoresEmpleados;
-import views.ViewSucursalesEmpleados;
+import views.ViewProveedoresEmpleados;
+import views.ViewProveedoresEmpleados;
 /**
  *
  * @author Octaviano
  */
 public class ControllerProveedoresEmpleados {
      ModelProveedoresEmpleados modelProveedoresEmpleados;
-     ViewSucursalesEmpleados viewProveedoresEmpleados;
+     ViewProveedoresEmpleados viewProveedoresEmpleados;
 
-    public ControllerProveedoresEmpleados(ModelProveedoresEmpleados modelProveedoresEmpleados, ViewSucursalesEmpleados viewSucursalesEmpleados) {
+    public ControllerProveedoresEmpleados(ModelProveedoresEmpleados modelProveedoresEmpleados, ViewProveedoresEmpleados viewProveedoresEmpleados) {
         this.modelProveedoresEmpleados = modelProveedoresEmpleados;
-        this.viewProveedoresEmpleados = viewSucursalesEmpleados;
+        this.viewProveedoresEmpleados = viewProveedoresEmpleados;
     }
-     
-     
+
+    
 }

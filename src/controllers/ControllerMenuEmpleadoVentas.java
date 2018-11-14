@@ -35,7 +35,7 @@ public class ControllerMenuEmpleadoVentas {
      * @param modelMenuEmpleadosVentas
      * @param viewMenuWmpleadosVentas 
      */
-    public ControllerMenuEmpleadoVentas(ModelMenuEmpleadoVentas modelMenuEmpleadosVentas, viewMenuEmpleadoVentas viewMenuWmpleadosVentas) {
+    public ControllerMenuEmpleadoVentas(ModelMenuEmpleadoVentas modelMenuEmpleadosVentas, viewMenuEmpleadoVentas viewMenuWmpleadosVentas, Object[] controllers) {
         this.modelMenuEmpleadosVentas = modelMenuEmpleadosVentas;
         this.viewMenuEmpleadosVentas = viewMenuWmpleadosVentas;
         setControllers();
