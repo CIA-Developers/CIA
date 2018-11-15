@@ -52,7 +52,6 @@ public class ControllerMenuEmpleadoVentas {
         controllerProductosEmpleados = (ControllerProductosEmpleados) controllers[1];
         controllerProveedoresEmpleados = (ControllerProveedoresEmpleados) controllers[2];
         controllerSucursalesEmpleados = (ControllerSucursalesEmpleados) controllers[3];
-        controllerSucursalesEmpleados = (ControllerSucursalesEmpleados) controllers[3];
         controllerVENTAS= (ControllerVENTAS) controllers[4];
     }
     /**
