@@ -39,6 +39,9 @@ public class ControllerCOMPRAS {
          for (int p = 0; p < modelCOMPRAS.getNumero_proveedor().size(); p++) {
             viewCOMPRAS.jcb_numero_proveedor.addItem((String) modelCOMPRAS.getNumero_proveedor().get(p));
         }
+        for (int s = 0; s < modelCOMPRAS.getNumero_sucursal().size(); s++) {
+            viewCOMPRAS.jcb_numero_sucursal.addItem((String) modelCOMPRAS.getNumero_sucursal().get(s));
+        }
     }
    
     

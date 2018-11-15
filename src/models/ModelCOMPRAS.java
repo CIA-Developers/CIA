@@ -227,13 +227,28 @@ public class ModelCOMPRAS {
       }
       try{
           while(rs.next()){
-             String dato =rs.getString("id_proveedor"); // dato entero
-              num_prov.add(dato);//agregar los datos a la lista        
+              String proveedor=rs.getString("id_proveedor");
+              num_prov.add(proveedor);//agregar los datos a la lista        
           }this.setNumero_proveedor(num_prov);// almacena la lista con los numeros de proveedores obetenidos de la BD      
       }catch(Exception e){
           JOptionPane.showMessageDialog(null,"error2 al llenar comboBox"+e);
       }
       ArrayList num_suc = new ArrayList(); // lista para sucursales
+      //llenar comboBox de Sucursales
+      try{
+          
+          rs = st.executeQuery("SELECT * FROM sucursal;");
+      }catch(SQLException e){
+           JOptionPane.showMessageDialog(null,"error1 al llenar comboBox"+e);
+      }
+      try{
+          while(rs.next()){
+              String sucursal=rs.getString("no_sucursal");
+              num_suc.add(sucursal);//agregar los datos a la lista        
+          }this.setNumero_sucursal(num_suc);// almacena la lista con los numeros de proveedores obetenidos de la BD      
+      }catch(Exception e){
+          JOptionPane.showMessageDialog(null,"error2 al llenar comboBox"+e);
+      }
     }
     
 }
