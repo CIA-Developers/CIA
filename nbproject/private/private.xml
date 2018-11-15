@@ -2,6 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/E:/PROYECTO_4TO/SISTEMA/StockCia/src/views/ViewCOMPRAS.java</file>
+            <file>file:/E:/PROYECTO_4TO/SISTEMA/StockCia/src/controllers/ControllerMenuEmpleadoCompras.java</file>
+            <file>file:/E:/PROYECTO_4TO/SISTEMA/StockCia/src/main/MenuEmpleadoCompras.java</file>
+            <file>file:/E:/PROYECTO_4TO/SISTEMA/StockCia/src/main/MenuEmpleadoVentas.java</file>
+            <file>file:/E:/PROYECTO_4TO/SISTEMA/StockCia/src/controllers/ControllerMenuEmpleadoVentas.java</file>
+        </group>
     </open-files>
 </project-private>

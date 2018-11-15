@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -26,8 +27,10 @@ public class ModelCOMPRAS {
     
     //********Variables para compra *********
     public String RFC_empleado;
-    public int numero_sucursal;
-    public int numero_proveedor;
+    public int num_sucursal;
+    public int num_proveedor;
+    public ArrayList numero_sucursal; // la variable almacenara una lista para llenar comboBox
+    public ArrayList numero_proveedor; // la variable almacenara una lista para llenar comboBox
     public String nombre_proveedor; // solo se obtendra este dato, no se almacenara
     public float subtotal;
     public float iva;
@@ -50,19 +53,35 @@ public class ModelCOMPRAS {
         this.RFC_empleado = RFC_empleado;
     }
 
-    public int getNumero_sucursal() {
+    public int getNum_sucursal() {
+        return num_sucursal;
+    }
+
+    public void setNum_sucursal(int num_sucursal) {
+        this.num_sucursal = num_sucursal;
+    }
+
+    public int getNum_proveedor() {
+        return num_proveedor;
+    }
+
+    public void setNum_proveedor(int num_proveedor) {
+        this.num_proveedor = num_proveedor;
+    }
+
+    public ArrayList getNumero_sucursal() {
         return numero_sucursal;
     }
 
-    public void setNumero_sucursal(int numero_sucursal) {
+    public void setNumero_sucursal(ArrayList numero_sucursal) {
         this.numero_sucursal = numero_sucursal;
     }
 
-    public int getNumero_proveedor() {
+    public ArrayList getNumero_proveedor() {
         return numero_proveedor;
     }
 
-    public void setNumero_proveedor(int numero_proveedor) {
+    public void setNumero_proveedor(ArrayList numero_proveedor) {
         this.numero_proveedor = numero_proveedor;
     }
 
@@ -161,7 +180,60 @@ public class ModelCOMPRAS {
     public void setTotal_por_producto(float total_por_producto) {
         this.total_por_producto = total_por_producto;
     }
+
+
+    /***
+     *  variables necesarias para la conexion
+     */
+    private Connection conexion;
+    private Statement st;
+    private ResultSet rs;
     
+    private DefaultTableModel model_compras = new DefaultTableModel();
+
+    public DefaultTableModel getModel_prov() {
+        return model_compras;
+    }
+
+    public void setModel_prov(DefaultTableModel model_prov) {
+        this.model_compras = model_prov;
+    }
     
+    /**
+     * se hace la conexion a la Base de datos y se hace la consulta hacia la
+     * tabla de detalle_compra y compras que tiene una union con la tabla de compra
+     *
+     */
+    public void Conectar() {
+        try {
+            conexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia", "root", "");
+            st = conexion.createStatement(); 
+
+        } catch (SQLException err) {
+            JOptionPane.showMessageDialog(null, "Error " + err.getMessage());
+        }
+    }
+    /***
+     * el metodo que llenara los comboBox con los registros necesarios de la base de datos
+     */
+    public void llenarCombo(){
+        ArrayList num_prov = new ArrayList(); // lista para proveedores
+      //llenar comboBox de Proveedores
+      try{
+          
+          rs = st.executeQuery("SELECT * FROM proveedores;");
+      }catch(SQLException e){
+           JOptionPane.showMessageDialog(null,"error1 al llenar comboBox"+e);
+      }
+      try{
+          while(rs.next()){
+             String dato =rs.getString("id_proveedor"); // dato entero
+              num_prov.add(dato);//agregar los datos a la lista        
+          }this.setNumero_proveedor(num_prov);// almacena la lista con los numeros de proveedores obetenidos de la BD      
+      }catch(Exception e){
+          JOptionPane.showMessageDialog(null,"error2 al llenar comboBox"+e);
+      }
+      ArrayList num_suc = new ArrayList(); // lista para sucursales
+    }
     
 }
