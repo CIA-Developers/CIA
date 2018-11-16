@@ -28,11 +28,11 @@ public class ControllerAgregarSucursal {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == viewAgregarSucursal.jb_nuevo) {
-                nuevo_proveedores();
+                nuevo_AgregarSucursal();
             } else if (e.getSource() == viewAgregarSucursal.jb_modificar) {
-                modificar_proveedores();
+                modificar_AgregarSucursal();
             } else if (e.getSource() == viewAgregarSucursal.jb_guardar) {
-                Guardar();
+                GuardarAgregarSucursal();
             }
         }
 
@@ -129,13 +129,13 @@ public class ControllerAgregarSucursal {
     private void cajas_habilitadas() {
     }
 
-    public void nuevo_proveedores() {
+    public void nuevo_AgregarSucursal() {
     }
 
-    public void modificar_proveedores() {
+    public void modificar_AgregarSucursal() {
     }
     
-    public void Guardar() {
+    public void GuardarAgregarSucursal() {
     }
     
 }
