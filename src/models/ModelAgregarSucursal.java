@@ -270,7 +270,26 @@ public class ModelAgregarSucursal {
             JOptionPane.showMessageDialog(null, "Error " + err.getMessage());
         }
     }
+   public void Guardar_Nuevo() {
+        //cada variable obtendra el valor actual de las cajas de texto 
+        no_sucursal= this.getNo_sucursal();
+        calle = this.getCalle();
+        colonia = this.getColonia();
+        numero = this.getNumero();
+        telefono = this.getTelefono();
 
+        int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de Guardar el NUEVO registro?");
+
+        if (JOptionPane.OK_OPTION == confirmar) {
+            try {
+                st.executeUpdate("insert into sucursales (no_sucursal, calle, colonia, numero, telefono) values"
+                        + "('" + no_sucursal + calle + "','" + colonia + "','" + numero + "','" + telefono + "');");
+                JOptionPane.showMessageDialog(null, "Guardado con exito ");
+            } catch (Exception err) {
+                JOptionPane.showMessageDialog(null, "Error Nuevo no se puede guardar " + err.getMessage());
+            }
+        }
+    }
 //Metodo mostar
     public void mostrar() {
         ResultSet rs = Database.getTabla("SELECT * FROM sucursal;");
