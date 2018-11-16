@@ -33,6 +33,7 @@ public final class ControllerMenuAdmin {
     private ControllerSucursales controllerSucursales;
     private ControllerAgregarSucursal controllerAgregarSucursal;
     private ControllerDetalleCompra controllerDetalleCompra;
+    private ControllerDetalleVenta controllerDetalleVenta;
 
     /**
      * Controlador principal donde se un el modelo y controlador del MenuAdmin
@@ -67,6 +68,7 @@ public final class ControllerMenuAdmin {
         controllerSucursales = (ControllerSucursales) controllers[5];
         controllerAgregarSucursal = (ControllerAgregarSucursal) controllers[6];
         controllerDetalleCompra = (ControllerDetalleCompra) controllers[7];
+        controllerDetalleVenta = (ControllerDetalleVenta) controllers[8];
     }
 
     /**
@@ -91,6 +93,7 @@ public final class ControllerMenuAdmin {
         viewMenuAdmin.jmi_sucursales.addActionListener(actionListener);
         viewMenuAdmin.jmi_agregar_Sucursal.addActionListener(actionListener);
         viewMenuAdmin.jmi_detallecompra.addActionListener(actionListener);
+        viewMenuAdmin.jmi_detalleventa.addActionListener(actionListener);
     }
     /**
      * Evalua el componente que genero el evento y llama a un método en
@@ -113,13 +116,14 @@ public final class ControllerMenuAdmin {
                 jmi_sucursales_actionPerformed();
             } else if (e.getSource() == viewMenuAdmin.jmi_agregar_Sucursal) {
                 jm_AgregarSucursales_actionPerformed();
-            }else if (e.getSource() == viewMenuAdmin.jmi_detallecompra) {
+            } else if (e.getSource() == viewMenuAdmin.jmi_detallecompra) {
                 jmi_detallecompra_actionPerformed();
+            }else if (e.getSource() == viewMenuAdmin.jmi_detalleventa) {
+                jmi_detalleventa_actionPerformed();
             }
 
         }
 
-     
     };
 
     /**
@@ -167,10 +171,15 @@ public final class ControllerMenuAdmin {
         viewMenuAdmin.revalidate();
         viewMenuAdmin.repaint();
     }
+
     private void jmi_detallecompra_actionPerformed() {
         viewMenuAdmin.setContentPane(controllerDetalleCompra.viewDetalleCompra);
         viewMenuAdmin.revalidate();
         viewMenuAdmin.repaint();
     }
+       private void jmi_detalleventa_actionPerformed() {
+        viewMenuAdmin.setContentPane(controllerDetalleVenta.viewDetalleVentas);
+        viewMenuAdmin.revalidate();
+        viewMenuAdmin.repaint();
+    }
 }
-

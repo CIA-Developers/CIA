@@ -48,11 +48,19 @@ public class MenuAdmin {
         ViewAgregarSucursal viewAgregarSucursal = new ViewAgregarSucursal();
         ControllerAgregarSucursal controllerAgregarSucursal = new ControllerAgregarSucursal(modelAgregarSucursal, viewAgregarSucursal);
 
+        
+        
         ModelDetalleCompras modelDetalleCompras = new ModelDetalleCompras();
         ViewDetalleCompra viewDetalleCompra = new ViewDetalleCompra();
         ControllerDetalleCompra controllerDetalleCompra = new ControllerDetalleCompra(modelDetalleCompras, viewDetalleCompra);
 
-        Object[] controllers = new Object[8];
+        
+        
+        ModelDetalleVentas modelDetalleVentas = new ModelDetalleVentas();
+        ViewDetalleVentas viewDetalleVentas = new ViewDetalleVentas();
+        ControllerDetalleVenta controllerDetalleVenta = new ControllerDetalleVenta(modelDetalleVentas, viewDetalleVentas);
+
+        Object[] controllers = new Object[9];
         controllers[0] = controllerClientes;
         controllers[1] = controllerEmpleadosCompras;
         controllers[2] = controllerEmpleadosVentas;
@@ -61,6 +69,7 @@ public class MenuAdmin {
         controllers[5] = controllerSucursales;
         controllers[6] = controllerAgregarSucursal;
         controllers[7] = controllerDetalleCompra;
+        controllers[8] = controllerDetalleVenta;
 
         ModelMenuAdmin modelMenuAdmin = new ModelMenuAdmin();
         ViewMenuAdmin viewMenuAdmin = new ViewMenuAdmin();

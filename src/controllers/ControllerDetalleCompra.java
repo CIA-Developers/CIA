@@ -17,7 +17,6 @@ import models.ModelDetalleCompras;
 import java.awt.Container;
 import views.ViewDetalleCompra;
 
-
 /**
  *
  * @author Ami
@@ -26,6 +25,8 @@ import views.ViewDetalleCompra;
 public class ControllerDetalleCompra {
   public ModelDetalleCompras modelDetalleCompra;
     public ViewDetalleCompra viewDetalleCompra;
+      
+
 
 
        public ControllerDetalleCompra(ModelDetalleCompras modelDetalleCompra, ViewDetalleCompra viewDetalleCompra) {
