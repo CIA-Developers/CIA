@@ -31,4 +31,14 @@ public class ModelAgregarSucursal {
     public void setModelo_Proveedores(DefaultTableModel modelo_EmCompras) {
         this.AgregarSucursal = AgregarSucursal;
     }
+    
+       public int rec;//Variable que tomara el valor seleccionado en la tabla 
+
+    public int getRec() {
+        return rec;
+    }
+
+    public void setRec(int rec) {
+        this.rec = rec;
+    }
 }
