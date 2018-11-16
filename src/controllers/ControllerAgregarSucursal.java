@@ -174,6 +174,16 @@ public class ControllerAgregarSucursal {
     }
 
     public void modificar_AgregarSucursal() {
+        viewAgregarSucursal.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
+        viewAgregarSucursal.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
+        //limpiar cada caja de la Interfaz 
+        modelAgregarSucursal.setVerificar(2);// le da el valor a verificar de uno para identificar Modifiar registro
+        viewAgregarSucursal.jtf_no_sucursal.setEditable(false); // el codigo no se puede modificar
+        viewAgregarSucursal.jtf_calle.setEditable(true);
+        viewAgregarSucursal.jtf_colonia.setEditable(true);
+        viewAgregarSucursal.jtf_numero.setEditable(true);
+        viewAgregarSucursal.jtf_telefono.setEditable(true);
+
     }
 
     public void GuardarAgregarSucursal() {
