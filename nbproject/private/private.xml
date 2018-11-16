@@ -3,10 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Familia%20Hernández/Desktop/StockCia/src/models/ModelProveedores.java</file>
-            <file>file:/C:/Users/Familia%20Hernández/Desktop/StockCia/src/controllers/ControllerProveedores.java</file>
-            <file>file:/C:/Users/Familia%20Hernández/Desktop/StockCia/src/models/ModelAgregarSucursal.java</file>
-            <file>file:/C:/Users/Familia%20Hernández/Desktop/StockCia/src/controllers/ControllerAgregarSucursal.java</file>
+            <file>file:/E:/PROYECTO_4TO/SISTEMA/StockCia/src/models/ModelCOMPRAS.java</file>
+            <file>file:/E:/PROYECTO_4TO/SISTEMA/StockCia/src/views/ViewCOMPRAS.java</file>
+            <file>file:/E:/PROYECTO_4TO/SISTEMA/StockCia/src/controllers/ControllerProductos.java</file>
+            <file>file:/E:/PROYECTO_4TO/SISTEMA/StockCia/src/controllers/ControllerCOMPRAS.java</file>
+            <file>file:/E:/PROYECTO_4TO/SISTEMA/StockCia/src/bd/bd_punto_venta.sql</file>
         </group>
     </open-files>
 </project-private>

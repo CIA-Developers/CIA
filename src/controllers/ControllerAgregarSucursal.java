@@ -129,15 +129,48 @@ public class ControllerAgregarSucursal {
     }
 
     public void jt_vista_MouseClicked() {
+        viewAgregarSucursal.jb_guardar.setEnabled(false);
+        viewAgregarSucursal.jb_modificar.setEnabled(true);//El boton modificar aparecera habilitado
+        viewAgregarSucursal.jb_nuevo.setEnabled(true);//El boton nuevo aparecera habilitado
+        cajas_deshabilitadas(); // cuando se haga clic en la tabla, las cajas se volveran a deshabilitar 
+        modelAgregarSucursal.setRec(viewAgregarSucursal.jt_vista.getSelectedRow());//a la variable se le asigna el elemento seleccionado en la tabla
+        viewAgregarSucursal.jtf_no_sucursal.setText(viewAgregarSucursal.jt_vista.getValueAt(modelAgregarSucursal.getRec(), 0).toString());
+        viewAgregarSucursal.jtf_calle.setText(viewAgregarSucursal.jt_vista.getValueAt(modelAgregarSucursal.getRec(), 1).toString());
+        viewAgregarSucursal.jtf_colonia.setText(viewAgregarSucursal.jt_vista.getValueAt(modelAgregarSucursal.getRec(), 2).toString());
+        viewAgregarSucursal.jtf_numero.setText(viewAgregarSucursal.jt_vista.getValueAt(modelAgregarSucursal.getRec(), 3).toString());
+        viewAgregarSucursal.jtf_telefono.setText(viewAgregarSucursal.jt_vista.getValueAt(modelAgregarSucursal.getRec(), 4).toString());
     }
 
     private void cajas_deshabilitadas() {
+        viewAgregarSucursal.jtf_no_sucursal.setEditable(false);
+        viewAgregarSucursal.jtf_calle.setEditable(false);
+        viewAgregarSucursal.jtf_colonia.setEditable(false);
+        viewAgregarSucursal.jtf_numero.setEditable(false);
+        viewAgregarSucursal.jtf_telefono.setEditable(false);
+
     }
 
     private void cajas_habilitadas() {
+        viewAgregarSucursal.jtf_no_sucursal.setEditable(true);
+        viewAgregarSucursal.jtf_calle.setEditable(true);
+        viewAgregarSucursal.jtf_colonia.setEditable(true);
+        viewAgregarSucursal.jtf_numero.setEditable(true);
+        viewAgregarSucursal.jtf_telefono.setEditable(true);
+
     }
 
     public void nuevo_AgregarSucursal() {
+        viewAgregarSucursal.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
+        viewAgregarSucursal.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
+        //limpiar cada caja de la Interfaz 
+        modelAgregarSucursal.setVerificar(1);// le da el valor a verificar de cero para identificar un nuevo registro
+        viewAgregarSucursal.jtf_no_sucursal.setText(modelAgregarSucursal.getLimpiar());
+        viewAgregarSucursal.jtf_calle.setText(modelAgregarSucursal.getLimpiar());
+        viewAgregarSucursal.jtf_colonia.setText(modelAgregarSucursal.getLimpiar());
+        viewAgregarSucursal.jtf_numero.setText(modelAgregarSucursal.getLimpiar());
+        viewAgregarSucursal.jtf_telefono.setText(modelAgregarSucursal.getLimpiar());
+        cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
+
     }
 
     public void modificar_AgregarSucursal() {
