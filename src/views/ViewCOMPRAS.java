@@ -49,13 +49,13 @@ public class ViewCOMPRAS extends javax.swing.JPanel {
         jtf_total = new javax.swing.JTextField();
         jp_productos = new javax.swing.JPanel();
         jl_codigo_producto = new javax.swing.JLabel();
-        jtf_codigo_producto = new javax.swing.JTextField();
         jl_nombre_producto = new javax.swing.JLabel();
         jtf_nombre_producto = new javax.swing.JTextField();
         jl_tipo_producto = new javax.swing.JLabel();
         jtf_tipo_producto = new javax.swing.JTextField();
         jl_marca_producto = new javax.swing.JLabel();
         jtf_marca_producto = new javax.swing.JTextField();
+        jcb_codigo_producto = new javax.swing.JComboBox<>();
         jl_fecha = new javax.swing.JLabel();
         jl_hora = new javax.swing.JLabel();
         jcb_numero_sucursal = new javax.swing.JComboBox<>();
@@ -220,31 +220,33 @@ public class ViewCOMPRAS extends javax.swing.JPanel {
         jl_marca_producto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jl_marca_producto.setText(" Marca producto:");
 
+        jcb_codigo_producto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
+
         javax.swing.GroupLayout jp_productosLayout = new javax.swing.GroupLayout(jp_productos);
         jp_productos.setLayout(jp_productosLayout);
         jp_productosLayout.setHorizontalGroup(
             jp_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_productosLayout.createSequentialGroup()
                 .addGroup(jp_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp_productosLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jl_marca_producto)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jtf_marca_producto, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jp_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jp_productosLayout.createSequentialGroup()
                             .addContainerGap()
                             .addComponent(jl_codigo_producto)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jtf_codigo_producto, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jcb_codigo_producto, 0, 144, Short.MAX_VALUE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jp_productosLayout.createSequentialGroup()
                             .addGroup(jp_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jl_nombre_producto)
                                 .addComponent(jl_tipo_producto))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jp_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jtf_tipo_producto)
-                                .addComponent(jtf_nombre_producto))))
-                    .addGroup(jp_productosLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jl_marca_producto)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtf_marca_producto, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jp_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jtf_tipo_producto, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                                .addComponent(jtf_nombre_producto)))))
                 .addGap(0, 42, Short.MAX_VALUE))
         );
         jp_productosLayout.setVerticalGroup(
@@ -253,7 +255,7 @@ public class ViewCOMPRAS extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jp_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_codigo_producto)
-                    .addComponent(jtf_codigo_producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jcb_codigo_producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jp_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_nombre_producto)
@@ -552,6 +554,7 @@ public class ViewCOMPRAS extends javax.swing.JPanel {
     public javax.swing.JButton jb_modificar;
     public javax.swing.JButton jb_nuevo;
     public javax.swing.JButton jb_realizar_compra;
+    public javax.swing.JComboBox<String> jcb_codigo_producto;
     public javax.swing.JComboBox<String> jcb_numero_proveedor;
     public javax.swing.JComboBox<String> jcb_numero_sucursal;
     public javax.swing.JComboBox<String> jcb_rfc;
@@ -585,7 +588,6 @@ public class ViewCOMPRAS extends javax.swing.JPanel {
     private javax.swing.JPanel jp_titulo;
     public javax.swing.JTable jt_vista;
     private javax.swing.JTextField jtf_cantidad;
-    public javax.swing.JTextField jtf_codigo_producto;
     public javax.swing.JTextField jtf_importe;
     public javax.swing.JTextField jtf_iva;
     public javax.swing.JTextField jtf_marca_producto;
