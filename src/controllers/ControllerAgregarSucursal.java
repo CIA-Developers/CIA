@@ -69,6 +69,31 @@ public class ControllerAgregarSucursal {
 
         }
     };
+    /**
+     * Busar solo con un compo, no es necesario el metodo de filtro toda la
+     * accion de buscar esta dentro del evento keyListener
+     */
+    KeyListener key = new KeyListener() {
+        @Override
+        public void keyTyped(KeyEvent e) {
+            if (e.getSource() == viewAgregarSucursal.jtf_buscar) {
+                modelAgregarSucursal.setTrsFiltro(new TableRowSorter(viewAgregarSucursal.jt_vista.getModel()));
+                viewAgregarSucursal.jt_vista.setRowSorter(modelAgregarSucursal.getTrsFiltro());
+            }
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            modelAgregarSucursal.setCadena(viewAgregarSucursal.jtf_buscar.getText());
+            viewAgregarSucursal.jtf_buscar.setText(modelAgregarSucursal.getCadena());
+            modelAgregarSucursal.getTrsFiltro().setRowFilter(RowFilter.regexFilter(viewAgregarSucursal.jtf_buscar.getText(), modelAgregarSucursal.getColumnaABuscar()));
+        }
+    };
 
      
     public ControllerAgregarSucursal(ModelAgregarSucursal modelAgregarSucursal, ViewAgregarSucursal viewAgregarSucursal) {
