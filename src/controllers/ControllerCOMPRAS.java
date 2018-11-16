@@ -44,6 +44,12 @@ public class ControllerCOMPRAS {
         for (int s = 0; s < modelCOMPRAS.getNumero_sucursal().size(); s++) {
             viewCOMPRAS.jcb_numero_sucursal.addItem((String) modelCOMPRAS.getNumero_sucursal().get(s));
         }
+        for (int e = 0; e < modelCOMPRAS.getNumero_empleado().size(); e++) {
+            viewCOMPRAS.jcb_rfc.addItem((String) modelCOMPRAS.getNumero_empleado().get(e));
+        }
+        for (int c = 0; c < modelCOMPRAS.getProducto().size(); c++) {
+            viewCOMPRAS.jcb_codigo_producto.addItem((String) modelCOMPRAS.getProducto().get(c));
+        }
     }
    
     
