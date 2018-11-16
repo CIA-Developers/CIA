@@ -284,7 +284,7 @@ public class ModelAgregarSucursal {
         if (JOptionPane.OK_OPTION == confirmar) {
             try {
                 st.executeUpdate("insert into sucursal (no_sucursal, calle, colonia, numero, telefono) values"
-                        + "('" + no_sucursal + calle + "','" + colonia + "','" + numero + "','" + telefono + "');");
+                        + "('" + no_sucursal+"','"  + calle + "','" + colonia + "','" + numero + "','" + telefono + "');");
                 JOptionPane.showMessageDialog(null, "Guardado con exito ");
             } catch (Exception err) {
                 JOptionPane.showMessageDialog(null, "Error Nuevo no se puede guardar " + err.getMessage());
