@@ -169,5 +169,45 @@ public class ModelAgregarSucursal {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+   
+    
+    
+    private Connection conexion;
+    private Statement st;
+    private ResultSet rs;
+    PreparedStatement ps;
+    
+    public Connection getConexion() {
+        return conexion;
+    }
+
+    public void setConexion(Connection conexion) {
+        this.conexion = conexion;
+    }
+
+    public Statement getSt() {
+        return st;
+    }
+
+    public void setSt(Statement st) {
+        this.st = st;
+    }
+
+    public ResultSet getRs() {
+        return rs;
+    }
+
+    public void setRs(ResultSet rs) {
+        this.rs = rs;
+    }
+
+    public PreparedStatement getPs() {
+        return ps;
+    }
+
+    public void setPs(PreparedStatement ps) {
+        this.ps = ps;
+    }
 }
+
 

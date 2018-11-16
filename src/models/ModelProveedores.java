@@ -224,6 +224,8 @@ public class ModelProveedores {
         this.correo = correo;
     }
 
+    
+    
     public Connection getConexion() {
         return conexion;
     }
