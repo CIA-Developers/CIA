@@ -271,5 +271,23 @@ public class ModelAgregarSucursal {
         }
     }
 
+//Metodo mostar
+    public void mostrar() {
+        ResultSet rs = Database.getTabla("SELECT * FROM sucursal;");
+        AgregarSucursal.setColumnIdentifiers(new Object[]{"no_sucursal", "calle", "Colonia", "Numero","telefono" });
+        try {
+            while (rs.next()) {
+                // añade los resultado a al modelo de tabla 
+               AgregarSucursal.addRow(new Object[]{
+                    rs.getString("no_sucursal"),
+                    rs.getString("calle"),
+                    rs.getString("colonia"),
+                    rs.getString("numero"),
+                    rs.getString("telefono")});
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 
 }
