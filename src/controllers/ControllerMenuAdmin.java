@@ -4,43 +4,47 @@
  * and open the template in the editor.
  */
 package controllers;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import models.ModelMenuAdmin;
 import views.ViewMenuAdmin;
+
 /**
  *
  * @author Octaviano
  */
-public class ControllerMenuAdmin {
-    
+public final class ControllerMenuAdmin {
+
     private final ModelMenuAdmin ModelMenuAdmin;
-    private final ViewMenuAdmin  viewMenuAdmin;
-    
+    private final ViewMenuAdmin viewMenuAdmin;
+
     /**
-     * Esta variable almacena los controladores de cada vista de catalogos
-     * para poder utilizarlos dentro del mismo JFrame.
+     * Esta variable almacena los controladores de cada vista de catalogos para
+     * poder utilizarlos dentro del mismo JFrame.
      */
     private Object controllers[];
-    
+
     private ControllerClientes controllerClientes;
-    private ControllerEmpleadosCompras controllerEmpleadosCompras; 
+    private ControllerEmpleadosCompras controllerEmpleadosCompras;
     private ControllerEmpleadosVentas controllerEmpleadosVentas;
     private ControllerProductos controllerProductos;
     private ControllerProveedores controllerProveedores;
     private ControllerSucursales controllerSucursales;
     private ControllerAgregarSucursal controllerAgregarSucursal;
+    private ControllerDetalleCompra controllerDetalleCompra;
 
     /**
      * Controlador principal donde se un el modelo y controlador del MenuAdmin
-     * Recibe cada controlador de las vistas de los catalogos 
-     * dentro de este controlador se tiene el accesso a la programacion 
-     * en el controlador de cada JpanelCatalogo
+     * Recibe cada controlador de las vistas de los catalogos dentro de este
+     * controlador se tiene el accesso a la programacion en el controlador de
+     * cada JpanelCatalogo
+     *
      * @param modelMenuAdmin
      * @param ViewMenuAdmin
-     * @param controllers 
+     * @param controllers
      */
-    public ControllerMenuAdmin(ModelMenuAdmin ModelMenuAdmin, ViewMenuAdmin viewMenuAdmin, Object[] controllers) {   
+    public ControllerMenuAdmin(ModelMenuAdmin ModelMenuAdmin, ViewMenuAdmin viewMenuAdmin, Object[] controllers) {
         this.ModelMenuAdmin = ModelMenuAdmin;
         this.viewMenuAdmin = viewMenuAdmin;
         this.controllers = controllers;
@@ -51,8 +55,8 @@ public class ControllerMenuAdmin {
 
     /**
      * Separa cada uno de los controlladores almacendados en controllers, de
-     * esta forma se puede acceder a todas las variables y métodos publicos
-     * de cada uno.
+     * esta forma se puede acceder a todas las variables y métodos publicos de
+     * cada uno.
      */
     public void setControllers() {
         controllerClientes = (ControllerClientes) controllers[0];
@@ -61,18 +65,21 @@ public class ControllerMenuAdmin {
         controllerProductos = (ControllerProductos) controllers[3];
         controllerProveedores = (ControllerProveedores) controllers[4];
         controllerSucursales = (ControllerSucursales) controllers[5];
-        controllerAgregarSucursal = (ControllerAgregarSucursal) controllers[6]; 
+        controllerAgregarSucursal = (ControllerAgregarSucursal) controllers[6];
+        controllerDetalleCompra = (ControllerDetalleCompra) controllers[7];
     }
+
     /**
      * mustra la ventana principal del menuAdmin
      */
-    private void initComponets(){
+    private void initComponets() {
         viewMenuAdmin.setTitle("Menu Administrador");
         viewMenuAdmin.setLocationRelativeTo(null);
         viewMenuAdmin.setVisible(true);
     }
+
     /**
-     * Asigna el actionListener a cada uno de los JMenuItems de la vista 
+     * Asigna el actionListener a cada uno de los JMenuItems de la vista
      * ViewMenuAdmin.
      */
     private void setActionListener() {
@@ -83,68 +90,87 @@ public class ControllerMenuAdmin {
         viewMenuAdmin.jmi_proveedores.addActionListener(actionListener);
         viewMenuAdmin.jmi_sucursales.addActionListener(actionListener);
         viewMenuAdmin.jmi_agregar_Sucursal.addActionListener(actionListener);
+        viewMenuAdmin.jmi_detallecompra.addActionListener(actionListener);
     }
     /**
-    * Evalua el componente que genero el evento y llama a un método en particular.
-    */
-    private final ActionListener actionListener = new ActionListener(){
+     * Evalua el componente que genero el evento y llama a un método en
+     * particular.
+     */
+    private final ActionListener actionListener = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-           if (e.getSource() == viewMenuAdmin.jmi_clientes) {
+            if (e.getSource() == viewMenuAdmin.jmi_clientes) {
                 jmi_clientes_actionPerformed();
-           }else if (e.getSource() == viewMenuAdmin.jmi_empleados_compras) {
+            } else if (e.getSource() == viewMenuAdmin.jmi_empleados_compras) {
                 jmi_Empleados_compras_actionPerformed();
-           }else if (e.getSource() == viewMenuAdmin.jmi_empleados_ventas) {
+            } else if (e.getSource() == viewMenuAdmin.jmi_empleados_ventas) {
                 jmi_Empleados_ventas_actionPerformed();
-           }else if (e.getSource() == viewMenuAdmin.jmi_productos) {
+            } else if (e.getSource() == viewMenuAdmin.jmi_productos) {
                 jmi_productos_actionPerformed();
-           }else if (e.getSource() == viewMenuAdmin.jmi_proveedores) {
+            } else if (e.getSource() == viewMenuAdmin.jmi_proveedores) {
                 jmi_proveedores_actionPerformed();
-           }else if (e.getSource() == viewMenuAdmin.jmi_sucursales) {
+            } else if (e.getSource() == viewMenuAdmin.jmi_sucursales) {
                 jmi_sucursales_actionPerformed();
-           }
-           else if (e.getSource() == viewMenuAdmin.jmi_agregar_Sucursal) {
+            } else if (e.getSource() == viewMenuAdmin.jmi_agregar_Sucursal) {
                 jm_AgregarSucursales_actionPerformed();
-           }
-        }    
+            }else if (e.getSource() == viewMenuAdmin.jmi_detallecompra) {
+                jmi_detallecompra_actionPerformed();
+            }
+
+        }
+
+     
     };
+
     /**
-    * Muestra el JPanel ViewClientes dentro del JFrame ViewMenuAdmin, (incluido todo
-    * el funcionamiendo programado).
-    */
-    private void jmi_clientes_actionPerformed(){
+     * Muestra el JPanel ViewClientes dentro del JFrame ViewMenuAdmin, (incluido
+     * todo el funcionamiendo programado).
+     */
+    private void jmi_clientes_actionPerformed() {
         viewMenuAdmin.setContentPane(controllerClientes.viewClientes);
         viewMenuAdmin.revalidate();
-        viewMenuAdmin.repaint();     
+        viewMenuAdmin.repaint();
     }
-    private void jmi_Empleados_compras_actionPerformed(){
+
+    private void jmi_Empleados_compras_actionPerformed() {
         viewMenuAdmin.setContentPane(controllerEmpleadosCompras.viewEmpleadosCompras);
         viewMenuAdmin.revalidate();
-        viewMenuAdmin.repaint();     
+        viewMenuAdmin.repaint();
     }
-    private void jmi_Empleados_ventas_actionPerformed(){
+
+    private void jmi_Empleados_ventas_actionPerformed() {
         viewMenuAdmin.setContentPane(controllerEmpleadosVentas.viewsEmpleadosVentas);
         viewMenuAdmin.revalidate();
-        viewMenuAdmin.repaint();     
+        viewMenuAdmin.repaint();
     }
-    private void jmi_productos_actionPerformed(){
+
+    private void jmi_productos_actionPerformed() {
         viewMenuAdmin.setContentPane(controllerProductos.viewProductos);
         viewMenuAdmin.revalidate();
-        viewMenuAdmin.repaint();     
+        viewMenuAdmin.repaint();
     }
-    private void jmi_proveedores_actionPerformed(){
+
+    private void jmi_proveedores_actionPerformed() {
         viewMenuAdmin.setContentPane(controllerProveedores.viewProveedores);
         viewMenuAdmin.revalidate();
-        viewMenuAdmin.repaint();     
+        viewMenuAdmin.repaint();
     }
-    private void jmi_sucursales_actionPerformed(){
+
+    private void jmi_sucursales_actionPerformed() {
         viewMenuAdmin.setContentPane(controllerSucursales.viewSucursales);
         viewMenuAdmin.revalidate();
-        viewMenuAdmin.repaint();     
+        viewMenuAdmin.repaint();
     }
-    private void jm_AgregarSucursales_actionPerformed(){
+
+    private void jm_AgregarSucursales_actionPerformed() {
         viewMenuAdmin.setContentPane(controllerAgregarSucursal.viewAgregarSucursal);
         viewMenuAdmin.revalidate();
-        viewMenuAdmin.repaint();     
+        viewMenuAdmin.repaint();
+    }
+    private void jmi_detallecompra_actionPerformed() {
+        viewMenuAdmin.setContentPane(controllerDetalleCompra.viewDetalleCompra);
+        viewMenuAdmin.revalidate();
+        viewMenuAdmin.repaint();
     }
 }
+
