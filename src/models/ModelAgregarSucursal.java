@@ -75,4 +75,37 @@ public class ModelAgregarSucursal {
         this.sql = sql;
     }
     
+        /**
+     * Variables para el metodo de busqueda
+     */   
+    private TableRowSorter trsFiltro; // sirve para filtar los datos dentro de la tabla
+
+    public TableRowSorter getTrsFiltro() {
+        return trsFiltro;
+    }
+
+    public void setTrsFiltro(TableRowSorter trsFiltro) {
+        this.trsFiltro = trsFiltro;
+    }
+    
+    public int columnaABuscar = 0; //solo buscara en la primer columa que pertenece al codigo de producto
+    public String cadena;
+
+    public String getCadena() {
+        return cadena;
+    }
+
+    public void setCadena(String cadena) {
+        this.cadena = cadena;
+    }
+    
+    public int getColumnaABuscar() {
+        return columnaABuscar;
+    }
+
+    public void setColumnaABuscar(int columnaABuscar) {
+        this.columnaABuscar = columnaABuscar;
+    }
+    
+    
 }
