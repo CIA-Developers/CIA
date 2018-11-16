@@ -24,13 +24,42 @@ public class ControllerAgregarSucursal {
     ActionListener list = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            if (e.getSource() == viewProveedores.jb_nuevo) {
+            if (e.getSource() == viewAgregarSucursal.jb_nuevo) {
                 nuevo_proveedores();
-            } else if (e.getSource() == viewProveedores.jb_modificar) {
+            } else if (e.getSource() == viewAgregarSucursal.jb_modificar) {
                 modificar_proveedores();
-            } else if (e.getSource() == viewProveedores.jb_guardar) {
+            } else if (e.getSource() == viewAgregarSucursal.jb_guardar) {
                 Guardar();
             }
+        }
+
+    };
+     MouseListener ml = new MouseListener() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            if (e.getSource() == viewAgregarSucursal.jt_vista) {
+                jt_vista_MouseClicked();
+            }
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+
         }
 
     };
