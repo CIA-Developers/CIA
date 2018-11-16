@@ -9,6 +9,6 @@ package models;
  *
  * @author Ami
  */
-public class ModelDetalleCompra {
+public class ModelDetalleCompras {
     
 }
