@@ -187,6 +187,18 @@ public class ControllerAgregarSucursal {
     }
 
     public void GuardarAgregarSucursal() {
+            // si la variable verificar es igual a 0 se llama al metodo de guardar Nuevo
+        if (modelAgregarSucursal.getVerificar() == 1) {
+            // darle el valor a las variables
+            modelAgregarSucursal.setNo_sucursal(viewAgregarSucursal.jtf_no_sucursal.getText());
+            modelAgregarSucursal.setCalle(viewAgregarSucursal.jtf_calle.getText());
+            modelAgregarSucursal.setColonia(viewAgregarSucursal.jtf_colonia.getText());
+            modelAgregarSucursal.setNumero(viewAgregarSucursal.jtf_numero.getText());
+            modelAgregarSucursal.setTelefono(viewAgregarSucursal.jtf_telefono.getText());
+       
+        
+        
     }
 
+    }
 }
