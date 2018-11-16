@@ -22,5 +22,13 @@ import javax.swing.table.TableRowSorter;
  * @author Octaviano
  */
 public class ModelAgregarSucursal {
-    
+        DefaultTableModel AgregarSucursal = new DefaultTableModel(); //la variable modelo almacenara los tados de la tabla
+
+    public DefaultTableModel getModelo_Proveedores() {
+        return AgregarSucursal;
+    }
+
+    public void setModelo_Proveedores(DefaultTableModel modelo_EmCompras) {
+        this.AgregarSucursal = AgregarSucursal;
+    }
 }
