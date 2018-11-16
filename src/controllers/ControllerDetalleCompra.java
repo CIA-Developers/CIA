@@ -22,6 +22,7 @@ import views.ViewDetalleCompra;
  *
  * @author Ami
  */
+
 public class ControllerDetalleCompra {
   public ModelDetalleCompras modelDetalleCompra;
     public ViewDetalleCompra viewDetalleCompra;
