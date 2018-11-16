@@ -21,7 +21,19 @@ import javax.swing.table.TableRowSorter;
 public class ControllerAgregarSucursal {
     ModelAgregarSucursal modelAgregarSucursal;
     ViewAgregarSucursal viewAgregarSucursal;
+    ActionListener list = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (e.getSource() == viewProveedores.jb_nuevo) {
+                nuevo_proveedores();
+            } else if (e.getSource() == viewProveedores.jb_modificar) {
+                modificar_proveedores();
+            } else if (e.getSource() == viewProveedores.jb_guardar) {
+                Guardar();
+            }
+        }
 
+    };
     public ControllerAgregarSucursal(ModelAgregarSucursal modelAgregarSucursal, ViewAgregarSucursal viewAgregarSucursal) {
         this.modelAgregarSucursal = modelAgregarSucursal;
         this.viewAgregarSucursal = viewAgregarSucursal;
