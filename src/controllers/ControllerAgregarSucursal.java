@@ -95,11 +95,19 @@ public class ControllerAgregarSucursal {
         }
     };
 
-     
+    
     public ControllerAgregarSucursal(ModelAgregarSucursal modelAgregarSucursal, ViewAgregarSucursal viewAgregarSucursal) {
         this.modelAgregarSucursal = modelAgregarSucursal;
         this.viewAgregarSucursal = viewAgregarSucursal;
-    }
+         this.viewAgregarSucursal.jtf_buscar.addKeyListener(key); //agregar elevento de keylistener en la caja e texto buscar
+        this.viewAgregarSucursal.jt_vista.addMouseListener(ml);//agregar a la table el evento de MouseListener
 
-     
-}
+        viewAgregarSucursal.jb_guardar.setEnabled(false);
+//El boton guardar aparecera inhabilitado
+        viewAgregarSucursal.jb_eliminar.setEnabled(false);
+//El boton guardar aparecera inhabilitado
+
+        cajas_deshabilitadas();
+        setActionListener();
+        ConexionBD();
+    }
