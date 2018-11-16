@@ -32,9 +32,9 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
         jP_buqueda_general = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
-        jButton1 = new javax.swing.JButton();
+        jDC_fecha_inicial = new com.toedter.calendar.JDateChooser();
+        jDC_fehca_final = new com.toedter.calendar.JDateChooser();
+        jB_ver = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -66,8 +66,8 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
 
         jLabel3.setText("Fecha final (dia/mes/año) :");
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/buscar .png"))); // NOI18N
-        jButton1.setText("Ver");
+        jB_ver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/buscar .png"))); // NOI18N
+        jB_ver.setText("Ver");
 
         javax.swing.GroupLayout jP_buqueda_generalLayout = new javax.swing.GroupLayout(jP_buqueda_general);
         jP_buqueda_general.setLayout(jP_buqueda_generalLayout);
@@ -77,9 +77,9 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jP_buqueda_generalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jP_buqueda_generalLayout.createSequentialGroup()
-                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jDC_fecha_inicial, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jDC_fehca_final, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jP_buqueda_generalLayout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
@@ -87,7 +87,7 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
                 .addContainerGap(155, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_buqueda_generalLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(jB_ver)
                 .addGap(22, 22, 22))
         );
         jP_buqueda_generalLayout.setVerticalGroup(
@@ -100,12 +100,12 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
                 .addGroup(jP_buqueda_generalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jP_buqueda_generalLayout.createSequentialGroup()
                         .addGap(1, 1, 1)
-                        .addComponent(jButton1))
+                        .addComponent(jB_ver))
                     .addGroup(jP_buqueda_generalLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(jP_buqueda_generalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jDC_fehca_final, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jDC_fecha_inicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(42, Short.MAX_VALUE))
         );
 
@@ -131,9 +131,9 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
+    private javax.swing.JButton jB_ver;
+    private com.toedter.calendar.JDateChooser jDC_fecha_inicial;
+    private com.toedter.calendar.JDateChooser jDC_fehca_final;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
