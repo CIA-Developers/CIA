@@ -106,6 +106,11 @@ public class ModelAgregarSucursal {
     public void setColumnaABuscar(int columnaABuscar) {
         this.columnaABuscar = columnaABuscar;
     }
-    
-    
+   //Variables que corresponden a cada caja de texto
+    public int verificar;
+    public String no_sucursal;
+    public String calle;
+    public String colonia;
+    public String numero;
+    public String telefono;
 }
