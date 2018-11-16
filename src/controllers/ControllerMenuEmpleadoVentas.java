@@ -7,14 +7,14 @@ package controllers;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import models.ModelMenuEmpleadoVentas;
-import views.viewMenuEmpleadoVentas;
+import views.ViewMenuEmpleadoVentas;
 /**
  *
  * @author Octaviano
  */
 public class ControllerMenuEmpleadoVentas {
     private final ModelMenuEmpleadoVentas modelMenuEmpleadosVentas;
-    private final viewMenuEmpleadoVentas viewMenuEmpleadosVentas;
+    private final ViewMenuEmpleadoVentas viewMenuEmpleadosVentas;
     
      /**
      * Esta variable almacena los controladores de cada vista de catalogos
@@ -35,13 +35,15 @@ public class ControllerMenuEmpleadoVentas {
      * @param modelMenuEmpleadosVentas
      * @param viewMenuWmpleadosVentas 
      */
-    public ControllerMenuEmpleadoVentas(ModelMenuEmpleadoVentas modelMenuEmpleadosVentas, viewMenuEmpleadoVentas viewMenuWmpleadosVentas, Object[] controllers) {
+    public ControllerMenuEmpleadoVentas(ModelMenuEmpleadoVentas modelMenuEmpleadosVentas, ViewMenuEmpleadoVentas viewMenuEmpleadosVentas, Object[] controllers) {    
         this.modelMenuEmpleadosVentas = modelMenuEmpleadosVentas;
-        this.viewMenuEmpleadosVentas = viewMenuWmpleadosVentas;
+        this.viewMenuEmpleadosVentas = viewMenuEmpleadosVentas;
+        this.controllers = controllers;
         setControllers();
         setActionListener();
         initComponets();
     }
+
     /**
      * Separa cada uno de los controlladores almacendados en controllers, de
      * esta forma se puede acceder a todas las variables y métodos publicos
