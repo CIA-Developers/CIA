@@ -29,6 +29,7 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jL_titulo = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jP_datos = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -54,6 +55,8 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
         jL_titulo.setFont(new java.awt.Font("Segoe UI", 0, 45)); // NOI18N
         jL_titulo.setText("Detalle Compras");
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Compra_venta.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -61,14 +64,18 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(58, 58, 58)
                 .addComponent(jL_titulo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(33, 33, 33))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jL_titulo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jL_titulo))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         jP_datos.setBackground(new java.awt.Color(255, 255, 255));
@@ -254,6 +261,7 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
     private javax.swing.JLabel jL_titulo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
