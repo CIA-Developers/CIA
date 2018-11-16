@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package controllers;
+
 import models.ModelAgregarSucursal;
 import views.ViewAgregarSucursal;
 import java.awt.event.ActionEvent;
@@ -14,11 +15,13 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.RowFilter;
 import javax.swing.table.TableRowSorter;
+
 /**
  *
  * @author Octaviano
  */
 public class ControllerAgregarSucursal {
+
     ModelAgregarSucursal modelAgregarSucursal;
     ViewAgregarSucursal viewAgregarSucursal;
     ActionListener list = new ActionListener() {
@@ -34,7 +37,7 @@ public class ControllerAgregarSucursal {
         }
 
     };
-     MouseListener ml = new MouseListener() {
+    MouseListener ml = new MouseListener() {
         @Override
         public void mouseClicked(MouseEvent e) {
             if (e.getSource() == viewAgregarSucursal.jt_vista) {
@@ -63,7 +66,7 @@ public class ControllerAgregarSucursal {
         }
 
     };
-      ActionListener actionListener = new ActionListener() {
+    ActionListener actionListener = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
 
@@ -95,11 +98,10 @@ public class ControllerAgregarSucursal {
         }
     };
 
-    
     public ControllerAgregarSucursal(ModelAgregarSucursal modelAgregarSucursal, ViewAgregarSucursal viewAgregarSucursal) {
         this.modelAgregarSucursal = modelAgregarSucursal;
         this.viewAgregarSucursal = viewAgregarSucursal;
-         this.viewAgregarSucursal.jtf_buscar.addKeyListener(key); //agregar elevento de keylistener en la caja e texto buscar
+        this.viewAgregarSucursal.jtf_buscar.addKeyListener(key); //agregar elevento de keylistener en la caja e texto buscar
         this.viewAgregarSucursal.jt_vista.addMouseListener(ml);//agregar a la table el evento de MouseListener
 
         viewAgregarSucursal.jb_guardar.setEnabled(false);
@@ -111,3 +113,29 @@ public class ControllerAgregarSucursal {
         setActionListener();
         ConexionBD();
     }
+
+    private void setActionListener() {
+    }
+
+    public void ConexionBD() {
+    }
+
+    public void jt_vista_MouseClicked() {
+    }
+
+    private void cajas_deshabilitadas() {
+    }
+
+    private void cajas_habilitadas() {
+    }
+
+    public void nuevo_proveedores() {
+    }
+
+    public void modificar_proveedores() {
+    }
+    
+    public void Guardar() {
+    }
+    
+}
