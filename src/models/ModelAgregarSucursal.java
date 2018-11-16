@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package models;
+
 import conectar_tablas.Database; //llamamos la conexion a la BD para almacen
 import static conectar_tablas.Database.getConexion;
 import java.sql.Connection;
@@ -22,7 +23,8 @@ import javax.swing.table.TableRowSorter;
  * @author Octaviano
  */
 public class ModelAgregarSucursal {
-        DefaultTableModel AgregarSucursal = new DefaultTableModel(); //la variable modelo almacenara los tados de la tabla
+
+    DefaultTableModel AgregarSucursal = new DefaultTableModel(); //la variable modelo almacenara los tados de la tabla
 
     public DefaultTableModel getModelo_AgregarSucursal() {
         return AgregarSucursal;
@@ -31,8 +33,8 @@ public class ModelAgregarSucursal {
     public void setModelo_AgregarSucursal(DefaultTableModel modelo_EmCompras) {
         this.AgregarSucursal = AgregarSucursal;
     }
-    
-       public int rec;//Variable que tomara el valor seleccionado en la tabla 
+
+    public int rec;//Variable que tomara el valor seleccionado en la tabla 
 
     public int getRec() {
         return rec;
@@ -41,11 +43,11 @@ public class ModelAgregarSucursal {
     public void setRec(int rec) {
         this.rec = rec;
     }
-    
-     /**
+
+    /**
      * Variables para el metodo de busqueda
      */
-    public String[] titulos = {"ID", "Nombre", "Apellido Paterno", "Apellido Materno", "Telefono", "Municipio", "calle", "Colonia", "Numero", "Correo"}; //columnas de la tabla
+    public String[] titulos = {"No_sucursal", "calle", "Colonia", "Numero", "Telefono"}; //columnas de la tabla
 
     public String[] getTitulos() {
         return titulos;
@@ -74,10 +76,10 @@ public class ModelAgregarSucursal {
     public void setSql(String sql) {
         this.sql = sql;
     }
-    
-        /**
+
+    /**
      * Variables para el metodo de busqueda
-     */   
+     */
     private TableRowSorter trsFiltro; // sirve para filtar los datos dentro de la tabla
 
     public TableRowSorter getTrsFiltro() {
@@ -87,7 +89,7 @@ public class ModelAgregarSucursal {
     public void setTrsFiltro(TableRowSorter trsFiltro) {
         this.trsFiltro = trsFiltro;
     }
-    
+
     public int columnaABuscar = 0; //solo buscara en la primer columa que pertenece al codigo de producto
     public String cadena;
 
@@ -98,7 +100,7 @@ public class ModelAgregarSucursal {
     public void setCadena(String cadena) {
         this.cadena = cadena;
     }
-    
+
     public int getColumnaABuscar() {
         return columnaABuscar;
     }
@@ -106,7 +108,7 @@ public class ModelAgregarSucursal {
     public void setColumnaABuscar(int columnaABuscar) {
         this.columnaABuscar = columnaABuscar;
     }
-   //Variables que corresponden a cada caja de texto
+    //Variables que corresponden a cada caja de texto
     private int verificar;
     private String no_sucursal;
     private String calle;
@@ -114,7 +116,7 @@ public class ModelAgregarSucursal {
     private String numero;
     private String telefono;
 
-   public DefaultTableModel getAgregarSucursal() {
+    public DefaultTableModel getAgregarSucursal() {
         return AgregarSucursal;
     }
 
@@ -169,14 +171,12 @@ public class ModelAgregarSucursal {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-   
-    
-    
+
     private Connection conexion;
     private Statement st;
     private ResultSet rs;
     PreparedStatement ps;
-    
+
     public Connection getConexion() {
         return conexion;
     }
@@ -243,14 +243,14 @@ public class ModelAgregarSucursal {
         this.codigo = codigo;
     }
 
-    private DefaultTableModel model_prov = new DefaultTableModel(); // variable que usa para el metodo de buscar
+    private DefaultTableModel model_AgregarSucursal = new DefaultTableModel(); // variable que usa para el metodo de buscar
 
-    public DefaultTableModel getModel_prov() {
-        return model_prov;
+    public DefaultTableModel getModel_AgregarSucursal() {
+        return model_AgregarSucursal;
     }
 
-    public void setModel_prov(DefaultTableModel model_prov) {
-        this.model_prov = model_prov;
+    public void setModel_AgregarSucursal(DefaultTableModel model_prov) {
+        this.model_AgregarSucursal = model_prov;
     }
 
     /**
@@ -270,9 +270,10 @@ public class ModelAgregarSucursal {
             JOptionPane.showMessageDialog(null, "Error " + err.getMessage());
         }
     }
-   public void Guardar_Nuevo() {
+
+    public void Guardar_Nuevo() {
         //cada variable obtendra el valor actual de las cajas de texto 
-        no_sucursal= this.getNo_sucursal();
+        no_sucursal = this.getNo_sucursal();
         calle = this.getCalle();
         colonia = this.getColonia();
         numero = this.getNumero();
@@ -282,7 +283,7 @@ public class ModelAgregarSucursal {
 
         if (JOptionPane.OK_OPTION == confirmar) {
             try {
-                st.executeUpdate("insert into sucursales (no_sucursal, calle, colonia, numero, telefono) values"
+                st.executeUpdate("insert into sucursal (no_sucursal, calle, colonia, numero, telefono) values"
                         + "('" + no_sucursal + calle + "','" + colonia + "','" + numero + "','" + telefono + "');");
                 JOptionPane.showMessageDialog(null, "Guardado con exito ");
             } catch (Exception err) {
@@ -290,14 +291,35 @@ public class ModelAgregarSucursal {
             }
         }
     }
+
+    public void Guardar_Modificado() {
+        no_sucursal = this.getNo_sucursal();
+        calle = this.getCalle();
+        colonia = this.getColonia();
+        numero = this.getNumero();
+        telefono = this.getTelefono();
+
+        int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de MODIFICAR registro?");
+
+        if (JOptionPane.OK_OPTION
+                == confirmar) {
+            try {
+                st.executeUpdate("UPDATE sucursal SET calle='" + calle + "',colonia='" + colonia + "',numero='" + numero + "' ,telefono='" + telefono + "'WHERE no_sucursal='" + no_sucursal + "';");
+                JOptionPane.showMessageDialog(null, "El registro se modifico correctamente");
+            } catch (Exception err) {
+                JOptionPane.showMessageDialog(null, "Error Nuevo no se puede guardar " + err.getMessage());
+            }
+        }
+    }
+
 //Metodo mostar
     public void mostrar() {
         ResultSet rs = Database.getTabla("SELECT * FROM sucursal;");
-        AgregarSucursal.setColumnIdentifiers(new Object[]{"no_sucursal", "calle", "Colonia", "Numero","telefono" });
+        AgregarSucursal.setColumnIdentifiers(new Object[]{"no_sucursal", "calle", "Colonia", "Numero", "telefono"});
         try {
             while (rs.next()) {
                 // añade los resultado a al modelo de tabla 
-               AgregarSucursal.addRow(new Object[]{
+                AgregarSucursal.addRow(new Object[]{
                     rs.getString("no_sucursal"),
                     rs.getString("calle"),
                     rs.getString("colonia"),
