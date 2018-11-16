@@ -262,7 +262,7 @@ public class ModelAgregarSucursal {
         try {
             conexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia", "root", "");
             st = conexion.createStatement();
-            rs = st.executeQuery("SELECT * FROM proveedores;");
+            rs = st.executeQuery("SELECT * FROM sucursal;");
 
             rs.first();
 
