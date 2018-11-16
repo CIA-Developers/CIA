@@ -107,10 +107,67 @@ public class ModelAgregarSucursal {
         this.columnaABuscar = columnaABuscar;
     }
    //Variables que corresponden a cada caja de texto
-    public int verificar;
-    public String no_sucursal;
-    public String calle;
-    public String colonia;
-    public String numero;
-    public String telefono;
+    private int verificar;
+    private String no_sucursal;
+    private String calle;
+    private String colonia;
+    private String numero;
+    private String telefono;
+
+   public DefaultTableModel getAgregarSucursal() {
+        return AgregarSucursal;
+    }
+
+    public void setAgregarSucursal(DefaultTableModel modelo_proveedores) {
+        this.AgregarSucursal = AgregarSucursal;
+    }
+
+    public int getVerificar() {
+        return verificar;
+    }
+
+    public void setVerificar(int verificar) {
+        this.verificar = verificar;
+    }
+
+    public String getNo_sucursal() {
+        return no_sucursal;
+    }
+
+    public void setNo_sucursal(String no_sucursal) {
+        this.no_sucursal = no_sucursal;
+    }
+
+    public String getCalle() {
+        return calle;
+    }
+
+    public void setCalle(String calle) {
+        this.calle = calle;
+    }
+
+    public String getColonia() {
+        return colonia;
+    }
+
+    public void setColonia(String colonia) {
+        this.colonia = colonia;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
 }
+
