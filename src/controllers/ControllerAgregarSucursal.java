@@ -160,6 +160,17 @@ public class ControllerAgregarSucursal {
     }
 
     public void nuevo_AgregarSucursal() {
+        viewAgregarSucursal.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
+        viewAgregarSucursal.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
+        //limpiar cada caja de la Interfaz 
+        modelAgregarSucursal.setVerificar(1);// le da el valor a verificar de cero para identificar un nuevo registro
+        viewAgregarSucursal.jtf_no_sucursal.setText(modelAgregarSucursal.getLimpiar());
+        viewAgregarSucursal.jtf_calle.setText(modelAgregarSucursal.getLimpiar());
+        viewAgregarSucursal.jtf_colonia.setText(modelAgregarSucursal.getLimpiar());
+        viewAgregarSucursal.jtf_numero.setText(modelAgregarSucursal.getLimpiar());
+        viewAgregarSucursal.jtf_telefono.setText(modelAgregarSucursal.getLimpiar());
+        cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
+
     }
 
     public void modificar_AgregarSucursal() {
