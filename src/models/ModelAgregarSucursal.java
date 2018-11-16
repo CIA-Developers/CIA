@@ -41,4 +41,38 @@ public class ModelAgregarSucursal {
     public void setRec(int rec) {
         this.rec = rec;
     }
+    
+     /**
+     * Variables para el metodo de busqueda
+     */
+    public String[] titulos = {"ID", "Nombre", "Apellido Paterno", "Apellido Materno", "Telefono", "Municipio", "calle", "Colonia", "Numero", "Correo"}; //columnas de la tabla
+
+    public String[] getTitulos() {
+        return titulos;
+    }
+
+    public void setTitulos(String[] titulos) {
+        this.titulos = titulos;
+    }
+
+    public String[] registros = new String[50];
+
+    public String[] getRegistros() {
+        return registros;
+    }
+
+    public void setRegistros(String[] registros) {
+        this.registros = registros;
+    }
+
+    public String sql;
+
+    public String getSql() {
+        return sql;
+    }
+
+    public void setSql(String sql) {
+        this.sql = sql;
+    }
+    
 }
