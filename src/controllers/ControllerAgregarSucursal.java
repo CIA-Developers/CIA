@@ -122,6 +122,10 @@ public class ControllerAgregarSucursal {
     }
 
     public void ConexionBD() {
+        modelAgregarSucursal.Conectar();
+        modelAgregarSucursal.mostrar();
+        viewAgregarSucursal.jt_vista.setModel(modelAgregarSucursal.getModelo_Proveedores()); //asignar a la tabla los valores correspondientes
+
     }
 
     public void jt_vista_MouseClicked() {
@@ -138,8 +142,8 @@ public class ControllerAgregarSucursal {
 
     public void modificar_AgregarSucursal() {
     }
-    
+
     public void GuardarAgregarSucursal() {
     }
-    
+
 }
