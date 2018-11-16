@@ -124,7 +124,7 @@ public class ControllerAgregarSucursal {
     public void ConexionBD() {
         modelAgregarSucursal.Conectar();
         modelAgregarSucursal.mostrar();
-        viewAgregarSucursal.jt_vista.setModel(modelAgregarSucursal.getModelo_Proveedores()); //asignar a la tabla los valores correspondientes
+        viewAgregarSucursal.jt_vista.setModel(modelAgregarSucursal.getModelo_AgregarSucursal()); //asignar a la tabla los valores correspondientes
 
     }
 
@@ -198,13 +198,20 @@ public class ControllerAgregarSucursal {
             modelAgregarSucursal.Guardar_Nuevo(); // metodo de  insertar nuevo registro 
         } else {
             // darle el valor a las variables
-            modelProveedores.setId(viewProveedores.jtf_id.getText());
-            modelProveedores.setNombre(viewProveedores.jtf_nombre.getText());
-            modelProveedores.setAp_pat(viewProveedores.jtf_ap_pat.getText());
-            modelProveedores.setAp_mat(viewProveedores.jtf_apt_mat.getText());
-            modelProveedores.setTelefono(viewProveedores.jtf_telefono.getText());
+            modelAgregarSucursal.setNo_sucursal(viewAgregarSucursal.jtf_no_sucursal.getText());
+            modelAgregarSucursal.setCalle(viewAgregarSucursal.jtf_calle.getText());
+            modelAgregarSucursal.setColonia(viewAgregarSucursal.jtf_colonia.getText());
+            modelAgregarSucursal.setNumero(viewAgregarSucursal.jtf_numero.getText());
+            modelAgregarSucursal.setTelefono(viewAgregarSucursal.jtf_telefono.getText());
 
         }
+                //LIMPIAR TABLA 
+        for (int i = 0; i < viewAgregarSucursal.jt_vista.getRowCount(); i++) {
+            modelAgregarSucursal.getModelo_AgregarSucursal().removeRow(i);
+            i -= 1;
+        }
+        //mostrar los nuevos datos 
+        modelAgregarSucursal.mostrar();
 
     }
 }
