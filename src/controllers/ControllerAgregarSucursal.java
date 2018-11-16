@@ -115,6 +115,10 @@ public class ControllerAgregarSucursal {
     }
 
     private void setActionListener() {
+
+        viewAgregarSucursal.jb_nuevo.addActionListener(list);
+        viewAgregarSucursal.jb_modificar.addActionListener(list);
+        viewAgregarSucursal.jb_guardar.addActionListener(list);
     }
 
     public void ConexionBD() {
