@@ -129,6 +129,16 @@ public class ControllerAgregarSucursal {
     }
 
     public void jt_vista_MouseClicked() {
+        viewAgregarSucursal.jb_guardar.setEnabled(false);
+        viewAgregarSucursal.jb_modificar.setEnabled(true);//El boton modificar aparecera habilitado
+        viewAgregarSucursal.jb_nuevo.setEnabled(true);//El boton nuevo aparecera habilitado
+        cajas_deshabilitadas(); // cuando se haga clic en la tabla, las cajas se volveran a deshabilitar 
+        modelAgregarSucursal.setRec(viewAgregarSucursal.jt_vista.getSelectedRow());//a la variable se le asigna el elemento seleccionado en la tabla
+        viewAgregarSucursal.jtf_no_sucursal.setText(viewAgregarSucursal.jt_vista.getValueAt(modelAgregarSucursal.getRec(), 0).toString());
+        viewAgregarSucursal.jtf_calle.setText(viewAgregarSucursal.jt_vista.getValueAt(modelAgregarSucursal.getRec(), 1).toString());
+        viewAgregarSucursal.jtf_colonia.setText(viewAgregarSucursal.jt_vista.getValueAt(modelAgregarSucursal.getRec(), 2).toString());
+        viewAgregarSucursal.jtf_numero.setText(viewAgregarSucursal.jt_vista.getValueAt(modelAgregarSucursal.getRec(), 3).toString());
+        viewAgregarSucursal.jtf_telefono.setText(viewAgregarSucursal.jt_vista.getValueAt(modelAgregarSucursal.getRec(), 4).toString());
     }
 
     private void cajas_deshabilitadas() {
