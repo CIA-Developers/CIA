@@ -142,9 +142,21 @@ public class ControllerAgregarSucursal {
     }
 
     private void cajas_deshabilitadas() {
+        viewAgregarSucursal.jtf_no_sucursal.setEditable(false);
+        viewAgregarSucursal.jtf_calle.setEditable(false);
+        viewAgregarSucursal.jtf_colonia.setEditable(false);
+        viewAgregarSucursal.jtf_numero.setEditable(false);
+        viewAgregarSucursal.jtf_telefono.setEditable(false);
+
     }
 
     private void cajas_habilitadas() {
+        viewAgregarSucursal.jtf_no_sucursal.setEditable(true);
+        viewAgregarSucursal.jtf_calle.setEditable(true);
+        viewAgregarSucursal.jtf_colonia.setEditable(true);
+        viewAgregarSucursal.jtf_numero.setEditable(true);
+        viewAgregarSucursal.jtf_telefono.setEditable(true);
+
     }
 
     public void nuevo_AgregarSucursal() {
