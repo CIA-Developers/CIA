@@ -208,6 +208,68 @@ public class ModelAgregarSucursal {
     public void setPs(PreparedStatement ps) {
         this.ps = ps;
     }
+
+    DefaultTableModel model; // variable que usa para el metodo de buscar
+
+    public DefaultTableModel getModel() {
+        return model;
+    }
+
+    public void setModel(DefaultTableModel model) {
+        this.model = model;
+    }
+
+    public String Limpiar = " "; // variables para boton limpiar
+    public int codigo = 0;
+    public int cantidad = 0;
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public String getLimpiar() {
+        return Limpiar;
+    }
+
+    public void setLimpiar(String Limpiar) {
+        this.Limpiar = Limpiar;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    private DefaultTableModel model_prov = new DefaultTableModel(); // variable que usa para el metodo de buscar
+
+    public DefaultTableModel getModel_prov() {
+        return model_prov;
+    }
+
+    public void setModel_prov(DefaultTableModel model_prov) {
+        this.model_prov = model_prov;
+    }
+
+    /**
+     * se hace la conexion a la Base de datos y se hace la consulta hacia la
+     * tabla de EmpleadosCompras que tiene una union con la tabla de compra
+     *
+     */
+    public void Conectar() {
+        try {
+            conexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia", "root", "");
+            st = conexion.createStatement();
+            rs = st.executeQuery("SELECT * FROM proveedores;");
+
+            rs.first();
+
+        } catch (SQLException err) {
+            JOptionPane.showMessageDialog(null, "Error " + err.getMessage());
+        }
+    }
+
+
 }
-
-
