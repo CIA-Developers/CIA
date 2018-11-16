@@ -268,19 +268,34 @@ public class ModelCOMPRAS {
           JOptionPane.showMessageDialog(null,"error2 al llenar comboBox"+e);
       }
       //llenar comboBox de RFC empleados 
+      ArrayList rfc = new ArrayList();
       try{
-          
           rs = st.executeQuery("SELECT * FROM empleados_compras;");
       }catch(SQLException e){
            JOptionPane.showMessageDialog(null,"error1 al llenar comboBox"+e);
       }
       try{
           while(rs.next()){
-              String sucursal=rs.getString("no_sucursal");
-              num_suc.add(sucursal);//agregar los datos a la lista        
-          }this.setNumero_sucursal(num_suc);// almacena la lista con los numeros de proveedores obetenidos de la BD      
+              String sucursal=rs.getString("RFC_empl_comp");
+              rfc.add(sucursal);//agregar los datos a la lista        
+          }this.setNumero_empleado(rfc);// almacena la lista con los numeros de proveedores obetenidos de la BD      
       }catch(Exception e){
-          JOptionPane.showMessageDialog(null,"error2 al llenar comboBox"+e);
+          JOptionPane.showMessageDialog(null,"error3 al llenar comboBox"+e);
+      }
+      //llenar comboBox de codigo de productos
+      ArrayList codigo = new ArrayList();
+      try{
+          rs = st.executeQuery("SELECT * FROM productos;");
+      }catch(SQLException e){
+           JOptionPane.showMessageDialog(null,"error4 al llenar comboBox"+e);
+      }
+      try{
+          while(rs.next()){
+              String sucursal=rs.getString("codigo_producto");
+              codigo.add(sucursal);//agregar los datos a la lista        
+          }this.setNumero_empleado(codigo);// almacena la lista con los numeros de proveedores obetenidos de la BD      
+      }catch(Exception e){
+          JOptionPane.showMessageDialog(null,"error5 al llenar comboBox"+e);
       }
     }
     
