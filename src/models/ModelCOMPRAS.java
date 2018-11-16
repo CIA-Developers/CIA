@@ -267,7 +267,21 @@ public class ModelCOMPRAS {
       }catch(Exception e){
           JOptionPane.showMessageDialog(null,"error2 al llenar comboBox"+e);
       }
-      
+      //llenar comboBox de RFC empleados 
+      try{
+          
+          rs = st.executeQuery("SELECT * FROM empleados_compras;");
+      }catch(SQLException e){
+           JOptionPane.showMessageDialog(null,"error1 al llenar comboBox"+e);
+      }
+      try{
+          while(rs.next()){
+              String sucursal=rs.getString("no_sucursal");
+              num_suc.add(sucursal);//agregar los datos a la lista        
+          }this.setNumero_sucursal(num_suc);// almacena la lista con los numeros de proveedores obetenidos de la BD      
+      }catch(Exception e){
+          JOptionPane.showMessageDialog(null,"error2 al llenar comboBox"+e);
+      }
     }
     
 }
