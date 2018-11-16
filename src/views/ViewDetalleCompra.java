@@ -30,6 +30,8 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jL_titulo = new javax.swing.JLabel();
         jP_datos = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -57,15 +59,29 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
 
         jP_datos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 153, 255))); // NOI18N
 
+        jLabel1.setText("Fecha inicio (dia/mes/año) :");
+
+        jLabel2.setText("Fecha fin (dia/mes/año) :");
+
         javax.swing.GroupLayout jP_datosLayout = new javax.swing.GroupLayout(jP_datos);
         jP_datos.setLayout(jP_datosLayout);
         jP_datosLayout.setHorizontalGroup(
             jP_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 541, Short.MAX_VALUE)
+            .addGroup(jP_datosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jP_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addContainerGap(497, Short.MAX_VALUE))
         );
         jP_datosLayout.setVerticalGroup(
             jP_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 310, Short.MAX_VALUE)
+            .addGroup(jP_datosLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel1)
+                .addGap(53, 53, 53)
+                .addComponent(jLabel2)
+                .addContainerGap(204, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -76,7 +92,7 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jP_datos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(851, Short.MAX_VALUE))
+                .addContainerGap(753, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,6 +107,8 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jL_titulo;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jP_datos;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
