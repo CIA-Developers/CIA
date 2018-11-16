@@ -29,6 +29,8 @@ public class ModelCOMPRAS {
     public String RFC_empleado;
     public int num_sucursal;
     public int num_proveedor;
+    public ArrayList producto; // la variable almacenara una lista para llenar comboBox
+    public ArrayList numero_empleado; // la variable almacenara una lista para llenar comboBox
     public ArrayList numero_sucursal; // la variable almacenara una lista para llenar comboBox
     public ArrayList numero_proveedor; // la variable almacenara una lista para llenar comboBox
     public String nombre_proveedor; // solo se obtendra este dato, no se almacenara
@@ -181,6 +183,22 @@ public class ModelCOMPRAS {
         this.total_por_producto = total_por_producto;
     }
 
+    public ArrayList getProducto() {
+        return producto;
+    }
+
+    public void setProducto(ArrayList producto) {
+        this.producto = producto;
+    }
+
+    public ArrayList getNumero_empleado() {
+        return numero_empleado;
+    }
+
+    public void setNumero_empleado(ArrayList numero_empleado) {
+        this.numero_empleado = numero_empleado;
+    }
+    
 
     /***
      *  variables necesarias para la conexion
@@ -249,6 +267,7 @@ public class ModelCOMPRAS {
       }catch(Exception e){
           JOptionPane.showMessageDialog(null,"error2 al llenar comboBox"+e);
       }
+      
     }
     
 }
