@@ -32,6 +32,8 @@ public class ControllerCOMPRAS {
     public void initComponents(){
         viewCOMPRAS.jcb_numero_proveedor.removeAllItems();//eliminar los items del comboBbx
         viewCOMPRAS.jcb_numero_sucursal.removeAllItems();
+        viewCOMPRAS.jcb_rfc.removeAllItems();
+        viewCOMPRAS.jcb_codigo_producto.removeAllItems();
         
     }
     public void llenadoCombos(){
