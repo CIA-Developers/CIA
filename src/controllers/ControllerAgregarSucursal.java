@@ -63,6 +63,14 @@ public class ControllerAgregarSucursal {
         }
 
     };
+      ActionListener actionListener = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+        }
+    };
+
+     
     public ControllerAgregarSucursal(ModelAgregarSucursal modelAgregarSucursal, ViewAgregarSucursal viewAgregarSucursal) {
         this.modelAgregarSucursal = modelAgregarSucursal;
         this.viewAgregarSucursal = viewAgregarSucursal;
