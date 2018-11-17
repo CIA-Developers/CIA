@@ -33,7 +33,7 @@ public final class ControllerMenuAdmin {
     private ControllerSucursales controllerSucursales;
     private ControllerAgregarSucursal controllerAgregarSucursal;
     private ControllerDetalleCompra controllerDetalleCompra;
-    private ControllerDetalleVenta controllerDetalleVenta;
+    private ControllerDetalleVentas controllerDetalleVentas;
 
     /**
      * Controlador principal donde se un el modelo y controlador del MenuAdmin
@@ -68,7 +68,7 @@ public final class ControllerMenuAdmin {
         controllerSucursales = (ControllerSucursales) controllers[5];
         controllerAgregarSucursal = (ControllerAgregarSucursal) controllers[6];
         controllerDetalleCompra = (ControllerDetalleCompra) controllers[7];
-        controllerDetalleVenta = (ControllerDetalleVenta) controllers[8];
+        controllerDetalleVentas = (ControllerDetalleVentas) controllers[8];
     }
 
     /**
@@ -177,8 +177,8 @@ public final class ControllerMenuAdmin {
         viewMenuAdmin.revalidate();
         viewMenuAdmin.repaint();
     }
-       private void jmi_detalleventa_actionPerformed() {
-        viewMenuAdmin.setContentPane(controllerDetalleVenta.viewDetalleVentas);
+    private void jmi_detalleventa_actionPerformed() {
+        viewMenuAdmin.setContentPane(controllerDetalleVentas.viewDetalleVentas);
         viewMenuAdmin.revalidate();
         viewMenuAdmin.repaint();
     }

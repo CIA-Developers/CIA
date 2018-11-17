@@ -38,13 +38,12 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
         jmi_productos = new javax.swing.JMenuItem();
         jm_nueva_sucursal = new javax.swing.JMenu();
         jmi_agregar_Sucursal = new javax.swing.JMenuItem();
-        jm_detalle_compra = new javax.swing.JMenu();
+        jm_detalles = new javax.swing.JMenu();
         jmi_detallecompra = new javax.swing.JMenuItem();
         jmi_detalleventa = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 153));
-        setMaximumSize(new java.awt.Dimension(32767, 32767));
 
         jl_CiaLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CIA-Developers.png"))); // NOI18N
 
@@ -98,12 +97,12 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
 
         jmi_detalle_compra1.add(jm_nueva_sucursal);
 
-        jm_detalle_compra.setBackground(new java.awt.Color(0, 153, 204));
-        jm_detalle_compra.setForeground(new java.awt.Color(255, 255, 255));
-        jm_detalle_compra.setText("Detalles ");
+        jm_detalles.setBackground(new java.awt.Color(0, 153, 204));
+        jm_detalles.setForeground(new java.awt.Color(255, 255, 255));
+        jm_detalles.setText("Detalles ");
 
         jmi_detallecompra.setText("Detalle Compra");
-        jm_detalle_compra.add(jmi_detallecompra);
+        jm_detalles.add(jmi_detallecompra);
 
         jmi_detalleventa.setText("Detalle Venta");
         jmi_detalleventa.addActionListener(new java.awt.event.ActionListener() {
@@ -111,9 +110,9 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
                 jmi_detalleventaActionPerformed(evt);
             }
         });
-        jm_detalle_compra.add(jmi_detalleventa);
+        jm_detalles.add(jmi_detalleventa);
 
-        jmi_detalle_compra1.add(jm_detalle_compra);
+        jmi_detalle_compra1.add(jm_detalles);
 
         setJMenuBar(jmi_detalle_compra1);
 
@@ -180,7 +179,7 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jl_CiaLogo;
     public javax.swing.JMenu jm_catalogos;
-    public javax.swing.JMenu jm_detalle_compra;
+    public javax.swing.JMenu jm_detalles;
     public javax.swing.JMenu jm_nueva_sucursal;
     public javax.swing.JMenuItem jmi_agregar_Sucursal;
     public javax.swing.JMenuItem jmi_clientes;

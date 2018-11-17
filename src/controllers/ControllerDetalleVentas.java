@@ -21,13 +21,12 @@ import views.ViewDetalleVentas;
  *
  * @author Ami
  */
-public class ControllerDetalleVenta {
-  public ModelDetalleVentas modelDetalleVentas;
-    public ViewDetalleVentas viewDetalleVentas;
-    
+public class ControllerDetalleVentas {
 
-       public ControllerDetalleVenta (ModelDetalleVentas modelDetalleVenta, ViewDetalleVentas viewDetalleVenta) {
+    public ModelDetalleVentas modelDetalleVentas;
+    public ViewDetalleVentas viewDetalleVentas;
+    public ControllerDetalleVentas(ModelDetalleVentas modelDetalleVentas, ViewDetalleVentas viewDetalleVentas) {
         this.modelDetalleVentas = modelDetalleVentas;
         this.viewDetalleVentas = viewDetalleVentas;
-}
+    }
 }
