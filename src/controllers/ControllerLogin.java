@@ -70,17 +70,13 @@ public class ControllerLogin {
             modelLogin.muenuAdmin();
             viewLogin.setVisible(false); //ocultar el login          
         }
-        else if (viewLogin.jcb_tipo_admin.getSelectedItem() == "Empleado ventas"){         
-//            viewMenuEmpleadoCompras.setLocationRelativeTo(null);
-//            viewMenuEmpleadoCompras.setVisible(true);
-//            viewMenuEmpleadoCompras.setVisible(true); // abrir la vista de empleado compras
-//            viewLogin.setVisible(false); //ocultar el login
+        else if (viewLogin.jcb_tipo_admin.getSelectedItem() == "Empleado Ventas"){
+            
+            viewLogin.setVisible(false); //ocultar el login 
         }
-        else if (viewLogin.jcb_tipo_admin.getSelectedItem() == "Empleado compras"){          
-//            viewMenuEmpleadoCompras.setLocationRelativeTo(null);
-//            viewMenuEmpleadoCompras.setVisible(true);
-//            viewMenuEmpleadoVentas.setVisible(true); // abrir la vista de empleado ventas 
-//            viewLogin.setVisible(false); //ocultar el login
+        else if (viewLogin.jcb_tipo_admin.getSelectedItem() == "Empleado Compras"){ 
+            modelLogin.EmpleadosCompras();
+            viewLogin.setVisible(false); //ocultar el login 
         }
     }
     

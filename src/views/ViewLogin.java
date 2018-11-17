@@ -51,7 +51,7 @@ public class ViewLogin extends javax.swing.JFrame {
         jl_passwd.setBounds(40, 330, 80, 25);
 
         jcb_tipo_admin.setBackground(new java.awt.Color(204, 204, 204));
-        jcb_tipo_admin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Empleado Ventas ", "Empleado Compras " }));
+        jcb_tipo_admin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Empleado Ventas", "Empleado Compras" }));
         jcb_tipo_admin.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         getContentPane().add(jcb_tipo_admin);
         jcb_tipo_admin.setBounds(150, 220, 140, 30);
