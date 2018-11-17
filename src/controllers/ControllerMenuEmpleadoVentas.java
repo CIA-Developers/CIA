@@ -7,14 +7,14 @@ package controllers;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import models.ModelMenuEmpleadoVentas;
-import views.ViewMenuEmpleadoVentas;
+import views.viewMenuEmpleadoVentas;
 /**
  *
  * @author Octaviano
  */
 public class ControllerMenuEmpleadoVentas {
     private final ModelMenuEmpleadoVentas modelMenuEmpleadosVentas;
-    private final ViewMenuEmpleadoVentas viewMenuEmpleadosVentas;
+    private final viewMenuEmpleadoVentas viewMenuEmpleadosVentas;
     
      /**
      * Esta variable almacena los controladores de cada vista de catalogos
@@ -35,7 +35,7 @@ public class ControllerMenuEmpleadoVentas {
      * @param modelMenuEmpleadosVentas
      * @param viewMenuWmpleadosVentas 
      */
-    public ControllerMenuEmpleadoVentas(ModelMenuEmpleadoVentas modelMenuEmpleadosVentas, ViewMenuEmpleadoVentas viewMenuEmpleadosVentas, Object[] controllers) {    
+    public ControllerMenuEmpleadoVentas(ModelMenuEmpleadoVentas modelMenuEmpleadosVentas, viewMenuEmpleadoVentas viewMenuEmpleadosVentas, Object[] controllers) {    
         this.modelMenuEmpleadosVentas = modelMenuEmpleadosVentas;
         this.viewMenuEmpleadosVentas = viewMenuEmpleadosVentas;
         this.controllers = controllers;

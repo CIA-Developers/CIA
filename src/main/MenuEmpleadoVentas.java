@@ -45,8 +45,8 @@ public class MenuEmpleadoVentas {
         controllers[4] = controllerVENTAS ;
         
         ModelMenuEmpleadoVentas modelMenuEmpleadoVentas = new ModelMenuEmpleadoVentas ();
-        ViewMenuEmpleadoVentas viewMenuEmpleadoVentas = new ViewMenuEmpleadoVentas();
-        ControllerMenuEmpleadoVentas controllerMenuEmpleadoVentas = new  ControllerMenuEmpleadoVentas(modelMenuEmpleadoVentas,viewMenuEmpleadoVentas,controllers);
+        viewMenuEmpleadoVentas ViewMenuEmpleadoVentas = new viewMenuEmpleadoVentas();
+        ControllerMenuEmpleadoVentas controllerMenuEmpleadoVentas = new  ControllerMenuEmpleadoVentas(modelMenuEmpleadoVentas,ViewMenuEmpleadoVentas,controllers);
         
     }
     

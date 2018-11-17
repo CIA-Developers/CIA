@@ -293,7 +293,7 @@ public class ModelCOMPRAS {
           while(rs.next()){
               String sucursal=rs.getString("codigo_producto");
               codigo.add(sucursal);//agregar los datos a la lista        
-          }this.setNumero_empleado(codigo);// almacena la lista con los numeros de proveedores obetenidos de la BD      
+          }this.setProducto(codigo);// almacena la lista con los numeros de proveedores obetenidos de la BD      
       }catch(Exception e){
           JOptionPane.showMessageDialog(null,"error5 al llenar comboBox"+e);
       }
