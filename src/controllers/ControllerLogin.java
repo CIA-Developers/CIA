@@ -14,7 +14,9 @@ import main.*; //importamos todas la clases main
  * @author Octaviano
  */
 public class ControllerLogin {
-      
+     
+    ViewMenuAdmin viewMenuAdmin;
+    
    private final ModelLogin modelLogin;
    private final ViewLogin viewLogin;
 
@@ -65,17 +67,8 @@ public class ControllerLogin {
     
     public void opciones(){
         if (viewLogin.jcb_tipo_admin.getSelectedItem() == "Administrador"){
-            admin.getClass();
-            viewmenuAdmin.setVisible(true);
-//            Object[] controllersAdmin = new Object[6];
-//            ModelMenuAdmin modelMenuAdmin = new ModelMenuAdmin();
-//            ViewMenuAdmin viewMenuAdmin = new ViewMenuAdmin();
-//            ControllerMenuAdmin controllerMenuAdmin = new ControllerMenuAdmin(modelMenuAdmin, viewMenuAdmin, controllersAdmin); 
-//            viewMenuAdmin.setVisible(true);
-//            viewMenuAdmin.revalidate();
-//            viewMenuAdmin.repaint();
-//            viewLogin.setVisible(false); //ocultar el login
-           
+            modelLogin.muenuAdmin();
+            viewLogin.setVisible(false); //ocultar el login          
         }
         else if (viewLogin.jcb_tipo_admin.getSelectedItem() == "Empleado ventas"){         
 //            viewMenuEmpleadoCompras.setLocationRelativeTo(null);
