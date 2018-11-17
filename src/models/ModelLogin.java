@@ -95,6 +95,39 @@ public class ModelLogin {
         ModelMenuEmpleadoCompras modelMenuEmpleadoCompras = new ModelMenuEmpleadoCompras ();
         viewMenuEmpleadoCompras ViewMenuEmpleadoCompras = new viewMenuEmpleadoCompras();
         ControllerMenuEmpleadoCompras controllerMenuEmpleadoCompras = new ControllerMenuEmpleadoCompras(modelMenuEmpleadoCompras,ViewMenuEmpleadoCompras,controllers);
+       
+    }
+    public void empleadosVentas(){
+        ModelClientesEmpleados modelClientesEmpleados = new ModelClientesEmpleados();
+        ViewClientesEmpleados viewClientesEmpleados = new ViewClientesEmpleados();
+        ControllerClientesEmpleados controllerClientesEmpleados = new ControllerClientesEmpleados(modelClientesEmpleados, viewClientesEmpleados);
+        
+        ModelProductosEmpleados modelProductosEmpleados = new ModelProductosEmpleados();
+        ViewProductosEmpleados viewProductosEmpleados = new ViewProductosEmpleados();
+        ControllerProductosEmpleados controllerProductosEmpleados = new ControllerProductosEmpleados(modelProductosEmpleados, viewProductosEmpleados);
+        
+        ModelProveedoresEmpleados modelProveedoresEmpleados = new ModelProveedoresEmpleados();
+        ViewProveedoresEmpleados viewProveedoresEmpleados = new ViewProveedoresEmpleados();
+        ControllerProveedoresEmpleados controllerProveedoresEmpleados = new ControllerProveedoresEmpleados(modelProveedoresEmpleados, viewProveedoresEmpleados);
+        
+        ModelSucursalesEmpleados modelSucursalesEmpleados  = new ModelSucursalesEmpleados ();
+        ViewSucursalesEmpleados  viewSucursalesEmpleados = new ViewSucursalesEmpleados ();
+        ControllerSucursalesEmpleados controllerSucursalesEmpleados  = new ControllerSucursalesEmpleados (modelSucursalesEmpleados , viewSucursalesEmpleados );
+        
+        modelVENTAS modelVENTAS  = new modelVENTAS ();
+        ViewVENTAS  viewVENTAS  = new ViewVENTAS ();
+        ControllerVENTAS  controllerVENTAS  = new ControllerVENTAS (modelVENTAS ,viewVENTAS );
+        
+        Object[] controllers = new Object[6];
+        controllers[0] = controllerClientesEmpleados;
+        controllers[1] = controllerProductosEmpleados;
+        controllers[2] = controllerProveedoresEmpleados;
+        controllers[3] = controllerSucursalesEmpleados;
+        controllers[4] = controllerVENTAS ;
+        
+        ModelMenuEmpleadoVentas modelMenuEmpleadoVentas = new ModelMenuEmpleadoVentas ();
+        viewMenuEmpleadoVentas ViewMenuEmpleadoVentas = new viewMenuEmpleadoVentas();
+        ControllerMenuEmpleadoVentas controllerMenuEmpleadoVentas = new  ControllerMenuEmpleadoVentas(modelMenuEmpleadoVentas,ViewMenuEmpleadoVentas,controllers);
         
     }
 }

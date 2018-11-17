@@ -71,7 +71,7 @@ public class ControllerLogin {
             viewLogin.setVisible(false); //ocultar el login          
         }
         else if (viewLogin.jcb_tipo_admin.getSelectedItem() == "Empleado Ventas"){
-            
+            modelLogin.empleadosVentas();
             viewLogin.setVisible(false); //ocultar el login 
         }
         else if (viewLogin.jcb_tipo_admin.getSelectedItem() == "Empleado Compras"){ 
