@@ -151,7 +151,6 @@ public class ControllerAgregarSucursal {
     }
 
     private void cajas_habilitadas() {
-        viewAgregarSucursal.jtf_no_sucursal.setEditable(true);
         viewAgregarSucursal.jtf_calle.setEditable(true);
         viewAgregarSucursal.jtf_colonia.setEditable(true);
         viewAgregarSucursal.jtf_numero.setEditable(true);
@@ -175,7 +174,7 @@ public class ControllerAgregarSucursal {
 
     public void modificar_AgregarSucursal() {
         viewAgregarSucursal.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
-        viewAgregarSucursal.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
+        viewAgregarSucursal.jb_nuevo.setEnabled(false);//El boton modificar aparecera inhabilitado
         //limpiar cada caja de la Interfaz 
         modelAgregarSucursal.setVerificar(2);// le da el valor a verificar de uno para identificar Modifiar registro
         viewAgregarSucursal.jtf_no_sucursal.setEditable(false); // el codigo no se puede modificar
@@ -196,14 +195,14 @@ public class ControllerAgregarSucursal {
             modelAgregarSucursal.setNumero(viewAgregarSucursal.jtf_numero.getText());
             modelAgregarSucursal.setTelefono(viewAgregarSucursal.jtf_telefono.getText());
             modelAgregarSucursal.Guardar_Nuevo(); // metodo de  insertar nuevo registro 
-        } else {
+        } else  {
             // darle el valor a las variables
             modelAgregarSucursal.setNo_sucursal(viewAgregarSucursal.jtf_no_sucursal.getText());
             modelAgregarSucursal.setCalle(viewAgregarSucursal.jtf_calle.getText());
             modelAgregarSucursal.setColonia(viewAgregarSucursal.jtf_colonia.getText());
             modelAgregarSucursal.setNumero(viewAgregarSucursal.jtf_numero.getText());
             modelAgregarSucursal.setTelefono(viewAgregarSucursal.jtf_telefono.getText());
-
+            modelAgregarSucursal.Guardar_Modificado();
         }
                 //LIMPIAR TABLA 
         for (int i = 0; i < viewAgregarSucursal.jt_vista.getRowCount(); i++) {
