@@ -119,6 +119,7 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
         jB_buscar_general.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/buscar .png"))); // NOI18N
         jB_buscar_general.setText("Ver");
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Botonimpirmi.png"))); // NOI18N
         jButton1.setText("Imprimmir");
 
         javax.swing.GroupLayout jP_datosLayout = new javax.swing.GroupLayout(jP_datos);
@@ -137,14 +138,15 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
                 .addGroup(jP_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jP_datosLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(jDC_fe_final, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jDC_fe_final, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jP_datosLayout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(50, 50, 50)
                         .addComponent(jB_buscar_general)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jP_datosLayout.setVerticalGroup(
             jP_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
