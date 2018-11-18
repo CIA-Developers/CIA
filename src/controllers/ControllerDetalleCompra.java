@@ -115,7 +115,7 @@ public class ControllerDetalleCompra {
         //depende del numero de items en el jcb
                 
         if (viewDetalleCompra.jCB_buscar.getSelectedItem() == "RFC empleado") {
-            modelDetalleCompra.setColumnaABuscar(5); //numero de columna en la tabla donde se encuentra el registro
+            modelDetalleCompra.setColumnaABuscar(2); //numero de columna en la tabla donde se encuentra el registro
         }
         else if (viewDetalleCompra.jCB_buscar.getSelectedItem() == "Codigo producto") {
             modelDetalleCompra.setColumnaABuscar(4); //numero de columna en la tabla donde se encuentra el registro
@@ -124,5 +124,24 @@ public class ControllerDetalleCompra {
     }
 
     private void cajas_deshabilitadas() {
+    }
+    
+    //***************** BOTONES Ver, nuevo y Imprimir**************************
+    /**
+     * Metodo que limpiara las cajas de texto para ingresar nuevo datos. 
+     */
+    
+    public void nuevo_sucursales(){
+       
+        //limpiar cada caja de la Interfaz 
+        viewDetalleCompra.jDC_fe_inicio.setText(Integer.toString(modelDetalleCompra.getCodigo()));// la caja de texto CODIGO_PRODUCTO recibe el valor de cero
+        viewDetalleCompra.jDC_fe_final.setText(modelDetalleCompra.getLimpiar());
+        viewDetalleCompra.jTF_mejor_comprador.setText(modelDetalleCompra.getLimpiar());
+        viewDetalleCompra.jTF_prod_mas_comprado.setText(modelDetalleCompra.getLimpiar());
+        viewDetalleCompra.jTF_prod_menos_comprado.setText(modelDetalleCompra.getLimpiar());
+        cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
+    }
+
+    private void cajas_habilitadas() {
     }
 }

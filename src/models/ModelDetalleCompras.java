@@ -42,6 +42,16 @@ public class ModelDetalleCompras {
         this.rec = rec;
     }
     
+    public String Limpiar = " ";
+
+    public String getLimpiar() {
+        return Limpiar;
+    }
+
+    public void setLimpiar(String Limpiar) {
+        this.Limpiar = Limpiar;
+    }
+    
     /**
      * Variables para el metodo de busqueda
      */

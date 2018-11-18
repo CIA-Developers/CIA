@@ -41,6 +41,7 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
         jDC_fe_final = new com.toedter.calendar.JDateChooser();
         jB_ver = new javax.swing.JButton();
         jB_imprimir = new javax.swing.JButton();
+        jB_nuevo = new javax.swing.JButton();
         jTF_busqueda = new javax.swing.JTextField();
         jCB_buscar = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
@@ -135,6 +136,9 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
         jB_imprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Botonimpirmi.png"))); // NOI18N
         jB_imprimir.setText("Imprimmir");
 
+        jB_nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/btnbusnuevo.png"))); // NOI18N
+        jB_nuevo.setText("Nuevo");
+
         javax.swing.GroupLayout jP_datosLayout = new javax.swing.GroupLayout(jP_datos);
         jP_datos.setLayout(jP_datosLayout);
         jP_datosLayout.setHorizontalGroup(
@@ -158,7 +162,9 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
                         .addGap(50, 50, 50)
                         .addComponent(jB_ver)
                         .addGap(18, 18, 18)
-                        .addComponent(jB_imprimir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jB_imprimir)
+                        .addGap(18, 18, 18)
+                        .addComponent(jB_nuevo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jP_datosLayout.setVerticalGroup(
@@ -171,7 +177,8 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
                         .addComponent(jL_fecha_final))
                     .addGroup(jP_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jB_ver)
-                        .addComponent(jB_imprimir)))
+                        .addComponent(jB_imprimir)
+                        .addComponent(jB_nuevo)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jP_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jDC_fe_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -183,10 +190,10 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(184, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(169, 169, 169)
                 .addComponent(jP_datos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(295, 295, 295))
+                .addContainerGap(205, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -276,15 +283,15 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel4)
                         .addGap(18, 18, 18)
-                        .addComponent(jCB_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jCB_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(jTF_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(14, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -313,6 +320,7 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton jB_imprimir;
+    public javax.swing.JButton jB_nuevo;
     public javax.swing.JButton jB_ver;
     public javax.swing.JComboBox<String> jCB_buscar;
     public com.toedter.calendar.JDateChooser jDC_fe_final;
