@@ -41,54 +41,67 @@ public class ViewLogin extends javax.swing.JFrame {
         jl_fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(364, 523));
+        setTitle("Iniciar Sesion");
+        setMaximumSize(new java.awt.Dimension(604, 503));
+        setMinimumSize(new java.awt.Dimension(604, 503));
         setUndecorated(true);
         getContentPane().setLayout(null);
 
-        jl_passwd.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jl_passwd.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jl_passwd.setText("Contraseña:");
         getContentPane().add(jl_passwd);
-        jl_passwd.setBounds(40, 330, 80, 25);
+        jl_passwd.setBounds(240, 250, 100, 25);
 
         jcb_tipo_admin.setBackground(new java.awt.Color(204, 204, 204));
+        jcb_tipo_admin.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jcb_tipo_admin.setForeground(new java.awt.Color(0, 153, 204));
         jcb_tipo_admin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Empleado Ventas", "Empleado Compras" }));
-        jcb_tipo_admin.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jcb_tipo_admin.setBorder(null);
         getContentPane().add(jcb_tipo_admin);
-        jcb_tipo_admin.setBounds(150, 220, 140, 30);
+        jcb_tipo_admin.setBounds(340, 110, 190, 30);
 
-        jl_tipo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jl_tipo.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jl_tipo.setText("TIPO:");
         getContentPane().add(jl_tipo);
-        jl_tipo.setBounds(110, 220, 40, 25);
+        jl_tipo.setBounds(280, 110, 40, 25);
 
-        jl_usuario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jl_usuario.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jl_usuario.setText("Usuario:");
         getContentPane().add(jl_usuario);
-        jl_usuario.setBounds(60, 280, 60, 25);
+        jl_usuario.setBounds(270, 180, 60, 25);
 
+        jpf_passwd.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jpf_passwd.setText("jPasswordField1");
+        jpf_passwd.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(51, 102, 255), null, null));
         getContentPane().add(jpf_passwd);
-        jpf_passwd.setBounds(120, 330, 180, 30);
-        getContentPane().add(jtf_usuario);
-        jtf_usuario.setBounds(120, 280, 180, 30);
+        jpf_passwd.setBounds(340, 250, 190, 30);
 
-        jb_aceptar.setBackground(new java.awt.Color(204, 204, 204));
-        jb_aceptar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jtf_usuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jtf_usuario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(51, 102, 255), null, null));
+        getContentPane().add(jtf_usuario);
+        jtf_usuario.setBounds(340, 180, 190, 30);
+
+        jb_aceptar.setBackground(new java.awt.Color(51, 153, 255));
+        jb_aceptar.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jb_aceptar.setForeground(new java.awt.Color(255, 255, 255));
         jb_aceptar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/aceptar.png"))); // NOI18N
         jb_aceptar.setText("Aceptar");
+        jb_aceptar.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 102, 153))); // NOI18N
         getContentPane().add(jb_aceptar);
-        jb_aceptar.setBounds(60, 400, 120, 39);
+        jb_aceptar.setBounds(90, 380, 120, 50);
 
-        jb_cancelar.setBackground(new java.awt.Color(204, 204, 204));
-        jb_cancelar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jb_cancelar.setBackground(new java.awt.Color(51, 153, 255));
+        jb_cancelar.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jb_cancelar.setForeground(new java.awt.Color(255, 255, 255));
         jb_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/cerrar.png"))); // NOI18N
         jb_cancelar.setText("cancelar");
+        jb_cancelar.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 102, 153))); // NOI18N
         getContentPane().add(jb_cancelar);
-        jb_cancelar.setBounds(190, 400, 120, 39);
+        jb_cancelar.setBounds(290, 380, 130, 50);
 
-        jl_fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo_login2.png"))); // NOI18N
+        jl_fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/login.png"))); // NOI18N
         getContentPane().add(jl_fondo);
-        jl_fondo.setBounds(0, 0, 370, 523);
+        jl_fondo.setBounds(0, 1, 600, 500);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
