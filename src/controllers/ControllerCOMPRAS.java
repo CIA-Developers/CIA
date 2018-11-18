@@ -79,6 +79,10 @@ public class ControllerCOMPRAS {
     public ControllerCOMPRAS(ModelCOMPRAS modelCOMPRAS, ViewCOMPRAS viewCOMPRAS) {
         this.modelCOMPRAS = modelCOMPRAS;
         this.viewCOMPRAS = viewCOMPRAS;
+        
+        viewCOMPRAS.jtf_cantidad.addKeyListener(key);
+        viewCOMPRAS.jtf_precio.addKeyListener(key);
+        
         modelCOMPRAS.Conectar();// conexion a la BD
         initComponents();
         llenadoCombos();
