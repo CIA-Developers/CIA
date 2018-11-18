@@ -593,7 +593,7 @@ public class ViewCOMPRAS extends javax.swing.JPanel {
     public javax.swing.JPanel jp_table;
     private javax.swing.JPanel jp_titulo;
     public javax.swing.JTable jt_vista;
-    private javax.swing.JTextField jtf_cantidad;
+    public javax.swing.JTextField jtf_cantidad;
     public javax.swing.JTextField jtf_importe;
     public javax.swing.JTextField jtf_iva;
     public javax.swing.JTextField jtf_marca_producto;
@@ -601,10 +601,10 @@ public class ViewCOMPRAS extends javax.swing.JPanel {
     public javax.swing.JTextField jtf_nombre_producto;
     public javax.swing.JTextField jtf_nombre_proveedor;
     public javax.swing.JTextField jtf_numero_compra;
-    private javax.swing.JTextField jtf_precio;
+    public javax.swing.JTextField jtf_precio;
     public javax.swing.JTextField jtf_subtotal;
     public javax.swing.JTextField jtf_telefono_proveedor;
     public javax.swing.JTextField jtf_tipo_producto;
-    private javax.swing.JTextField jtf_total;
+    public javax.swing.JTextField jtf_total;
     // End of variables declaration//GEN-END:variables
 }
