@@ -25,8 +25,20 @@ public class ControllerDetalleCompra {
 
     public ModelDetalleCompras modelDetalleCompra;
     public ViewDetalleCompra viewDetalleCompra;
+    
     public ControllerDetalleCompra(ModelDetalleCompras modelDetalleCompra, ViewDetalleCompra viewDetalleCompra) {
         this.modelDetalleCompra = modelDetalleCompra;
         this.viewDetalleCompra = viewDetalleCompra;
+    }
+    
+     /**
+     * este metodo hace la conexion a la base de datos 
+     * llama a los metodos conectar, mostrar  dentro del modelo 
+     * muestra en la tabla los datos que contiene la variable de modelo_sucursal
+     */
+    public void ConexionBD(){
+        modelDetalleCompra.Conectar();
+        modelDetalleCompra.mostrar();
+        viewDetalleCompra.jT_detalle_compra.setModel(modelDetalleCompra.getModelo_detalle_compra()); //asignar a la tabla los valores correspondientes
     }
 }

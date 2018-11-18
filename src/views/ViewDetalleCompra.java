@@ -312,11 +312,11 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jB_imprimir;
-    private javax.swing.JButton jB_ver;
-    private javax.swing.JComboBox<String> jCB_buscar;
-    private com.toedter.calendar.JDateChooser jDC_fe_final;
-    private com.toedter.calendar.JDateChooser jDC_fe_inicio;
+    public javax.swing.JButton jB_imprimir;
+    public javax.swing.JButton jB_ver;
+    public javax.swing.JComboBox<String> jCB_buscar;
+    public com.toedter.calendar.JDateChooser jDC_fe_final;
+    public com.toedter.calendar.JDateChooser jDC_fe_inicio;
     private javax.swing.JLabel jL_fecha_final;
     private javax.swing.JLabel jL_fecha_inicial;
     private javax.swing.JLabel jL_mejor_comprador;
@@ -333,10 +333,10 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTF_buscar;
-    private javax.swing.JTextField jTF_mejor_comprador;
-    private javax.swing.JTextField jTF_prod_mas_comprado;
-    private javax.swing.JTextField jTF_prod_menos_comprado;
-    private javax.swing.JTable jT_detalle_compra;
+    public javax.swing.JTextField jTF_buscar;
+    public javax.swing.JTextField jTF_mejor_comprador;
+    public javax.swing.JTextField jTF_prod_mas_comprado;
+    public javax.swing.JTextField jTF_prod_menos_comprado;
+    public javax.swing.JTable jT_detalle_compra;
     // End of variables declaration//GEN-END:variables
 }

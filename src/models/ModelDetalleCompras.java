@@ -22,15 +22,17 @@ import javax.swing.table.TableRowSorter;
  */
 public class ModelDetalleCompras {
      //la variable modelo almacenara los tados de la tabla
-        DefaultTableModel modelo_sucursal = new DefaultTableModel();
+        DefaultTableModel modelo_detalle_compra = new DefaultTableModel();
 
-    public DefaultTableModel getModelo_sucursal() {
-        return modelo_sucursal;
+    public DefaultTableModel getModelo_detalle_compra() {
+        return modelo_detalle_compra;
     }
 
-    public void setModelo_sucursal(DefaultTableModel modelo_sucursal) {
-        this.modelo_sucursal = modelo_sucursal;
+    public void setModelo_detalle_compra(DefaultTableModel modelo_detalle_compra) {
+        this.modelo_detalle_compra = modelo_detalle_compra;
     }
+
+    
     
     /**
      * Variables para el metodo de busqueda
@@ -101,11 +103,11 @@ public class ModelDetalleCompras {
     
      public void mostrar() {
         ResultSet rs = Database.getTabla("SELECT compra.id_compra, fecha_compra, detalle_compra.id_detalle_compra, codigo_producto_comp, cantidad_comp, precio_comp, total_producto_comp FROM compra INNER JOIN detalle_compra ON compra.id_compra = detalle_compra.id_compra");
-        modelo_sucursal.setColumnIdentifiers(new Object[]{"Id compra", "Fecha compra", "Id detalle compra", "Codigo producto", "Cantidad", "Precio individual", "Total"});
+        modelo_detalle_compra.setColumnIdentifiers(new Object[]{"Id compra", "Fecha compra", "Id detalle compra", "Codigo producto", "Cantidad", "Precio individual", "Total"});
         try {
             while (rs.next()) {
                 // añade los resultado a al modelo de tabla 
-                modelo_sucursal.addRow(new Object[]{
+                modelo_detalle_compra.addRow(new Object[]{
                     rs.getString("compra.id_compra"),
                     rs.getString("fecha_compra"),
                     rs.getString("detalle_compra.id_detalle_compra"),
