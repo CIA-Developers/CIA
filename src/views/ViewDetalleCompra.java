@@ -55,6 +55,7 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
         jTF_prod_menos_comprado = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1327, 695));
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
 

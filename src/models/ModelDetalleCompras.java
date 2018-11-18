@@ -5,10 +5,15 @@
  */
 package models;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Ami
  */
 public class ModelDetalleCompras {
+     //la variable modelo almacenara los tados de la tabla
+        DefaultTableModel modelo_sucursal = new DefaultTableModel();
+
     
 }
