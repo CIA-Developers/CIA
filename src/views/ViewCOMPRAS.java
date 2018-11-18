@@ -142,7 +142,7 @@ public class ViewCOMPRAS extends javax.swing.JPanel {
         jcb_numero_proveedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
 
         jl_nombre_proveedor.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jl_nombre_proveedor.setText("Nombre Proveedor:");
+        jl_nombre_proveedor.setText("Nombre :");
 
         jtf_nombre_proveedor.setEditable(false);
 
