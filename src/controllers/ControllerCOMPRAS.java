@@ -52,7 +52,9 @@ public class ControllerCOMPRAS {
         modelCOMPRAS.Conectar();// conexion a la BD
         initComponents();
         llenadoCombos();
-        setActionListener();      
+        setActionListener(); 
+        deshabiltarObjetos();
+        
     }
 
     public void initComponents(){
@@ -82,6 +84,24 @@ public class ControllerCOMPRAS {
             viewCOMPRAS.jcb_codigo_producto.addItem((String) modelCOMPRAS.getProducto().get(c));
         }
     }
-   
-    
+    /**
+     * metodo que deshabilitara los combobox
+     * para que no se pueda realizar otra accion, si no se ha registrado
+     * quien va a hacer la compra (empleado)
+     */
+    public void deshabiltarObjetos(){
+        viewCOMPRAS.jcb_numero_sucursal.setEnabled(false);
+        viewCOMPRAS.jcb_numero_proveedor.setEnabled(false);
+        viewCOMPRAS.jcb_codigo_producto.setEnabled(false);
+        //Deshabilitar cajas de texto
+        viewCOMPRAS.jtf_cantidad.setEditable(false);
+        viewCOMPRAS.jtf_precio.setEditable(false);
+        //Deshablitar botones
+        viewCOMPRAS.jb_agregar.setEnabled(false);
+        viewCOMPRAS.jb_modificar.setEnabled(false);
+        viewCOMPRAS.jb_nuevo.setEnabled(false);
+        viewCOMPRAS.jb_realizar_compra.setEnabled(false);
+        //Deshabilitando la tabla de compras 
+        viewCOMPRAS.jt_vista.setEnabled(false);
+    }
 }
