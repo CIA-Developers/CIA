@@ -56,6 +56,15 @@ public class ModelDetalleCompras {
         this.cadena = cadena;
     }
     
+    DefaultTableModel model = new DefaultTableModel(); // variable que usa para el metodo de buscar
+
+    public DefaultTableModel getModel() {
+        return model;
+    }
+
+    public void setModel(DefaultTableModel model) {
+        this.model = model;
+    }
 
 
     
