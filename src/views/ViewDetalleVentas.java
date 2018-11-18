@@ -36,22 +36,22 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
         jDC_fecha_inicial = new com.toedter.calendar.JDateChooser();
         jDC_fehca_final = new com.toedter.calendar.JDateChooser();
         jB_ver = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jB_imprimir = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jT_detalle_venta = new javax.swing.JTable();
         jTextField1 = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jL_mejor_vendedor = new javax.swing.JLabel();
+        jTF_mejor_vendedor = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        jL_producto_mas_vendido = new javax.swing.JLabel();
+        jTF_prod_mas_vendido = new javax.swing.JTextField();
+        jL_producto_menos_vendido = new javax.swing.JLabel();
+        jTF_prod_menos_vendido = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1327, 695));
@@ -94,8 +94,8 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
         jB_ver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/buscar .png"))); // NOI18N
         jB_ver.setText("Ver");
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Botonimpirmi.png"))); // NOI18N
-        jButton1.setText("Imprimir");
+        jB_imprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Botonimpirmi.png"))); // NOI18N
+        jB_imprimir.setText("Imprimir");
 
         javax.swing.GroupLayout jP_buqueda_generalLayout = new javax.swing.GroupLayout(jP_buqueda_general);
         jP_buqueda_general.setLayout(jP_buqueda_generalLayout);
@@ -115,7 +115,7 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
                         .addComponent(jDC_fehca_final, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addGroup(jP_buqueda_generalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
+                    .addComponent(jB_imprimir)
                     .addComponent(jB_ver))
                 .addGap(18, 18, 18))
         );
@@ -131,7 +131,7 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
                 .addGroup(jP_buqueda_generalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jDC_fehca_final, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jDC_fecha_inicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(jB_imprimir))
                 .addGap(19, 19, 19))
         );
 
@@ -154,7 +154,7 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(255, 255, 51));
         jPanel2.setPreferredSize(new java.awt.Dimension(675, 64));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jT_detalle_venta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null},
@@ -165,8 +165,8 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
                 "Id venta", "Codigo producto", "RFC cliente", "Fecha venta", "RFC epmleado", "No sucursal", "Codigo descuento", "Puntos ganados", "Cantidad", "Precio venta", "Total"
             }
         ));
-        jTable1.setPreferredSize(new java.awt.Dimension(675, 64));
-        jScrollPane1.setViewportView(jTable1);
+        jT_detalle_venta.setPreferredSize(new java.awt.Dimension(675, 64));
+        jScrollPane1.setViewportView(jT_detalle_venta);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -199,16 +199,16 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/empleadoDestacado.png"))); // NOI18N
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel5.setText("Mejor Vendedor:");
+        jL_mejor_vendedor.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jL_mejor_vendedor.setText("Mejor Vendedor:");
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/productoMasVendido.png"))); // NOI18N
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel6.setText("Producto mas vendido: ");
+        jL_producto_mas_vendido.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jL_producto_mas_vendido.setText("Producto mas vendido: ");
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel7.setText("Producto menos vendido:");
+        jL_producto_menos_vendido.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jL_producto_menos_vendido.setText("Producto menos vendido:");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -219,18 +219,18 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
                 .addComponent(jLabel8)
                 .addGap(41, 41, 41)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jL_mejor_vendedor)
+                    .addComponent(jTF_mejor_vendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(57, 57, 57)
                 .addComponent(jLabel9)
                 .addGap(51, 51, 51)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jL_producto_mas_vendido)
+                    .addComponent(jTF_prod_mas_vendido, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(53, 53, 53)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
+                    .addComponent(jTF_prod_menos_vendido, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jL_producto_menos_vendido))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -242,9 +242,9 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel4Layout.createSequentialGroup()
-                                    .addComponent(jLabel5)
+                                    .addComponent(jL_mejor_vendedor)
                                     .addGap(18, 18, 18)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jTF_mejor_vendedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(jLabel8))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel9)
@@ -252,12 +252,12 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel6))
+                            .addComponent(jL_producto_menos_vendido)
+                            .addComponent(jL_producto_mas_vendido))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTF_prod_menos_vendido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTF_prod_mas_vendido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
 
@@ -312,18 +312,18 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jB_imprimir;
     private javax.swing.JButton jB_ver;
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private com.toedter.calendar.JDateChooser jDC_fecha_inicial;
     private com.toedter.calendar.JDateChooser jDC_fehca_final;
+    private javax.swing.JLabel jL_mejor_vendedor;
+    private javax.swing.JLabel jL_producto_mas_vendido;
+    private javax.swing.JLabel jL_producto_menos_vendido;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jP_Titulo;
@@ -332,10 +332,10 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTF_mejor_vendedor;
+    private javax.swing.JTextField jTF_prod_mas_vendido;
+    private javax.swing.JTextField jTF_prod_menos_vendido;
+    private javax.swing.JTable jT_detalle_venta;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }
