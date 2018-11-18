@@ -26,6 +26,34 @@ public class ControllerDetalleCompra {
     public ModelDetalleCompras modelDetalleCompra;
     public ViewDetalleCompra viewDetalleCompra;
     
+    MouseListener ml = new MouseListener(){
+        @Override
+        public void mouseClicked(MouseEvent e) {
+          if (e.getSource() == viewDetalleCompra.jT_detalle_compra) {
+                jt_detalle_compra_MouseClicked();
+            }  
+        }
+         @Override
+        public void mousePressed(MouseEvent e) {
+           
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+           
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+            
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+           
+        }    
+    };
+    
     KeyListener key = new KeyListener(){
         @Override
         public void keyTyped(KeyEvent e) {
@@ -52,6 +80,11 @@ public class ControllerDetalleCompra {
     public ControllerDetalleCompra(ModelDetalleCompras modelDetalleCompra, ViewDetalleCompra viewDetalleCompra) {
         this.modelDetalleCompra = modelDetalleCompra;
         this.viewDetalleCompra = viewDetalleCompra;
+        this.viewDetalleCompra.jT_detalle_compra.addMouseListener(ml);//agregar a la table el evento de MouseListener
+        this.viewDetalleCompra.jTF_busqueda.addKeyListener(key); //agregar elevento de keylistener en la tabla
+        
+       
+        ConexionBD();
     }
     
      /**
