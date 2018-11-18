@@ -87,6 +87,17 @@ public class ControllerDetalleCompra {
         ConexionBD();
     }
     
+    private void jt_detalle_compra_MouseClicked() {
+        cajas_deshabilitadas(); // cuando se haga clic en la tabla, las cajas se volveran a deshabilitar 
+        viewDetalleCompra.setRec(viewDetalleCompra.jT_detalle_compra.getSelectedRow());//a la variable se le asigna el elemento seleccionado en la tabla
+        viewDetalleCompra.jDC_fe_inicio.setText(viewDetalleCompra.jT_detalle_compra.getValueAt(modelDetalleCompra.getRec(), 0).toString());
+        viewDetalleCompra.jDC_fe_final.setText(viewDetalleCompra.jT_detalle_compra.getValueAt(modelDetalleCompra.getRec(), 1).toString());
+        viewDetalleCompra.jTF_mejor_comprador.setText(viewDetalleCompra.jT_detalle_compra.getValueAt(modelDetalleCompra.getRec(), 2).toString());
+        viewDetalleCompra.jTF_prod_mas_comprado.setText(viewDetalleCompra.jT_detalle_compra.getValueAt(modelDetalleCompra.getRec(), 3).toString());
+        viewDetalleCompra.jTF_prod_menos_comprado.setText(viewDetalleCompra.jT_detalle_compra.getValueAt(modelDetalleCompra.getRec(), 4).toString());
+        
+        }
+    
      /**
      * este metodo hace la conexion a la base de datos 
      * llama a los metodos conectar, mostrar  dentro del modelo 

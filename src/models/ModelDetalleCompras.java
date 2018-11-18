@@ -32,7 +32,15 @@ public class ModelDetalleCompras {
         this.modelo_detalle_compra = modelo_detalle_compra;
     }
 
-    
+     public int rec;//Variable que tomara el valor seleccionado en la tabla 
+
+    public int getRec() {
+        return rec;
+    }
+
+    public void setRec(int rec) {
+        this.rec = rec;
+    }
     
     /**
      * Variables para el metodo de busqueda
