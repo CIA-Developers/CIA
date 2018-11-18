@@ -62,4 +62,17 @@ public class ModelDetalleVentas {
         this.date = date;
     }
      
+    /**
+     * Variables para el metodo de busqueda
+     */
+    private TableRowSorter trsFiltro; // sirve para filtar los datos dentro de la tabla
+
+    public TableRowSorter getTrsFiltro() {
+        return trsFiltro;
+    }
+
+    public void setTrsFiltro(TableRowSorter trsFiltro) {
+        this.trsFiltro = trsFiltro;
+    }
+    
 }
