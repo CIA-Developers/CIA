@@ -162,7 +162,7 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Id venta", "Codigo producto", "RFC cliente", "Fecha venta", "RFC epmleado", "No sucursal", "Codigo descuento", "Puntos ganados", "Cantidad", "Precio venta", "Total"
+                "Id venta", "Fecha venta", "RFC cliente", "RFC epmleado", "No sucursal", "Codigo descuento", "Puntos ganados", "Id detalle venta", "Cantidad", "Precio venta", "Total"
             }
         ));
         jT_detalle_venta.setPreferredSize(new java.awt.Dimension(675, 64));
