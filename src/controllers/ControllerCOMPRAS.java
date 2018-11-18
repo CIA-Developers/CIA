@@ -139,5 +139,6 @@ public class ControllerCOMPRAS {
         modelCOMPRAS.setCantidad_compra(Integer.parseInt(viewCOMPRAS.jtf_cantidad.getText()));
         modelCOMPRAS.setPrecio_compra(Float.parseFloat(viewCOMPRAS.jtf_precio.getText()));
         modelCOMPRAS.TotalCompraProducto();
+        viewCOMPRAS.jtf_total.setText(Float.toString(modelCOMPRAS.getTotal_por_producto()));
     }
 }
