@@ -41,4 +41,20 @@ public class ControllerDetalleCompra {
         modelDetalleCompra.mostrar();
         viewDetalleCompra.jT_detalle_compra.setModel(modelDetalleCompra.getModelo_detalle_compra()); //asignar a la tabla los valores correspondientes
     }
+    
+     // ********************************* M E T O D O   D E   B U S Q U E D A    *******************************************
+    /***
+     * Metodo para filtar los datos de la busqueda
+     */
+    public void filtro() {
+        //depende del numero de items en el jcb
+                
+        if (viewDetalleCompra.jCB_buscar.getSelectedItem() == "RFC empleado") {
+            modelDetalleCompra.setColumnaABuscar(5); //numero de columna en la tabla donde se encuentra el registro
+        }
+        else if (viewDetalleCompra.jCB_buscar.getSelectedItem() == "Codigo producto") {
+            modelDetalleCompra.setColumnaABuscar(0); //numero de columna en la tabla donde se encuentra el registro
+        }
+        modelDetalleCompra.getTrsFiltro().setRowFilter(RowFilter.regexFilter(viewDetalleCompra.jTF_busqueda.getText(), modelDetalleCompra.getColumnaABuscar()));
+    }
 }

@@ -34,7 +34,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jCB_buscar" min="-2" pref="105" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jTF_buscar" min="-2" pref="188" max="-2" attributes="0"/>
+                      <Component id="jTF_busqueda" min="-2" pref="188" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -61,7 +61,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTF_buscar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTF_busqueda" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jCB_buscar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -343,7 +343,7 @@
         </Container>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JTextField" name="jTF_buscar">
+    <Component class="javax.swing.JTextField" name="jTF_busqueda">
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>

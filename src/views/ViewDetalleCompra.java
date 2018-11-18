@@ -41,7 +41,7 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
         jDC_fe_final = new com.toedter.calendar.JDateChooser();
         jB_ver = new javax.swing.JButton();
         jB_imprimir = new javax.swing.JButton();
-        jTF_buscar = new javax.swing.JTextField();
+        jTF_busqueda = new javax.swing.JTextField();
         jCB_buscar = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -278,7 +278,7 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(jCB_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTF_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTF_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -298,7 +298,7 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTF_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTF_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jCB_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -333,7 +333,7 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
-    public javax.swing.JTextField jTF_buscar;
+    public javax.swing.JTextField jTF_busqueda;
     public javax.swing.JTextField jTF_mejor_comprador;
     public javax.swing.JTextField jTF_prod_mas_comprado;
     public javax.swing.JTextField jTF_prod_menos_comprado;
