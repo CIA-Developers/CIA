@@ -26,6 +26,29 @@ public class ControllerDetalleCompra {
     public ModelDetalleCompras modelDetalleCompra;
     public ViewDetalleCompra viewDetalleCompra;
     
+    KeyListener key = new KeyListener(){
+        @Override
+        public void keyTyped(KeyEvent e) {
+            if (e.getSource() == viewDetalleCompra.jTF_busqueda) {
+                modelDetalleCompra.setTrsFiltro(new TableRowSorter(viewDetalleCompra.jT_detalle_compra.getModel()));
+                viewDetalleCompra.jT_detalle_compra.setRowSorter(modelDetalleCompra.getTrsFiltro());
+            } 
+        }
+        @Override
+        public void keyPressed(KeyEvent e) {
+ 
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            if (e.getSource() == viewDetalleCompra.jTF_busqueda) {
+                modelDetalleCompra.setCadena(viewDetalleCompra.jTF_busqueda.getText());
+                viewDetalleCompra.jTF_busqueda.setText(modelDetalleCompra.getCadena());
+                filtro();
+            }    
+        }    
+    };
+    
     public ControllerDetalleCompra(ModelDetalleCompras modelDetalleCompra, ViewDetalleCompra viewDetalleCompra) {
         this.modelDetalleCompra = modelDetalleCompra;
         this.viewDetalleCompra = viewDetalleCompra;
