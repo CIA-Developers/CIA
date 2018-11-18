@@ -30,6 +30,11 @@ public class ControllerCOMPRAS {
                viewCOMPRAS.jtf_nombre_proveedor.setText(modelCOMPRAS.getNombre_proveedor());
                viewCOMPRAS.jtf_telefono_proveedor.setText(modelCOMPRAS.getTelefono_proveedor());
             }
+            else if (e.getSource() == viewCOMPRAS.jcb_rfc){
+                modelCOMPRAS.setRFC_empleado((String) viewCOMPRAS.jcb_rfc.getSelectedItem());
+                modelCOMPRAS.llenarTextFieldsEmpleados();
+                viewCOMPRAS.jtf_nombre_empleado.setText(modelCOMPRAS.getNombre_empleado()+"  "+modelCOMPRAS.getApellido_pat_empleado()+"  "+modelCOMPRAS.getApellido_mat_empleado());
+            }
         }
         
     };
@@ -52,6 +57,8 @@ public class ControllerCOMPRAS {
     }
     public void setActionListener(){
         viewCOMPRAS.jcb_numero_proveedor.addActionListener(list);
+        viewCOMPRAS.jcb_rfc.addActionListener(list);
+        viewCOMPRAS.jcb_codigo_producto.addActionListener(list);
     }
     public void llenadoCombos(){
         modelCOMPRAS.llenarCombo();

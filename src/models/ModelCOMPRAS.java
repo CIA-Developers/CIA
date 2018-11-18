@@ -27,6 +27,9 @@ public class ModelCOMPRAS {
     
     //********Variables para compra *********
     public String RFC_empleado;
+    public String nombre_empleado;
+    public String apellido_pat_empleado;
+    public String apellido_mat_empleado;
     public int num_sucursal;
     public int id_proveedor;
     public String num_proveedor;
@@ -57,6 +60,30 @@ public class ModelCOMPRAS {
         this.RFC_empleado = RFC_empleado;
     }
 
+    public String getNombre_empleado() {
+        return nombre_empleado;
+    }
+
+    public void setNombre_empleado(String nombre_empleado) {
+        this.nombre_empleado = nombre_empleado;
+    }
+
+    public String getApellido_pat_empleado() {
+        return apellido_pat_empleado;
+    }
+
+    public void setApellido_pat_empleado(String apellido_pat_empleado) {
+        this.apellido_pat_empleado = apellido_pat_empleado;
+    }
+
+    public String getApellido_mat_empleado() {
+        return apellido_mat_empleado;
+    }
+
+    public void setApellido_mat_empleado(String apellido_mat_empleado) {
+        this.apellido_mat_empleado = apellido_mat_empleado;
+    }
+    
     public int getNum_sucursal() {
         return num_sucursal;
     }
@@ -85,9 +112,6 @@ public class ModelCOMPRAS {
     public void setTelefono_proveedor(String telefono_proveedor) {
         this.telefono_proveedor = telefono_proveedor;
     }
-
-   
-
     
     public void setNum_proveedor(String num_proveedor) {
         this.num_proveedor = num_proveedor;
@@ -330,5 +354,18 @@ public class ModelCOMPRAS {
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"error6 al llenarTextFields"+e);
         }
+    }
+    public void llenarTextFieldsEmpleados(){
+        try{
+            RFC_empleado=this.getRFC_empleado();
+            rs = st.executeQuery("SELECT * FROM empleados_compras WHERE RFC_empl_comp='" +RFC_empleado+ "';");//consulta a empleaddos compras
+                rs.next();
+                nombre_empleado = rs.getString("nombre_empl_comp");
+                apellido_pat_empleado = rs.getString("ap_pat_comp");
+                apellido_mat_empleado = rs.getString("ap_mat_comp");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"error7 al llenarTextFields"+e);
+        }
+        
     }
 }
