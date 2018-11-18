@@ -35,6 +35,13 @@ public class ControllerCOMPRAS {
                 modelCOMPRAS.llenarTextFieldsEmpleados();
                 viewCOMPRAS.jtf_nombre_empleado.setText(modelCOMPRAS.getNombre_empleado()+"  "+modelCOMPRAS.getApellido_pat_empleado()+"  "+modelCOMPRAS.getApellido_mat_empleado());
             }
+            else if (e.getSource() == viewCOMPRAS.jcb_codigo_producto){
+                modelCOMPRAS.setCodigo_producto((String) viewCOMPRAS.jcb_codigo_producto.getSelectedItem());
+                modelCOMPRAS.llenarTextFieldsProductos();
+                viewCOMPRAS.jtf_nombre_producto.setText(modelCOMPRAS.getNombre_producto());
+                viewCOMPRAS.jtf_tipo_producto.setText(modelCOMPRAS.getTipo_producto());
+                viewCOMPRAS.jtf_marca_producto.setText(modelCOMPRAS.getMarca_producto());
+            }
         }
         
     };
