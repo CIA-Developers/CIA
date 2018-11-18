@@ -135,4 +135,9 @@ public class ControllerCOMPRAS {
         //Deshabilitando la tabla de compras 
         viewCOMPRAS.jt_vista.setEnabled(false);
     }
+    public void TotalProducto(){
+        modelCOMPRAS.setCantidad_compra(Integer.parseInt(viewCOMPRAS.jtf_cantidad.getText()));
+        modelCOMPRAS.setPrecio_compra(Float.parseFloat(viewCOMPRAS.jtf_precio.getText()));
+        
+    }
 }

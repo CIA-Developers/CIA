@@ -40,9 +40,7 @@ public class ControllerProductos {
   MouseListener ml = new MouseListener() {
         @Override
         public void mouseClicked(MouseEvent e) {
-            if (e.getSource() == viewProductos.jt_vista) {
-                jt_vista_MouseClicked();
-            }
+            
         }
 
         @Override
