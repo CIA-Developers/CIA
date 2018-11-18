@@ -31,8 +31,8 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jP_buqueda_general = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jL_fecha_inicial = new javax.swing.JLabel();
+        jL_fecha_final = new javax.swing.JLabel();
         jDC_fecha_inicial = new com.toedter.calendar.JDateChooser();
         jDC_fehca_final = new com.toedter.calendar.JDateChooser();
         jB_ver = new javax.swing.JButton();
@@ -85,11 +85,11 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
         jP_buqueda_general.setBackground(new java.awt.Color(255, 255, 255));
         jP_buqueda_general.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda General", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 153, 255))); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setText("Fecha inicio (dia/mes/año) :");
+        jL_fecha_inicial.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jL_fecha_inicial.setText("Fecha inicio (dia/mes/año) :");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel3.setText("Fecha final (dia/mes/año) :");
+        jL_fecha_final.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jL_fecha_final.setText("Fecha final (dia/mes/año) :");
 
         jB_ver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/buscar .png"))); // NOI18N
         jB_ver.setText("Ver");
@@ -105,9 +105,9 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
                 .addGroup(jP_buqueda_generalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jP_buqueda_generalLayout.createSequentialGroup()
                         .addGap(54, 54, 54)
-                        .addComponent(jLabel2)
+                        .addComponent(jL_fecha_inicial)
                         .addGap(87, 87, 87)
-                        .addComponent(jLabel3))
+                        .addComponent(jL_fecha_final))
                     .addGroup(jP_buqueda_generalLayout.createSequentialGroup()
                         .addGap(62, 62, 62)
                         .addComponent(jDC_fecha_inicial, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -124,8 +124,8 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
             .addGroup(jP_buqueda_generalLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jP_buqueda_generalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
+                    .addComponent(jL_fecha_inicial)
+                    .addComponent(jL_fecha_final)
                     .addComponent(jB_ver))
                 .addGap(22, 22, 22)
                 .addGroup(jP_buqueda_generalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -317,12 +317,12 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> jComboBox1;
     private com.toedter.calendar.JDateChooser jDC_fecha_inicial;
     private com.toedter.calendar.JDateChooser jDC_fehca_final;
+    private javax.swing.JLabel jL_fecha_final;
+    private javax.swing.JLabel jL_fecha_inicial;
     private javax.swing.JLabel jL_mejor_vendedor;
     private javax.swing.JLabel jL_producto_mas_vendido;
     private javax.swing.JLabel jL_producto_menos_vendido;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

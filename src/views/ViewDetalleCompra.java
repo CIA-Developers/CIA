@@ -32,27 +32,27 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jT_detalle = new javax.swing.JTable();
+        jT_detalle_compra = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jP_datos = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jL_fecha_inicial = new javax.swing.JLabel();
+        jL_fecha_final = new javax.swing.JLabel();
         jDC_fe_inicio = new com.toedter.calendar.JDateChooser();
         jDC_fe_final = new com.toedter.calendar.JDateChooser();
-        jB_buscar_general = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jB_ver = new javax.swing.JButton();
+        jB_imprimir = new javax.swing.JButton();
         jTF_buscar = new javax.swing.JTextField();
         jCB_buscar = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jL_mejor_comprador = new javax.swing.JLabel();
+        jTF_mejor_comprador = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jL_prod_mas_comprado = new javax.swing.JLabel();
+        jTF_prod_mas_comprado = new javax.swing.JTextField();
+        jL_prod_menos_comprado = new javax.swing.JLabel();
+        jTF_prod_menos_comprado = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -86,7 +86,7 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 51));
 
-        jT_detalle.setModel(new javax.swing.table.DefaultTableModel(
+        jT_detalle_compra.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null},
@@ -97,7 +97,7 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
                 "Id_compra", "Id_proveedor", "Fecha compra", "RFC empleado", "No.Sucuarsal", "Codigo producto", "Cantidad", "Precio individual", "Total"
             }
         ));
-        jScrollPane2.setViewportView(jT_detalle);
+        jScrollPane2.setViewportView(jT_detalle_compra);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -122,17 +122,17 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
         jP_datos.setBackground(new java.awt.Color(255, 255, 255));
         jP_datos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Reporte General", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 153, 255))); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel1.setText("Fecha inicio (dia/mes/año) :");
+        jL_fecha_inicial.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jL_fecha_inicial.setText("Fecha inicio (dia/mes/año) :");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setText("Fecha fin (dia/mes/año) :");
+        jL_fecha_final.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jL_fecha_final.setText("Fecha fin (dia/mes/año) :");
 
-        jB_buscar_general.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/buscar .png"))); // NOI18N
-        jB_buscar_general.setText("Ver");
+        jB_ver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/buscar .png"))); // NOI18N
+        jB_ver.setText("Ver");
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Botonimpirmi.png"))); // NOI18N
-        jButton1.setText("Imprimmir");
+        jB_imprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Botonimpirmi.png"))); // NOI18N
+        jB_imprimir.setText("Imprimmir");
 
         javax.swing.GroupLayout jP_datosLayout = new javax.swing.GroupLayout(jP_datos);
         jP_datos.setLayout(jP_datosLayout);
@@ -142,7 +142,7 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
                 .addGroup(jP_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jP_datosLayout.createSequentialGroup()
                         .addGap(28, 28, 28)
-                        .addComponent(jLabel1))
+                        .addComponent(jL_fecha_inicial))
                     .addGroup(jP_datosLayout.createSequentialGroup()
                         .addGap(47, 47, 47)
                         .addComponent(jDC_fe_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -153,11 +153,11 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
                         .addComponent(jDC_fe_final, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jP_datosLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addComponent(jL_fecha_final)
                         .addGap(50, 50, 50)
-                        .addComponent(jB_buscar_general)
+                        .addComponent(jB_ver)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jB_imprimir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jP_datosLayout.setVerticalGroup(
@@ -166,11 +166,11 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jP_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jP_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1)
-                        .addComponent(jLabel2))
+                        .addComponent(jL_fecha_inicial)
+                        .addComponent(jL_fecha_final))
                     .addGroup(jP_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jB_buscar_general)
-                        .addComponent(jButton1)))
+                        .addComponent(jB_ver)
+                        .addComponent(jB_imprimir)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jP_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jDC_fe_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -204,16 +204,16 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/empleadoDestacado.png"))); // NOI18N
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel6.setText("Mejor Comprador:");
+        jL_mejor_comprador.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jL_mejor_comprador.setText("Mejor Comprador:");
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Comprado.png"))); // NOI18N
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel8.setText("Producto mas comprado:");
+        jL_prod_mas_comprado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jL_prod_mas_comprado.setText("Producto mas comprado:");
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel9.setText("Producto menos comprado:");
+        jL_prod_menos_comprado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jL_prod_menos_comprado.setText("Producto menos comprado:");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -225,20 +225,20 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
-                        .addComponent(jLabel6))
+                        .addComponent(jL_mejor_comprador))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(33, 33, 33)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jTF_mejor_comprador, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(106, 106, 106)
                 .addComponent(jLabel7)
                 .addGap(35, 35, 35)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField2))
+                    .addComponent(jL_prod_mas_comprado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTF_prod_mas_comprado))
                 .addGap(60, 60, 60)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField3))
+                    .addComponent(jL_prod_menos_comprado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTF_prod_menos_comprado))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -246,20 +246,20 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTF_mejor_comprador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel5)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
-                            .addComponent(jLabel6)
+                            .addComponent(jL_mejor_comprador)
                             .addComponent(jLabel7)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel9))
+                                    .addComponent(jL_prod_mas_comprado)
+                                    .addComponent(jL_prod_menos_comprado))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(jTF_prod_mas_comprado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTF_prod_menos_comprado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
@@ -310,21 +310,21 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jB_buscar_general;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jB_imprimir;
+    private javax.swing.JButton jB_ver;
     private javax.swing.JComboBox<String> jCB_buscar;
     private com.toedter.calendar.JDateChooser jDC_fe_final;
     private com.toedter.calendar.JDateChooser jDC_fe_inicio;
+    private javax.swing.JLabel jL_fecha_final;
+    private javax.swing.JLabel jL_fecha_inicial;
+    private javax.swing.JLabel jL_mejor_comprador;
+    private javax.swing.JLabel jL_prod_mas_comprado;
+    private javax.swing.JLabel jL_prod_menos_comprado;
     private javax.swing.JLabel jL_titulo;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jP_datos;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -332,9 +332,9 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTF_buscar;
-    private javax.swing.JTable jT_detalle;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTF_mejor_comprador;
+    private javax.swing.JTextField jTF_prod_mas_comprado;
+    private javax.swing.JTextField jTF_prod_menos_comprado;
+    private javax.swing.JTable jT_detalle_compra;
     // End of variables declaration//GEN-END:variables
 }
