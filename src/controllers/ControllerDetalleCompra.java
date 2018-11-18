@@ -115,7 +115,7 @@ public class ControllerDetalleCompra {
         //depende del numero de items en el jcb
                 
         if (viewDetalleCompra.jCB_buscar.getSelectedItem() == "RFC empleado") {
-            modelDetalleCompra.setColumnaABuscar(5); //numero de columna en la tabla donde se encuentra el registro
+            modelDetalleCompra.setColumnaABuscar(2); //numero de columna en la tabla donde se encuentra el registro
         }
         else if (viewDetalleCompra.jCB_buscar.getSelectedItem() == "Codigo producto") {
             modelDetalleCompra.setColumnaABuscar(4); //numero de columna en la tabla donde se encuentra el registro
@@ -125,4 +125,9 @@ public class ControllerDetalleCompra {
 
     private void cajas_deshabilitadas() {
     }
+    
+    //***************** BOTONES Ver y Imprimir**************************
+    /**
+     * Metodo que limpiara las cajas de texto para ingresar nuevo datos. 
+     */
 }
