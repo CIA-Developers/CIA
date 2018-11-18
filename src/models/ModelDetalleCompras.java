@@ -36,6 +36,26 @@ public class ModelDetalleCompras {
     public void setTrsFiltro(TableRowSorter trsFiltro) {
         this.trsFiltro = trsFiltro;
     }
+    
+    public int columnaABuscar;
+    public String cadena;
+
+    public int getColumnaABuscar() {
+        return columnaABuscar;
+    }
+
+    public void setColumnaABuscar(int columnaABuscar) {
+        this.columnaABuscar = columnaABuscar;
+    }
+
+    public String getCadena() {
+        return cadena;
+    }
+
+    public void setCadena(String cadena) {
+        this.cadena = cadena;
+    }
+    
 
 
     
