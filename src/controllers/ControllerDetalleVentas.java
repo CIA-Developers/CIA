@@ -58,9 +58,9 @@ public class ControllerDetalleVentas {
     KeyListener key = new KeyListener(){
         @Override
         public void keyTyped(KeyEvent e) {
-            if (e.getSource() == viewDetalleCompra.jTF_busqueda) {
-                modelDetalleCompra.setTrsFiltro(new TableRowSorter(viewDetalleCompra.jT_detalle_compra.getModel()));
-                viewDetalleCompra.jT_detalle_compra.setRowSorter(modelDetalleCompra.getTrsFiltro());
+            if (e.getSource() == viewDetalleVentas.jTF_busqueda) {
+                modelDetalleVentas.setTrsFiltro(new TableRowSorter(viewDetalleVentas.jT_detalle_venta.getModel()));
+                viewDetalleVentas.jT_detalle_venta.setRowSorter(modelDetalleVentas.getTrsFiltro());
             } 
         }
         @Override
@@ -92,10 +92,43 @@ public class ControllerDetalleVentas {
     }
     
      private void jt_detalle_venta_MouseClicked() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
-     
-      private void filtro() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      
+      /**
+     * este metodo hace la conexion a la base de datos 
+     * llama a los metodos conectar, mostrar  dentro del modelo 
+     * muestra en la tabla los datos que contiene la variable de modelo_sucursal
+     */
+    public void ConexionBD(){
+        modelDetalleVentas.Conectar();
+        modelDetalleVentas.mostrar();
+        viewDetalleVentas.jT_detalle_venta.setModel(modelDetalleVentas.getModelo_detalle_compra()); //asignar a la tabla los valores correspondientes
+    }
+    
+     // ********************************* M E T O D O   D E   B U S Q U E D A    *******************************************
+    /***
+     * Metodo para filtar los datos de la busqueda
+     */
+    public void filtro() {
+        //depende del numero de items en el jcb
+                
+        if (viewDetalleVentas.jCB_buscar.getSelectedItem() == "RFC empleado") {
+            modelDetalleVentas.setColumnaABuscar(2); //numero de columna en la tabla donde se encuentra el registro
         }
+        else if (viewDetalleVentas.jCB_buscar.getSelectedItem() == "Codigo producto") {
+            modelDetalleVentas.setColumnaABuscar(4); //numero de columna en la tabla donde se encuentra el registro
+        }
+        modelDetalleVentas.getTrsFiltro().setRowFilter(RowFilter.regexFilter(viewDetalleVentas.jTF_busqueda.getText(), modelDetalleVentas.getColumnaABuscar()));
+    }
+    
+     private void cajas_deshabilitadas() {
+    }
+    
+    //***************** BOTONES Ver, nuevo y Imprimir**************************
+    /**
+     * Metodo que limpiara las cajas de texto para ingresar nuevo datos. 
+     */
+
+    
+    
 }
