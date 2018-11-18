@@ -401,5 +401,10 @@ public class ModelCOMPRAS {
             JOptionPane.showMessageDialog(null,"error8 al llenarTextFields"+e);
         }   
     }
+    //*****************************METODOS PARA REALIZAR LA COMPRA*************************************
+    //--------TABLA DE COMPRAS--------
+    public void TotalCompra(){
+        
+    }
     
 }
