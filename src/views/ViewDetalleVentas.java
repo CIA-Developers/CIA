@@ -40,8 +40,8 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jT_detalle_venta = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jTF_busqueda = new javax.swing.JTextField();
+        jCB_buscar = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -185,10 +185,10 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione uno", "RFC cliente", "RFC empleado", "Sucursal" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        jCB_buscar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione uno", "RFC cliente", "RFC empleado", "Sucursal" }));
+        jCB_buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                jCB_buscarActionPerformed(evt);
             }
         });
 
@@ -270,9 +270,9 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jCB_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTF_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
@@ -295,8 +295,8 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jTF_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jCB_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -307,15 +307,15 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void jCB_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCB_buscarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_jCB_buscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton jB_imprimir;
     public javax.swing.JButton jB_ver;
-    public javax.swing.JComboBox<String> jComboBox1;
+    public javax.swing.JComboBox<String> jCB_buscar;
     public com.toedter.calendar.JDateChooser jDC_fecha_inicial;
     public com.toedter.calendar.JDateChooser jDC_fehca_final;
     private javax.swing.JLabel jL_fecha_final;
@@ -333,10 +333,10 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JTextField jTF_busqueda;
     public javax.swing.JTextField jTF_mejor_vendedor;
     public javax.swing.JTextField jTF_prod_mas_vendido;
     public javax.swing.JTextField jTF_prod_menos_vendido;
     public javax.swing.JTable jT_detalle_venta;
-    public javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
