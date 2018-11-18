@@ -27,9 +27,9 @@ public class ModelCOMPRAS {
     
     //********Variables para compra *********
     public String RFC_empleado;
-    public String nombre_empleado;
-    public String apellido_pat_empleado;
-    public String apellido_mat_empleado;
+    public String nombre_empleado;// solo se obtendra este dato, no se almacenara
+    public String apellido_pat_empleado;// solo se obtendra este dato, no se almacenara
+    public String apellido_mat_empleado;// solo se obtendra este dato, no se almacenara
     public int num_sucursal;
     public int id_proveedor;
     public String num_proveedor;
@@ -39,6 +39,8 @@ public class ModelCOMPRAS {
     public ArrayList numero_proveedor; // la variable almacenara una lista para llenar comboBox
     public String nombre_proveedor; // solo se obtendra este dato, no se almacenara
     public String telefono_proveedor; // solo se obtendra este dato, no se almacenara
+    public String apell_pat_proveedor; // solo se obtendra este dato, no se almacenara
+    public String apell_mat_proveedor; // solo se obtendra este dato, no se almacenara
     public float subtotal;
     public float iva;
     public float importe;
@@ -116,6 +118,24 @@ public class ModelCOMPRAS {
     public void setNum_proveedor(String num_proveedor) {
         this.num_proveedor = num_proveedor;
     }
+
+    public String getApell_pat_proveedor() {
+        return apell_pat_proveedor;
+    }
+
+    public void setApell_pat_proveedor(String apell_pat_proveedor) {
+        this.apell_pat_proveedor = apell_pat_proveedor;
+    }
+
+    public String getApell_mat_proveedor() {
+        return apell_mat_proveedor;
+    }
+
+    public void setApell_mat_proveedor(String apell_mat_proveedor) {
+        this.apell_mat_proveedor = apell_mat_proveedor;
+    }
+    
+    
 
     public ArrayList getNumero_sucursal() {
         return numero_sucursal;
@@ -350,7 +370,9 @@ public class ModelCOMPRAS {
             rs = st.executeQuery("SELECT * FROM proveedores WHERE id_proveedor='" + id_proveedor+ "';");//consulta a proveedores
             rs.next();
             nombre_proveedor=rs.getString("nombre_prov");
-            telefono_proveedor=rs.getString("telefono_prov");        
+            telefono_proveedor=rs.getString("telefono_prov"); 
+            apell_pat_proveedor=rs.getString("ap_pat_prov");
+            apell_mat_proveedor=rs.getString("ap_mat_prov");
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"error6 al llenarTextFields"+e);
         }
@@ -365,7 +387,6 @@ public class ModelCOMPRAS {
                 apellido_mat_empleado = rs.getString("ap_mat_comp");
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"error7 al llenarTextFields"+e);
-        }
-        
+        }   
     }
 }

@@ -27,7 +27,7 @@ public class ControllerCOMPRAS {
             if (e.getSource() == viewCOMPRAS.jcb_numero_proveedor){
                modelCOMPRAS.setId_proveedor(Integer.parseInt((String)viewCOMPRAS.jcb_numero_proveedor.getSelectedItem()));
                modelCOMPRAS.llenarTextFieldsProveedor();
-               viewCOMPRAS.jtf_nombre_proveedor.setText(modelCOMPRAS.getNombre_proveedor());
+               viewCOMPRAS.jtf_nombre_proveedor.setText(modelCOMPRAS.getNombre_proveedor()+"  "+modelCOMPRAS.getApell_pat_proveedor()+"  "+modelCOMPRAS.getApell_mat_proveedor());
                viewCOMPRAS.jtf_telefono_proveedor.setText(modelCOMPRAS.getTelefono_proveedor());
             }
             else if (e.getSource() == viewCOMPRAS.jcb_rfc){
