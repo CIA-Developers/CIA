@@ -20,13 +20,27 @@ import views.ViewCOMPRAS;
 public class ControllerCOMPRAS {
     ModelCOMPRAS modelCOMPRAS;
     ViewCOMPRAS viewCOMPRAS;
+    
+    ActionListener list = new ActionListener(){
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (e.getSource() == viewCOMPRAS.jcb_numero_proveedor){
+               modelCOMPRAS.setId_proveedor(Integer.parseInt((String)viewCOMPRAS.jcb_numero_proveedor.getSelectedItem()));
+               modelCOMPRAS.llenarTextFieldsProveedor();
+               viewCOMPRAS.jtf_nombre_proveedor.setText(modelCOMPRAS.getNombre_proveedor());
+               viewCOMPRAS.jtf_telefono_proveedor.setText(modelCOMPRAS.getTelefono_proveedor());
+            }
+        }
+        
+    };
 
     public ControllerCOMPRAS(ModelCOMPRAS modelCOMPRAS, ViewCOMPRAS viewCOMPRAS) {
         this.modelCOMPRAS = modelCOMPRAS;
         this.viewCOMPRAS = viewCOMPRAS;
-        modelCOMPRAS.Conectar();// conexion a la BD 
+        modelCOMPRAS.Conectar();// conexion a la BD
         initComponents();
         llenadoCombos();
+        setActionListener();      
     }
 
     public void initComponents(){
@@ -36,9 +50,12 @@ public class ControllerCOMPRAS {
         viewCOMPRAS.jcb_codigo_producto.removeAllItems();
         
     }
+    public void setActionListener(){
+        viewCOMPRAS.jcb_numero_proveedor.addActionListener(list);
+    }
     public void llenadoCombos(){
         modelCOMPRAS.llenarCombo();
-         for (int p = 0; p < modelCOMPRAS.getNumero_proveedor().size(); p++) {
+        for (int p = 0; p < modelCOMPRAS.getNumero_proveedor().size(); p++) {
             viewCOMPRAS.jcb_numero_proveedor.addItem((String) modelCOMPRAS.getNumero_proveedor().get(p));
         }
         for (int s = 0; s < modelCOMPRAS.getNumero_sucursal().size(); s++) {

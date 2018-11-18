@@ -28,12 +28,14 @@ public class ModelCOMPRAS {
     //********Variables para compra *********
     public String RFC_empleado;
     public int num_sucursal;
-    public int num_proveedor;
+    public int id_proveedor;
+    public String num_proveedor;
     public ArrayList producto; // la variable almacenara una lista para llenar comboBox
     public ArrayList numero_empleado; // la variable almacenara una lista para llenar comboBox
     public ArrayList numero_sucursal; // la variable almacenara una lista para llenar comboBox
     public ArrayList numero_proveedor; // la variable almacenara una lista para llenar comboBox
     public String nombre_proveedor; // solo se obtendra este dato, no se almacenara
+    public String telefono_proveedor; // solo se obtendra este dato, no se almacenara
     public float subtotal;
     public float iva;
     public float importe;
@@ -63,11 +65,31 @@ public class ModelCOMPRAS {
         this.num_sucursal = num_sucursal;
     }
 
-    public int getNum_proveedor() {
+    public int getId_proveedor() {
+        return id_proveedor;
+    }
+
+    public void setId_proveedor(int id_proveedor) {
+        this.id_proveedor = id_proveedor;
+    }
+    
+
+    public String getNum_proveedor() {
         return num_proveedor;
     }
 
-    public void setNum_proveedor(int num_proveedor) {
+    public String getTelefono_proveedor() {
+        return telefono_proveedor;
+    }
+
+    public void setTelefono_proveedor(String telefono_proveedor) {
+        this.telefono_proveedor = telefono_proveedor;
+    }
+
+   
+
+    
+    public void setNum_proveedor(String num_proveedor) {
         this.num_proveedor = num_proveedor;
     }
 
@@ -298,5 +320,15 @@ public class ModelCOMPRAS {
           JOptionPane.showMessageDialog(null,"error5 al llenar comboBox"+e);
       }
     }
-    
+    public void llenarTextFieldsProveedor(){
+        try{
+            id_proveedor=this.getId_proveedor();      
+            rs = st.executeQuery("SELECT * FROM proveedores WHERE id_proveedor='" + id_proveedor+ "';");//consulta a proveedores
+            rs.next();
+            nombre_proveedor=rs.getString("nombre_prov");
+            telefono_proveedor=rs.getString("telefono_prov");        
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"error6 al llenarTextFields"+e);
+        }
+    }
 }
