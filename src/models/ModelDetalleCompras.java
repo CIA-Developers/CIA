@@ -15,5 +15,13 @@ public class ModelDetalleCompras {
      //la variable modelo almacenara los tados de la tabla
         DefaultTableModel modelo_sucursal = new DefaultTableModel();
 
+    public DefaultTableModel getModelo_sucursal() {
+        return modelo_sucursal;
+    }
+
+    public void setModelo_sucursal(DefaultTableModel modelo_sucursal) {
+        this.modelo_sucursal = modelo_sucursal;
+    }
+
     
 }
