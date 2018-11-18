@@ -42,6 +42,8 @@ public class ModelDetalleCompras {
         this.rec = rec;
     }
     
+    
+    
     /**
      * Variables para el metodo de busqueda
      */
