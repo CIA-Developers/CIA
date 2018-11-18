@@ -5,6 +5,7 @@
  */
 package models;
 
+import conectar_tablas.Database;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -97,5 +98,26 @@ public class ModelDetalleCompras {
         }
 
     }
+    
+     public void mostrar() {
+        ResultSet rs = Database.getTabla("SELECT compra.id_compra, fecha_compra, detalle_compra.id_detalle_compra, codigo_producto_comp, cantidad_comp, precio_comp, total_producto_comp FROM compra INNER JOIN detalle_compra ON compra.id_compra = detalle_compra.id_compra");
+        modelo_sucursal.setColumnIdentifiers(new Object[]{"Id compra", "Fecha compra", "Id detalle compra", "Codigo producto", "Cantidad", "Precio individual", "Total"});
+        try {
+            while (rs.next()) {
+                // añade los resultado a al modelo de tabla 
+                modelo_sucursal.addRow(new Object[]{
+                    rs.getString("compra.id_compra"),
+                    rs.getString("fecha_compra"),
+                    rs.getString("detalle_compra.id_detalle_compra"),
+                    rs.getString("detalle_compra.codigo_producto_comp"),
+                    rs.getString("detalle_compra.cantidad_comp"),
+                    rs.getString("detalle_compra.precio_comp"),
+                    rs.getString("detalle_compra.total_producto_comp")});
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
     
 }
