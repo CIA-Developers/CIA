@@ -118,7 +118,7 @@ public class ControllerDetalleCompra {
             modelDetalleCompra.setColumnaABuscar(5); //numero de columna en la tabla donde se encuentra el registro
         }
         else if (viewDetalleCompra.jCB_buscar.getSelectedItem() == "Codigo producto") {
-            modelDetalleCompra.setColumnaABuscar(0); //numero de columna en la tabla donde se encuentra el registro
+            modelDetalleCompra.setColumnaABuscar(4); //numero de columna en la tabla donde se encuentra el registro
         }
         modelDetalleCompra.getTrsFiltro().setRowFilter(RowFilter.regexFilter(viewDetalleCompra.jTF_busqueda.getText(), modelDetalleCompra.getColumnaABuscar()));
     }

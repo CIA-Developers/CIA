@@ -99,7 +99,7 @@ public class ModelDetalleCompras {
         try {
             conexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia", "root", "");
             st = conexion.createStatement();
-            rs = st.executeQuery("SELECT compra.id_compra, fecha_compra, detalle_compra.id_detalle_compra, codigo_producto_comp, cantidad_comp, precio_comp, total_producto_comp FROM compra INNER JOIN detalle_compra ON compra.id_compra = detalle_compra.id_compra;");
+            rs = st.executeQuery("SELECT compra.id_compra, fecha_compra, RFC_empleado_comp, detalle_compra.id_detalle_compra, codigo_producto_comp, cantidad_comp, precio_comp, total_producto_comp FROM compra INNER JOIN detalle_compra ON compra.id_compra = detalle_compra.id_compra;");
 
             rs.first();
 
@@ -110,14 +110,15 @@ public class ModelDetalleCompras {
     }
     
      public void mostrar() {
-        ResultSet rs = Database.getTabla("SELECT compra.id_compra, fecha_compra, detalle_compra.id_detalle_compra, codigo_producto_comp, cantidad_comp, precio_comp, total_producto_comp FROM compra INNER JOIN detalle_compra ON compra.id_compra = detalle_compra.id_compra");
-        modelo_detalle_compra.setColumnIdentifiers(new Object[]{"Id compra", "Fecha compra", "Id detalle compra", "Codigo producto", "Cantidad", "Precio individual", "Total"});
+        ResultSet rs = Database.getTabla("SELECT compra.id_compra, fecha_compra, RFC_empleado_comp, detalle_compra.id_detalle_compra, codigo_producto_comp, cantidad_comp, precio_comp, total_producto_comp FROM compra INNER JOIN detalle_compra ON compra.id_compra = detalle_compra.id_compra");
+        modelo_detalle_compra.setColumnIdentifiers(new Object[]{"Id compra", "Fecha compra","RFC empleado", "Id detalle compra", "Codigo producto", "Cantidad", "Precio individual", "Total"});
         try {
             while (rs.next()) {
                 // añade los resultado a al modelo de tabla 
                 modelo_detalle_compra.addRow(new Object[]{
                     rs.getString("compra.id_compra"),
                     rs.getString("fecha_compra"),
+                    rs.getString("RFC_empleado_comp"),
                     rs.getString("detalle_compra.id_detalle_compra"),
                     rs.getString("detalle_compra.codigo_producto_comp"),
                     rs.getString("detalle_compra.cantidad_comp"),
