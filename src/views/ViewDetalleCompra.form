@@ -31,7 +31,7 @@
                   <Component id="jPanel4" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="88" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -69,7 +69,7 @@
               <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="28" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -163,12 +163,10 @@
             <Component class="javax.swing.JTable" name="jT_detalle_compra">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="9" rowCount="4">
-                    <Column editable="true" title="Id_compra" type="java.lang.Object"/>
-                    <Column editable="true" title="Id_proveedor" type="java.lang.Object"/>
+                  <Table columnCount="7" rowCount="4">
+                    <Column editable="true" title="Id compra" type="java.lang.Object"/>
                     <Column editable="true" title="Fecha compra" type="java.lang.Object"/>
-                    <Column editable="true" title="RFC empleado" type="java.lang.Object"/>
-                    <Column editable="true" title="No.Sucuarsal" type="java.lang.Object"/>
+                    <Column editable="true" title="Id detalle compra" type="java.lang.Object"/>
                     <Column editable="true" title="Codigo producto" type="java.lang.Object"/>
                     <Column editable="true" title="Cantidad" type="java.lang.Object"/>
                     <Column editable="true" title="Precio individual" type="java.lang.Object"/>
@@ -404,8 +402,7 @@
                       <Component id="jTF_mejor_comprador" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" max="-2" attributes="0">
-                              <Component id="jL_mejor_comprador" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -418,6 +415,7 @@
                                       <Component id="jTF_prod_menos_comprado" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+                              <Component id="jL_mejor_comprador" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
