@@ -6,6 +6,7 @@
 package models;
 
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -22,6 +23,12 @@ public class ModelDetalleCompras {
     public void setModelo_sucursal(DefaultTableModel modelo_sucursal) {
         this.modelo_sucursal = modelo_sucursal;
     }
+    
+    /**
+     * Variables para el metodo de busqueda
+     */
+    private TableRowSorter trsFiltro; // sirve para filtar los datos dentro de la tabla
+
 
     
 }
