@@ -401,4 +401,5 @@ public class ModelCOMPRAS {
             JOptionPane.showMessageDialog(null,"error8 al llenarTextFields"+e);
         }   
     }
+    
 }
