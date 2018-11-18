@@ -402,9 +402,14 @@ public class ModelCOMPRAS {
         }   
     }
     //*****************************METODOS PARA REALIZAR LA COMPRA*************************************
-    //--------TABLA DE COMPRAS--------
-    public void TotalCompra(){
-        
+    //--------TABLA DE DETALLE COMPRAS--------
+    public void TotalCompraProducto(){
+        cantidad_compra = this.getCantidad_compra();
+        precio_compra = this.getPrecio_compra();
+        total_por_producto = this.getTotal_por_producto(); 
+        //operaion con los valores que reciban estas variables 
+        //para calcular el total de compra por cada producto
+        total_por_producto = cantidad_compra * precio_compra;
     }
     
 }
