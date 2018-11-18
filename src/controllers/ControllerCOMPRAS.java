@@ -66,7 +66,10 @@ public class ControllerCOMPRAS {
 
         @Override
         public void keyPressed(KeyEvent e) {
-
+            if (e.getSource() == viewCOMPRAS.jtf_cantidad || e.getSource() == viewCOMPRAS.jtf_precio){
+               TotalProducto();
+            }
+           
         }
 
         @Override
