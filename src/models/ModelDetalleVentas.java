@@ -75,4 +75,28 @@ public class ModelDetalleVentas {
         this.trsFiltro = trsFiltro;
     }
     
+    public int columnaABuscar;
+    public String cadena;
+
+    public int getColumnaABuscar() {
+        return columnaABuscar;
+    }
+
+    public void setColumnaABuscar(int columnaABuscar) {
+        this.columnaABuscar = columnaABuscar;
+    }
+
+    public String getCadena() {
+        return cadena;
+    }
+
+    public void setCadena(String cadena) {
+        this.cadena = cadena;
+    }
+    
+    DefaultTableModel model = new DefaultTableModel(); // variable que usa para el metodo de buscar
+
+    public DefaultTableModel getModel() {
+        return model;
+    }
 }
