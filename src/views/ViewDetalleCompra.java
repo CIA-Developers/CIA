@@ -132,6 +132,11 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
 
         jB_ver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/buscar .png"))); // NOI18N
         jB_ver.setText("Ver");
+        jB_ver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_verActionPerformed(evt);
+            }
+        });
 
         jB_imprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Botonimpirmi.png"))); // NOI18N
         jB_imprimir.setText("Imprimmir");
@@ -316,6 +321,10 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jB_verActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_verActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_verActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -292,10 +292,11 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jP_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -312,11 +313,11 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jB_imprimir;
-    private javax.swing.JButton jB_ver;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private com.toedter.calendar.JDateChooser jDC_fecha_inicial;
-    private com.toedter.calendar.JDateChooser jDC_fehca_final;
+    public javax.swing.JButton jB_imprimir;
+    public javax.swing.JButton jB_ver;
+    public javax.swing.JComboBox<String> jComboBox1;
+    public com.toedter.calendar.JDateChooser jDC_fecha_inicial;
+    public com.toedter.calendar.JDateChooser jDC_fehca_final;
     private javax.swing.JLabel jL_fecha_final;
     private javax.swing.JLabel jL_fecha_inicial;
     private javax.swing.JLabel jL_mejor_vendedor;
@@ -332,10 +333,10 @@ public class ViewDetalleVentas extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTF_mejor_vendedor;
-    private javax.swing.JTextField jTF_prod_mas_vendido;
-    private javax.swing.JTextField jTF_prod_menos_vendido;
-    private javax.swing.JTable jT_detalle_venta;
-    private javax.swing.JTextField jTextField1;
+    public javax.swing.JTextField jTF_mejor_vendedor;
+    public javax.swing.JTextField jTF_prod_mas_vendido;
+    public javax.swing.JTextField jTF_prod_menos_vendido;
+    public javax.swing.JTable jT_detalle_venta;
+    public javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

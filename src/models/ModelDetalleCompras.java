@@ -52,6 +52,17 @@ public class ModelDetalleCompras {
         this.Limpiar = Limpiar;
     }
     
+     public int date;
+
+    public int getDate() {
+        return date;
+    }
+
+    public void setDate(int date) {
+        this.date = date;
+    }
+     
+    
     /**
      * Variables para el metodo de busqueda
      */
@@ -93,6 +104,8 @@ public class ModelDetalleCompras {
     public void setModel(DefaultTableModel model) {
         this.model = model;
     }
+    
+    //Metodos para buscar por rango de fecha
     
     private Connection conexion;
     private Statement st;
