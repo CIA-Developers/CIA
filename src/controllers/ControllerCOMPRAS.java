@@ -29,11 +29,13 @@ public class ControllerCOMPRAS {
                modelCOMPRAS.llenarTextFieldsProveedor();
                viewCOMPRAS.jtf_nombre_proveedor.setText(modelCOMPRAS.getNombre_proveedor()+"  "+modelCOMPRAS.getApell_pat_proveedor()+"  "+modelCOMPRAS.getApell_mat_proveedor());
                viewCOMPRAS.jtf_telefono_proveedor.setText(modelCOMPRAS.getTelefono_proveedor());
+               viewCOMPRAS.jcb_codigo_producto.setEnabled(true);//habilitando jcb productos
             }
             else if (e.getSource() == viewCOMPRAS.jcb_rfc){
                 modelCOMPRAS.setRFC_empleado((String) viewCOMPRAS.jcb_rfc.getSelectedItem());
                 modelCOMPRAS.llenarTextFieldsEmpleados();
                 viewCOMPRAS.jtf_nombre_empleado.setText(modelCOMPRAS.getNombre_empleado()+"  "+modelCOMPRAS.getApellido_pat_empleado()+"  "+modelCOMPRAS.getApellido_mat_empleado());
+                viewCOMPRAS.jcb_numero_sucursal.setEnabled(true);//habilitando jcb numero sucursal
             }
             else if (e.getSource() == viewCOMPRAS.jcb_codigo_producto){
                 modelCOMPRAS.setCodigo_producto((String) viewCOMPRAS.jcb_codigo_producto.getSelectedItem());
@@ -41,6 +43,14 @@ public class ControllerCOMPRAS {
                 viewCOMPRAS.jtf_nombre_producto.setText(modelCOMPRAS.getNombre_producto());
                 viewCOMPRAS.jtf_tipo_producto.setText(modelCOMPRAS.getTipo_producto());
                 viewCOMPRAS.jtf_marca_producto.setText(modelCOMPRAS.getMarca_producto());
+                //habilitar cajas de texto
+                viewCOMPRAS.jtf_cantidad.setEditable(true);
+                viewCOMPRAS.jtf_precio.setEditable(true);
+                //hablitar botones
+                viewCOMPRAS.jb_agregar.setEnabled(true);
+            }
+            else if (e.getSource() == viewCOMPRAS.jcb_numero_sucursal){
+                viewCOMPRAS.jcb_numero_proveedor.setEnabled(true);//habilitando jcb numero de proveedor
             }
         }
         
@@ -68,6 +78,7 @@ public class ControllerCOMPRAS {
         viewCOMPRAS.jcb_numero_proveedor.addActionListener(list);
         viewCOMPRAS.jcb_rfc.addActionListener(list);
         viewCOMPRAS.jcb_codigo_producto.addActionListener(list);
+        viewCOMPRAS.jcb_numero_sucursal.addActionListener(list);
     }
     public void llenadoCombos(){
         modelCOMPRAS.llenarCombo();
