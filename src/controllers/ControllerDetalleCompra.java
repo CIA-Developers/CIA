@@ -15,6 +15,8 @@ import javax.swing.RowFilter;
 import javax.swing.table.TableRowSorter;
 import models.ModelDetalleCompras;
 import java.awt.Container;
+import java.text.SimpleDateFormat;
+import javax.swing.JOptionPane;
 import views.ViewDetalleCompra;
 
 /**
@@ -52,6 +54,8 @@ public class ControllerDetalleCompra {
         public void mouseExited(MouseEvent e) {
            
         }    
+
+       
     };
     
     KeyListener key = new KeyListener(){
@@ -85,18 +89,12 @@ public class ControllerDetalleCompra {
         
        
         ConexionBD();
+        cajas_deshabilitadas();
     }
     
-    private void jt_detalle_compra_MouseClicked() {
-        cajas_deshabilitadas(); // cuando se haga clic en la tabla, las cajas se volveran a deshabilitar 
-        viewDetalleCompra.setRec(viewDetalleCompra.jT_detalle_compra.getSelectedRow());//a la variable se le asigna el elemento seleccionado en la tabla
-        viewDetalleCompra.jDC_fe_inicio.setText(viewDetalleCompra.jT_detalle_compra.getValueAt(modelDetalleCompra.getRec(), 0).toString());
-        viewDetalleCompra.jDC_fe_final.setText(viewDetalleCompra.jT_detalle_compra.getValueAt(modelDetalleCompra.getRec(), 1).toString());
-        viewDetalleCompra.jTF_mejor_comprador.setText(viewDetalleCompra.jT_detalle_compra.getValueAt(modelDetalleCompra.getRec(), 2).toString());
-        viewDetalleCompra.jTF_prod_mas_comprado.setText(viewDetalleCompra.jT_detalle_compra.getValueAt(modelDetalleCompra.getRec(), 3).toString());
-        viewDetalleCompra.jTF_prod_menos_comprado.setText(viewDetalleCompra.jT_detalle_compra.getValueAt(modelDetalleCompra.getRec(), 4).toString());
-        
+     private void jt_detalle_compra_MouseClicked() {
         }
+    
     
      /**
      * este metodo hace la conexion a la base de datos 
@@ -123,5 +121,8 @@ public class ControllerDetalleCompra {
             modelDetalleCompra.setColumnaABuscar(0); //numero de columna en la tabla donde se encuentra el registro
         }
         modelDetalleCompra.getTrsFiltro().setRowFilter(RowFilter.regexFilter(viewDetalleCompra.jTF_busqueda.getText(), modelDetalleCompra.getColumnaABuscar()));
+    }
+
+    private void cajas_deshabilitadas() {
     }
 }

@@ -43,6 +43,7 @@ public class ModelSucursales {
     public void setRec(int rec) {
         this.rec = rec;
     }
+    
     /**
      * Variables para el metodo de busqueda
      */
