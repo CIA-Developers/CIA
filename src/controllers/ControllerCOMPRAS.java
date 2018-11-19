@@ -93,6 +93,7 @@ public class ControllerCOMPRAS {
         
         modelCOMPRAS.numeroCompras();
         viewCOMPRAS.jtf_numero_compra.setText(Integer.toString(modelCOMPRAS.getNumero_compra()));
+        viewCOMPRAS.jt_vista.setModel(modelCOMPRAS.getModel_compras());//agrenado modelo a la tabla
                
     }
 
