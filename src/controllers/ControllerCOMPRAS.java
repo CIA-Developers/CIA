@@ -172,10 +172,10 @@ public class ControllerCOMPRAS {
             modelCOMPRAS.setPrecio_compra(Float.parseFloat(viewCOMPRAS.jtf_precio.getText()));
             modelCOMPRAS.setCantidad_compra(Float.parseFloat(viewCOMPRAS.jtf_cantidad.getText()));
             modelCOMPRAS.setTotal_por_producto(Float.parseFloat(viewCOMPRAS.jtf_total.getText()));
-            modelCOMPRAS.AgregarDatosCompra();
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"error11 AgregarDatosCompras "+ e);
         }
+        //haciendo la suma de toda la columna de total por producto
         float fila=0;
         float total=0;
         for (int i = 0; i < viewCOMPRAS.jt_vista.getRowCount(); i++){
@@ -184,6 +184,10 @@ public class ControllerCOMPRAS {
         }
         modelCOMPRAS.setImporte(total);
         viewCOMPRAS.jtf_importe.setText(Float.toString(modelCOMPRAS.getImporte()));
+        viewCOMPRAS.jtf_iva.setText(Float.toString(modelCOMPRAS.getIva()));
+        viewCOMPRAS.jtf_subtotal.setText(Float.toString(modelCOMPRAS.getSubtotal()));
+        
+        modelCOMPRAS.AgregarDatosCompra();
     }
     /**
      * metodo para agregar un nuevo producto a compras
@@ -200,6 +204,6 @@ public class ControllerCOMPRAS {
         viewCOMPRAS.jtf_total.setText("0.0");
         viewCOMPRAS.jb_agregar.setEnabled(false);
         viewCOMPRAS.jb_modificar.setEnabled(false);
-         viewCOMPRAS.jb_eliminar.setEnabled(false);
+        viewCOMPRAS.jb_eliminar.setEnabled(false);
     }
 }
