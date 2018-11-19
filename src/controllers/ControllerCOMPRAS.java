@@ -51,6 +51,7 @@ public class ControllerCOMPRAS {
                 viewCOMPRAS.jb_agregar.setEnabled(true);
             }else if (e.getSource() == viewCOMPRAS.jcb_numero_sucursal){
                 viewCOMPRAS.jcb_numero_proveedor.setEnabled(true);//habilitando jcb numero de proveedor
+                viewCOMPRAS.jb_nuevo.setEnabled(false);
             }else if (e.getSource() == viewCOMPRAS.jb_agregar){
                llenadoTabla();
             }else if (e.getSource() == viewCOMPRAS.jb_nuevo){
@@ -174,7 +175,15 @@ public class ControllerCOMPRAS {
             modelCOMPRAS.AgregarDatosCompra();
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"error11 AgregarDatosCompras "+ e);
-      }
+        }
+        float fila=0;
+        float total=0;
+        for (int i = 0; i < viewCOMPRAS.jt_vista.getRowCount(); i++){
+            fila = Float.parseFloat(viewCOMPRAS.jt_vista.getValueAt(i,6).toString());
+            total += fila;    
+        }
+        modelCOMPRAS.setImporte(total);
+        viewCOMPRAS.jtf_importe.setText(Float.toString(modelCOMPRAS.getImporte()));
     }
     /**
      * metodo para agregar un nuevo producto a compras
@@ -191,5 +200,6 @@ public class ControllerCOMPRAS {
         viewCOMPRAS.jtf_total.setText("0.0");
         viewCOMPRAS.jb_agregar.setEnabled(false);
         viewCOMPRAS.jb_modificar.setEnabled(false);
+         viewCOMPRAS.jb_eliminar.setEnabled(false);
     }
 }

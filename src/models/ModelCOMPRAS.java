@@ -430,6 +430,7 @@ public class ModelCOMPRAS {
       datos[5] = Float.toString(this.getCantidad_compra());
       datos[6] = Float.toString(this.getTotal_por_producto());
       model_compras.addRow(datos);
+      //*********************calculando el importe, iva y subtotal de la compra***************
     }
     /**
      * metodo para saber la cantidad de filas que tiene la tabla de compras
