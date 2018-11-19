@@ -266,5 +266,13 @@ public class ControllerCOMPRAS {
      */
     public void eliminar(){
         modelCOMPRAS.getModel_compras().removeRow(viewCOMPRAS.jt_vista.getSelectedRow()); //eliina la fila seleccionada en la jtable
+        //volviando a calcular el importe
+        float fila=0;
+        float total=0;
+        for (int i = 0; i < viewCOMPRAS.jt_vista.getRowCount(); i++){
+            fila = Float.parseFloat(viewCOMPRAS.jt_vista.getValueAt(i,6).toString());
+            total += fila;    
+        }
+    
     }
 }
