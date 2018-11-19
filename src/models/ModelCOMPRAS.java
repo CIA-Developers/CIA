@@ -497,7 +497,6 @@ public class ModelCOMPRAS {
             numero_compra = this.getNumero_compra();
             codigo_producto = this.getCodigo_producto();
             cantidad_compra = this.getCantidad_compra();
-            subtotal = this.getSubtotal();
             precio_compra = this.getPrecio_compra();
             total_por_producto = this.getTotal_por_producto();
             ps = cn.prepareStatement("insert into detalle_compra (id_compra,codigo_producto_comp,cantidad_comp,precio_comp,total_producto_comp)"
@@ -505,9 +504,8 @@ public class ModelCOMPRAS {
             ps.setInt(1,numero_compra);
             ps.setString(2,codigo_producto);
             ps.setFloat(3,cantidad_compra);
-            ps.setFloat(4,subtotal);
-            ps.setFloat(5,precio_compra);
-            ps.setFloat(6,total_por_producto);
+            ps.setFloat(4,precio_compra);
+            ps.setFloat(5,total_por_producto);
             ps.executeUpdate();//realizndo la accion de guardar 
       }catch(Exception e){
             JOptionPane.showMessageDialog(null,"error13 FinalizarCompras "+ e);

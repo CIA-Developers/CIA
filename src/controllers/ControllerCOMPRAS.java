@@ -296,6 +296,24 @@ public class ControllerCOMPRAS {
      * este meodo finalizara toda la compra de la tabla
      */
     public void realizarCompra(){
+        // se guarda en Compras **agregando datos para guardar
+        modelCOMPRAS.setId_proveedor((int)viewCOMPRAS.jcb_numero_proveedor.getSelectedItem());
+        modelCOMPRAS.setImporte(Float.parseFloat(viewCOMPRAS.jtf_importe.getText()));
+        modelCOMPRAS.setIva(Float.parseFloat(viewCOMPRAS.jtf_iva.getText()));
+        modelCOMPRAS.setSubtotal(Float.parseFloat(viewCOMPRAS.jtf_subtotal.getText()));
+        modelCOMPRAS.setNum_sucursal((int) viewCOMPRAS.jcb_numero_sucursal.getSelectedItem());
+        modelCOMPRAS.finalizarCompratablaCompra();//llamamos al metodo de guardar en compra 
+        
+        //se guardara en detalle_compras ***agregando datos
+        
+        for (int i = 0; i < viewCOMPRAS.jt_vista.getRowCount(); i++){
+            modelCOMPRAS.setNumero_compra((int) viewCOMPRAS.jt_vista.getValueAt(i,0));
+            modelCOMPRAS.setCodigo_producto(viewCOMPRAS.jt_vista.getValueAt(i,1).toString());
+            modelCOMPRAS.setCantidad_compra((float) viewCOMPRAS.jt_vista.getValueAt(i,5));
+            modelCOMPRAS.setPrecio_compra((float) viewCOMPRAS.jt_vista.getValueAt(i,4));
+            modelCOMPRAS.setTotal_por_producto((float) viewCOMPRAS.jt_vista.getValueAt(i,6));
+            modelCOMPRAS.finalizarCompratablaDetalleCompra(); //llamamos el metodo de guardar en detalle_compra
+        }
         
     }
 }
