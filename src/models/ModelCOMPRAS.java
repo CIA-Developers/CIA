@@ -273,15 +273,17 @@ public class ModelCOMPRAS {
     private Statement st;
     private ResultSet rs;
     
-    private DefaultTableModel model_compras = new DefaultTableModel();
+    public DefaultTableModel model_compras = new DefaultTableModel();
 
-    public DefaultTableModel getModel_prov() {
+    public DefaultTableModel getModel_compras() {
         return model_compras;
     }
 
-    public void setModel_prov(DefaultTableModel model_prov) {
-        this.model_compras = model_prov;
+    public void setModel_compras(DefaultTableModel model_compras) {
+        this.model_compras = model_compras;
     }
+
+   
      
     /**
      * se hace la conexion a la Base de datos y se hace la consulta hacia la
