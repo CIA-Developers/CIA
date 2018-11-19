@@ -289,4 +289,13 @@ public class ControllerCOMPRAS {
         eliminar();
         llenadoTabla();
     }
+    /**
+     * metodon  que guardara cada dato de la compra en su respectiva tabla
+     * en detalle compra, se agudaran los datos dentro de la jtable
+     * en compra, se llenara con los datos de jos jtf que le corresponden a la tabla
+     * este meodo finalizara toda la compra de la tabla
+     */
+    public void realizarCompra(){
+        
+    }
 }
