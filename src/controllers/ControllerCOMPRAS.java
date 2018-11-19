@@ -91,6 +91,8 @@ public class ControllerCOMPRAS {
         setActionListener(); 
         deshabiltarObjetos();
         
+        modelCOMPRAS.AgregarDatosCompra();
+        
     }
 
     public void initComponents(){
