@@ -158,6 +158,8 @@ public class ControllerCOMPRAS {
     }
     public void llenadoTabla(){
         try{
+            viewCOMPRAS.jb_modificar.setEnabled(true);
+            viewCOMPRAS.jb_nuevo.setEnabled(true);
             modelCOMPRAS.setNumero_compra(Integer.parseInt(viewCOMPRAS.jtf_numero_compra.getText()));
             modelCOMPRAS.setCodigo_producto((String) viewCOMPRAS.jcb_codigo_producto.getSelectedItem());
             modelCOMPRAS.setNombre_producto(viewCOMPRAS.jtf_nombre_producto.getText());
