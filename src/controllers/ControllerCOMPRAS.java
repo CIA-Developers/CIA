@@ -164,6 +164,14 @@ public class ControllerCOMPRAS {
         }
     }
     /**
+     * metodo que al haer clic en una fila de la tabla, pasara cada dato en sus Jtf correspondientes 
+     * para poder modificar o eliminar la fila seleccionada
+     */
+    public void jt_vista_MouseClicked(){
+        
+    }
+    
+    /**
      * metodo que deshabilitara los combobox
      * para que no se pueda realizar otra accion, si no se ha registrado
      * quien va a hacer la compra (empleado)
