@@ -32,14 +32,12 @@ public class ControllerCOMPRAS {
                viewCOMPRAS.jtf_nombre_proveedor.setText(modelCOMPRAS.getNombre_proveedor()+"  "+modelCOMPRAS.getApell_pat_proveedor()+"  "+modelCOMPRAS.getApell_mat_proveedor());
                viewCOMPRAS.jtf_telefono_proveedor.setText(modelCOMPRAS.getTelefono_proveedor());
                viewCOMPRAS.jcb_codigo_producto.setEnabled(true);//habilitando jcb productos
-            }
-            else if (e.getSource() == viewCOMPRAS.jcb_rfc){
+            }else if (e.getSource() == viewCOMPRAS.jcb_rfc){
                 modelCOMPRAS.setRFC_empleado((String) viewCOMPRAS.jcb_rfc.getSelectedItem());
                 modelCOMPRAS.llenarTextFieldsEmpleados();
                 viewCOMPRAS.jtf_nombre_empleado.setText(modelCOMPRAS.getNombre_empleado()+"  "+modelCOMPRAS.getApellido_pat_empleado()+"  "+modelCOMPRAS.getApellido_mat_empleado());
                 viewCOMPRAS.jcb_numero_sucursal.setEnabled(true);//habilitando jcb numero sucursal
-            }
-            else if (e.getSource() == viewCOMPRAS.jcb_codigo_producto){
+            }else if (e.getSource() == viewCOMPRAS.jcb_codigo_producto){
                 modelCOMPRAS.setCodigo_producto((String) viewCOMPRAS.jcb_codigo_producto.getSelectedItem());
                 modelCOMPRAS.llenarTextFieldsProductos();
                 viewCOMPRAS.jtf_nombre_producto.setText(modelCOMPRAS.getNombre_producto());
@@ -50,9 +48,10 @@ public class ControllerCOMPRAS {
                 viewCOMPRAS.jtf_precio.setEditable(true);
                 //hablitar botones
                 viewCOMPRAS.jb_agregar.setEnabled(true);
-            }
-            else if (e.getSource() == viewCOMPRAS.jcb_numero_sucursal){
+            }else if (e.getSource() == viewCOMPRAS.jcb_numero_sucursal){
                 viewCOMPRAS.jcb_numero_proveedor.setEnabled(true);//habilitando jcb numero de proveedor
+            }else if (e.getSource() == viewCOMPRAS.jb_agregar){
+               llenadoTabla();
             }
         }
         
