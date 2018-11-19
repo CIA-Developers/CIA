@@ -58,6 +58,8 @@ public class ControllerCOMPRAS {
                llenadoTabla();
             }else if (e.getSource() == viewCOMPRAS.jb_nuevo){
                nuevo();
+            }else if (e.getSource() == viewCOMPRAS.jb_eliminar){
+               eliminar();
             }
         }
         
