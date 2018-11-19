@@ -50,9 +50,9 @@ public class ModelCOMPRAS {
     public String nombre_producto;// solo se obtendra este dato, no se almacenara
     public String tipo_producto;// solo se obtendra este dato, no se almacenara
     public String marca_producto;// solo se obtendra este dato, no se almacenara
-    public int cantidad_compra;
-    public float precio_compra;
-    public float total_por_producto;
+    public float cantidad_compra = 0.0f;
+    public float precio_compra = 0.0f;
+    public float total_por_producto=0.0f;
 
     public String getRFC_empleado() {
         return RFC_empleado;
@@ -225,11 +225,11 @@ public class ModelCOMPRAS {
         this.marca_producto = marca_producto;
     }
 
-    public int getCantidad_compra() {
+    public float getCantidad_compra() {
         return cantidad_compra;
     }
 
-    public void setCantidad_compra(int cantidad_compra) {
+    public void setCantidad_compra(float cantidad_compra) {
         this.cantidad_compra = cantidad_compra;
     }
 

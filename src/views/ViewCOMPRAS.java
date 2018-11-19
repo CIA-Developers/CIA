@@ -119,7 +119,6 @@ public class ViewCOMPRAS extends javax.swing.JPanel {
         jl_cantidad.setText("Cantiad compra:");
 
         jtf_cantidad.setBackground(new java.awt.Color(153, 153, 153));
-        jtf_cantidad.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jtf_cantidad.setText("0");
 
         jl_no_sucursal.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -129,7 +128,6 @@ public class ViewCOMPRAS extends javax.swing.JPanel {
         jl_precio_compra.setText("Precio Compra:");
 
         jtf_precio.setBackground(new java.awt.Color(153, 153, 153));
-        jtf_precio.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jtf_precio.setText("0.0");
 
         jp_proveedor.setBackground(new java.awt.Color(255, 255, 255));

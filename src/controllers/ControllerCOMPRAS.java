@@ -61,20 +61,19 @@ public class ControllerCOMPRAS {
     KeyListener key = new KeyListener(){
         @Override
         public void keyTyped(KeyEvent e) {
-            
+      
         }
 
         @Override
         public void keyPressed(KeyEvent e) {
-            if (e.getSource() == viewCOMPRAS.jtf_cantidad || e.getSource() == viewCOMPRAS.jtf_precio){
-               TotalProducto();
-            }
            
         }
 
         @Override
         public void keyReleased(KeyEvent e) {
-           
+           if (e.getSource() == viewCOMPRAS.jtf_cantidad || e.getSource() == viewCOMPRAS.jtf_precio){
+               TotalProducto();
+            }
         }
         
     };
@@ -143,7 +142,7 @@ public class ControllerCOMPRAS {
         viewCOMPRAS.jt_vista.setEnabled(false);
     }
     public void TotalProducto(){
-        modelCOMPRAS.setCantidad_compra(Integer.parseInt(viewCOMPRAS.jtf_cantidad.getText()));
+        modelCOMPRAS.setCantidad_compra(Float.parseFloat(viewCOMPRAS.jtf_cantidad.getText()));
         modelCOMPRAS.setPrecio_compra(Float.parseFloat(viewCOMPRAS.jtf_precio.getText()));
         modelCOMPRAS.TotalCompraProducto();
         viewCOMPRAS.jtf_total.setText(Float.toString(modelCOMPRAS.getTotal_por_producto()));
