@@ -165,6 +165,10 @@ public class ControllerCOMPRAS {
             viewCOMPRAS.jb_modificar.setEnabled(true);
             viewCOMPRAS.jb_nuevo.setEnabled(true);
             viewCOMPRAS.jb_eliminar.setEnabled(true);
+            viewCOMPRAS.jb_realizar_compra.setEnabled(true);
+            viewCOMPRAS.jcb_numero_sucursal.setEnabled(false);
+            viewCOMPRAS.jcb_numero_proveedor.setEnabled(false);
+            viewCOMPRAS.jcb_rfc.setEnabled(false);
             modelCOMPRAS.setNumero_compra(Integer.parseInt(viewCOMPRAS.jtf_numero_compra.getText()));
             modelCOMPRAS.setCodigo_producto((String) viewCOMPRAS.jcb_codigo_producto.getSelectedItem());
             modelCOMPRAS.setNombre_producto(viewCOMPRAS.jtf_nombre_producto.getText());
