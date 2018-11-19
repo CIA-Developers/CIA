@@ -53,6 +53,8 @@ public class ControllerCOMPRAS {
                 viewCOMPRAS.jcb_numero_proveedor.setEnabled(true);//habilitando jcb numero de proveedor
             }else if (e.getSource() == viewCOMPRAS.jb_agregar){
                llenadoTabla();
+            }else if (e.getSource() == viewCOMPRAS.jb_nuevo){
+               nuevo();
             }
         }
         
@@ -179,6 +181,15 @@ public class ControllerCOMPRAS {
      * limpiara las cajas para poder agregar un nuevo producto
      */
     public void nuevo(){
-        
+        viewCOMPRAS.jtf_nombre_proveedor.setText(" ");
+        viewCOMPRAS.jtf_telefono_proveedor.setText("  ");
+        viewCOMPRAS.jtf_nombre_producto.setText("  ");
+        viewCOMPRAS.jtf_tipo_producto.setText(" ");
+        viewCOMPRAS.jtf_marca_producto.setText(" ");
+        viewCOMPRAS.jtf_cantidad.setText("0");
+        viewCOMPRAS.jtf_precio.setText("0.0");
+        viewCOMPRAS.jtf_total.setText("0.0");
+        viewCOMPRAS.jb_agregar.setEnabled(false);
+        viewCOMPRAS.jb_modificar.setEnabled(false);
     }
 }
