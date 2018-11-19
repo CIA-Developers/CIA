@@ -273,6 +273,10 @@ public class ControllerCOMPRAS {
             fila = Float.parseFloat(viewCOMPRAS.jt_vista.getValueAt(i,6).toString());
             total += fila;    
         }
-    
+        modelCOMPRAS.setImporte(total);
+        modelCOMPRAS.importe();
+        viewCOMPRAS.jtf_importe.setText(Float.toString(modelCOMPRAS.getImporte()));
+        viewCOMPRAS.jtf_iva.setText(Float.toString(modelCOMPRAS.getIva()));
+        viewCOMPRAS.jtf_subtotal.setText(Float.toString(modelCOMPRAS.getSubtotal()));  
     }
 }
