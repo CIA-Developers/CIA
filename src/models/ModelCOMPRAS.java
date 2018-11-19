@@ -410,5 +410,14 @@ public class ModelCOMPRAS {
         //para calcular el total de compra por cada producto
         total_por_producto = cantidad_compra * precio_compra;
     }
-    
+    /**
+     * este metodo realizara los siguientes procesos
+     * 1. pasara cada dato ingresado para la compra en la tabla, llenado una lista de los productos comprados
+     * 2. calculara el importe, iva y subtotal de toda la compra en genera
+     * 3. este metodo solo servira para dar vista de como se ve cada producto 
+     *    con su respectivo precio y cantidad manejando tambien el Total final (SIN GUARDAR EN LA BASE DE DATOS)
+     */
+    public void AgregarDatosCompra(){
+        
+    }
 }
