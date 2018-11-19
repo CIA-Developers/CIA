@@ -63,6 +63,9 @@ public class ControllerCOMPRAS {
             }else if (e.getSource() == viewCOMPRAS.jb_modificar){
                modificar();
             }
+            else if (e.getSource() == viewCOMPRAS.jb_realizar_compra){
+               realizarCompra();
+            }
         }
         
     };
