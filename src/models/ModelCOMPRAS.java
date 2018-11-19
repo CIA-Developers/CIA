@@ -272,6 +272,7 @@ public class ModelCOMPRAS {
     private Connection conexion;
     private Statement st;
     private ResultSet rs;
+    PreparedStatement ps;
     
     public DefaultTableModel model_compras = new DefaultTableModel();
     public int rec;//Variable que tomara el valor seleccionado en la tabla 
@@ -469,6 +470,25 @@ public class ModelCOMPRAS {
      * para realizar la compra y finalizarla 
      */
     public void finalizarCompra(){
-        
+        try{// se guarda en la tabla de compra   
+            Connection cn = getConexion();
+            id_proveedor = this.getId_proveedor();
+            importe = this.getImporte();
+            iva = this.getIva();
+            subtotal = this.getSubtotal();
+            RFC_empleado = this.getRFC_empleado();
+            num_sucursal = this.getNum_sucursal();
+            ps = cn.prepareStatement("insert into compra (id_proveedor,importe_comp,iva_comp,subtotal_comp,RFC_empleado_comp,no_sucursal)"
+                + " values(?, ?, ?, ?, ?, ?);");
+            ps.setInt(1,id_proveedor);
+            ps.setFloat(2,importe);
+            ps.setFloat(3,iva);
+            ps.setFloat(4,subtotal);
+            ps.setString(5,RFC_empleado);
+            ps.setInt(6,num_sucursal);
+            ps.executeUpdate();//realizndo la accion de guardar
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"error12 FinalizarCompras "+ e);
+      }
     }
 }
