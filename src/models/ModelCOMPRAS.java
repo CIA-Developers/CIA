@@ -293,7 +293,25 @@ public class ModelCOMPRAS {
     public void setModel_compras(DefaultTableModel model_compras) {
         this.model_compras = model_compras;
     }
+//**********************ACTUALIZANDO STOCK*****************************
+   public int stock_productos;
+   public int stock_productos_sucursales;
 
+    public int getStock_productos() {
+        return stock_productos;
+    }
+
+    public void setStock_productos(int stock_productos) {
+        this.stock_productos = stock_productos;
+    }
+
+    public int getStock_productos_sucursales() {
+        return stock_productos_sucursales;
+    }
+
+    public void setStock_productos_sucursales(int stock_productos_sucursales) {
+        this.stock_productos_sucursales = stock_productos_sucursales;
+    }
    
      
     /**
@@ -508,9 +526,16 @@ public class ModelCOMPRAS {
             ps.setFloat(3,cantidad_compra);
             ps.setFloat(4,precio_compra);
             ps.setFloat(5,total_por_producto);
-            ps.executeUpdate();//realizndo la accion de guardar 
+            ps.executeUpdate();//realizndo la accion de guardar    
       }catch(Exception e){
             JOptionPane.showMessageDialog(null,"error13 FinalizarCompras "+ e);
+      }    
+      try{//actualizando stock al realizar una compra
+          rs = st.executeQuery("SELECT * FROM productos;");//consulta a productos
+          rs.next();
+          
+      }catch(Exception e){
+          JOptionPane.showMessageDialog(null,"error16 FinalizarCompras "+ e);
       } 
      }
 }
