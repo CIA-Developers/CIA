@@ -161,7 +161,7 @@ public class ControllerCOMPRAS {
         try{
             viewCOMPRAS.jb_modificar.setEnabled(true);
             viewCOMPRAS.jb_nuevo.setEnabled(true);
-            viewCOMPRAS.jb_eliminar.setEnabled(false);
+            viewCOMPRAS.jb_eliminar.setEnabled(true);
             modelCOMPRAS.setNumero_compra(Integer.parseInt(viewCOMPRAS.jtf_numero_compra.getText()));
             modelCOMPRAS.setCodigo_producto((String) viewCOMPRAS.jcb_codigo_producto.getSelectedItem());
             modelCOMPRAS.setNombre_producto(viewCOMPRAS.jtf_nombre_producto.getText());
