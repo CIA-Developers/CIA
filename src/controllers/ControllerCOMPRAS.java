@@ -107,7 +107,12 @@ public class ControllerCOMPRAS {
         viewCOMPRAS.jcb_numero_proveedor.addActionListener(list);
         viewCOMPRAS.jcb_rfc.addActionListener(list);
         viewCOMPRAS.jcb_codigo_producto.addActionListener(list);
-        viewCOMPRAS.jcb_numero_sucursal.addActionListener(list);      
+        viewCOMPRAS.jcb_numero_sucursal.addActionListener(list);   
+        //botones
+        viewCOMPRAS.jb_agregar.addActionListener(list);
+        viewCOMPRAS.jb_modificar.addActionListener(list);
+        viewCOMPRAS.jb_nuevo.addActionListener(list);
+        viewCOMPRAS.jb_realizar_compra.addActionListener(list);
     }
     public void llenadoCombos(){
         modelCOMPRAS.llenarCombo();
