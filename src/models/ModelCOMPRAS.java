@@ -462,4 +462,13 @@ public class ModelCOMPRAS {
             JOptionPane.showMessageDialog(null,"error10 AgregarDatosCompras "+ e);
       }
     }
+    /**
+     * finalizar compra
+     * este metodo hara la consulta a la base de datos, con las tablas de compra y detalle_compra
+     * guardara en la tablas los datos que le corresponden a cada una
+     * para realizar la compra y finalizarla 
+     */
+    public void finalizarCompra(){
+        
+    }
 }
