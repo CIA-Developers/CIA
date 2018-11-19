@@ -429,7 +429,7 @@ public class ModelCOMPRAS {
       datos[4] = Float.toString(this.getPrecio_compra());
       datos[5] = Float.toString(this.getCantidad_compra());
       datos[6] = Float.toString(this.getTotal_por_producto());
-      
+      model_compras.addRow(datos);
     }
     /**
      * metodo para saber la cantidad de filas que tiene la tabla de compras

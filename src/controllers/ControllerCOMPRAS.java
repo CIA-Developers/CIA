@@ -12,6 +12,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import models.ModelCOMPRAS;
 import views.ViewCOMPRAS;
@@ -156,13 +157,17 @@ public class ControllerCOMPRAS {
         viewCOMPRAS.jtf_total.setText(Float.toString(modelCOMPRAS.getTotal_por_producto()));
     }
     public void llenadoTabla(){
-        modelCOMPRAS.setNumero_compra(Integer.parseInt(viewCOMPRAS.jtf_numero_compra.getText()));
-        modelCOMPRAS.setCodigo_producto((String) viewCOMPRAS.jcb_codigo_producto.getSelectedItem());
-        modelCOMPRAS.setNombre_producto(viewCOMPRAS.jtf_nombre_producto.getText());
-        modelCOMPRAS.setMarca_producto(viewCOMPRAS.jtf_marca_producto.getText());
-        modelCOMPRAS.setPrecio_compra(Float.parseFloat(viewCOMPRAS.jtf_precio.getText()));
-        modelCOMPRAS.setCantidad_compra(Float.parseFloat(viewCOMPRAS.jtf_cantidad.getText()));
-        modelCOMPRAS.setTotal_por_producto(Float.parseFloat(viewCOMPRAS.jtf_total.getText()));
-        modelCOMPRAS.AgregarDatosCompra();
+        try{
+            modelCOMPRAS.setNumero_compra(Integer.parseInt(viewCOMPRAS.jtf_numero_compra.getText()));
+            modelCOMPRAS.setCodigo_producto((String) viewCOMPRAS.jcb_codigo_producto.getSelectedItem());
+            modelCOMPRAS.setNombre_producto(viewCOMPRAS.jtf_nombre_producto.getText());
+            modelCOMPRAS.setMarca_producto(viewCOMPRAS.jtf_marca_producto.getText());
+            modelCOMPRAS.setPrecio_compra(Float.parseFloat(viewCOMPRAS.jtf_precio.getText()));
+            modelCOMPRAS.setCantidad_compra(Float.parseFloat(viewCOMPRAS.jtf_cantidad.getText()));
+            modelCOMPRAS.setTotal_por_producto(Float.parseFloat(viewCOMPRAS.jtf_total.getText()));
+            modelCOMPRAS.AgregarDatosCompra();
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"error11 AgregarDatosCompras "+ e);
+      }
     }
 }
