@@ -60,6 +60,8 @@ public class ControllerCOMPRAS {
                nuevo();
             }else if (e.getSource() == viewCOMPRAS.jb_eliminar){
                eliminar();
+            }else if (e.getSource() == viewCOMPRAS.jb_modificar){
+               modificar();
             }
         }
         
@@ -278,5 +280,13 @@ public class ControllerCOMPRAS {
         viewCOMPRAS.jtf_importe.setText(Float.toString(modelCOMPRAS.getImporte()));
         viewCOMPRAS.jtf_iva.setText(Float.toString(modelCOMPRAS.getIva()));
         viewCOMPRAS.jtf_subtotal.setText(Float.toString(modelCOMPRAS.getSubtotal()));  
+    }
+    /**
+     * metodo que agregara  el registro modificado 
+     * eliminara el dato que fue modificado
+     */
+    public void modificar(){
+        eliminar();
+        llenadoTabla();
     }
 }
