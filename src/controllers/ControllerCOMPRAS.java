@@ -117,6 +117,7 @@ public class ControllerCOMPRAS {
         
         viewCOMPRAS.jtf_cantidad.addKeyListener(key);
         viewCOMPRAS.jtf_precio.addKeyListener(key);
+        this.viewCOMPRAS.jt_vista.addMouseListener(ml);//agregar a la table el evento de MouseListener
         
         modelCOMPRAS.Conectar();// conexion a la BD
         initComponents();
