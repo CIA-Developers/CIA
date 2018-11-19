@@ -262,6 +262,6 @@ public class ControllerCOMPRAS {
      * metodo que sirve para eliminar una fila seleccionda dentro de la tabla
      */
     public void eliminar(){
-        
+        modelCOMPRAS.getModel_compras().removeRow(viewCOMPRAS.jt_vista.getSelectedRow()); //eliina la fila seleccionada en la jtable
     }
 }
