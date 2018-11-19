@@ -174,4 +174,11 @@ public class ControllerCOMPRAS {
             JOptionPane.showMessageDialog(null,"error11 AgregarDatosCompras "+ e);
       }
     }
+    /**
+     * metodo para agregar un nuevo producto a compras
+     * limpiara las cajas para poder agregar un nuevo producto
+     */
+    public void nuevo(){
+        
+    }
 }
