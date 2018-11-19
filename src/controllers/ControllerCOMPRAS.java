@@ -66,6 +66,7 @@ public class ControllerCOMPRAS {
         @Override
         public void mouseClicked(MouseEvent e) {
             if (e.getSource() == viewCOMPRAS.jt_vista) {
+                jt_vista_MouseClicked();
             }
         }
 
