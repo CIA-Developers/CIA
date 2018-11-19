@@ -430,9 +430,11 @@ public class ModelCOMPRAS {
       datos[5] = Float.toString(this.getCantidad_compra());
       datos[6] = Float.toString(this.getTotal_por_producto());
       model_compras.addRow(datos);
+    }
+    public void importe(){
       //*********************calculando el importe, iva y subtotal de la compra***************
       importe=this.getImporte();
-      iva= importe * 16/100;//calculando el iva
+      iva= importe*16/100;//calculando el iva
       subtotal = importe - iva; //calculando el subtotal
     }
     /**

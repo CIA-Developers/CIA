@@ -172,6 +172,7 @@ public class ControllerCOMPRAS {
             modelCOMPRAS.setPrecio_compra(Float.parseFloat(viewCOMPRAS.jtf_precio.getText()));
             modelCOMPRAS.setCantidad_compra(Float.parseFloat(viewCOMPRAS.jtf_cantidad.getText()));
             modelCOMPRAS.setTotal_por_producto(Float.parseFloat(viewCOMPRAS.jtf_total.getText()));
+            modelCOMPRAS.AgregarDatosCompra();
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"error11 AgregarDatosCompras "+ e);
         }
@@ -183,11 +184,10 @@ public class ControllerCOMPRAS {
             total += fila;    
         }
         modelCOMPRAS.setImporte(total);
+        modelCOMPRAS.importe();
         viewCOMPRAS.jtf_importe.setText(Float.toString(modelCOMPRAS.getImporte()));
         viewCOMPRAS.jtf_iva.setText(Float.toString(modelCOMPRAS.getIva()));
-        viewCOMPRAS.jtf_subtotal.setText(Float.toString(modelCOMPRAS.getSubtotal()));
-        
-        modelCOMPRAS.AgregarDatosCompra();
+        viewCOMPRAS.jtf_subtotal.setText(Float.toString(modelCOMPRAS.getSubtotal()));    
     }
     /**
      * metodo para agregar un nuevo producto a compras
