@@ -125,9 +125,16 @@ public class ControllerDetalleCompra {
     }
 
     private void cajas_deshabilitadas() {
+        viewDetalleCompra.jTF_mejor_comprador.setEditable(false);
+        viewDetalleCompra.jTF_prod_mas_comprado.setEditable(false);
+        viewDetalleCompra.jTF_prod_menos_comprado.setEditable(false);
     }
     
     private void cajas_habilitadas() {
+        viewDetalleCompra.jTF_mejor_comprador.setEditable(true);
+        viewDetalleCompra.jTF_prod_mas_comprado.setEditable(true);
+        viewDetalleCompra.jTF_prod_menos_comprado.setEditable(true);
+        
     }
     
     //***************** BOTONES Ver, nuevo y Imprimir**************************
