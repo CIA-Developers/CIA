@@ -127,6 +127,9 @@ public class ControllerDetalleCompra {
     private void cajas_deshabilitadas() {
     }
     
+    private void cajas_habilitadas() {
+    }
+    
     //***************** BOTONES Ver, nuevo y Imprimir**************************
     /**
      * Metodo que limpiara las cajas de texto para ingresar nuevo datos. 
@@ -135,12 +138,12 @@ public class ControllerDetalleCompra {
     public void nuevo_DetalleVenta(){
        
         //limpiar cada caja de la Interfaz 
+        viewDetalleCompra.jDC_fe_inicio.setCalendar(null);
         viewDetalleCompra.jTF_mejor_comprador.setText(modelDetalleCompra.getLimpiar());
         viewDetalleCompra.jTF_prod_mas_comprado.setText(modelDetalleCompra.getLimpiar());
         viewDetalleCompra.jTF_prod_menos_comprado.setText(modelDetalleCompra.getLimpiar());
         cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
     }
 
-    private void cajas_habilitadas() {
-    }
+    
 }
