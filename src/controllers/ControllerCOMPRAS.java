@@ -149,6 +149,7 @@ public class ControllerCOMPRAS {
         viewCOMPRAS.jb_modificar.addActionListener(list);
         viewCOMPRAS.jb_nuevo.addActionListener(list);
         viewCOMPRAS.jb_realizar_compra.addActionListener(list);
+        viewCOMPRAS.jb_eliminar.addActionListener(list);
     }
     public void llenadoCombos(){
         modelCOMPRAS.llenarCombo();
