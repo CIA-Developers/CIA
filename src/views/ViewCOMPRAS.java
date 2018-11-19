@@ -78,6 +78,8 @@ public class ViewCOMPRAS extends javax.swing.JPanel {
         jtf_subtotal = new javax.swing.JTextField();
         jtf_importe = new javax.swing.JTextField();
         jl_importe = new javax.swing.JLabel();
+        jb_eliminar = new javax.swing.JButton();
+        jl_eliminar = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(1150, 692));
@@ -462,6 +464,12 @@ public class ViewCOMPRAS extends javax.swing.JPanel {
         jl_importe.setForeground(new java.awt.Color(0, 102, 204));
         jl_importe.setText("IMPORTE   $:");
 
+        jb_eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/eliminar.png"))); // NOI18N
+
+        jl_eliminar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jl_eliminar.setForeground(new java.awt.Color(51, 51, 51));
+        jl_eliminar.setText("Eliminar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -498,10 +506,13 @@ public class ViewCOMPRAS extends javax.swing.JPanel {
                             .addComponent(jl_nuevo))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jl_modificar)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jb_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jl_modificar)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(jb_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(12, 12, 12)))
+                            .addComponent(jb_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jl_eliminar))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -525,9 +536,16 @@ public class ViewCOMPRAS extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jl_modificar)))
                         .addGap(18, 18, 18)
-                        .addComponent(jb_nuevo)
-                        .addGap(7, 7, 7)
-                        .addComponent(jl_nuevo)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jb_nuevo)
+                                .addGap(7, 7, 7)
+                                .addComponent(jl_nuevo))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jb_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(67, 67, 67)
+                                    .addComponent(jl_eliminar))))))
                 .addGap(18, 18, 18)
                 .addComponent(jp_table, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -555,6 +573,7 @@ public class ViewCOMPRAS extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JButton jb_agregar;
+    public javax.swing.JButton jb_eliminar;
     public javax.swing.JButton jb_modificar;
     public javax.swing.JButton jb_nuevo;
     public javax.swing.JButton jb_realizar_compra;
@@ -565,6 +584,7 @@ public class ViewCOMPRAS extends javax.swing.JPanel {
     public javax.swing.JLabel jl_agregar;
     public javax.swing.JLabel jl_cantidad;
     public javax.swing.JLabel jl_codigo_producto;
+    public javax.swing.JLabel jl_eliminar;
     public javax.swing.JLabel jl_empleado;
     public javax.swing.JLabel jl_fecha;
     public javax.swing.JLabel jl_hora;
