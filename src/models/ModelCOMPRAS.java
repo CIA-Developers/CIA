@@ -282,7 +282,7 @@ public class ModelCOMPRAS {
     public void setModel_prov(DefaultTableModel model_prov) {
         this.model_compras = model_prov;
     }
-    
+     
     /**
      * se hace la conexion a la Base de datos y se hace la consulta hacia la
      * tabla de detalle_compra y compras que tiene una union con la tabla de compra
@@ -418,6 +418,6 @@ public class ModelCOMPRAS {
      *    con su respectivo precio y cantidad manejando tambien el Total final (SIN GUARDAR EN LA BASE DE DATOS)
      */
     public void AgregarDatosCompra(){
-        
+      model_compras.setColumnIdentifiers(new Object[]{"Numero de Compra", "Codigo Producto", "Nombre Producto", "Marca","Precio", "Cantidad", "Total"});  
     }
 }
