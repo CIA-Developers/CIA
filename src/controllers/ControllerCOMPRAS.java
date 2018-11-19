@@ -91,7 +91,7 @@ public class ControllerCOMPRAS {
         setActionListener(); 
         deshabiltarObjetos();
         
-        modelCOMPRAS.AgregarDatosCompra();
+        
         
     }
 
@@ -148,5 +148,8 @@ public class ControllerCOMPRAS {
         modelCOMPRAS.setPrecio_compra(Float.parseFloat(viewCOMPRAS.jtf_precio.getText()));
         modelCOMPRAS.TotalCompraProducto();
         viewCOMPRAS.jtf_total.setText(Float.toString(modelCOMPRAS.getTotal_por_producto()));
+    }
+    public void llenadoTabla(){
+        modelCOMPRAS.AgregarDatosCompra();
     }
 }
