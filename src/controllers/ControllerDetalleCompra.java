@@ -125,6 +125,16 @@ public class ControllerDetalleCompra {
     }
 
     private void cajas_deshabilitadas() {
+        viewDetalleCompra.jTF_mejor_comprador.setEditable(false);
+        viewDetalleCompra.jTF_prod_mas_comprado.setEditable(false);
+        viewDetalleCompra.jTF_prod_menos_comprado.setEditable(false);
+    }
+    
+    private void cajas_habilitadas() {
+        viewDetalleCompra.jTF_mejor_comprador.setEditable(true);
+        viewDetalleCompra.jTF_prod_mas_comprado.setEditable(true);
+        viewDetalleCompra.jTF_prod_menos_comprado.setEditable(true);
+        
     }
     
     //***************** BOTONES Ver, nuevo y Imprimir**************************
@@ -135,12 +145,12 @@ public class ControllerDetalleCompra {
     public void nuevo_DetalleVenta(){
        
         //limpiar cada caja de la Interfaz 
+        viewDetalleCompra.jDC_fe_inicio.setCalendar(null);
         viewDetalleCompra.jTF_mejor_comprador.setText(modelDetalleCompra.getLimpiar());
         viewDetalleCompra.jTF_prod_mas_comprado.setText(modelDetalleCompra.getLimpiar());
         viewDetalleCompra.jTF_prod_menos_comprado.setText(modelDetalleCompra.getLimpiar());
         cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
     }
 
-    private void cajas_habilitadas() {
-    }
+    
 }
