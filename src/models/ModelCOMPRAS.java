@@ -418,13 +418,6 @@ public class ModelCOMPRAS {
      *    con su respectivo precio y cantidad manejando tambien el Total final (SIN GUARDAR EN LA BASE DE DATOS)
      */
     public void AgregarDatosCompra(){
-      try{
-        rs = st.executeQuery("SELECT * FROM proveedoresCREATE TABLE compra ;");
-        rs.last(); //colocarse en el ultimo registro
-        this.setNumero_compra(rs.getInt("id_compra"+1));// se le suma uno al ultimo registro de sucursal para obtener el numero de compra siguiente
-      }catch(Exception e){
-            JOptionPane.showMessageDialog(null,"error10 AgregarDatosCompras "+ e);
-      }
       model_compras.setColumnIdentifiers(new Object[]{"Numero de Compra", "Codigo Producto", "Nombre Producto", "Marca","Precio", "Cantidad", "Total"}); 
       String datos[] = new String[8];
       datos[0] = Integer.toString(this.getNumero_compra());
@@ -435,5 +428,20 @@ public class ModelCOMPRAS {
       datos[5] = Float.toString(this.getCantidad_compra());
       datos[6] = Float.toString(this.getTotal_por_producto());
       
+    }
+    /**
+     * metodo para saber la cantidad de filas que tiene la tabla de compras
+     * para obtener el numero de compra quesigue
+     */
+    public void numeroCompras(){
+        try{ //obtener el nuemero de registros dentro de la base de datos
+            rs=st.executeQuery("SELECT * from compra;");
+            while (rs.next()) {
+                ++numero_compra;
+            }
+            numero_compra=numero_compra+1;//obetner el numero de compra a realizar
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"error10 AgregarDatosCompras "+ e);
+      }
     }
 }

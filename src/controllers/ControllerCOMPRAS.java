@@ -85,17 +85,15 @@ public class ControllerCOMPRAS {
         viewCOMPRAS.jtf_cantidad.addKeyListener(key);
         viewCOMPRAS.jtf_precio.addKeyListener(key);
         
-        modelCOMPRAS.numeroCompras();
-        viewCOMPRAS.jtf_numero_compra.setText(Integer.toString(modelCOMPRAS.getNumero_compra()));
-        
         modelCOMPRAS.Conectar();// conexion a la BD
         initComponents();
         llenadoCombos();
         setActionListener(); 
         deshabiltarObjetos();
         
-        
-        
+        modelCOMPRAS.numeroCompras();
+        viewCOMPRAS.jtf_numero_compra.setText(Integer.toString(modelCOMPRAS.getNumero_compra()));
+               
     }
 
     public void initComponents(){
