@@ -170,7 +170,13 @@ public class ControllerCOMPRAS {
      * para poder modificar o eliminar la fila seleccionada
      */
     public void jt_vista_MouseClicked(){
-        
+        modelCOMPRAS.setRec(viewCOMPRAS.jt_vista.getSelectedRow());//a la variable se le asigna el elemento seleccionado en la tabla
+        viewCOMPRAS.jcb_codigo_producto.setSelectedItem(viewCOMPRAS.jt_vista.getValueAt(modelCOMPRAS.getRec(), 1).toString());
+        viewCOMPRAS.jtf_nombre_producto.setText(viewCOMPRAS.jt_vista.getValueAt(modelCOMPRAS.getRec(), 2).toString());
+        viewCOMPRAS.jtf_marca_producto.setText(viewCOMPRAS.jt_vista.getValueAt(modelCOMPRAS.getRec(), 3).toString());
+        viewCOMPRAS.jtf_precio.setText(viewCOMPRAS.jt_vista.getValueAt(modelCOMPRAS.getRec(), 4).toString());
+        viewCOMPRAS.jtf_cantidad.setText(viewCOMPRAS.jt_vista.getValueAt(modelCOMPRAS.getRec(), 5).toString());
+        viewCOMPRAS.jtf_total.setText(viewCOMPRAS.jt_vista.getValueAt(modelCOMPRAS.getRec(), 6).toString());
     }
     
     /**
