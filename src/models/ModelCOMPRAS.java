@@ -293,15 +293,7 @@ public class ModelCOMPRAS {
     public void setModel_compras(DefaultTableModel model_compras) {
         this.model_compras = model_compras;
     }
-    public int filas_tabla;
 
-    public int getFilas_tabla() {
-        return filas_tabla;
-    }
-
-    public void setFilas_tabla(int filas_tabla) {
-        this.filas_tabla = filas_tabla;
-    }
    
      
     /**
@@ -477,7 +469,7 @@ public class ModelCOMPRAS {
      * guardara en la tablas los datos que le corresponden a cada una
      * para realizar la compra y finalizarla 
      */
-    public void finalizarCompra(){
+    public void finalizarCompratablaCompra(){
         try{// se guarda en la tabla de compra   
             Connection cn = getConexion();
             id_proveedor = this.getId_proveedor();
@@ -498,7 +490,9 @@ public class ModelCOMPRAS {
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"error12 FinalizarCompras "+ e);
       }
-      try{//se guardara en la tabla detalle_compra
+    }
+     public void finalizarCompratablaDetalleCompra(){
+              try{//se guardara en la tabla detalle_compra
          Connection cn = getConexion();
             numero_compra = this.getNumero_compra();
             codigo_producto = this.getCodigo_producto();
@@ -517,6 +511,6 @@ public class ModelCOMPRAS {
             ps.executeUpdate();//realizndo la accion de guardar 
       }catch(Exception e){
             JOptionPane.showMessageDialog(null,"error13 FinalizarCompras "+ e);
-      }
-    }
+      } 
+     }
 }
