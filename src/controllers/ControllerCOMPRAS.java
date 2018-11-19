@@ -322,6 +322,7 @@ public class ControllerCOMPRAS {
         }
         }catch(Exception e){
                 JOptionPane.showMessageDialog(null,"error15 FinalizarCompras "+ e);
-          } 
+        } 
+        JOptionPane.showMessageDialog(null,"Se realizo la compra con exito");
     }
 }

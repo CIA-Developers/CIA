@@ -455,10 +455,9 @@ public class ModelCOMPRAS {
     public void numeroCompras(){
         try{ //obtener el nuemero de registros dentro de la base de datos
             rs=st.executeQuery("SELECT * from compra;");
-            while (rs.next()) {
-                ++numero_compra;
-            }
-            numero_compra=numero_compra+1;//obetner el numero de compra a realizar
+            rs.last();
+            numero_compra=rs.getInt("id_compra");//obetner el numero de compra a realizar
+            numero_compra=numero_compra+1;
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"error10 AgregarDatosCompras "+ e);
       }
