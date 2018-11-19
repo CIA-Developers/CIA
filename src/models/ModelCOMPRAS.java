@@ -418,6 +418,13 @@ public class ModelCOMPRAS {
      *    con su respectivo precio y cantidad manejando tambien el Total final (SIN GUARDAR EN LA BASE DE DATOS)
      */
     public void AgregarDatosCompra(){
+      try{
+        rs = st.executeQuery("SELECT * FROM proveedoresCREATE TABLE compra ;");
+        rs.last(); //colocarse en el ultimo registro
+        this.setNumero_compra(rs.getInt("id_compra"+1));// se le suma uno al ultimo registro de sucursal para obtener el numero de compra siguiente
+      }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"error10 AgregarDatosCompras "+ e);
+      }
       model_compras.setColumnIdentifiers(new Object[]{"Numero de Compra", "Codigo Producto", "Nombre Producto", "Marca","Precio", "Cantidad", "Total"}); 
       String datos[] = new String[8];
       datos[0] = Integer.toString(this.getNumero_compra());
