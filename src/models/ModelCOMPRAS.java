@@ -418,6 +418,15 @@ public class ModelCOMPRAS {
      *    con su respectivo precio y cantidad manejando tambien el Total final (SIN GUARDAR EN LA BASE DE DATOS)
      */
     public void AgregarDatosCompra(){
-      model_compras.setColumnIdentifiers(new Object[]{"Numero de Compra", "Codigo Producto", "Nombre Producto", "Marca","Precio", "Cantidad", "Total"});  
+      model_compras.setColumnIdentifiers(new Object[]{"Numero de Compra", "Codigo Producto", "Nombre Producto", "Marca","Precio", "Cantidad", "Total"}); 
+      String datos[] = new String[8];
+      datos[0] = Integer.toString(this.getNumero_compra());
+      datos[1] = this.getCodigo_producto();
+      datos[2] = this.getNombre_producto();
+      datos[3] = this.getMarca_producto();
+      datos[4] = Float.toString(this.getPrecio_compra());
+      datos[5] = Float.toString(this.getCantidad_compra());
+      datos[6] = Float.toString(this.getTotal_por_producto());
+      
     }
 }
