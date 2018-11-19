@@ -299,24 +299,29 @@ public class ControllerCOMPRAS {
      * este meodo finalizara toda la compra de la tabla
      */
     public void realizarCompra(){
+        try{
         // se guarda en Compras **agregando datos para guardar
-        modelCOMPRAS.setId_proveedor((int)viewCOMPRAS.jcb_numero_proveedor.getSelectedItem());
+        modelCOMPRAS.setId_proveedor(Integer.parseInt((String) viewCOMPRAS.jcb_numero_proveedor.getSelectedItem()));
         modelCOMPRAS.setImporte(Float.parseFloat(viewCOMPRAS.jtf_importe.getText()));
         modelCOMPRAS.setIva(Float.parseFloat(viewCOMPRAS.jtf_iva.getText()));
         modelCOMPRAS.setSubtotal(Float.parseFloat(viewCOMPRAS.jtf_subtotal.getText()));
-        modelCOMPRAS.setNum_sucursal((int) viewCOMPRAS.jcb_numero_sucursal.getSelectedItem());
+        modelCOMPRAS.setNum_sucursal(Integer.parseInt((String) viewCOMPRAS.jcb_numero_sucursal.getSelectedItem()));
         modelCOMPRAS.finalizarCompratablaCompra();//llamamos al metodo de guardar en compra 
-        
+        }catch(Exception e){
+                JOptionPane.showMessageDialog(null,"error14 FinalizarCompras "+ e);
+          } 
         //se guardara en detalle_compras ***agregando datos
-        
+        try{
         for (int i = 0; i < viewCOMPRAS.jt_vista.getRowCount(); i++){
-            modelCOMPRAS.setNumero_compra((int) viewCOMPRAS.jt_vista.getValueAt(i,0));
+            modelCOMPRAS.setNumero_compra(Integer.parseInt((String) viewCOMPRAS.jt_vista.getValueAt(i,0)));
             modelCOMPRAS.setCodigo_producto(viewCOMPRAS.jt_vista.getValueAt(i,1).toString());
-            modelCOMPRAS.setCantidad_compra((float) viewCOMPRAS.jt_vista.getValueAt(i,5));
-            modelCOMPRAS.setPrecio_compra((float) viewCOMPRAS.jt_vista.getValueAt(i,4));
-            modelCOMPRAS.setTotal_por_producto((float) viewCOMPRAS.jt_vista.getValueAt(i,6));
+            modelCOMPRAS.setCantidad_compra(Float.parseFloat((String) viewCOMPRAS.jt_vista.getValueAt(i,5)));
+            modelCOMPRAS.setPrecio_compra(Float.parseFloat((String) viewCOMPRAS.jt_vista.getValueAt(i,4)));
+            modelCOMPRAS.setTotal_por_producto(Float.parseFloat((String)viewCOMPRAS.jt_vista.getValueAt(i,6)));
             modelCOMPRAS.finalizarCompratablaDetalleCompra(); //llamamos el metodo de guardar en detalle_compra
         }
-        
+        }catch(Exception e){
+                JOptionPane.showMessageDialog(null,"error15 FinalizarCompras "+ e);
+          } 
     }
 }
