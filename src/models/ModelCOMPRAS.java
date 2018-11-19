@@ -274,6 +274,16 @@ public class ModelCOMPRAS {
     private ResultSet rs;
     
     public DefaultTableModel model_compras = new DefaultTableModel();
+    public int rec;//Variable que tomara el valor seleccionado en la tabla 
+
+    public int getRec() {
+        return rec;
+    }
+
+    public void setRec(int rec) {
+        this.rec = rec;
+    } 
+    
 
     public DefaultTableModel getModel_compras() {
         return model_compras;
