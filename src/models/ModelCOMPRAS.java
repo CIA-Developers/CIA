@@ -293,7 +293,15 @@ public class ModelCOMPRAS {
     public void setModel_compras(DefaultTableModel model_compras) {
         this.model_compras = model_compras;
     }
+    public int filas_tabla;
 
+    public int getFilas_tabla() {
+        return filas_tabla;
+    }
+
+    public void setFilas_tabla(int filas_tabla) {
+        this.filas_tabla = filas_tabla;
+    }
    
      
     /**
