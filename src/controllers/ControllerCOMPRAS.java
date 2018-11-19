@@ -258,4 +258,10 @@ public class ControllerCOMPRAS {
         viewCOMPRAS.jb_modificar.setEnabled(false);
         viewCOMPRAS.jb_eliminar.setEnabled(false);
     }
+    /**
+     * metodo que sirve para eliminar una fila seleccionda dentro de la tabla
+     */
+    public void eliminar(){
+        
+    }
 }
