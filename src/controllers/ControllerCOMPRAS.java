@@ -147,6 +147,7 @@ public class ControllerCOMPRAS {
         viewCOMPRAS.jb_modificar.setEnabled(false);
         viewCOMPRAS.jb_nuevo.setEnabled(false);
         viewCOMPRAS.jb_realizar_compra.setEnabled(false);
+        viewCOMPRAS.jb_eliminar.setEnabled(false);
         //Deshabilitando la tabla de compras 
         viewCOMPRAS.jt_vista.setEnabled(false);
     }
@@ -160,6 +161,7 @@ public class ControllerCOMPRAS {
         try{
             viewCOMPRAS.jb_modificar.setEnabled(true);
             viewCOMPRAS.jb_nuevo.setEnabled(true);
+            viewCOMPRAS.jb_eliminar.setEnabled(false);
             modelCOMPRAS.setNumero_compra(Integer.parseInt(viewCOMPRAS.jtf_numero_compra.getText()));
             modelCOMPRAS.setCodigo_producto((String) viewCOMPRAS.jcb_codigo_producto.getSelectedItem());
             modelCOMPRAS.setNombre_producto(viewCOMPRAS.jtf_nombre_producto.getText());
