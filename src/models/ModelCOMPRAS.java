@@ -495,26 +495,23 @@ public class ModelCOMPRAS {
       }
     }
      public void finalizarCompratablaDetalleCompra(){
-        int confirmar = JOptionPane.showConfirmDialog(null, "confirmar la compra");    
-        if(JOptionPane.OK_OPTION==confirmar) {
-            try{//se guardara en la tabla detalle_compra
-                Connection cn = getConexion();
-                numero_compra = this.getNumero_compra();
-                codigo_producto = this.getCodigo_producto();
-                cantidad_compra = this.getCantidad_compra();
-                precio_compra = this.getPrecio_compra();
-                total_por_producto = this.getTotal_por_producto();
-                ps = cn.prepareStatement("insert into detalle_compra (id_compra,codigo_producto_comp,cantidad_comp,precio_comp,total_producto_comp)"
-                    + " values(?, ?, ?, ?, ?);");
-                ps.setInt(1,numero_compra);
-                ps.setString(2,codigo_producto);
-                ps.setFloat(3,cantidad_compra);
-                ps.setFloat(4,precio_compra);
-                ps.setFloat(5,total_por_producto);
-                ps.executeUpdate();//realizndo la accion de guardar 
-          }catch(Exception e){
-                JOptionPane.showMessageDialog(null,"error13 FinalizarCompras "+ e);
-          } 
-      }
+        try{//se guardara en la tabla detalle_compra
+            Connection cn = getConexion();
+            numero_compra = this.getNumero_compra();
+            codigo_producto = this.getCodigo_producto();
+            cantidad_compra = this.getCantidad_compra();
+            precio_compra = this.getPrecio_compra();
+            total_por_producto = this.getTotal_por_producto();
+            ps = cn.prepareStatement("insert into detalle_compra (id_compra,codigo_producto_comp,cantidad_comp,precio_comp,total_producto_comp)"
+                + " values(?, ?, ?, ?, ?);");
+            ps.setInt(1,numero_compra);
+            ps.setString(2,codigo_producto);
+            ps.setFloat(3,cantidad_compra);
+            ps.setFloat(4,precio_compra);
+            ps.setFloat(5,total_por_producto);
+            ps.executeUpdate();//realizndo la accion de guardar 
+      }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"error13 FinalizarCompras "+ e);
+      } 
      }
 }
