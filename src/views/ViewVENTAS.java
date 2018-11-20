@@ -588,7 +588,7 @@ public class ViewVENTAS extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_proveedor1Layout.createSequentialGroup()
                 .addGroup(jp_proveedor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jp_proveedor1Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
+                        .addContainerGap()
                         .addGroup(jp_proveedor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jl_subtotal2)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -625,10 +625,12 @@ public class ViewVENTAS extends javax.swing.JPanel {
         );
 
         jl_total1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jl_total1.setForeground(new java.awt.Color(0, 0, 153));
         jl_total1.setText("puntos ganados:");
 
-        jtf_precio1.setBackground(new java.awt.Color(153, 153, 153));
-        jtf_precio1.setText("0.0");
+        jtf_precio1.setBackground(new java.awt.Color(153, 204, 255));
+        jtf_precio1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jtf_precio1.setText("0");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -657,8 +659,8 @@ public class ViewVENTAS extends javax.swing.JPanel {
                                 .addComponent(jb_realizar_compra)
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jl_total1)
-                                    .addComponent(jtf_precio1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jl_total1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtf_precio1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jl_importe)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -726,7 +728,7 @@ public class ViewVENTAS extends javax.swing.JPanel {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jl_total1)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jtf_precio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                        .addComponent(jtf_precio1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(63, 63, 63)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -742,8 +744,8 @@ public class ViewVENTAS extends javax.swing.JPanel {
                                 .addGap(30, 30, 30))))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jp_proveedor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                        .addComponent(jp_proveedor1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
