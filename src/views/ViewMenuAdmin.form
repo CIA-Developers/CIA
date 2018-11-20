@@ -134,6 +134,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jmi_agregar_Sucursal">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Images/agregar.png"/>
                 </Property>
@@ -145,6 +148,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jmi_descuentos">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Images/Menu/descuentos.png"/>
                 </Property>
@@ -156,6 +162,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jmi_promociones">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Images/Menu/promociones.png"/>
                 </Property>
@@ -186,6 +195,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jmi_detallecompra">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Images/Menu/compras.png"/>
                 </Property>
@@ -197,6 +209,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jmi_detalleventa">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Images/Menu/Ventas.png"/>
                 </Property>

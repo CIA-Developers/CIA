@@ -93,14 +93,17 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
         jm_nueva_sucursal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/opciones.png"))); // NOI18N
         jm_nueva_sucursal.setText("Opciones ");
 
+        jmi_agregar_Sucursal.setBackground(new java.awt.Color(255, 255, 255));
         jmi_agregar_Sucursal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/agregar.png"))); // NOI18N
         jmi_agregar_Sucursal.setText("Agregar Nueva Sucursal ");
         jm_nueva_sucursal.add(jmi_agregar_Sucursal);
 
+        jmi_descuentos.setBackground(new java.awt.Color(255, 255, 255));
         jmi_descuentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/descuentos.png"))); // NOI18N
         jmi_descuentos.setText("Descuentos");
         jm_nueva_sucursal.add(jmi_descuentos);
 
+        jmi_promociones.setBackground(new java.awt.Color(255, 255, 255));
         jmi_promociones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/promociones.png"))); // NOI18N
         jmi_promociones.setText("Promociones");
         jm_nueva_sucursal.add(jmi_promociones);
@@ -112,10 +115,12 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
         jm_detalles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/aceptar.png"))); // NOI18N
         jm_detalles.setText("Detalles ");
 
+        jmi_detallecompra.setBackground(new java.awt.Color(255, 255, 255));
         jmi_detallecompra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/compras.png"))); // NOI18N
         jmi_detallecompra.setText("Detalle Compra");
         jm_detalles.add(jmi_detallecompra);
 
+        jmi_detalleventa.setBackground(new java.awt.Color(255, 255, 255));
         jmi_detalleventa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/Ventas.png"))); // NOI18N
         jmi_detalleventa.setText("Detalle Venta");
         jmi_detalleventa.addActionListener(new java.awt.event.ActionListener() {
