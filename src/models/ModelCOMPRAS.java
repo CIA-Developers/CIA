@@ -531,7 +531,10 @@ public class ModelCOMPRAS {
       }catch(Exception e){
             JOptionPane.showMessageDialog(null,"error13 FinalizarCompras "+ e);
       }    
-      try{
+    }
+     public void existencias(){
+         try{
+          cantidad_compra = this.getCantidad_compra();
           rs = st.executeQuery("SELECT * FROM sucursal_productos;");//consulta a sucursales_productos
           rs.next();
           stock_productos_sucursales =rs.getInt("existencias"); 
@@ -540,7 +543,7 @@ public class ModelCOMPRAS {
       }catch(Exception e){
           JOptionPane.showMessageDialog(null,"error17 FinalizarCompras "+ e);
       }
-            try{//actualizando stock al realizar una compra
+        try{//actualizando stock al realizar una compra
           rs = st.executeQuery("SELECT * FROM productos;");//consulta a productos
           rs.next();
           stock_productos=rs.getInt("existencia_total"); 
