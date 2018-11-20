@@ -38,6 +38,8 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
         jmi_productos = new javax.swing.JMenuItem();
         jm_nueva_sucursal = new javax.swing.JMenu();
         jmi_agregar_Sucursal = new javax.swing.JMenuItem();
+        jmi_descuentos = new javax.swing.JMenuItem();
+        jmi_promociones = new javax.swing.JMenuItem();
         jm_detalles = new javax.swing.JMenu();
         jmi_detallecompra = new javax.swing.JMenuItem();
         jmi_detalleventa = new javax.swing.JMenuItem();
@@ -95,15 +97,26 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
         jmi_agregar_Sucursal.setText("Agregar Nueva Sucursal ");
         jm_nueva_sucursal.add(jmi_agregar_Sucursal);
 
+        jmi_descuentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/descuentos.png"))); // NOI18N
+        jmi_descuentos.setText("Descuentos");
+        jm_nueva_sucursal.add(jmi_descuentos);
+
+        jmi_promociones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/promociones.png"))); // NOI18N
+        jmi_promociones.setText("Promociones");
+        jm_nueva_sucursal.add(jmi_promociones);
+
         jmi_detalle_compra1.add(jm_nueva_sucursal);
 
         jm_detalles.setBackground(new java.awt.Color(0, 153, 204));
         jm_detalles.setForeground(new java.awt.Color(255, 255, 255));
+        jm_detalles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/aceptar.png"))); // NOI18N
         jm_detalles.setText("Detalles ");
 
+        jmi_detallecompra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/compras.png"))); // NOI18N
         jmi_detallecompra.setText("Detalle Compra");
         jm_detalles.add(jmi_detallecompra);
 
+        jmi_detalleventa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/Ventas.png"))); // NOI18N
         jmi_detalleventa.setText("Detalle Venta");
         jmi_detalleventa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,6 +152,10 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
     private void jmi_detalleventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_detalleventaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jmi_detalleventaActionPerformed
+
+    private void jmi_descuentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_descuentosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmi_descuentosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,12 +200,14 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
     public javax.swing.JMenu jm_nueva_sucursal;
     public javax.swing.JMenuItem jmi_agregar_Sucursal;
     public javax.swing.JMenuItem jmi_clientes;
+    public javax.swing.JMenuItem jmi_descuentos;
     public javax.swing.JMenuBar jmi_detalle_compra1;
     public javax.swing.JMenuItem jmi_detallecompra;
     public javax.swing.JMenuItem jmi_detalleventa;
     public javax.swing.JMenuItem jmi_empleados_compras;
     public javax.swing.JMenuItem jmi_empleados_ventas;
     public javax.swing.JMenuItem jmi_productos;
+    public javax.swing.JMenuItem jmi_promociones;
     public javax.swing.JMenuItem jmi_proveedores;
     public javax.swing.JMenuItem jmi_sucursales;
     // End of variables declaration//GEN-END:variables
