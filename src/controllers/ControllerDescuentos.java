@@ -5,10 +5,25 @@
  */
 package controllers;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import models.ModelDescuentos;
+import views.ViewDescuentos;
+
 /**
  *
  * @author Octaviano
  */
 public class ControllerDescuentos {
-    
+
+    ModelDescuentos modelDescuentos;
+    ViewDescuentos viewDescuentos;
+
+    public ControllerDescuentos(ModelDescuentos modelDescuentos, ViewDescuentos viewDescuentos) {
+
+        this.modelDescuentos = modelDescuentos;
+        this.viewDescuentos = viewDescuentos;
+
+    }
+
 }

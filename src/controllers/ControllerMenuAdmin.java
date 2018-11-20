@@ -34,6 +34,8 @@ public final class ControllerMenuAdmin {
     private ControllerAgregarSucursal controllerAgregarSucursal;
     private ControllerDetalleCompra controllerDetalleCompra;
     private ControllerDetalleVentas controllerDetalleVentas;
+    private ControllerPromociones controllerPromociones;
+    private ControllerDescuentos controllerDescuentos;
 
     /**
      * Controlador principal donde se un el modelo y controlador del MenuAdmin
@@ -69,6 +71,8 @@ public final class ControllerMenuAdmin {
         controllerAgregarSucursal = (ControllerAgregarSucursal) controllers[6];
         controllerDetalleCompra = (ControllerDetalleCompra) controllers[7];
         controllerDetalleVentas = (ControllerDetalleVentas) controllers[8];
+        controllerPromociones = (ControllerPromociones) controllers[9];
+        controllerDescuentos = (ControllerDescuentos) controllers[10];
     }
 
     /**
@@ -94,6 +98,8 @@ public final class ControllerMenuAdmin {
         viewMenuAdmin.jmi_agregar_Sucursal.addActionListener(actionListener);
         viewMenuAdmin.jmi_detallecompra.addActionListener(actionListener);
         viewMenuAdmin.jmi_detalleventa.addActionListener(actionListener);
+        viewMenuAdmin.jmi_promociones.addActionListener(actionListener);
+        viewMenuAdmin.jmi_descuentos.addActionListener(actionListener);
     }
     /**
      * Evalua el componente que genero el evento y llama a un método en
@@ -118,8 +124,12 @@ public final class ControllerMenuAdmin {
                 jm_AgregarSucursales_actionPerformed();
             } else if (e.getSource() == viewMenuAdmin.jmi_detallecompra) {
                 jmi_detallecompra_actionPerformed();
-            }else if (e.getSource() == viewMenuAdmin.jmi_detalleventa) {
+            } else if (e.getSource() == viewMenuAdmin.jmi_detalleventa) {
                 jmi_detalleventa_actionPerformed();
+            } else if (e.getSource() == viewMenuAdmin.jmi_promociones) {
+                jmi_promociones_actionPerformed();
+            } else if (e.getSource() == viewMenuAdmin.jmi_descuentos) {
+                jmi_descuentos_actionPerformed();
             }
 
         }
@@ -177,8 +187,21 @@ public final class ControllerMenuAdmin {
         viewMenuAdmin.revalidate();
         viewMenuAdmin.repaint();
     }
+
     private void jmi_detalleventa_actionPerformed() {
         viewMenuAdmin.setContentPane(controllerDetalleVentas.viewDetalleVentas);
+        viewMenuAdmin.revalidate();
+        viewMenuAdmin.repaint();
+    }
+
+    private void jmi_promociones_actionPerformed() {
+        viewMenuAdmin.setContentPane(controllerPromociones.viewPromociones);
+        viewMenuAdmin.revalidate();
+        viewMenuAdmin.repaint();
+    }
+
+    private void jmi_descuentos_actionPerformed() {
+        viewMenuAdmin.setContentPane(controllerDescuentos.viewDescuentos);
         viewMenuAdmin.revalidate();
         viewMenuAdmin.repaint();
     }

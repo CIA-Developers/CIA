@@ -56,7 +56,15 @@ public class MenuAdmin {
         ViewDetalleVentas viewDetalleVentas = new ViewDetalleVentas();
         ControllerDetalleVentas controllerDetalleVenta = new ControllerDetalleVentas(modelDetalleVentas, viewDetalleVentas);
 
-        Object[] controllers = new Object[9];
+        ModelPromociones modelPromociones = new ModelPromociones();
+        ViewPromociones viewPromociones = new ViewPromociones();
+        ControllerPromociones controllerPromociones = new ControllerPromociones(modelPromociones, viewPromociones);
+
+        ModelDescuentos modelDescuentos = new ModelDescuentos();
+        ViewDescuentos viewDescuentos = new ViewDescuentos();
+        ControllerDescuentos controllerDescuentos = new ControllerDescuentos(modelDescuentos, viewDescuentos);
+
+        Object[] controllers = new Object[11];
         controllers[0] = controllerClientes;
         controllers[1] = controllerEmpleadosCompras;
         controllers[2] = controllerEmpleadosVentas;
@@ -66,6 +74,9 @@ public class MenuAdmin {
         controllers[6] = controllerAgregarSucursal;
         controllers[7] = controllerDetalleCompra;
         controllers[8] = controllerDetalleVenta;
+        controllers[9] = controllerPromociones;
+        controllers[10] = controllerDescuentos;
+       
 
         ModelMenuAdmin modelMenuAdmin = new ModelMenuAdmin();
         ViewMenuAdmin viewMenuAdmin = new ViewMenuAdmin();
