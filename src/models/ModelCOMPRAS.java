@@ -514,6 +514,7 @@ public class ModelCOMPRAS {
      public void finalizarCompratablaDetalleCompra(){
         try{//se guardara en la tabla detalle_compra
             Connection cn = getConexion();
+            num_sucursal = this.getNum_sucursal();
             numero_compra = this.getNumero_compra();
             codigo_producto = this.getCodigo_producto();
             cantidad_compra = this.getCantidad_compra();
@@ -530,19 +531,23 @@ public class ModelCOMPRAS {
       }catch(Exception e){
             JOptionPane.showMessageDialog(null,"error13 FinalizarCompras "+ e);
       }    
-      try{//actualizando stock al realizar una compra
-          rs = st.executeQuery("SELECT * FROM productos;");//consulta a productos
-          rs.next();
-          stock_productos=rs.getInt("existencia_total"); 
-      }catch(Exception e){
-          JOptionPane.showMessageDialog(null,"error16 FinalizarCompras "+ e);
-      }
       try{
           rs = st.executeQuery("SELECT * FROM sucursal_productos;");//consulta a sucursales_productos
           rs.next();
-          stock_productos=rs.getInt("existencias"); 
+          stock_productos_sucursales =rs.getInt("existencias"); 
+          stock_productos_sucursales = (int)(stock_productos_sucursales + cantidad_compra);
+          st.executeUpdate("UPDATE sucursal_productos SET existencias='"+stock_productos_sucursales+"' WHERE no_sucursal='"+codigo_producto+"' and codigo_producto='"+num_sucursal+"';");
       }catch(Exception e){
           JOptionPane.showMessageDialog(null,"error17 FinalizarCompras "+ e);
+      }
+            try{//actualizando stock al realizar una compra
+          rs = st.executeQuery("SELECT * FROM productos;");//consulta a productos
+          rs.next();
+          stock_productos=rs.getInt("existencia_total"); 
+          stock_productos = stock_productos + stock_productos_sucursales;
+           st.executeUpdate("UPDATE productos SET existencia_total='"+stock_productos+"' WHERE codigo_producto='"+codigo_producto+"';");
+      }catch(Exception e){
+          JOptionPane.showMessageDialog(null,"error16 FinalizarCompras "+ e);
       }
      }
 }

@@ -318,6 +318,7 @@ public class ControllerCOMPRAS {
             modelCOMPRAS.setCantidad_compra(Float.parseFloat((String) viewCOMPRAS.jt_vista.getValueAt(i,5)));
             modelCOMPRAS.setPrecio_compra(Float.parseFloat((String) viewCOMPRAS.jt_vista.getValueAt(i,4)));
             modelCOMPRAS.setTotal_por_producto(Float.parseFloat((String)viewCOMPRAS.jt_vista.getValueAt(i,6)));
+            modelCOMPRAS.setNum_sucursal(Integer.parseInt((String) viewCOMPRAS.jcb_numero_sucursal.getSelectedItem()));
             modelCOMPRAS.finalizarCompratablaDetalleCompra(); //llamamos el metodo de guardar en detalle_compra
         }
         }catch(Exception e){
