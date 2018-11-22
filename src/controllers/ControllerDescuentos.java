@@ -161,7 +161,7 @@ public class ControllerDescuentos {
     /**
      * Metodo que limpiara las cajas de texto para ingresar nuevo datos.
      */
-    public void nuevo_proveedores() {
+    public void nuevo_Descuentos() {
         viewDescuentos.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
         viewDescuentos.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
         //limpiar cada caja de la Interfaz 
@@ -172,7 +172,7 @@ public class ControllerDescuentos {
         cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
     }
 
-    public void modificar_proveedores() {
+    public void modificar_Descuentos() {
         viewDescuentos.jb_guardar.setEnabled(true);//El boton guardar aparecera habilitado
         viewDescuentos.jb_modificar.setEnabled(false);//El boton modificar aparecera inhabilitado
         //limpiar cada caja de la Interfaz 
@@ -187,15 +187,15 @@ public class ControllerDescuentos {
         // si la variable verificar es igual a 0 se llama al metodo de guardar Nuevo
         if (modelDescuentos.getVerificar() == 1) {
             // darle el valor a las variables
-            modelDescuentos.setId(viewDescuentos.jtf_codigo_descuento.getText());
-            modelDescuentos.setNombre(viewDescuentos.jtf_porcentaje.getText());
-            modelDescuentos.setAp_pat(viewDescuentos.jtf_cantidad_puntos.getText());
+            modelDescuentos.setCodigo_descuento(viewDescuentos.jtf_codigo_descuento.getText());
+            modelDescuentos.setPorcentaje(viewDescuentos.jtf_porcentaje.getText());
+            modelDescuentos.setCantidad_puntos(viewDescuentos.jtf_cantidad_puntos.getText());
             modelDescuentos.Guardar_Nuevo(); // metodo de  insertar nuevo registro           
         } else {
             // darle el valor a las variables
-            modelDescuentos.setId(viewDescuentos.jtf_codigo_descuento.getText());
-            modelDescuentos.setNombre(viewDescuentos.jtf_porcentaje.getText());
-            modelDescuentos.setAp_pat(viewDescuentos.jtf_cantidad_puntos.getText());
+            modelDescuentos.setCodigo_descuento(viewDescuentos.jtf_codigo_descuento.getText());
+            modelDescuentos.setPorcentaje(viewDescuentos.jtf_porcentaje.getText());
+            modelDescuentos.setCantidad_puntos(viewDescuentos.jtf_cantidad_puntos.getText());
             modelDescuentos.Guardar_Modificado();// metodo de  Modificar el registro
         }
         //LIMPIAR TABLA 
@@ -209,6 +209,3 @@ public class ControllerDescuentos {
 }
 
 
-    }
-
-}
