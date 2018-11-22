@@ -215,10 +215,13 @@ public class ControllerCOMPRAS {
         viewCOMPRAS.jt_vista.setEnabled(false);
     }
     public void TotalProducto(){
+        try{
         modelCOMPRAS.setCantidad_compra(Float.parseFloat(viewCOMPRAS.jtf_cantidad.getText()));
         modelCOMPRAS.setPrecio_compra(Float.parseFloat(viewCOMPRAS.jtf_precio.getText()));
         modelCOMPRAS.TotalCompraProducto();
         viewCOMPRAS.jtf_total.setText(Float.toString(modelCOMPRAS.getTotal_por_producto()));
+        }catch(Exception e){
+        }
     }
     public void llenadoTabla(){
         try{
