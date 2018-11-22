@@ -249,7 +249,7 @@ public class ModelDescuentos {
         Codigo_descuento = this.getCodigo_descuento();
         Porcentaje = this.getPorcentaje();
         Cantidad_puntos = this.getCantidad_puntos();
-            int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de Guardar el NUEVO registro?");
+        int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de Guardar el NUEVO registro?");
 
         if (JOptionPane.OK_OPTION == confirmar) {
             try {
@@ -262,26 +262,26 @@ public class ModelDescuentos {
         }
     }
 //nuevo
+
     public void Guardar_Modificado() {
         //cada variable obtendra el valor actual de las cajas de texto 
-         Codigo_descuento = this.getCodigo_descuento();
+        Codigo_descuento = this.getCodigo_descuento();
         Porcentaje = this.getPorcentaje();
         Cantidad_puntos = this.getCantidad_puntos();
 
-        
         int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de MODIFICAR registro?");
-        
-        if(JOptionPane.OK_OPTION==confirmar) {
-            try{
-               st.executeUpdate("UPDATE descuentos SET porcentaje='"+Porcentaje+"',cantidad_puntos='"+Cantidad_puntos+"'WHERE cantidad_putos='"+Cantidad_puntos+"';");
-               JOptionPane.showMessageDialog(null,"El registro se modifico correctamente");
-            } catch(Exception err) 
-            { 
-                JOptionPane.showMessageDialog(null,"Error Nuevo no se puede guardar "+err.getMessage()); 
+
+        if (JOptionPane.OK_OPTION == confirmar) {
+            try {
+                st.executeUpdate("UPDATE descuentos SET porcentaje='" + Porcentaje + "',cantidad_puntos='" + Cantidad_puntos + "'WHERE codigo_descuento='" + Codigo_descuento + "';");
+                JOptionPane.showMessageDialog(null, "El registro se modifico correctamente");
+            } catch (Exception err) {
+                JOptionPane.showMessageDialog(null, "Error Nuevo no se puede guardar " + err.getMessage());
             }
         }
     }
-   //Metodo mostar
+    //Metodo mostar
+
     public void mostrar() {
         ResultSet rs = Database.getTabla("SELECT * FROM descuentos;");
         modelo_Descuentos.setColumnIdentifiers(new Object[]{"Codigo Descuento", "Porcentaje", "Cantidad de Puntos"});
