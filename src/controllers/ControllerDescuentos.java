@@ -66,17 +66,37 @@ public class ControllerDescuentos {
         }
 
     };
+ ActionListener actionListener = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        }
+    };
+  /**
+     * Busar solo con un compo, no es necesario el metodo de filtro toda la
+     * accion de buscar esta dentro del evento keyListener
+     */
+    KeyListener key = new KeyListener() {
+        @Override
+        public void keyTyped(KeyEvent e) {
+            if (e.getSource() == viewDescuentos.jtf_buscar) {
+                modelDescuentos.setTrsFiltro(new TableRowSorter(viewDescuentos.jt_vista.getModel()));
+                viewDescuentos.jt_vista.setRowSorter(modelDescuentos.getTrsFiltro());
+            }
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            modelDescuentos.setCadena(viewDescuentos.jtf_buscar.getText());
+            viewDescuentos.jtf_buscar.setText(modelDescuentos.getCadena());
+            modelDescuentos.getTrsFiltro().setRowFilter(RowFilter.regexFilter(viewDescuentos.jtf_buscar.getText(), modelDescuentos.getColumnaABuscar()));
+        }
+    };
     
 
     public ControllerDescuentos(ModelDescuentos modelDescuentos, ViewDescuentos viewDescuentos) {
