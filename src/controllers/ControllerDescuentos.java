@@ -37,6 +37,36 @@ public class ControllerDescuentos {
         }
 
     };
+       MouseListener ml = new MouseListener() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            if (e.getSource() == viewDescuentos.jt_vista) {
+                jt_vista_MouseClicked();
+            }
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+
+        }
+
+    };
+
     
     
     
