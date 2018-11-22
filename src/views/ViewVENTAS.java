@@ -519,7 +519,7 @@ public class ViewVENTAS extends javax.swing.JPanel {
         jl_subtotal1.setForeground(new java.awt.Color(153, 0, 153));
         jl_subtotal1.setText("aplicar  descuento.");
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/descuento.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/descuento_ventas.png"))); // NOI18N
 
         jl_subtotal2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jl_subtotal2.setText("codigo descuento:");
@@ -737,11 +737,9 @@ public class ViewVENTAS extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jl_iva)
                                     .addComponent(jtf_iva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jtf_subtotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jl_subtotal))
-                                .addGap(30, 30, 30))))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jtf_subtotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jl_subtotal))))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jp_proveedor1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -792,8 +790,6 @@ public class ViewVENTAS extends javax.swing.JPanel {
     public javax.swing.JLabel jl_subtotal5;
     public javax.swing.JLabel jl_telefono_proveedor;
     public javax.swing.JLabel jl_tipo_producto;
-    public javax.swing.JLabel jl_titulo;
-    public javax.swing.JLabel jl_titulo1;
     public javax.swing.JLabel jl_titulo2;
     public javax.swing.JLabel jl_total;
     public javax.swing.JLabel jl_total1;
@@ -802,8 +798,6 @@ public class ViewVENTAS extends javax.swing.JPanel {
     public javax.swing.JPanel jp_proveedor;
     public javax.swing.JPanel jp_proveedor1;
     public javax.swing.JPanel jp_table;
-    private javax.swing.JPanel jp_titulo;
-    private javax.swing.JPanel jp_titulo1;
     private javax.swing.JPanel jp_titulo2;
     public javax.swing.JTable jt_vista;
     public javax.swing.JTextField jtf_cantidad;

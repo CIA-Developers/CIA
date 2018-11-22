@@ -160,12 +160,9 @@
                                   <Component id="jtf_iva" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jtf_subtotal" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jl_subtotal" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="jtf_subtotal" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jl_subtotal" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -1324,7 +1321,7 @@
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/descuento.png"/>
+              <Image iconType="3" name="/Images/descuento_ventas.png"/>
             </Property>
           </Properties>
         </Component>
