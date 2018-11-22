@@ -280,6 +280,7 @@ public class ModelDescuentos {
             }
         }
     }
+    
     //Metodo mostar
 
     public void mostrar() {
