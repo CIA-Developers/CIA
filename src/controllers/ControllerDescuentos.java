@@ -24,6 +24,30 @@ public class ControllerDescuentos {
 
     ModelDescuentos modelDescuentos;
     ViewDescuentos viewDescuentos;
+     ActionListener list = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (e.getSource() == viewDescuentos.jb_nuevo) {
+                nuevo_Descuentos();
+            } else if (e.getSource() == viewDescuentos.jb_modificar) {
+                modificar_Descuentos();
+            } else if (e.getSource() == viewDescuentos.jb_guardar) {
+                Guardar();
+            }
+        }
+
+    };
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     public ControllerDescuentos(ModelDescuentos modelDescuentos, ViewDescuentos viewDescuentos) {
 
