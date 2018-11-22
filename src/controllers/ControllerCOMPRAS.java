@@ -51,6 +51,7 @@ public class ControllerCOMPRAS {
                 viewCOMPRAS.jtf_precio.setEditable(true);
                 //hablitar botones
                 viewCOMPRAS.jb_agregar.setEnabled(true);
+                viewCOMPRAS.jb_nuevo.setEnabled(false);
             }else if (e.getSource() == viewCOMPRAS.jcb_numero_sucursal){
                 viewCOMPRAS.jcb_numero_proveedor.setEnabled(true);//habilitando jcb numero de proveedor
                 viewCOMPRAS.jb_nuevo.setEnabled(false);
@@ -60,8 +61,10 @@ public class ControllerCOMPRAS {
                nuevo();
             }else if (e.getSource() == viewCOMPRAS.jb_eliminar){
                eliminar();
+               limpiarSinTabla();
             }else if (e.getSource() == viewCOMPRAS.jb_modificar){
                modificar();
+               limpiarSinTabla();
             }
             else if (e.getSource() == viewCOMPRAS.jb_realizar_compra){
                realizarCompra();
@@ -185,6 +188,9 @@ public class ControllerCOMPRAS {
         viewCOMPRAS.jtf_precio.setText(viewCOMPRAS.jt_vista.getValueAt(modelCOMPRAS.getRec(), 4).toString());
         viewCOMPRAS.jtf_cantidad.setText(viewCOMPRAS.jt_vista.getValueAt(modelCOMPRAS.getRec(), 5).toString());
         viewCOMPRAS.jtf_total.setText(viewCOMPRAS.jt_vista.getValueAt(modelCOMPRAS.getRec(), 6).toString());
+        viewCOMPRAS.jb_modificar.setEnabled(true);
+        viewCOMPRAS.jb_eliminar.setEnabled(true);
+        viewCOMPRAS.jb_agregar.setEnabled(false);
     }
     
     /**
@@ -216,9 +222,9 @@ public class ControllerCOMPRAS {
     }
     public void llenadoTabla(){
         try{
-            viewCOMPRAS.jb_modificar.setEnabled(true);
+            viewCOMPRAS.jb_modificar.setEnabled(false);
             viewCOMPRAS.jb_nuevo.setEnabled(true);
-            viewCOMPRAS.jb_eliminar.setEnabled(true);
+            viewCOMPRAS.jb_eliminar.setEnabled(false);
             viewCOMPRAS.jb_realizar_compra.setEnabled(true);
             viewCOMPRAS.jcb_numero_sucursal.setEnabled(false);
             viewCOMPRAS.jcb_numero_proveedor.setEnabled(false);
@@ -253,6 +259,31 @@ public class ControllerCOMPRAS {
      * metodo para agregar un nuevo producto a compras
      * limpiara las cajas para poder agregar un nuevo producto
      */
+    public void limpiar(){
+        viewCOMPRAS.jtf_nombre_proveedor.setText(" ");
+        viewCOMPRAS.jtf_telefono_proveedor.setText("  ");
+        viewCOMPRAS.jtf_nombre_producto.setText("  ");
+        viewCOMPRAS.jtf_tipo_producto.setText(" ");
+        viewCOMPRAS.jtf_marca_producto.setText(" ");
+        viewCOMPRAS.jtf_cantidad.setText("0");
+        viewCOMPRAS.jtf_precio.setText("0.0");
+        viewCOMPRAS.jtf_total.setText("0.0");
+        //LIMPIAR TABLA 
+        for (int i = 0; i <  viewCOMPRAS.jt_vista.getRowCount(); i++) {
+           modelCOMPRAS.getModel_compras().removeRow(i);
+            i-=1;
+        }
+    }
+    public void limpiarSinTabla(){
+        viewCOMPRAS.jtf_nombre_proveedor.setText(" ");
+        viewCOMPRAS.jtf_telefono_proveedor.setText("  ");
+        viewCOMPRAS.jtf_nombre_producto.setText("  ");
+        viewCOMPRAS.jtf_tipo_producto.setText(" ");
+        viewCOMPRAS.jtf_marca_producto.setText(" ");
+        viewCOMPRAS.jtf_cantidad.setText("0");
+        viewCOMPRAS.jtf_precio.setText("0.0");
+        viewCOMPRAS.jtf_total.setText("0.0");
+    }
     public void nuevo(){
         viewCOMPRAS.jtf_nombre_proveedor.setText(" ");
         viewCOMPRAS.jtf_telefono_proveedor.setText("  ");
@@ -282,7 +313,7 @@ public class ControllerCOMPRAS {
         modelCOMPRAS.importe();
         viewCOMPRAS.jtf_importe.setText(Float.toString(modelCOMPRAS.getImporte()));
         viewCOMPRAS.jtf_iva.setText(Float.toString(modelCOMPRAS.getIva()));
-        viewCOMPRAS.jtf_subtotal.setText(Float.toString(modelCOMPRAS.getSubtotal()));  
+        viewCOMPRAS.jtf_subtotal.setText(Float.toString(modelCOMPRAS.getSubtotal())); 
     }
     /**
      * metodo que agregara  el registro modificado 
@@ -319,13 +350,13 @@ public class ControllerCOMPRAS {
             modelCOMPRAS.setPrecio_compra(Float.parseFloat((String) viewCOMPRAS.jt_vista.getValueAt(i,4)));
             modelCOMPRAS.setTotal_por_producto(Float.parseFloat((String)viewCOMPRAS.jt_vista.getValueAt(i,6)));
             modelCOMPRAS.finalizarCompratablaDetalleCompra(); //llamamos el metodo de guardar en detalle_compra
-            
-            
-            
+               
         }
+        JOptionPane.showMessageDialog(null,"Se realizo la compra con exito");  
+        deshabiltarObjetos();
+        limpiar();
         }catch(Exception e){
                 JOptionPane.showMessageDialog(null,"error15 FinalizarCompras "+ e);
         } 
-        JOptionPane.showMessageDialog(null,"Se realizo la compra con exito");
     }
 }
