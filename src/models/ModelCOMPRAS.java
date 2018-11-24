@@ -50,7 +50,7 @@ public class ModelCOMPRAS {
     public String nombre_producto;// solo se obtendra este dato, no se almacenara
     public String tipo_producto;// solo se obtendra este dato, no se almacenara
     public String marca_producto;// solo se obtendra este dato, no se almacenara
-    public float cantidad_compra = 0.0f;
+    public int cantidad_compra = 0;
     public float precio_compra = 0.0f;
     public float total_por_producto=0.0f;
 
@@ -225,11 +225,11 @@ public class ModelCOMPRAS {
         this.marca_producto = marca_producto;
     }
 
-    public float getCantidad_compra() {
+    public int getCantidad_compra() {
         return cantidad_compra;
     }
 
-    public void setCantidad_compra(float cantidad_compra) {
+    public void setCantidad_compra(int cantidad_compra) {
         this.cantidad_compra = cantidad_compra;
     }
 
@@ -296,6 +296,26 @@ public class ModelCOMPRAS {
 //**********************ACTUALIZANDO STOCK*****************************
    public int stock_productos;
    public int stock_productos_sucursales;
+   public int existencias_sucursal;
+   public int existencia_general;
+
+    public int getExistencias_sucursal() {
+        return existencias_sucursal;
+    }
+
+    public void setExistencias_sucursal(int existencias_sucursal) {
+        this.existencias_sucursal = existencias_sucursal;
+    }
+
+    public int getExistencia_general() {
+        return existencia_general;
+    }
+
+    public void setExistencia_general(int existencia_general) {
+        this.existencia_general = existencia_general;
+    }
+   
+   
 
     public int getStock_productos() {
         return stock_productos;
@@ -456,7 +476,7 @@ public class ModelCOMPRAS {
       datos[2] = this.getNombre_producto();
       datos[3] = this.getMarca_producto();
       datos[4] = Float.toString(this.getPrecio_compra());
-      datos[5] = Float.toString(this.getCantidad_compra());
+      datos[5] = Integer.toString(this.getCantidad_compra());
       datos[6] = Float.toString(this.getTotal_por_producto());
       model_compras.addRow(datos);
     }
@@ -534,21 +554,29 @@ public class ModelCOMPRAS {
     }
      public void existencias(){
          try{
+          //existencias por sucursal
           cantidad_compra = this.getCantidad_compra();
-          rs = st.executeQuery("SELECT * FROM sucursal_productos;");//consulta a sucursales_productos
+          codigo_producto = this.getCodigo_producto();
+          num_sucursal = this.getNum_sucursal();
+          rs = st.executeQuery("SELECT * FROM sucursal_productos WHERE no_sucursal="+num_sucursal+" and codigo_producto='"+codigo_producto+"';");//consulta a sucursales_productos
           rs.next();
           stock_productos_sucursales =rs.getInt("existencias"); 
-          stock_productos_sucursales = (int)(stock_productos_sucursales + cantidad_compra);
-          st.executeUpdate("UPDATE sucursal_productos SET existencias='"+stock_productos_sucursales+"' WHERE no_sucursal='"+codigo_producto+"' and codigo_producto='"+num_sucursal+"';");
-      }catch(Exception e){
-          JOptionPane.showMessageDialog(null,"error17 FinalizarCompras "+ e);
-      }
-        try{//actualizando stock al realizar una compra
-          rs = st.executeQuery("SELECT * FROM productos;");//consulta a productos
+          existencias_sucursal = stock_productos_sucursales + cantidad_compra;//sumando a existencias
+          //revisar que los datos sean correctos
+          System.out.println("sucursal:"+stock_productos_sucursales);
+          System.out.println("sucursal:"+cantidad_compra);
+          System.out.println("sucursal:"+existencias_sucursal);
+          st.executeUpdate("UPDATE sucursal_productos SET existencias="+existencias_sucursal+" WHERE no_sucursal="+num_sucursal+" and codigo_producto='"+codigo_producto+"';");
+          //existencias generales en productos
+          rs = st.executeQuery("SELECT * FROM productos WHERE codigo_producto='"+codigo_producto+"';");//consulta a productos
           rs.next();
-          stock_productos=rs.getInt("existencia_total"); 
-          stock_productos = stock_productos + stock_productos_sucursales;
-           st.executeUpdate("UPDATE productos SET existencia_total='"+stock_productos+"' WHERE codigo_producto='"+codigo_producto+"';");
+          stock_productos=rs.getInt("existencia_total");
+          //revisar que los datos sean correctos
+          System.out.println("productos:"+stock_productos);
+          System.out.println("productos:"+cantidad_compra);
+          existencia_general = stock_productos + cantidad_compra;
+          System.out.println(existencia_general);
+          st.executeUpdate("UPDATE productos SET existencia_total="+existencia_general+" WHERE codigo_producto='"+codigo_producto+"';");
       }catch(Exception e){
           JOptionPane.showMessageDialog(null,"error16 FinalizarCompras "+ e);
       }
