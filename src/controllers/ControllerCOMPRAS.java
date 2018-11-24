@@ -216,7 +216,7 @@ public class ControllerCOMPRAS {
     }
     public void TotalProducto(){
         try{
-        modelCOMPRAS.setCantidad_compra(Float.parseFloat(viewCOMPRAS.jtf_cantidad.getText()));
+        modelCOMPRAS.setCantidad_compra(Integer.parseInt(viewCOMPRAS.jtf_cantidad.getText()));
         modelCOMPRAS.setPrecio_compra(Float.parseFloat(viewCOMPRAS.jtf_precio.getText()));
         modelCOMPRAS.TotalCompraProducto();
         viewCOMPRAS.jtf_total.setText(Float.toString(modelCOMPRAS.getTotal_por_producto()));
@@ -239,7 +239,7 @@ public class ControllerCOMPRAS {
             modelCOMPRAS.setNombre_producto(viewCOMPRAS.jtf_nombre_producto.getText());
             modelCOMPRAS.setMarca_producto(viewCOMPRAS.jtf_marca_producto.getText());
             modelCOMPRAS.setPrecio_compra(Float.parseFloat(viewCOMPRAS.jtf_precio.getText()));
-            modelCOMPRAS.setCantidad_compra(Float.parseFloat(viewCOMPRAS.jtf_cantidad.getText()));
+            modelCOMPRAS.setCantidad_compra(Integer.parseInt(viewCOMPRAS.jtf_cantidad.getText()));
             modelCOMPRAS.setTotal_por_producto(Float.parseFloat(viewCOMPRAS.jtf_total.getText()));
             modelCOMPRAS.AgregarDatosCompra();
         }catch(Exception e){
@@ -349,12 +349,19 @@ public class ControllerCOMPRAS {
         for (int i = 0; i < viewCOMPRAS.jt_vista.getRowCount(); i++){
             modelCOMPRAS.setNumero_compra(Integer.parseInt((String) viewCOMPRAS.jt_vista.getValueAt(i,0)));
             modelCOMPRAS.setCodigo_producto(viewCOMPRAS.jt_vista.getValueAt(i,1).toString());
-            modelCOMPRAS.setCantidad_compra(Float.parseFloat((String) viewCOMPRAS.jt_vista.getValueAt(i,5)));
+            modelCOMPRAS.setCantidad_compra(Integer.parseInt((String) viewCOMPRAS.jt_vista.getValueAt(i,5)));
             modelCOMPRAS.setPrecio_compra(Float.parseFloat((String) viewCOMPRAS.jt_vista.getValueAt(i,4)));
             modelCOMPRAS.setTotal_por_producto(Float.parseFloat((String)viewCOMPRAS.jt_vista.getValueAt(i,6)));
-            modelCOMPRAS.finalizarCompratablaDetalleCompra(); //llamamos el metodo de guardar en detalle_compra
-               
+            modelCOMPRAS.finalizarCompratablaDetalleCompra(); //llamamos el metodo de guardar en detalle_compra   
         }
+        //Actualizar stock al realizar la compra
+        for (int i = 0; i < viewCOMPRAS.jt_vista.getRowCount(); i++){
+           modelCOMPRAS.setNum_sucursal(Integer.parseInt((String) viewCOMPRAS.jcb_numero_sucursal.getSelectedItem()));
+           modelCOMPRAS.setCodigo_producto(viewCOMPRAS.jt_vista.getValueAt(i,1).toString());
+           modelCOMPRAS.setCantidad_compra(Integer.parseInt((String) viewCOMPRAS.jt_vista.getValueAt(i,5))); 
+           modelCOMPRAS.existencias();   
+        }
+        JOptionPane.showMessageDialog(null,"Agregando compra");
         JOptionPane.showMessageDialog(null,"Se realizo la compra con exito");  
         deshabiltarObjetos();
         limpiar();
