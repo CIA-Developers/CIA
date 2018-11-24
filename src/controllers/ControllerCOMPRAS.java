@@ -365,6 +365,9 @@ public class ControllerCOMPRAS {
         JOptionPane.showMessageDialog(null,"Se realizo la compra con exito");  
         deshabiltarObjetos();
         limpiar();
+        viewCOMPRAS.jtf_importe.setText("0.0");
+        viewCOMPRAS.jtf_iva.setText("0.0");
+        viewCOMPRAS.jtf_subtotal.setText("0.0"); 
         }catch(Exception e){
                 JOptionPane.showMessageDialog(null,"error15 FinalizarCompras "+ e);
         } 
