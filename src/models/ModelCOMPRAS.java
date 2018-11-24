@@ -531,6 +531,11 @@ public class ModelCOMPRAS {
           }
       }
     }
+    /**
+     * este metodo guardara en la base de datos los datos correspondientes en detalle compra
+     * 1. se le agrega a cada variable el valor correspondiente para despues agregarlo a la base de datos
+     * 2. se hace la consulta para insertar datos
+     */
      public void finalizarCompratablaDetalleCompra(){
         try{//se guardara en la tabla detalle_compra
             Connection cn = getConexion();
@@ -552,7 +557,12 @@ public class ModelCOMPRAS {
             JOptionPane.showMessageDialog(null,"error13 FinalizarCompras "+ e);
       }    
     }
-     public void existencias(){
+     /**
+      * este metodo actuliza las existencias sumando a las exitencias actuales las nuevas
+      * al relializar un compra, estos cambios se agregan en la tabla de sucursal_productos y en 
+      * productos que es la suma general de cada productos 
+      */
+    public void existencias(){
          try{
           //existencias por sucursal
           cantidad_compra = this.getCantidad_compra();
