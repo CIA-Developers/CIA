@@ -334,13 +334,13 @@ public class ControllerCOMPRAS {
      */
     public void realizarCompra(){
         try{
-        // se guarda en Compras **agregando datos para guardar
-        modelCOMPRAS.setId_proveedor(Integer.parseInt((String) viewCOMPRAS.jcb_numero_proveedor.getSelectedItem()));
-        modelCOMPRAS.setImporte(Float.parseFloat(viewCOMPRAS.jtf_importe.getText()));
-        modelCOMPRAS.setIva(Float.parseFloat(viewCOMPRAS.jtf_iva.getText()));
-        modelCOMPRAS.setSubtotal(Float.parseFloat(viewCOMPRAS.jtf_subtotal.getText()));
-        modelCOMPRAS.setNum_sucursal(Integer.parseInt((String) viewCOMPRAS.jcb_numero_sucursal.getSelectedItem()));
-        modelCOMPRAS.finalizarCompratablaCompra();//llamamos al metodo de guardar en compra 
+            // se guarda en Compras **agregando datos para guardar
+            modelCOMPRAS.setId_proveedor(Integer.parseInt((String) viewCOMPRAS.jcb_numero_proveedor.getSelectedItem()));
+            modelCOMPRAS.setImporte(Float.parseFloat(viewCOMPRAS.jtf_importe.getText()));
+            modelCOMPRAS.setIva(Float.parseFloat(viewCOMPRAS.jtf_iva.getText()));
+            modelCOMPRAS.setSubtotal(Float.parseFloat(viewCOMPRAS.jtf_subtotal.getText()));
+            modelCOMPRAS.setNum_sucursal(Integer.parseInt((String) viewCOMPRAS.jcb_numero_sucursal.getSelectedItem()));
+            modelCOMPRAS.finalizarCompratablaCompra();//llamamos al metodo de guardar en compra 
         }catch(Exception e){
                 JOptionPane.showMessageDialog(null,"error14 FinalizarCompras "+ e);
           } 
@@ -365,9 +365,13 @@ public class ControllerCOMPRAS {
         JOptionPane.showMessageDialog(null,"Se realizo la compra con exito");  
         deshabiltarObjetos();
         limpiar();
+        viewCOMPRAS.jcb_rfc.setEnabled(true);
+        viewCOMPRAS.jtf_nombre_empleado.setText(" ");
         viewCOMPRAS.jtf_importe.setText("0.0");
         viewCOMPRAS.jtf_iva.setText("0.0");
-        viewCOMPRAS.jtf_subtotal.setText("0.0"); 
+        viewCOMPRAS.jtf_subtotal.setText("0.0");
+        modelCOMPRAS.numeroCompras();
+        viewCOMPRAS.jtf_numero_compra.setText(Integer.toString(modelCOMPRAS.getNumero_compra()));
         }catch(Exception e){
                 JOptionPane.showMessageDialog(null,"error15 FinalizarCompras "+ e);
         } 
