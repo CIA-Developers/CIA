@@ -81,6 +81,7 @@ public class ModelPromociones {
     private String descuento;
     private String precion_descuento;
     private String unidad_medida;
+    private String codigo_producto;
     private String fecha_inicio;
     private String fecha_final;
 
@@ -131,6 +132,14 @@ public class ModelPromociones {
     public void setUnidad_medida(String unidad_medida) {
         this.unidad_medida = unidad_medida;
     }
+        public String getCodigo_producto() {
+        return codigo_producto;
+    }
+
+    public void setCodigo_producto(String unidad_medida) {
+        this.codigo_producto = codigo_producto;
+    }
+
 
     public String getFecha_inicio() {
         return fecha_inicio;
@@ -147,6 +156,8 @@ public class ModelPromociones {
     public void setFecha_final(String fecha_final) {
         this.fecha_final = fecha_final;
     }
+    
+    
     public String Limpiar = " ";
     public int codigo = 0;
 
@@ -185,8 +196,7 @@ public class ModelPromociones {
         try {
             conexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia", "root", "");
             st = conexion.createStatement();
-            rs = st.executeQuery("SELECT * select promociones.id_promociones,causa_promocion, desc_promocion,precio_descuento, unidad_medida, promocion_prod.codigo_producto, promocion_prod.fecha_inicio, promocion_prod.fecha_final from promociones inner join promocion_prod on promociones.id_promociones = promocion_prod.id_promociones;");
-
+            rs = st.executeQuery("SELECT promociones.id_promociones,causa_promocion, desc_promocion,precio_descuento, promociones.unidad_medida, promocion_prod.codigo_producto, promocion_prod.fecha_inicio, promocion_prod.fecha_final from promociones inner join promocion_prod on promociones.id_promociones = promocion_prod.id_promociones;");
             rs.first();
 
         } catch (SQLException err) {
@@ -197,18 +207,17 @@ public class ModelPromociones {
 
     public void mostrar() {
         ResultSet rs = Database.getTabla("SELECT promociones.id_promociones,causa_promocion, desc_promocion,precio_descuento, promociones.unidad_medida, promocion_prod.codigo_producto, promocion_prod.fecha_inicio, promocion_prod.fecha_final from promociones inner join promocion_prod on promociones.id_promociones = promocion_prod.id_promociones;");
-        modelo_promocion.setColumnIdentifiers(new Object[]{"No promocion", "Causa_promocion", "Descuento_promocion", "precio_descuento", "unidad_medida"});
+        modelo_promocion.setColumnIdentifiers(new Object[]{"No promocion", "Causa", "Descuento", "precio_descuento", "unidad de medida", "codigo del producto", "fecha_inicio", "fecha_final"});
         try {
             while (rs.next()) {
                 // añade los resultado a al modelo de tabla 
                 modelo_promocion.addRow(new Object[]{rs.getString("promociones.id_promociones"),
-                    rs.getString("promociones.causa_promocion"),
-                    rs.getString("promociones.desc_promocion"),
-                    rs.getString("promociones.precio_descuento"),
-                    rs.getString("promociones.unidad_medida"),
-                     rs.getString("promociones.precion_descuento"),
+                    rs.getString("causa_promocion"),
+                    rs.getString("desc_promocion"),
+                    rs.getString("precio_descuento"),
                     rs.getString("unidad_medida"),
-                    rs.getString("fecha-inicio"),
+                    rs.getString("codigo_producto"),
+                    rs.getString("fecha_inicio"),
                     rs.getString("fecha_final")});
             }
         } catch (Exception e) {
