@@ -26,12 +26,12 @@ public class ModelPromociones {
 
     DefaultTableModel modelo_promocion = new DefaultTableModel(); //la variable modelo almacenara los tados de la tabla
 
-    public DefaultTableModel getModelo_sucursal() {
+    public DefaultTableModel getModelo_promocion() {
         return modelo_promocion;
     }
 
-    public void setModelo_sucursal(DefaultTableModel modelo_sucursal) {
-        this.modelo_promocion = modelo_sucursal;
+    public void setModelo_promocion(DefaultTableModel modelo_promocion) {
+        this.modelo_promocion = modelo_promocion;
     }
 
     public int rec;//Variable que tomara el valor seleccionado en la tabla 
@@ -185,7 +185,7 @@ public class ModelPromociones {
         try {
             conexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia", "root", "");
             st = conexion.createStatement();
-            rs = st.executeQuery("SELECT * from promociones;");
+            rs = st.executeQuery("SELECT * select promociones.id_promociones,causa_promocion, desc_promocion,precio_descuento, unidad_medida, promocion_prod.codigo_producto, promocion_prod.fecha_inicio, promocion_prod.fecha_final from promociones inner join promocion_prod on promociones.id_promociones = promocion_prod.id_promociones;");
 
             rs.first();
 
@@ -196,67 +196,23 @@ public class ModelPromociones {
     }
 
     public void mostrar() {
-        ResultSet rs = Database.getTabla("SELECT * FROM promociones;");
+        ResultSet rs = Database.getTabla("SELECT promociones.id_promociones,causa_promocion, desc_promocion,precio_descuento, promociones.unidad_medida, promocion_prod.codigo_producto, promocion_prod.fecha_inicio, promocion_prod.fecha_final from promociones inner join promocion_prod on promociones.id_promociones = promocion_prod.id_promociones;");
         modelo_promocion.setColumnIdentifiers(new Object[]{"No promocion", "Causa_promocion", "Descuento_promocion", "precio_descuento", "unidad_medida"});
         try {
             while (rs.next()) {
                 // añade los resultado a al modelo de tabla 
-                modelo_promocion.addRow(new Object[]{rs.getString("no_promocion"),
-                    rs.getString("causa"),
-                    rs.getString("descuento"),
-                    rs.getString("precio_descuento"),
-                    rs.getString("unidad_medida")});
+                modelo_promocion.addRow(new Object[]{rs.getString("promociones.id_promociones"),
+                    rs.getString("promociones.causa_promocion"),
+                    rs.getString("promociones.desc_promocion"),
+                    rs.getString("promociones.precio_descuento"),
+                    rs.getString("promociones.unidad_medida"),
+                     rs.getString("promociones.precion_descuento"),
+                    rs.getString("unidad_medida"),
+                    rs.getString("fecha-inicio"),
+                    rs.getString("fecha_final")});
             }
         } catch (Exception e) {
             System.out.println(e);
         }
     }
-
-    //*****************METODOS DE BOTONES Nuevo, Borrar, Guardar y Modificar**************************
-    public void Guardar_Nuevo() {
-        //cada variable obtendra el valor actual de las cajas de texto 
-        no_promocion = this.getNo_promocion();
-        causa = this.getCausa();
-        descuento = this.getDescuento();
-        precion_descuento = this.getPrecion_descuento();
-        unidad_medida = this.getUnidad_medida();
-        fecha_inicio = this.getFecha_inicio();
-        fecha_final = this.getFecha_final();
-        
-    int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de Guardar el NUEVO registro?");
-
-    if (JOptionPane.OK_OPTION == confirmar
-
-        ) {
-            try {
-            st.executeUpdate("insert into prociones(id_promociones,causa_promocion,des_promocion,precio_descuento,unidad_medida) values"
-                    + "('" + no_promocion + "','" + causa + "','" + descuento + "','" + precion_descuento + "','" + unidad_medida + "');");
-
-            JOptionPane.showMessageDialog(null, "Guardado con exito ");
-        } catch (Exception err) {
-            JOptionPane.showMessageDialog(null, "Error Nuevo no se puede guardar " + err.getMessage());
-        }
-    }
-    }   public void Guardar_Modificado() {
-        //cada variable obtendra el valor actual de las cajas de texto 
-        no_promocion = this.getNo_promocion();
-        causa = this.getCausa();
-        descuento = this.getDescuento();
-        precion_descuento = this.getPrecion_descuento();
-        unidad_medida = this.getUnidad_medida();
-        fecha_inicio = this.getFecha_inicio();
-        fecha_final = this.getFecha_final();
-
-        int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de MODIFICAR registro?");
-
-        if (JOptionPane.OK_OPTION == confirmar) {
-            try {
-                st.executeUpdate("UPDATE sucursal SET causa='" + causa + "',descuento='" + descuento+ "',precion_descuento='" + precion_descuento + "',unidad_medida='" + unidad_medida +  "'WHERE id_promociones='" + no_promocion + "';");
-                JOptionPane.showMessageDialog(null, "El registro se modifico correctamente");
-            } catch (Exception err) {
-                JOptionPane.showMessageDialog(null, "Error Nuevo no se puede guardar " + err.getMessage());
-            }
-        }
-    }
 }
-//nuevo

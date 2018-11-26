@@ -80,17 +80,16 @@ public class ControllerPromociones {
         this.viewPromociones.jtf_buscar.addKeyListener(key); //agregar elevento de keylistener en la tabla
 
         ConexionBD();
-        cajas_deshabilitadas();
+
     }
 
     public void ConexionBD() {
         modelPromociones.Conectar();
         modelPromociones.mostrar();
-        viewPromociones.jt_vista.setModel(modelPromociones.getModelo_sucursal()); //asignar a la tabla los valores correspondientes
+        viewPromociones.jt_vista.setModel(modelPromociones.getModelo_promocion()); //asignar a la tabla los valores correspondientes
     }
 
     public void jt_vista_MouseClicked() {
-        cajas_deshabilitadas(); // cuando se haga clic en la tabla, las cajas se volveran a deshabilitar 
         modelPromociones.setRec(viewPromociones.jt_vista.getSelectedRow());//a la variable se le asigna el elemento seleccionado en la tabla
         viewPromociones.jtf_no_promocion.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 0).toString());
         viewPromociones.jtf_calle1.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 1).toString());
@@ -99,73 +98,6 @@ public class ControllerPromociones {
         viewPromociones.jtf_telefono1.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 4).toString());
     
     }
-
-    public void cajas_deshabilitadas() {
-        viewPromociones.jtf_no_promocion.setEditable(false);
-        viewPromociones.jtf_calle1.setEditable(false);
-        viewPromociones.jtf_colonia1.setEditable(false);
-        viewPromociones.jtf_telefono1.setEditable(false);
-    }
-
-    public void cajas_habilitadas() {
-        viewPromociones.jtf_no_promocion.setEditable(false);
-        viewPromociones.jtf_calle1.setEditable(false);
-        viewPromociones.jtf_colonia1.setEditable(false);
-        viewPromociones.jtf_telefono1.setEditable(false);
-    }
-
-    //***************** BOTONES Nuevo, Borrar, Guardar y Modificar**************************
-    /**
-     * Metodo que limpiara las cajas de texto para ingresar nuevo datos.
-     */
-    public void nuevo_sucursales() {
-
-        //limpiar cada caja de la Interfaz 
-        viewPromociones.jtf_no_promocion.setText(Integer.toString(modelPromociones.getCodigo()));// la caja de texto CODIGO_PRODUCTO recibe el valor de cero
-        viewPromociones.jtf_calle1.setText(modelPromociones.getLimpiar());
-        viewPromociones.jtf_colonia1.setText(modelPromociones.getLimpiar());
-        viewPromociones.jtf_numero1.setText(modelPromociones.getLimpiar());
-        viewPromociones.jtf_telefono1.setText(modelPromociones.getLimpiar());
-
-        cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
-    }
-
-    public void modificar_sucursales() {
-
-        viewPromociones.jtf_calle1.setEditable(true);
-        viewPromociones.jtf_colonia1.setEditable(true);
-        viewPromociones.jtf_telefono1.setEditable(true);
-    }
-
-    public void Guardar() {
-        // si la variable verificar es igual a 0 se llama al metodo de guardar Nuevo
-        if (modelPromociones.getVerificar() == 1) {
-            // darle el valor a las variables
-            modelPromociones.setNo_promocion(viewPromociones.jtf_no_promocion.getText());
-            modelPromociones.setCausa(viewPromociones.jtf_calle1.getText());
-            modelPromociones.setDescuento(viewPromociones.jtf_colonia1.getText());
-            modelPromociones.setPrecion_descuento(viewPromociones.jtf_numero1.getText());
-            modelPromociones.setUnidad_medida(viewPromociones.jtf_telefono1.getText());
-            modelPromociones.Guardar_Nuevo(); // metodo de  insertar nuevo registro           
-        } else {
-            // darle el valor a las variables
-            modelPromociones.setNo_promocion(viewPromociones.jtf_no_promocion.getText());
-            modelPromociones.setCausa(viewPromociones.jtf_calle1.getText());
-            modelPromociones.setDescuento(viewPromociones.jtf_colonia1.getText());
-            modelPromociones.setPrecion_descuento(viewPromociones.jtf_numero1.getText());
-            modelPromociones.setUnidad_medida(viewPromociones.jtf_telefono1.getText());
-
-            modelPromociones.Guardar_Modificado();// metodo de  Modificar el registro
-        }
-        //LIMPIAR TABLA 
-        for (int i = 0; i < viewPromociones.jt_vista.getRowCount(); i++) {
-            modelPromociones.getModelo_sucursal().removeRow(i);
-            i -= 1;
-        }
-        //mostrar los nuevos datos 
-        modelPromociones.mostrar();
-    }
 }
-
 
     
