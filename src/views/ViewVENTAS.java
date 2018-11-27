@@ -29,8 +29,8 @@ public class ViewVENTAS extends javax.swing.JPanel {
 
         jp_titulo2 = new javax.swing.JPanel();
         jl_titulo2 = new javax.swing.JLabel();
-        jl_fecha = new javax.swing.JLabel();
-        jl_hora = new javax.swing.JLabel();
+        fecha = new rojeru_san.RSLabelFecha();
+        hora = new rojeru_san.RSLabelHora();
         jp_datos = new javax.swing.JPanel();
         jl_empleado = new javax.swing.JLabel();
         jl_numero_compras = new javax.swing.JLabel();
@@ -111,13 +111,12 @@ public class ViewVENTAS extends javax.swing.JPanel {
         jl_titulo2.setForeground(new java.awt.Color(102, 102, 102));
         jl_titulo2.setText("Ventas");
 
-        jl_fecha.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
-        jl_fecha.setForeground(new java.awt.Color(0, 0, 102));
-        jl_fecha.setText("año-mes-dia");
+        fecha.setForeground(new java.awt.Color(0, 0, 153));
+        fecha.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        fecha.setFormato("dd-MM-yyyy");
 
-        jl_hora.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
-        jl_hora.setForeground(new java.awt.Color(0, 0, 102));
-        jl_hora.setText("00:00");
+        hora.setForeground(new java.awt.Color(0, 0, 153));
+        hora.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
 
         javax.swing.GroupLayout jp_titulo2Layout = new javax.swing.GroupLayout(jp_titulo2);
         jp_titulo2.setLayout(jp_titulo2Layout);
@@ -127,20 +126,19 @@ public class ViewVENTAS extends javax.swing.JPanel {
                 .addGap(46, 46, 46)
                 .addComponent(jl_titulo2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jl_fecha)
-                .addGap(18, 18, 18)
-                .addComponent(jl_hora)
-                .addGap(46, 46, 46))
+                .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(hora, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
         );
         jp_titulo2Layout.setVerticalGroup(
             jp_titulo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_titulo2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jp_titulo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(hora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jl_titulo2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jp_titulo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jl_fecha)
-                        .addComponent(jl_hora)))
+                    .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -645,15 +643,14 @@ public class ViewVENTAS extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jb_realizar_venta, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(jl_subtotal)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jtf_subtotal, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(jl_iva)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jtf_iva, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jl_subtotal)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jtf_subtotal, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jl_iva)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jtf_iva, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(51, 51, 51)
@@ -751,6 +748,8 @@ public class ViewVENTAS extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private rojeru_san.RSLabelFecha fecha;
+    private rojeru_san.RSLabelHora hora;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JButton jb_agregar;
     private javax.swing.JButton jb_aplicar_descuento;
@@ -773,8 +772,6 @@ public class ViewVENTAS extends javax.swing.JPanel {
     private javax.swing.JLabel jl_efectivo;
     public javax.swing.JLabel jl_eliminar;
     public javax.swing.JLabel jl_empleado;
-    public javax.swing.JLabel jl_fecha;
-    public javax.swing.JLabel jl_hora;
     public javax.swing.JLabel jl_importe;
     public javax.swing.JLabel jl_iva;
     public javax.swing.JLabel jl_marca_producto;
