@@ -67,7 +67,7 @@ public class ControllerPromociones {
             if (e.getSource() == viewPromociones.jtf_buscar) {
                 modelPromociones.setCadena(viewPromociones.jtf_buscar.getText());
                 viewPromociones.jtf_buscar.setText(modelPromociones.getCadena());
-         
+
             }
         }
     };
@@ -96,8 +96,9 @@ public class ControllerPromociones {
         viewPromociones.jtf_colonia1.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 2).toString());
         viewPromociones.jtf_numero1.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 3).toString());
         viewPromociones.jtf_telefono1.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 4).toString());
-    
+        viewPromociones.jtf_no_sucursal.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 5).toString());
+        viewPromociones.jtf_calle.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 6).toString());
+        viewPromociones.jtf_colonia.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 7).toString());
+
     }
 }
-
-    
