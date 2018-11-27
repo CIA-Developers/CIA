@@ -160,12 +160,12 @@ public class viewMenuEmpleadoCompras extends javax.swing.JFrame {
     private javax.swing.JLabel jl_CiaLogo;
     public javax.swing.JMenu jm_acciones;
     public javax.swing.JMenu jm_catalogos;
-    private javax.swing.JMenu jm_opciones;
+    public javax.swing.JMenu jm_opciones;
     public javax.swing.JMenuItem jmi_clientes;
     public javax.swing.JMenuItem jmi_compras;
     public javax.swing.JMenuItem jmi_productos;
     public javax.swing.JMenuItem jmi_proveedores;
-    private javax.swing.JMenuItem jmi_salir;
+    public javax.swing.JMenuItem jmi_salir;
     public javax.swing.JMenuItem jmi_sucursales;
     // End of variables declaration//GEN-END:variables
 }

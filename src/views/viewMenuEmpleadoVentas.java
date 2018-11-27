@@ -37,6 +37,7 @@ public class viewMenuEmpleadoVentas extends javax.swing.JFrame {
         jmi_productos = new javax.swing.JMenuItem();
         jm_acciones = new javax.swing.JMenu();
         jmi_ventas = new javax.swing.JMenuItem();
+        jmi_cotizacion = new javax.swing.JMenuItem();
         jm_opciones = new javax.swing.JMenu();
         jmi_salir = new javax.swing.JMenuItem();
 
@@ -84,6 +85,10 @@ public class viewMenuEmpleadoVentas extends javax.swing.JFrame {
         jmi_ventas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/Ventas.png"))); // NOI18N
         jmi_ventas.setText("VENTAS");
         jm_acciones.add(jmi_ventas);
+
+        jmi_cotizacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/Cotizar.png"))); // NOI18N
+        jmi_cotizacion.setText("COTIZACION");
+        jm_acciones.add(jmi_cotizacion);
 
         jMenuBar1.add(jm_acciones);
 
@@ -162,11 +167,12 @@ public class viewMenuEmpleadoVentas extends javax.swing.JFrame {
     private javax.swing.JLabel jl_CiaLogo;
     public javax.swing.JMenu jm_acciones;
     public javax.swing.JMenu jm_catalogos;
-    private javax.swing.JMenu jm_opciones;
+    public javax.swing.JMenu jm_opciones;
     public javax.swing.JMenuItem jmi_clientes;
+    public javax.swing.JMenuItem jmi_cotizacion;
     public javax.swing.JMenuItem jmi_productos;
     public javax.swing.JMenuItem jmi_proveedores;
-    private javax.swing.JMenuItem jmi_salir;
+    public javax.swing.JMenuItem jmi_salir;
     public javax.swing.JMenuItem jmi_sucursales;
     public javax.swing.JMenuItem jmi_ventas;
     // End of variables declaration//GEN-END:variables
