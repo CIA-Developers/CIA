@@ -36,13 +36,15 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
         jmi_empleados_ventas = new javax.swing.JMenuItem();
         jmi_sucursales = new javax.swing.JMenuItem();
         jmi_productos = new javax.swing.JMenuItem();
+        jm_detalles = new javax.swing.JMenu();
+        jmi_detallecompra = new javax.swing.JMenuItem();
+        jmi_detalleventa = new javax.swing.JMenuItem();
         jm_nueva_sucursal = new javax.swing.JMenu();
         jmi_agregar_Sucursal = new javax.swing.JMenuItem();
         jmi_descuentos = new javax.swing.JMenuItem();
         jmi_promociones = new javax.swing.JMenuItem();
-        jm_detalles = new javax.swing.JMenu();
-        jmi_detallecompra = new javax.swing.JMenuItem();
-        jmi_detalleventa = new javax.swing.JMenuItem();
+        jm_opciones = new javax.swing.JMenu();
+        jmi_salir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 153));
@@ -89,27 +91,6 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
 
         jmi_detalle_compra1.add(jm_catalogos);
 
-        jm_nueva_sucursal.setForeground(new java.awt.Color(255, 255, 255));
-        jm_nueva_sucursal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/opciones.png"))); // NOI18N
-        jm_nueva_sucursal.setText("Opciones ");
-
-        jmi_agregar_Sucursal.setBackground(new java.awt.Color(255, 255, 255));
-        jmi_agregar_Sucursal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/agregar.png"))); // NOI18N
-        jmi_agregar_Sucursal.setText("Agregar Nueva Sucursal ");
-        jm_nueva_sucursal.add(jmi_agregar_Sucursal);
-
-        jmi_descuentos.setBackground(new java.awt.Color(255, 255, 255));
-        jmi_descuentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/descuentos.png"))); // NOI18N
-        jmi_descuentos.setText("Descuentos");
-        jm_nueva_sucursal.add(jmi_descuentos);
-
-        jmi_promociones.setBackground(new java.awt.Color(255, 255, 255));
-        jmi_promociones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/promociones.png"))); // NOI18N
-        jmi_promociones.setText("Promociones");
-        jm_nueva_sucursal.add(jmi_promociones);
-
-        jmi_detalle_compra1.add(jm_nueva_sucursal);
-
         jm_detalles.setBackground(new java.awt.Color(0, 153, 204));
         jm_detalles.setForeground(new java.awt.Color(255, 255, 255));
         jm_detalles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/aceptar.png"))); // NOI18N
@@ -131,6 +112,36 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
         jm_detalles.add(jmi_detalleventa);
 
         jmi_detalle_compra1.add(jm_detalles);
+
+        jm_nueva_sucursal.setForeground(new java.awt.Color(255, 255, 255));
+        jm_nueva_sucursal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/accionesAdmin.png"))); // NOI18N
+        jm_nueva_sucursal.setText("Acciones");
+
+        jmi_agregar_Sucursal.setBackground(new java.awt.Color(255, 255, 255));
+        jmi_agregar_Sucursal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/agregar.png"))); // NOI18N
+        jmi_agregar_Sucursal.setText("Agregar Nueva Sucursal ");
+        jm_nueva_sucursal.add(jmi_agregar_Sucursal);
+
+        jmi_descuentos.setBackground(new java.awt.Color(255, 255, 255));
+        jmi_descuentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/descuentos.png"))); // NOI18N
+        jmi_descuentos.setText("Descuentos");
+        jm_nueva_sucursal.add(jmi_descuentos);
+
+        jmi_promociones.setBackground(new java.awt.Color(255, 255, 255));
+        jmi_promociones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/promociones.png"))); // NOI18N
+        jmi_promociones.setText("Promociones");
+        jm_nueva_sucursal.add(jmi_promociones);
+
+        jmi_detalle_compra1.add(jm_nueva_sucursal);
+
+        jm_opciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/opciones.png"))); // NOI18N
+        jm_opciones.setText("Opciones");
+
+        jmi_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/Salir.png"))); // NOI18N
+        jmi_salir.setText("Salir");
+        jm_opciones.add(jmi_salir);
+
+        jmi_detalle_compra1.add(jm_opciones);
 
         setJMenuBar(jmi_detalle_compra1);
 
@@ -203,6 +214,7 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
     public javax.swing.JMenu jm_catalogos;
     public javax.swing.JMenu jm_detalles;
     public javax.swing.JMenu jm_nueva_sucursal;
+    private javax.swing.JMenu jm_opciones;
     public javax.swing.JMenuItem jmi_agregar_Sucursal;
     public javax.swing.JMenuItem jmi_clientes;
     public javax.swing.JMenuItem jmi_descuentos;
@@ -214,6 +226,7 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
     public javax.swing.JMenuItem jmi_productos;
     public javax.swing.JMenuItem jmi_promociones;
     public javax.swing.JMenuItem jmi_proveedores;
+    private javax.swing.JMenuItem jmi_salir;
     public javax.swing.JMenuItem jmi_sucursales;
     // End of variables declaration//GEN-END:variables
 }
