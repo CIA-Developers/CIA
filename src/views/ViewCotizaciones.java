@@ -9,12 +9,12 @@ package views;
  *
  * @author Octaviano
  */
-public class ViewVENTAS extends javax.swing.JPanel {
+public class ViewCotizaciones extends javax.swing.JPanel {
 
     /**
      * Creates new form ViewVENTAS
      */
-    public ViewVENTAS() {
+    public ViewCotizaciones() {
         initComponents();
     }
 
@@ -32,8 +32,6 @@ public class ViewVENTAS extends javax.swing.JPanel {
         fecha = new rojeru_san.RSLabelFecha();
         hora = new rojeru_san.RSLabelHora();
         jp_datos = new javax.swing.JPanel();
-        jl_empleado = new javax.swing.JLabel();
-        jl_numero_compras = new javax.swing.JLabel();
         jl_cantidad = new javax.swing.JLabel();
         jtf_cantidad = new javax.swing.JTextField();
         jl_no_sucursal = new javax.swing.JLabel();
@@ -46,7 +44,6 @@ public class ViewVENTAS extends javax.swing.JPanel {
         jtf_nombre_cliente = new javax.swing.JTextField();
         jl_telefono_proveedor = new javax.swing.JLabel();
         jtf_puntos_acumulados = new javax.swing.JTextField();
-        jtf_numero_venta = new javax.swing.JTextField();
         jl_total = new javax.swing.JLabel();
         jtf_total = new javax.swing.JTextField();
         jp_productos = new javax.swing.JPanel();
@@ -59,9 +56,6 @@ public class ViewVENTAS extends javax.swing.JPanel {
         jtf_marca_producto = new javax.swing.JTextField();
         jcb_codigo_producto = new javax.swing.JComboBox<>();
         jcb_numero_sucursal = new javax.swing.JComboBox<>();
-        jcb_rfc = new javax.swing.JComboBox<>();
-        jl_nombre_empleado = new javax.swing.JLabel();
-        jtf_nombre_empleado = new javax.swing.JTextField();
         jb_agregar = new javax.swing.JButton();
         jb_nuevo = new javax.swing.JButton();
         jb_eliminar = new javax.swing.JButton();
@@ -95,8 +89,6 @@ public class ViewVENTAS extends javax.swing.JPanel {
         jtf_porcentaje = new javax.swing.JTextField();
         jl_descuento = new javax.swing.JLabel();
         jtf_descuento = new javax.swing.JTextField();
-        jl_puntos_ganados = new javax.swing.JLabel();
-        jtf_puntos_ganados = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(1150, 692));
@@ -109,7 +101,7 @@ public class ViewVENTAS extends javax.swing.JPanel {
 
         jl_titulo2.setFont(new java.awt.Font("Segoe UI", 0, 45)); // NOI18N
         jl_titulo2.setForeground(new java.awt.Color(102, 102, 102));
-        jl_titulo2.setText("Ventas");
+        jl_titulo2.setText("Cotizaciones");
 
         fecha.setForeground(new java.awt.Color(0, 0, 153));
         fecha.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
@@ -144,12 +136,6 @@ public class ViewVENTAS extends javax.swing.JPanel {
 
         jp_datos.setBackground(new java.awt.Color(255, 255, 255));
         jp_datos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14), new java.awt.Color(0, 153, 255))); // NOI18N
-
-        jl_empleado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jl_empleado.setText("Empleado:");
-
-        jl_numero_compras.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jl_numero_compras.setText("No. venta:");
 
         jl_cantidad.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jl_cantidad.setText("Cantiad venta:");
@@ -224,8 +210,6 @@ public class ViewVENTAS extends javax.swing.JPanel {
                     .addComponent(jtf_puntos_acumulados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        jtf_numero_venta.setEditable(false);
 
         jl_total.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jl_total.setText("Total   $:");
@@ -312,13 +296,6 @@ public class ViewVENTAS extends javax.swing.JPanel {
 
         jcb_numero_sucursal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
 
-        jcb_rfc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jl_nombre_empleado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jl_nombre_empleado.setText("Nombre:");
-
-        jtf_nombre_empleado.setEditable(false);
-
         javax.swing.GroupLayout jp_datosLayout = new javax.swing.GroupLayout(jp_datos);
         jp_datos.setLayout(jp_datosLayout);
         jp_datosLayout.setHorizontalGroup(
@@ -326,79 +303,59 @@ public class ViewVENTAS extends javax.swing.JPanel {
             .addGroup(jp_datosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jp_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jp_datosLayout.createSequentialGroup()
-                        .addComponent(jl_empleado)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jcb_rfc, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jl_numero_compras)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtf_numero_venta, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
                         .addComponent(jl_no_sucursal, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jcb_numero_sucursal, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jp_datosLayout.createSequentialGroup()
-                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jp_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jp_datosLayout.createSequentialGroup()
-                                .addComponent(jl_nombre_empleado)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jtf_nombre_empleado)))
+                        .addComponent(jcb_numero_sucursal, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jp_productos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
+                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_datosLayout.createSequentialGroup()
+                        .addComponent(jl_precio_compra)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jp_productos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_datosLayout.createSequentialGroup()
-                                .addComponent(jl_precio_compra)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jtf_precio, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_datosLayout.createSequentialGroup()
-                                .addComponent(jl_total)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jtf_total, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_datosLayout.createSequentialGroup()
-                                .addComponent(jl_cantidad)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jtf_cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(jtf_precio, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_datosLayout.createSequentialGroup()
+                        .addComponent(jl_total)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jtf_total, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_datosLayout.createSequentialGroup()
+                        .addComponent(jl_cantidad)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jtf_cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
         jp_datosLayout.setVerticalGroup(
             jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_datosLayout.createSequentialGroup()
+                .addGap(6, 6, 6)
                 .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jl_empleado)
-                    .addComponent(jl_numero_compras)
-                    .addComponent(jtf_numero_venta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jl_no_sucursal)
-                    .addComponent(jcb_numero_sucursal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jcb_rfc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14)
+                    .addComponent(jcb_numero_sucursal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_datosLayout.createSequentialGroup()
-                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jl_nombre_empleado)
-                            .addComponent(jtf_nombre_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jp_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(58, 58, 58))
                     .addGroup(jp_datosLayout.createSequentialGroup()
-                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jp_productos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jp_datosLayout.createSequentialGroup()
-                                .addGap(28, 28, 28)
-                                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jl_cantidad)
-                                    .addComponent(jtf_cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jl_precio_compra)
-                                    .addComponent(jtf_precio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jl_total)
-                                    .addComponent(jtf_total, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(27, 27, 27)
+                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jl_cantidad)
+                            .addComponent(jtf_cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jl_precio_compra)
+                            .addComponent(jtf_precio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jp_datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jl_total)
+                            .addComponent(jtf_total, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(jp_datosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jp_productos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jb_agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BotonAgregar.png"))); // NOI18N
@@ -486,7 +443,7 @@ public class ViewVENTAS extends javax.swing.JPanel {
         jb_realizar_venta.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jb_realizar_venta.setForeground(new java.awt.Color(255, 255, 255));
         jb_realizar_venta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Compra_venta.png"))); // NOI18N
-        jb_realizar_venta.setText("Realizar Venta...");
+        jb_realizar_venta.setText("Cotizar");
 
         jp_pago.setBackground(new java.awt.Color(255, 255, 255));
         jp_pago.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "pago", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(51, 153, 255))); // NOI18N
@@ -622,14 +579,6 @@ public class ViewVENTAS extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jl_puntos_ganados.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jl_puntos_ganados.setForeground(new java.awt.Color(0, 0, 153));
-        jl_puntos_ganados.setText("puntos ganados:");
-
-        jtf_puntos_ganados.setBackground(new java.awt.Color(153, 204, 255));
-        jtf_puntos_ganados.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jtf_puntos_ganados.setText("0");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -642,30 +591,24 @@ public class ViewVENTAS extends javax.swing.JPanel {
                         .addComponent(jp_pago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jb_realizar_venta, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jl_subtotal)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jtf_subtotal, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jl_iva)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jtf_iva, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(51, 51, 51)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jl_puntos_ganados, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jtf_puntos_ganados, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(133, 133, 133))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jl_subtotal)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jtf_subtotal, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jl_iva)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jtf_iva, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(53, 53, 53)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jtf_importe, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                         .addGap(46, 46, 46)
-                                        .addComponent(jl_importe)))
-                                .addGap(79, 79, 79))))
+                                        .addComponent(jl_importe))))
+                            .addComponent(jb_realizar_venta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(79, 79, 79))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jp_table, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -692,8 +635,8 @@ public class ViewVENTAS extends javax.swing.JPanel {
                 .addComponent(jp_titulo2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jp_datos, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jb_agregar)
@@ -713,37 +656,30 @@ public class ViewVENTAS extends javax.swing.JPanel {
                                 .addComponent(jb_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createSequentialGroup()
                                     .addGap(67, 67, 67)
-                                    .addComponent(jl_eliminar)))))
-                    .addComponent(jp_datos, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jl_eliminar))))))
                 .addGap(18, 18, 18)
                 .addComponent(jp_table, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jp_pago, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(58, 58, 58)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jtf_subtotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jl_subtotal))
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jl_iva)
+                            .addComponent(jtf_iva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jl_importe)
-                                .addGap(8, 8, 8)
-                                .addComponent(jtf_importe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jl_puntos_ganados))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(35, 35, 35)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jtf_subtotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jl_subtotal))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jl_iva)
-                                    .addComponent(jtf_iva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(32, 32, 32)
+                        .addComponent(jl_importe)
+                        .addGap(8, 8, 8)
+                        .addComponent(jtf_importe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(jb_realizar_venta, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jb_realizar_venta, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtf_puntos_ganados, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(23, Short.MAX_VALUE))
+                        .addComponent(jp_pago, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -761,7 +697,6 @@ public class ViewVENTAS extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> jcb_codigo_descuento;
     public javax.swing.JComboBox<String> jcb_codigo_producto;
     public javax.swing.JComboBox<String> jcb_numero_sucursal;
-    public javax.swing.JComboBox<String> jcb_rfc;
     public javax.swing.JComboBox<String> jcb_rfc_cliente;
     public javax.swing.JLabel jl_agregar;
     public javax.swing.JLabel jl_aplicar_descuentos;
@@ -772,21 +707,17 @@ public class ViewVENTAS extends javax.swing.JPanel {
     public javax.swing.JLabel jl_descuento;
     private javax.swing.JLabel jl_efectivo;
     public javax.swing.JLabel jl_eliminar;
-    public javax.swing.JLabel jl_empleado;
     public javax.swing.JLabel jl_importe;
     public javax.swing.JLabel jl_iva;
     public javax.swing.JLabel jl_marca_producto;
     public javax.swing.JLabel jl_modificar;
     public javax.swing.JLabel jl_no_sucursal;
-    public javax.swing.JLabel jl_nombre_empleado;
     public javax.swing.JLabel jl_nombre_producto;
     public javax.swing.JLabel jl_nombre_proveedor;
     public javax.swing.JLabel jl_nuevo;
-    public javax.swing.JLabel jl_numero_compras;
     public javax.swing.JLabel jl_numero_proveedor;
     public javax.swing.JLabel jl_porcentaje;
     public javax.swing.JLabel jl_precio_compra;
-    public javax.swing.JLabel jl_puntos_ganados;
     public javax.swing.JLabel jl_puntos_requeridos;
     public javax.swing.JLabel jl_subtotal;
     public javax.swing.JLabel jl_telefono_proveedor;
@@ -808,13 +739,10 @@ public class ViewVENTAS extends javax.swing.JPanel {
     public javax.swing.JTextField jtf_iva;
     public javax.swing.JTextField jtf_marca_producto;
     public javax.swing.JTextField jtf_nombre_cliente;
-    public javax.swing.JTextField jtf_nombre_empleado;
     public javax.swing.JTextField jtf_nombre_producto;
-    public javax.swing.JTextField jtf_numero_venta;
     public javax.swing.JTextField jtf_porcentaje;
     public javax.swing.JTextField jtf_precio;
     public javax.swing.JTextField jtf_puntos_acumulados;
-    public javax.swing.JTextField jtf_puntos_ganados;
     public javax.swing.JTextField jtf_puntos_requeridos;
     public javax.swing.JTextField jtf_subtotal;
     public javax.swing.JTextField jtf_tipo_producto;
