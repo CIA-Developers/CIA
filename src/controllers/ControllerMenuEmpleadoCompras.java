@@ -74,6 +74,7 @@ public class ControllerMenuEmpleadoCompras {
         viewMenuEmpleadosCompras.jmi_proveedores.addActionListener(actionListener);
         viewMenuEmpleadosCompras.jmi_sucursales.addActionListener(actionListener);
         viewMenuEmpleadosCompras.jmi_compras.addActionListener(actionListener);
+        viewMenuEmpleadosCompras.jmi_salir.addActionListener(actionListener);
     }
     private final ActionListener actionListener = new ActionListener(){
         @Override
@@ -89,7 +90,10 @@ public class ControllerMenuEmpleadoCompras {
            }
            else if (e.getSource() == viewMenuEmpleadosCompras.jmi_compras) {
                 jmi_compras_actionPerformed();
-           }
+           }else if (e.getSource() == viewMenuEmpleadosCompras.jmi_salir) {
+                modelMenuEmpleadosCompras.VentanaLogin();
+                viewMenuEmpleadosCompras.setVisible(false);
+            }
         }
     };
     /**

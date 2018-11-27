@@ -46,6 +46,7 @@ public class ControllerLogin {
         this.modelLogin = modelLogin;
         this.viewLogin = viewLogin;
         viewLogin.jb_aceptar.addActionListener(actionListener); //agrega el evento ActionListener 
+        viewLogin.jb_cancelar.addActionListener(actionListener); //agrega el evento ActionListener 
         //this.controllers = controllers;
         initComponets();
     }
@@ -61,6 +62,9 @@ public class ControllerLogin {
         public void actionPerformed(ActionEvent e) {
            if (e.getSource() == viewLogin.jb_aceptar) {
                opciones();
+           }else if (e.getSource() == viewLogin.jb_cancelar) {
+               viewLogin.setVisible(false);
+               System.exit(0);
            }
         }    
     };

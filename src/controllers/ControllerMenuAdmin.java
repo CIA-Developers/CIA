@@ -100,6 +100,7 @@ public final class ControllerMenuAdmin {
         viewMenuAdmin.jmi_detalleventa.addActionListener(actionListener);
         viewMenuAdmin.jmi_promociones.addActionListener(actionListener);
         viewMenuAdmin.jmi_descuentos.addActionListener(actionListener);
+        viewMenuAdmin.jmi_salir.addActionListener(actionListener);
     }
     /**
      * Evalua el componente que genero el evento y llama a un método en
@@ -130,6 +131,9 @@ public final class ControllerMenuAdmin {
                 jmi_promociones_actionPerformed();
             } else if (e.getSource() == viewMenuAdmin.jmi_descuentos) {
                 jmi_descuentos_actionPerformed();
+            }else if (e.getSource() == viewMenuAdmin.jmi_salir) {
+                ModelMenuAdmin.VentanaLogin();
+                viewMenuAdmin.setVisible(false);
             }
 
         }

@@ -5,10 +5,17 @@
  */
 package models;
 
+import controllers.ControllerLogin;
+import views.ViewLogin;
+
 /**
  *
  * @author Octaviano
  */
 public class ModelMenuEmpleadoVentas {
-    
+    public void VentanaLogin(){
+        ModelLogin modelLogin = new ModelLogin();
+        ViewLogin viewLogin = new ViewLogin();
+        ControllerLogin controllerLogin = new ControllerLogin(modelLogin,viewLogin/*,viewMenuAdmin*/ /*,controllersLogin*/);
+    }
 }

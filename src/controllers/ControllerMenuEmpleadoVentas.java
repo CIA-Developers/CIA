@@ -75,6 +75,7 @@ public class ControllerMenuEmpleadoVentas {
         viewMenuEmpleadosVentas.jmi_proveedores.addActionListener(actionListener);
         viewMenuEmpleadosVentas.jmi_sucursales.addActionListener(actionListener);
         viewMenuEmpleadosVentas.jmi_ventas.addActionListener(actionListener);
+        viewMenuEmpleadosVentas.jmi_salir.addActionListener(actionListener);
     }
     
     private final ActionListener actionListener = new ActionListener(){
@@ -91,7 +92,10 @@ public class ControllerMenuEmpleadoVentas {
            }
            else if (e.getSource() == viewMenuEmpleadosVentas.jmi_ventas) {
                 jmi_ventas_actionPerformed();
-           }
+           }else if (e.getSource() == viewMenuEmpleadosVentas.jmi_salir) {
+                modelMenuEmpleadosVentas.VentanaLogin();
+                viewMenuEmpleadosVentas.setVisible(false);
+            }
         }
           /**
     * Muestra el JPanel ViewClientes dentro del JFrame ViewMenuEmpleadosCompras, (incluido todo
