@@ -44,6 +44,7 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
         jmi_descuentos = new javax.swing.JMenuItem();
         jmi_promociones = new javax.swing.JMenuItem();
         jm_opciones = new javax.swing.JMenu();
+        jmi_respaldoBD = new javax.swing.JMenuItem();
         jmi_salir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -134,9 +135,16 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
 
         jmi_detalle_compra1.add(jm_nueva_sucursal);
 
+        jm_opciones.setForeground(new java.awt.Color(255, 255, 255));
         jm_opciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/opciones.png"))); // NOI18N
         jm_opciones.setText("Opciones");
 
+        jmi_respaldoBD.setBackground(new java.awt.Color(255, 255, 255));
+        jmi_respaldoBD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/RespaldoBD.png"))); // NOI18N
+        jmi_respaldoBD.setText("RespaldoBD");
+        jm_opciones.add(jmi_respaldoBD);
+
+        jmi_salir.setBackground(new java.awt.Color(255, 255, 255));
         jmi_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/Salir.png"))); // NOI18N
         jmi_salir.setText("Salir");
         jm_opciones.add(jmi_salir);
@@ -226,6 +234,7 @@ public class ViewMenuAdmin extends javax.swing.JFrame {
     public javax.swing.JMenuItem jmi_productos;
     public javax.swing.JMenuItem jmi_promociones;
     public javax.swing.JMenuItem jmi_proveedores;
+    private javax.swing.JMenuItem jmi_respaldoBD;
     public javax.swing.JMenuItem jmi_salir;
     public javax.swing.JMenuItem jmi_sucursales;
     // End of variables declaration//GEN-END:variables

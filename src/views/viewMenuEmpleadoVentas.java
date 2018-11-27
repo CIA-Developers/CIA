@@ -92,9 +92,11 @@ public class viewMenuEmpleadoVentas extends javax.swing.JFrame {
 
         jMenuBar1.add(jm_acciones);
 
+        jm_opciones.setForeground(new java.awt.Color(255, 255, 255));
         jm_opciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/opciones.png"))); // NOI18N
         jm_opciones.setText("Opciones");
 
+        jmi_salir.setBackground(new java.awt.Color(255, 255, 255));
         jmi_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu/Salir.png"))); // NOI18N
         jmi_salir.setText("Salir");
         jm_opciones.add(jmi_salir);

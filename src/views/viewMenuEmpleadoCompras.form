@@ -125,6 +125,9 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="jm_opciones">
           <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Images/opciones.png"/>
             </Property>
@@ -136,6 +139,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jmi_salir">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Images/Menu/Salir.png"/>
                 </Property>
