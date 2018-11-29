@@ -47,7 +47,12 @@ public class modelVENTAS {
     public int cantidad_venta = 0;
     public float precio_venta;
     public float total_por_producto=0.0f;
-
+    
+    public ArrayList producto; // la variable almacenara una lista para llenar comboBox
+    public ArrayList numero_empleado; // la variable almacenara una lista para llenar comboBox
+    public ArrayList numero_sucursal; // la variable almacenara una lista para llenar comboBox
+    public ArrayList numero_cliente; // la variable almacenara una lista para llenar comboBox
+    public ArrayList descuento_combo; // la variable almacenara una lista para llenar comboBox
     
     public int codigo_descuento;
     public int puntos_requeridos;
@@ -282,6 +287,48 @@ public class modelVENTAS {
     public void setPuntos_ganados(int puntos_ganados) {
         this.puntos_ganados = puntos_ganados;
     }
+
+    public ArrayList getProducto() {
+        return producto;
+    }
+
+    public void setProducto(ArrayList producto) {
+        this.producto = producto;
+    }
+
+    public ArrayList getNumero_empleado() {
+        return numero_empleado;
+    }
+
+    public void setNumero_empleado(ArrayList numero_empleado) {
+        this.numero_empleado = numero_empleado;
+    }
+
+    public ArrayList getNumero_sucursal() {
+        return numero_sucursal;
+    }
+
+    public void setNumero_sucursal(ArrayList numero_sucursal) {
+        this.numero_sucursal = numero_sucursal;
+    }
+
+    public ArrayList getNumero_cliente() {
+        return numero_cliente;
+    }
+
+    public void setNumero_cliente(ArrayList numero_cliente) {
+        this.numero_cliente = numero_cliente;
+    }
+
+    public ArrayList getDescuento_combo() {
+        return descuento_combo;
+    }
+
+    public void setDescuento_combo(ArrayList descuento_combo) {
+        this.descuento_combo = descuento_combo;
+    }
+    
+    
     //**************Variables para conexion 
     private Connection conexion;
     private Statement st;
@@ -358,6 +405,40 @@ public class modelVENTAS {
             JOptionPane.showMessageDialog(null, "Error " + err.getMessage());
         }
     }
-    
-    
+    /***
+     * el metodo que llenara los comboBox con los registros necesarios de la base de datos
+     */
+    public void llenarCombo(){
+        //llenar comboBox de RFC empleados 
+      ArrayList rfc = new ArrayList();
+      try{
+          rs = st.executeQuery("SELECT * FROM empleados_compras;");
+      }catch(SQLException e){
+           JOptionPane.showMessageDialog(null,"error1 al llenar comboBox"+e);
+      }
+      try{
+          while(rs.next()){
+              String sucursal=rs.getString("RFC_empl_comp");
+              rfc.add(sucursal);//agregar los datos a la lista        
+          }this.setNumero_empleado(rfc);// almacena la lista con los numeros de proveedores obetenidos de la BD      
+      }catch(Exception e){
+          JOptionPane.showMessageDialog(null,"error3 al llenar comboBox"+e);
+      }
+    }
+    /**
+     * llenado de los TextFields con los datos que le correspondan 
+     * segun sea seleccionado en el comboBox
+     */
+    public void llenarTextFieldsEmpleados(){
+        try{
+            RFC_empleado=this.getRFC_empleado();
+            rs = st.executeQuery("SELECT * FROM empleados_compras WHERE RFC_empl_comp='" +RFC_empleado+ "';");//consulta a empleaddos compras
+                rs.next();
+                nombre_empleado = rs.getString("nombre_empl_comp");
+                apellido_pat_empleado = rs.getString("ap_pat_comp");
+                apellido_mat_empleado = rs.getString("ap_mat_comp");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"error7 al llenarTextFields"+e);
+        }   
+    }
 }
