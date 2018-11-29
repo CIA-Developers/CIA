@@ -307,6 +307,44 @@ public class modelVENTAS {
         this.rec = rec;
     }
     
+    //**********************ACTUALIZANDO STOCK*****************************
+   public int stock_productos;
+   public int stock_productos_sucursales;
+   public int existencias_sucursal;
+   public int existencia_general;
+
+    public int getStock_productos() {
+        return stock_productos;
+    }
+
+    public void setStock_productos(int stock_productos) {
+        this.stock_productos = stock_productos;
+    }
+
+    public int getStock_productos_sucursales() {
+        return stock_productos_sucursales;
+    }
+
+    public void setStock_productos_sucursales(int stock_productos_sucursales) {
+        this.stock_productos_sucursales = stock_productos_sucursales;
+    }
+
+    public int getExistencias_sucursal() {
+        return existencias_sucursal;
+    }
+
+    public void setExistencias_sucursal(int existencias_sucursal) {
+        this.existencias_sucursal = existencias_sucursal;
+    }
+
+    public int getExistencia_general() {
+        return existencia_general;
+    }
+
+    public void setExistencia_general(int existencia_general) {
+        this.existencia_general = existencia_general;
+    }
+
     
     /**
      * Conexion a la Base de datos
@@ -320,4 +358,6 @@ public class modelVENTAS {
             JOptionPane.showMessageDialog(null, "Error " + err.getMessage());
         }
     }
+    
+    
 }
