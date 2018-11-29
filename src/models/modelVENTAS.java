@@ -412,14 +412,14 @@ public class modelVENTAS {
         //llenar comboBox de RFC empleados 
       ArrayList rfc = new ArrayList();
       try{
-          rs = st.executeQuery("SELECT * FROM empleados_compras;");
+          rs = st.executeQuery("SELECT * FROM empleados_ventas;");
       }catch(SQLException e){
            JOptionPane.showMessageDialog(null,"error1 al llenar comboBox"+e);
       }
       try{
           while(rs.next()){
-              String sucursal=rs.getString("RFC_empl_comp");
-              rfc.add(sucursal);//agregar los datos a la lista        
+              String empl=rs.getString("RFC_empl_vent");
+              rfc.add(empl);//agregar los datos a la lista        
           }this.setNumero_empleado(rfc);// almacena la lista con los numeros de proveedores obetenidos de la BD      
       }catch(Exception e){
           JOptionPane.showMessageDialog(null,"error3 al llenar comboBox"+e);
@@ -432,11 +432,11 @@ public class modelVENTAS {
     public void llenarTextFieldsEmpleados(){
         try{
             RFC_empleado=this.getRFC_empleado();
-            rs = st.executeQuery("SELECT * FROM empleados_compras WHERE RFC_empl_comp='" +RFC_empleado+ "';");//consulta a empleaddos compras
+            rs = st.executeQuery("SELECT * FROM empleados_ventas WHERE RFC_empl_vent='" +RFC_empleado+ "';");//consulta a empleaddos ventas
                 rs.next();
-                nombre_empleado = rs.getString("nombre_empl_comp");
-                apellido_pat_empleado = rs.getString("ap_pat_comp");
-                apellido_mat_empleado = rs.getString("ap_mat_comp");
+                nombre_empleado = rs.getString("nombre_empl_vent");
+                apellido_pat_empleado = rs.getString("ap_pat_vent");
+                apellido_mat_empleado = rs.getString("ap_mat_vent");
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"error7 al llenarTextFields"+e);
         }   
