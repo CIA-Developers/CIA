@@ -282,6 +282,42 @@ public class modelVENTAS {
     public void setPuntos_ganados(int puntos_ganados) {
         this.puntos_ganados = puntos_ganados;
     }
+    //**************Variables para conexion 
+    private Connection conexion;
+    private Statement st;
+    private ResultSet rs;
+    PreparedStatement ps;
     
-      
+    public DefaultTableModel model_compras = new DefaultTableModel();
+    public int rec;//Variable que tomara el valor seleccionado en la tabla 
+
+    public DefaultTableModel getModel_compras() {
+        return model_compras;
+    }
+
+    public void setModel_compras(DefaultTableModel model_compras) {
+        this.model_compras = model_compras;
+    }
+
+    public int getRec() {
+        return rec;
+    }
+
+    public void setRec(int rec) {
+        this.rec = rec;
+    }
+    
+    
+    /**
+     * Conexion a la Base de datos
+     */  
+    public void Conectar() {
+        try {
+            conexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia", "root", "");
+            st = conexion.createStatement(); 
+
+        } catch (SQLException err) {
+            JOptionPane.showMessageDialog(null, "Error " + err.getMessage());
+        }
+    }
 }
