@@ -92,13 +92,13 @@ public class ControllerPromociones {
     public void jt_vista_MouseClicked() {
         modelPromociones.setRec(viewPromociones.jt_vista.getSelectedRow());//a la variable se le asigna el elemento seleccionado en la tabla
         viewPromociones.jtf_no_promocion.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 0).toString());
-        viewPromociones.jtf_calle1.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 1).toString());
+        viewPromociones.jtf_causa.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 1).toString());
         viewPromociones.jtf_colonia1.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 2).toString());
         viewPromociones.jtf_numero1.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 3).toString());
         viewPromociones.jtf_telefono1.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 4).toString());
-        viewPromociones.jtf_no_sucursal.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 5).toString());
-        viewPromociones.jtf_calle.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 6).toString());
-        viewPromociones.jtf_colonia.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 7).toString());
+       // viewPromociones.jtf_no_sucursal.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 5).toString());
+        //viewPromociones.jtf_calle.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 6).toString());
+        //viewPromociones.jtf_colonia.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 7).toString());
 
     }
 }
