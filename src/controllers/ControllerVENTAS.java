@@ -43,5 +43,14 @@ public class ControllerVENTAS {
         for (int p = 0; p < modelVENTAS.getNumero_empleado().size(); p++) {
             viewVENTAS.jcb_rfc.addItem((String) modelVENTAS.getNumero_empleado().get(p));
         }
+        for (int p = 0; p < modelVENTAS.getNumero_sucursal().size(); p++) {
+            viewVENTAS.jcb_numero_sucursal.addItem((String) modelVENTAS.getNumero_sucursal().get(p));
+        }
+        for (int p = 0; p < modelVENTAS.getProducto().size(); p++) {
+            viewVENTAS.jcb_codigo_producto.addItem((String) modelVENTAS.getProducto().get(p));
+        }
+        for (int p = 0; p < modelVENTAS.getNumero_cliente().size(); p++) {
+            viewVENTAS.jcb_rfc_cliente.addItem((String) modelVENTAS.getNumero_cliente().get(p));
+        }
     }
 }

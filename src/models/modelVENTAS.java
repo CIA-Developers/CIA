@@ -455,6 +455,21 @@ public class modelVENTAS {
       }catch(Exception e){
           JOptionPane.showMessageDialog(null,"error5 al llenar comboBox"+e);
       }
+      //llenar comboBox de RFC del cliente
+      ArrayList cliente = new ArrayList();
+      try{
+          rs = st.executeQuery("SELECT * FROM clientes;");
+      }catch(SQLException e){
+           JOptionPane.showMessageDialog(null,"error4 al llenar comboBox"+e);
+      }
+      try{
+          while(rs.next()){
+              String client=rs.getString("RFC_cliente");
+              cliente.add(client);//agregar los datos a la lista        
+          }this.setNumero_cliente(cliente);// almacena la lista con los numeros de proveedores obetenidos de la BD      
+      }catch(Exception e){
+          JOptionPane.showMessageDialog(null,"error5 al llenar comboBox"+e);
+      }
     }
     /**
      * llenado de los TextFields con los datos que le correspondan 
