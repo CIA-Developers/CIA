@@ -16,6 +16,14 @@ public class ControllerVENTAS {
     modelVENTAS modelVENTAS;
     ViewVENTAS viewVENTAS;
 
+    ActionListener list = new ActionListener(){
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            
+        }
+        
+    };
+    
     public ControllerVENTAS(modelVENTAS modelVENTAS, ViewVENTAS viewVENTAS) {
         this.modelVENTAS = modelVENTAS;
         this.viewVENTAS = viewVENTAS;
@@ -23,6 +31,12 @@ public class ControllerVENTAS {
         modelVENTAS.Conectar();//Llamar a la conexion a la Base de datos 
         LimpiarCombox();
         LlenarCombox();
+    }
+    /**
+     * agregar el evento de ActionListener a los ComboBox y a los botones de la vista Ventas
+     */
+    public void setActionListener(){
+        
     }
     /**
      * Metodo que limpiara los ComboBox de la vista VENTAS
