@@ -19,7 +19,12 @@ public class ControllerVENTAS {
     ActionListener list = new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent e) {
-            
+            if (e.getSource() == viewVENTAS.jcb_rfc){
+                modelVENTAS.setRFC_empleado((String) viewVENTAS.jcb_rfc.getSelectedItem());
+                modelVENTAS.llenarTextFieldsEmpleados();
+                viewVENTAS.jtf_nombre_empleado.setText(modelVENTAS.getNombre_empleado()+"  "+modelVENTAS.getApellido_pat_empleado()+"  "+modelVENTAS.getApellido_mat_empleado());
+                viewVENTAS.jcb_numero_sucursal.setEnabled(true);//habilitando jcb numero sucursal
+            }
         }
         
     };
