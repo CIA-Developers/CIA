@@ -470,6 +470,21 @@ public class modelVENTAS {
       }catch(Exception e){
           JOptionPane.showMessageDialog(null,"error5 al llenar comboBox"+e);
       }
+      //llenar comboBox de Descuentos
+      ArrayList descuentos = new ArrayList();
+      try{
+          rs = st.executeQuery("SELECT * FROM descuentos;");
+      }catch(SQLException e){
+           JOptionPane.showMessageDialog(null,"error4 al llenar comboBox"+e);
+      }
+      try{
+          while(rs.next()){
+              String desc=rs.getString("codigo_descuento");
+              descuentos.add(desc);//agregar los datos a la lista        
+          }this.setDescuento_combo(descuentos);// almacena la lista con los numeros de proveedores obetenidos de la BD      
+      }catch(Exception e){
+          JOptionPane.showMessageDialog(null,"error5 al llenar comboBox"+e);
+      }
     }
     /**
      * llenado de los TextFields con los datos que le correspondan 

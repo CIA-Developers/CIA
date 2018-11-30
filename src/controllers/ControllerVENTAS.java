@@ -52,5 +52,8 @@ public class ControllerVENTAS {
         for (int p = 0; p < modelVENTAS.getNumero_cliente().size(); p++) {
             viewVENTAS.jcb_rfc_cliente.addItem((String) modelVENTAS.getNumero_cliente().get(p));
         }
+        for (int p = 0; p < modelVENTAS.getDescuento_combo().size(); p++) {
+            viewVENTAS.jcb_codigo_descuento.addItem((String) modelVENTAS.getDescuento_combo().get(p));
+        }
     }
 }
