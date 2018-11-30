@@ -31,12 +31,17 @@ public class ControllerVENTAS {
         modelVENTAS.Conectar();//Llamar a la conexion a la Base de datos 
         LimpiarCombox();
         LlenarCombox();
+        setActionListener(); 
     }
     /**
      * agregar el evento de ActionListener a los ComboBox y a los botones de la vista Ventas
      */
     public void setActionListener(){
-        
+       viewVENTAS.jcb_codigo_producto.addActionListener(list);
+       viewVENTAS.jcb_numero_sucursal.addActionListener(list);
+       viewVENTAS.jcb_rfc.addActionListener(list);
+       viewVENTAS.jcb_rfc_cliente.addActionListener(list);
+       viewVENTAS.jcb_codigo_descuento.addActionListener(list);
     }
     /**
      * Metodo que limpiara los ComboBox de la vista VENTAS
