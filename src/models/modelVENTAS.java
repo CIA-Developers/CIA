@@ -472,7 +472,7 @@ public class modelVENTAS {
             JOptionPane.showMessageDialog(null,"error7 al llenarTextFields"+e);
         }   
     }
-     public void llenarTextFieldsProductos(){
+    public void llenarTextFieldsProductos(){
        try{
            codigo_producto = this.getCodigo_producto();
            rs = st.executeQuery("SELECT * FROM productos WHERE codigo_producto='" +codigo_producto+ "';");//consulta a empleaddos compras

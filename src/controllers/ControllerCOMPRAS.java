@@ -141,7 +141,9 @@ public class ControllerCOMPRAS {
         viewCOMPRAS.jt_vista.setModel(modelCOMPRAS.getModel_compras());//agrenado modelo a la tabla
                
     }
-
+    /**
+     * se eliminan los Items de los comboBox
+     */
     public void initComponents(){
         viewCOMPRAS.jcb_numero_proveedor.removeAllItems();//eliminar los items del comboBbx
         viewCOMPRAS.jcb_numero_sucursal.removeAllItems();

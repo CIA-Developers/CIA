@@ -19,7 +19,29 @@ public class ControllerVENTAS {
     public ControllerVENTAS(modelVENTAS modelVENTAS, ViewVENTAS viewVENTAS) {
         this.modelVENTAS = modelVENTAS;
         this.viewVENTAS = viewVENTAS;
+        
+        modelVENTAS.Conectar();//Llamar a la conexion a la Base de datos 
+        LimpiarCombox();
+        LlenarCombox();
     }
-    
-    
+    /**
+     * Metodo que limpiara los ComboBox de la vista VENTAS
+     */
+    public void LimpiarCombox(){
+       viewVENTAS.jcb_codigo_producto.removeAllItems();
+       viewVENTAS.jcb_numero_sucursal.removeAllItems();
+       viewVENTAS.jcb_rfc.removeAllItems();
+       viewVENTAS.jcb_rfc_cliente.removeAllItems();
+       viewVENTAS.jcb_codigo_descuento.removeAllItems();
+    }
+    /**
+     * Metodo que realizara el llenado de los ComboBox con los datos corespondientes 
+     * obtenidos de la base de datos 
+     */
+    public void LlenarCombox(){
+        modelVENTAS.llenarCombo();//metodo en el modelo para llenar los comboBox
+        for (int p = 0; p < modelVENTAS.getNumero_empleado().size(); p++) {
+            viewVENTAS.jcb_rfc.addItem((String) modelVENTAS.getNumero_empleado().get(p));
+        }
+    }
 }

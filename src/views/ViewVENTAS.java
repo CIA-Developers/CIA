@@ -764,7 +764,7 @@ public class ViewVENTAS extends javax.swing.JPanel {
     public javax.swing.JButton jb_modificar;
     public javax.swing.JButton jb_nuevo;
     public javax.swing.JButton jb_realizar_venta;
-    private javax.swing.JComboBox<String> jcb_codigo_descuento;
+    public javax.swing.JComboBox<String> jcb_codigo_descuento;
     public javax.swing.JComboBox<String> jcb_codigo_producto;
     public javax.swing.JComboBox<String> jcb_numero_sucursal;
     public javax.swing.JComboBox<String> jcb_rfc;
