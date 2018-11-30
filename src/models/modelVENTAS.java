@@ -424,6 +424,37 @@ public class modelVENTAS {
       }catch(Exception e){
           JOptionPane.showMessageDialog(null,"error3 al llenar comboBox"+e);
       }
+      ArrayList num_suc = new ArrayList(); // lista para sucursales
+      //llenar comboBox de Sucursales
+      try{
+          
+          rs = st.executeQuery("SELECT * FROM sucursal;");
+      }catch(SQLException e){
+           JOptionPane.showMessageDialog(null,"error1 al llenar comboBox"+e);
+      }
+      try{
+          while(rs.next()){
+              String sucursal=rs.getString("no_sucursal");
+              num_suc.add(sucursal);//agregar los datos a la lista        
+          }this.setNumero_sucursal(num_suc);// almacena la lista con los numeros de proveedores obetenidos de la BD      
+      }catch(Exception e){
+          JOptionPane.showMessageDialog(null,"error2 al llenar comboBox"+e);
+      }
+      //llenar comboBox de codigo de productos
+      ArrayList codigo = new ArrayList();
+      try{
+          rs = st.executeQuery("SELECT * FROM productos;");
+      }catch(SQLException e){
+           JOptionPane.showMessageDialog(null,"error4 al llenar comboBox"+e);
+      }
+      try{
+          while(rs.next()){
+              String prod=rs.getString("codigo_producto");
+              codigo.add(prod);//agregar los datos a la lista        
+          }this.setProducto(codigo);// almacena la lista con los numeros de proveedores obetenidos de la BD      
+      }catch(Exception e){
+          JOptionPane.showMessageDialog(null,"error5 al llenar comboBox"+e);
+      }
     }
     /**
      * llenado de los TextFields con los datos que le correspondan 
@@ -439,6 +470,19 @@ public class modelVENTAS {
                 apellido_mat_empleado = rs.getString("ap_mat_vent");
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"error7 al llenarTextFields"+e);
+        }   
+    }
+     public void llenarTextFieldsProductos(){
+       try{
+           codigo_producto = this.getCodigo_producto();
+           rs = st.executeQuery("SELECT * FROM productos WHERE codigo_producto='" +codigo_producto+ "';");//consulta a empleaddos compras
+           rs.next();
+           nombre_producto = rs.getString("nom_producto");// solo se obtendra este dato, no se almacenara
+           tipo_producto = rs.getString("tipo_producto");// solo se obtendra este dato, no se almacenara
+           marca_producto = rs.getString("marca");  
+           precio_venta = rs.getFloat("precio_unitario_venta");
+       }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"error8 al llenarTextFields"+e);
         }   
     }
 }
