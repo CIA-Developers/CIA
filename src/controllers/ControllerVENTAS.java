@@ -34,6 +34,10 @@ public class ControllerVENTAS {
             }else if (e.getSource() == viewVENTAS.jcb_codigo_producto){
                 
             }else if (e.getSource() == viewVENTAS.jcb_codigo_descuento){
+                modelVENTAS.setCodigo_descuento(Integer.parseInt((String) viewVENTAS.jcb_codigo_descuento.getSelectedItem()));
+                modelVENTAS.llenarTextFieldsDescuentos();
+                viewVENTAS.jtf_puntos_requeridos.setText(Integer.toString(modelVENTAS.getCantidad_puntos()));
+                viewVENTAS.jtf_porcentaje.setText(Integer.toString(modelVENTAS.getPorcentaje()));
                 
             }
         }
