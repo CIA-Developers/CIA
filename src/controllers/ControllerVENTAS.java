@@ -112,6 +112,13 @@ public class ControllerVENTAS {
         viewVENTAS.jtf_tipo_producto.setText(modelVENTAS.getTipo_producto());
         viewVENTAS.jtf_marca_producto.setText(modelVENTAS.getMarca_producto());
         //proceso para establecer el precio y Status del producto si esta en promocion, venta normal o no.
+        if("en venta".equals(modelVENTAS.getStatus_producto())){
+            viewVENTAS.jl_status_producto.setText("Venta Normal");
+            viewVENTAS.jtf_precio.setText(Float.toString(modelVENTAS.getPrecio_venta())); 
+        }else{
+            viewVENTAS.jl_status_producto.setText(" Ya no se Maneja");
+            viewVENTAS.jtf_precio.setText("0.0");
+        }
         
         
     }
