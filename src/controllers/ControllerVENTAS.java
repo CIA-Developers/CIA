@@ -32,6 +32,7 @@ public class ControllerVENTAS {
                 viewVENTAS.jtf_nombre_cliente.setText(modelVENTAS.getNombre_cliente()+"  "+modelVENTAS.getApell_pat_cliente()+"  "+modelVENTAS.getApell_mat_cliente());
                 viewVENTAS.jtf_puntos_acumulados.setText(Integer.toString(modelVENTAS.getPuntos_acumulados()));
             }else if (e.getSource() == viewVENTAS.jcb_codigo_producto){
+                Productos();
                 
             }else if (e.getSource() == viewVENTAS.jcb_codigo_descuento){
                 modelVENTAS.setCodigo_descuento(Integer.parseInt((String) viewVENTAS.jcb_codigo_descuento.getSelectedItem()));
@@ -105,6 +106,13 @@ public class ControllerVENTAS {
      * 6. verificar con la fecha final de la promocion, ara verificar si todavia es aplicable
      */
     public void Productos(){
+        modelVENTAS.setCodigo_producto((String) viewVENTAS.jcb_codigo_producto.getSelectedItem());
+        modelVENTAS.llenarTextFieldsProductos();
+        viewVENTAS.jtf_nombre_producto.setText(modelVENTAS.getNombre_producto());
+        viewVENTAS.jtf_tipo_producto.setText(modelVENTAS.getTipo_producto());
+        viewVENTAS.jtf_marca_producto.setText(modelVENTAS.getMarca_producto());
+        //proceso para establecer el precio y Status del producto si esta en promocion, venta normal o no.
+        
         
     }
 }

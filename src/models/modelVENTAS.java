@@ -572,7 +572,7 @@ public class modelVENTAS {
     public void llenarTextFieldsProductos(){
        try{//tabla de productos 
            codigo_producto = this.getCodigo_producto();
-           rs = st.executeQuery("SELECT * FROM productos WHERE codigo_producto='" +codigo_producto+ "';");//consulta a productos
+           rs = st.executeQuery("SELECT * FROM productos WHERE codigo_producto='"+codigo_producto+"';");//consulta a productos
            rs.next();
            nombre_producto = rs.getString("nom_producto");// solo se obtendra este dato, no se almacenara
            tipo_producto = rs.getString("tipo_producto");// solo se obtendra este dato, no se almacenara
@@ -584,14 +584,13 @@ public class modelVENTAS {
        }  
        try{//tabla de productos con Promocion
            codigo_producto = this.getCodigo_producto();
-           rs = st.executeQuery("SELECT precio_descuento,fecha_final FROM promociones "
-                   + "inner join promocion_prod on promociones.id_promociones = promocion_prod.id_promociones"
-                   + "WHERE codigo_producto='" +codigo_producto+ "';");//consulta a productos
-           rs.next();
-           precio_venta_promo = rs.getFloat("precio_descuento");// solo se obtendra este dato, no se almacenara
-           fecha_final = rs.getString("fecha_final");// solo se obtendra este dato, no se almacenara
+           rs = st.executeQuery("SELECT precio_descuento,fecha_final FROM promociones inner join promocion_prod on promociones.id_promociones = promocion_prod.id_promociones WHERE codigo_producto='"+codigo_producto+"';");//consulta a productos
+           if(rs.next());{
+                precio_venta_promo =rs.getFloat("precio_descuento");// solo se obtendra este dato, no se almacenara
+                fecha_final = rs.getString("fecha_final");// solo se obtendra este dato, no se almacenara
+           }
        }catch(Exception e){
-            JOptionPane.showMessageDialog(null,"error10 al llenarTextFields"+e);
+            System.out.println("error11 al llenarTextFields"+e);
         }
     }
 }
