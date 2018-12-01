@@ -530,6 +530,7 @@ public class modelVENTAS {
         try{
         codigo_descuento = this.getCodigo_descuento();
         rs = st.executeQuery("SELECT * FROM descuentos WHERE codigo_descuento='" +codigo_descuento+ "';");//consulta a descuentos
+        rs.next();
         porcentaje = rs.getInt("porcentaje");
         cantidad_puntos = rs.getInt("cantidad_puntos");
         }catch(Exception e){
