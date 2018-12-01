@@ -502,6 +502,19 @@ public class modelVENTAS {
             JOptionPane.showMessageDialog(null,"error7 al llenarTextFields"+e);
         }   
     }
+    public void llenarTextFieldsClientes(){
+        try{
+            RFC_cliente=this.getRFC_cliente();
+            rs = st.executeQuery("SELECT * FROM clientes WHERE RFC_cliente='" +RFC_cliente+ "';");//consulta a empleaddos ventas
+            rs.next();
+            nombre_cliente = rs.getString("nombre_client");
+            apell_pat_cliente= rs.getString("ap_pat_client");
+            apell_mat_cliente = rs.getString("ap_mat_client");
+            puntos_acumulados=rs.getInt("puntos");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"error8 al llenarTextFields"+e);
+        }
+    }
     public void llenarTextFieldsProductos(){
        try{
            codigo_producto = this.getCodigo_producto();
@@ -512,7 +525,7 @@ public class modelVENTAS {
            marca_producto = rs.getString("marca");  
            precio_venta = rs.getFloat("precio_unitario_venta");
        }catch(Exception e){
-            JOptionPane.showMessageDialog(null,"error8 al llenarTextFields"+e);
+            JOptionPane.showMessageDialog(null,"error9 al llenarTextFields"+e);
         }   
     }
 }
