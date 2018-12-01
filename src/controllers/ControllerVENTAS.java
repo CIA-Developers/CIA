@@ -6,6 +6,7 @@
 package controllers;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import models.modelVENTAS;
 import views.ViewVENTAS;
 /**
@@ -117,6 +118,7 @@ public class ControllerVENTAS {
             viewVENTAS.jtf_precio.setText(Float.toString(modelVENTAS.getPrecio_venta())); 
         }else{
             viewVENTAS.jl_status_producto.setText(" Ya no se Maneja");
+            JOptionPane.showMessageDialog(null,"EL PRODUCTO YA NO SE MANEJA");
             viewVENTAS.jtf_precio.setText("0.0");
         }
         
