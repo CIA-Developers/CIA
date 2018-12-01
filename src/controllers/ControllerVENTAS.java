@@ -24,6 +24,17 @@ public class ControllerVENTAS {
                 modelVENTAS.llenarTextFieldsEmpleados();
                 viewVENTAS.jtf_nombre_empleado.setText(modelVENTAS.getNombre_empleado()+"  "+modelVENTAS.getApellido_pat_empleado()+"  "+modelVENTAS.getApellido_mat_empleado());
                 viewVENTAS.jcb_numero_sucursal.setEnabled(true);//habilitando jcb numero sucursal
+            }else if (e.getSource() == viewVENTAS.jcb_numero_sucursal){
+                viewVENTAS.jcb_rfc_cliente.setEnabled(true);//habilitando jcb numero sucursal
+            }else if (e.getSource() == viewVENTAS.jcb_rfc_cliente){
+                modelVENTAS.setRFC_cliente((String) viewVENTAS.jcb_rfc_cliente.getSelectedItem());
+                modelVENTAS.llenarTextFieldsClientes();
+                viewVENTAS.jtf_nombre_cliente.setText(modelVENTAS.getNombre_cliente()+"  "+modelVENTAS.getApell_pat_cliente()+"  "+modelVENTAS.getApell_mat_cliente());
+                viewVENTAS.jtf_puntos_acumulados.setText(Integer.toString(modelVENTAS.getPuntos_acumulados()));
+            }else if (e.getSource() == viewVENTAS.jcb_codigo_producto){
+                
+            }else if (e.getSource() == viewVENTAS.jcb_codigo_descuento){
+                
             }
         }
         
