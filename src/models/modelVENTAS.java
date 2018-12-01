@@ -44,6 +44,7 @@ public class modelVENTAS {
     public String nombre_producto;// solo se obtendra este dato, no se almacenara
     public String tipo_producto;// solo se obtendra este dato, no se almacenara
     public String marca_producto;// solo se obtendra este dato, no se almacenara
+    public String Status_producto;
     public int cantidad_venta = 0;
     public float precio_venta;
     public float precio_venta_promo;
@@ -211,6 +212,14 @@ public class modelVENTAS {
         this.marca_producto = marca_producto;
     }
 
+    public String getStatus_producto() {
+        return Status_producto;
+    }
+
+    public void setStatus_producto(String Status_producto) {
+        this.Status_producto = Status_producto;
+    }
+    
     public int getCantidad_venta() {
         return cantidad_venta;
     }
@@ -556,9 +565,9 @@ public class modelVENTAS {
         }
      }
     /**
-     * El metodo ademas de llenar los TextFields con los datos de los productos 
-     * verificara si si el producto seleccionado esta en venta o no 
-     * verificara si el producto se encuentra en promocion, para aplicar el descuento de este 
+     * El metodo  pasara a las variables correspondintes los datos de los productos
+     * pasara los datos de los productos que esten el promocion
+     * para poder ser utlizado en el controlador de ventas 
      */
     public void llenarTextFieldsProductos(){
        try{//tabla de productos 
@@ -569,6 +578,7 @@ public class modelVENTAS {
            tipo_producto = rs.getString("tipo_producto");// solo se obtendra este dato, no se almacenara
            marca_producto = rs.getString("marca");  
            precio_venta = rs.getFloat("precio_unitario_venta");
+           Status_producto=rs.getString("status_prod");
        }catch(Exception e){
             JOptionPane.showMessageDialog(null,"error10 al llenarTextFields"+e);
        }  
