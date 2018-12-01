@@ -41,6 +41,7 @@ public class modelVENTAS {
     
     public int numero_venta;
     public String codigo_producto;
+    public String codigo_producto_Promo;
     public String nombre_producto;// solo se obtendra este dato, no se almacenara
     public String tipo_producto;// solo se obtendra este dato, no se almacenara
     public String marca_producto;// solo se obtendra este dato, no se almacenara
@@ -188,6 +189,14 @@ public class modelVENTAS {
         this.codigo_producto = codigo_producto;
     }
 
+    public String getCodigo_producto_Promo() {
+        return codigo_producto_Promo;
+    }
+
+    public void setCodigo_producto_Promo(String codigo_producto_Promo) {
+        this.codigo_producto_Promo = codigo_producto_Promo;
+    }
+   
     public String getNombre_producto() {
         return nombre_producto;
     }
@@ -586,6 +595,7 @@ public class modelVENTAS {
            codigo_producto = this.getCodigo_producto();
            rs = st.executeQuery("SELECT precio_descuento,fecha_final FROM promociones inner join promocion_prod on promociones.id_promociones = promocion_prod.id_promociones WHERE codigo_producto='"+codigo_producto+"';");//consulta a productos
            if(rs.next());{
+                codigo_producto_Promo = rs.getString("codigo_producto");
                 precio_venta_promo =rs.getFloat("precio_descuento");// solo se obtendra este dato, no se almacenara
                 fecha_final = rs.getString("fecha_final");// solo se obtendra este dato, no se almacenara
            }
