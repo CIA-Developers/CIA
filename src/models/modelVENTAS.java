@@ -56,6 +56,7 @@ public class modelVENTAS {
     
     public int codigo_descuento;
     public int puntos_requeridos;
+    public int cantidad_puntos;
     public int porcentaje;
     public float descuento;
     
@@ -248,6 +249,16 @@ public class modelVENTAS {
         this.puntos_requeridos = puntos_requeridos;
     }
 
+    public int getCantidad_puntos() {
+        return cantidad_puntos;
+    }
+
+    public void setCantidad_puntos(int cantidad_puntos) {
+        this.cantidad_puntos = cantidad_puntos;
+    }
+
+    
+    
     public int getPorcentaje() {
         return porcentaje;
     }
@@ -505,7 +516,7 @@ public class modelVENTAS {
     public void llenarTextFieldsClientes(){
         try{
             RFC_cliente=this.getRFC_cliente();
-            rs = st.executeQuery("SELECT * FROM clientes WHERE RFC_cliente='" +RFC_cliente+ "';");//consulta a empleaddos ventas
+            rs = st.executeQuery("SELECT * FROM clientes WHERE RFC_cliente='" +RFC_cliente+ "';");//consulta a clientes
             rs.next();
             nombre_cliente = rs.getString("nombre_client");
             apell_pat_cliente= rs.getString("ap_pat_client");
@@ -515,17 +526,27 @@ public class modelVENTAS {
             JOptionPane.showMessageDialog(null,"error8 al llenarTextFields"+e);
         }
     }
+    public void llenarTextFieldsDescuentos(){
+        try{
+        codigo_descuento = this.getCodigo_descuento();
+        rs = st.executeQuery("SELECT * FROM descuentos WHERE codigo_descuento='" +codigo_descuento+ "';");//consulta a descuentos
+        porcentaje = rs.getInt("porcentaje");
+        cantidad_puntos = rs.getInt("cantidad_puntos");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"error9 al llenarTextFields"+e);
+        }
+     }
     public void llenarTextFieldsProductos(){
        try{
            codigo_producto = this.getCodigo_producto();
-           rs = st.executeQuery("SELECT * FROM productos WHERE codigo_producto='" +codigo_producto+ "';");//consulta a empleaddos compras
+           rs = st.executeQuery("SELECT * FROM productos WHERE codigo_producto='" +codigo_producto+ "';");//consulta a productos
            rs.next();
            nombre_producto = rs.getString("nom_producto");// solo se obtendra este dato, no se almacenara
            tipo_producto = rs.getString("tipo_producto");// solo se obtendra este dato, no se almacenara
            marca_producto = rs.getString("marca");  
            precio_venta = rs.getFloat("precio_unitario_venta");
        }catch(Exception e){
-            JOptionPane.showMessageDialog(null,"error9 al llenarTextFields"+e);
+            JOptionPane.showMessageDialog(null,"error10 al llenarTextFields"+e);
         }   
     }
 }
