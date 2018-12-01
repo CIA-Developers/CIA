@@ -95,4 +95,16 @@ public class ControllerVENTAS {
             viewVENTAS.jcb_codigo_descuento.addItem((String) modelVENTAS.getDescuento_combo().get(p));
         }
     }
+    /**
+     * este metodo realizara  las siguientes acciones 
+     * 1. llenara los textFields con los datos que le correspondan segun el item seleccionado en el ComboBox
+     * 2. identificara si el producto seleccionado esta en venta 
+     * 3. si el producto no esta en venta notificara que el producto no se puede vender 
+     * 4. identificara si el producto seleccionado esta en promociones
+     * 5. si el producto esta en promociones aplicara el descuento que le corresponda 
+     * 6. verificar con la fecha final de la promocion, ara verificar si todavia es aplicable
+     */
+    public void Productos(){
+        
+    }
 }

@@ -97,7 +97,7 @@ CREATE TABLE promocion_prod (
     
     insert into promocion_prod values 
         (1,1651,1,"2018-08-16","2018-10-16"),
-        (2,8170,2,"2018-08-16","2018-10-16");
+        (2,8170,2,"2018-08-16","2019-01-16");
 
 CREATE TABLE empleados_compras (
     RFC_empl_comp CHAR(13) NOT NULL PRIMARY KEY,

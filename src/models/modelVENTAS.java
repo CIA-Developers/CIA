@@ -46,6 +46,8 @@ public class modelVENTAS {
     public String marca_producto;// solo se obtendra este dato, no se almacenara
     public int cantidad_venta = 0;
     public float precio_venta;
+    public float precio_venta_promo;
+    public String fecha_final;
     public float total_por_producto=0.0f;
     
     public ArrayList producto; // la variable almacenara una lista para llenar comboBox
@@ -221,6 +223,22 @@ public class modelVENTAS {
         return precio_venta;
     }
 
+    public float getPrecio_venta_promo() {
+        return precio_venta_promo;
+    }
+
+    public void setPrecio_venta_promo(float precio_venta_promo) {
+        this.precio_venta_promo = precio_venta_promo;
+    }
+
+    public String getFecha_final() {
+        return fecha_final;
+    }
+
+    public void setFecha_final(String fecha_final) {
+        this.fecha_final = fecha_final;
+    }
+    
     public void setPrecio_venta(float precio_venta) {
         this.precio_venta = precio_venta;
     }
@@ -537,8 +555,13 @@ public class modelVENTAS {
             JOptionPane.showMessageDialog(null,"error9 al llenarTextFields"+e);
         }
      }
+    /**
+     * El metodo ademas de llenar los TextFields con los datos de los productos 
+     * verificara si si el producto seleccionado esta en venta o no 
+     * verificara si el producto se encuentra en promocion, para aplicar el descuento de este 
+     */
     public void llenarTextFieldsProductos(){
-       try{
+       try{//tabla de productos 
            codigo_producto = this.getCodigo_producto();
            rs = st.executeQuery("SELECT * FROM productos WHERE codigo_producto='" +codigo_producto+ "';");//consulta a productos
            rs.next();
@@ -548,6 +571,17 @@ public class modelVENTAS {
            precio_venta = rs.getFloat("precio_unitario_venta");
        }catch(Exception e){
             JOptionPane.showMessageDialog(null,"error10 al llenarTextFields"+e);
-        }   
+       }  
+       try{//tabla de productos con Promocion
+           codigo_producto = this.getCodigo_producto();
+           rs = st.executeQuery("SELECT precio_descuento,fecha_final FROM promociones "
+                   + "inner join promocion_prod on promociones.id_promociones = promocion_prod.id_promociones"
+                   + "WHERE codigo_producto='" +codigo_producto+ "';");//consulta a productos
+           rs.next();
+           precio_venta_promo = rs.getFloat("precio_descuento");// solo se obtendra este dato, no se almacenara
+           fecha_final = rs.getString("fecha_final");// solo se obtendra este dato, no se almacenara
+       }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"error10 al llenarTextFields"+e);
+        }
     }
 }
