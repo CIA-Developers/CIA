@@ -49,7 +49,7 @@ public class ControllerVENTAS {
                 viewVENTAS.jtf_porcentaje.setText(Integer.toString(modelVENTAS.getPorcentaje()));
                 
             }else if (e.getSource() == viewVENTAS.jb_agregar){
-                AgregarDatosVenta();
+                jtf_agregar();
             }
         }
         
@@ -205,5 +205,22 @@ public class ControllerVENTAS {
         viewVENTAS.jtf_importe.setText(Float.toString(modelVENTAS.getImporte()));
         viewVENTAS.jtf_iva.setText(Float.toString(modelVENTAS.getIva()));
         viewVENTAS.jtf_subtotal.setText(Float.toString(modelVENTAS.getSubtotal())); 
+    }
+    /**
+     * metodo que evalua si el producto esta en venta, o no 
+     * si el producto ya no esta en venta, no dejara que se agrege a la venta
+     */
+    public void jtf_agregar(){
+        switch (modelVENTAS.getStatus_producto()) {
+            case "en venta":
+               AgregarDatosVenta();
+                break;
+            case "ya no se maneja":
+                JOptionPane.showMessageDialog(null,"no se puede vender este producto");
+                break;
+            case "Producto en **Promocion**":
+                AgregarDatosVenta();
+                break;
+        }
     }
 }
