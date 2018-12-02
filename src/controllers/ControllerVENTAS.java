@@ -39,7 +39,7 @@ public class ControllerVENTAS {
                 viewVENTAS.jtf_puntos_acumulados.setText(Integer.toString(modelVENTAS.getPuntos_acumulados()));
             }else if (e.getSource() == viewVENTAS.jcb_codigo_producto){
                 Productos();
-                
+             
             }else if (e.getSource() == viewVENTAS.jcb_codigo_descuento){
                 modelVENTAS.setCodigo_descuento(Integer.parseInt((String) viewVENTAS.jcb_codigo_descuento.getSelectedItem()));
                 modelVENTAS.llenarTextFieldsDescuentos();
@@ -69,6 +69,13 @@ public class ControllerVENTAS {
        viewVENTAS.jcb_rfc.addActionListener(list);
        viewVENTAS.jcb_rfc_cliente.addActionListener(list);
        viewVENTAS.jcb_codigo_descuento.addActionListener(list);
+       //Botones 
+       viewVENTAS.jb_agregar.addActionListener(list);
+       viewVENTAS.jb_nuevo.addActionListener(list);
+       viewVENTAS.jb_eliminar.addActionListener(list);
+       viewVENTAS.jb_modificar.addActionListener(list);
+       viewVENTAS.jb_aplicar_descuento.addActionListener(list);
+       viewVENTAS.jb_realizar_venta.addActionListener(list);
     }
     /**
      * Metodo que limpiara los ComboBox de la vista VENTAS
@@ -109,7 +116,7 @@ public class ControllerVENTAS {
      * 3. si el producto no esta en venta notificara que el producto no se puede vender 
      * 4. identificara si el producto seleccionado esta en promociones
      * 5. si el producto esta en promociones aplicara el descuento que le corresponda 
-     * 6. verificar con la fecha final de la promocion, ara verificar si todavia es aplicable
+     * 6. verificar con la fecha final de la promocion, para verificar si todavia es aplicable
      */
     public void Productos(){
         modelVENTAS.setCodigo_producto((String) viewVENTAS.jcb_codigo_producto.getSelectedItem());
