@@ -6,6 +6,8 @@
 package controllers;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
 import models.modelVENTAS;
 import views.ViewVENTAS;
@@ -51,9 +53,30 @@ public class ControllerVENTAS {
         
     };
     
+    KeyListener key = new KeyListener(){
+        @Override
+        public void keyTyped(KeyEvent e) {
+            
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+            
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            
+        }
+        
+    };
+    
     public ControllerVENTAS(modelVENTAS modelVENTAS, ViewVENTAS viewVENTAS) {
         this.modelVENTAS = modelVENTAS;
         this.viewVENTAS = viewVENTAS;
+        
+        viewVENTAS.jtf_cantidad.addKeyListener(key);
+        viewVENTAS.jtf_precio.addKeyListener(key);
         
         modelVENTAS.Conectar();//Llamar a la conexion a la Base de datos 
         LimpiarCombox();
