@@ -688,5 +688,13 @@ public class modelVENTAS {
         datos[6] = Float.toString(this.getTotal_por_producto());
         model_ventas.addRow(datos);
     }
-    
+    /**
+     * Calculando el importe de la Venta
+     */
+    public void importe(){
+      //*********************calculando el importe, iva y subtotal de la compra***************
+      importe=this.getImporte();
+      iva= importe*16/100;//calculando el iva
+      subtotal = importe - iva; //calculando el subtotal
+    }
 }
