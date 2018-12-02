@@ -84,6 +84,12 @@ public class ControllerVENTAS {
         LimpiarCombox();
         LlenarCombox();
         setActionListener(); 
+        
+        // obetner el numero de venta y mostrarlo
+        modelVENTAS.numeroVentas();
+        viewVENTAS.jtf_numero_venta.setText(Integer.toString(modelVENTAS.getNumero_venta()));
+        viewVENTAS.jt_vista.setModel(modelVENTAS.getModel_ventas());//agrenado modelo a la tabla
+        
     }
     /**
      * agregar el evento de ActionListener a los ComboBox y a los botones de la vista Ventas
