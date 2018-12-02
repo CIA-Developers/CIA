@@ -56,17 +56,19 @@ public class ControllerVENTAS {
     KeyListener key = new KeyListener(){
         @Override
         public void keyTyped(KeyEvent e) {
-            
+
         }
 
         @Override
         public void keyPressed(KeyEvent e) {
-            
+
         }
 
         @Override
         public void keyReleased(KeyEvent e) {
-            totalProducto();
+           if (e.getSource() == viewVENTAS.jtf_cantidad){
+               totalProducto();
+            }
         }
         
     };
@@ -145,11 +147,13 @@ public class ControllerVENTAS {
         modelVENTAS.setCodigo_producto((String) viewVENTAS.jcb_codigo_producto.getSelectedItem());
         modelVENTAS.setCodigo_producto_Promo((String) viewVENTAS.jcb_codigo_producto.getSelectedItem());
         modelVENTAS.llenarTextFieldsProductos();
+        viewVENTAS.jtf_cantidad.setText("1");
         viewVENTAS.jtf_nombre_producto.setText(modelVENTAS.getNombre_producto());
         viewVENTAS.jtf_tipo_producto.setText(modelVENTAS.getTipo_producto());
         viewVENTAS.jtf_marca_producto.setText(modelVENTAS.getMarca_producto());
         viewVENTAS.jl_status_producto.setText(modelVENTAS.getStatus_vista());
         viewVENTAS.jtf_precio.setText(Float.toString(modelVENTAS.getPrecio_venta()));
+        totalProducto();
         
     }
     /***

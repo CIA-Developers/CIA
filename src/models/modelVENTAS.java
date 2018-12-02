@@ -51,7 +51,7 @@ public class modelVENTAS {
     public String marca_producto;// solo se obtendra este dato, no se almacenara
     public String Status_producto;
     public String Status_vista;
-    public int cantidad_venta = 0;
+    public int cantidad_venta = 1; //se incia la venta en uno
     public float precio_venta;
     public float precio_venta_promo;
     public Date fecha_final;
@@ -249,7 +249,7 @@ public class modelVENTAS {
     public void setStatus_vista(String Status_vista) {
         this.Status_vista = Status_vista;
     }
-    
+
     public int getCantidad_venta() {
         return cantidad_venta;
     }
