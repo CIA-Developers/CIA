@@ -403,15 +403,15 @@ public class modelVENTAS {
     private ResultSet rs;
     PreparedStatement ps;
     
-    public DefaultTableModel model_compras = new DefaultTableModel();
+    public DefaultTableModel model_ventas = new DefaultTableModel();
     public int rec;//Variable que tomara el valor seleccionado en la tabla 
 
-    public DefaultTableModel getModel_compras() {
-        return model_compras;
+    public DefaultTableModel getModel_ventas() {
+        return model_ventas;
     }
 
-    public void setModel_compras(DefaultTableModel model_compras) {
-        this.model_compras = model_compras;
+    public void setModel_ventas(DefaultTableModel model_ventas) {
+        this.model_ventas = model_ventas;
     }
 
     public int getRec() {
@@ -647,6 +647,20 @@ public class modelVENTAS {
        }
     }
     //******************** METODOS PARA REALIZAR LA VENTA ***************************
+    /**
+     * metodo para conocer que numero de Venta es el que sigue
+     */
+    public void numeroVentas(){
+        try{ //obtener el nuemero de registros dentro de la base de datos
+            rs=st.executeQuery("SELECT * from ventas;");
+            rs.last();
+            numero_venta=rs.getInt("id_ventas");//obetner el numero de compra a realizar
+            numero_venta=numero_venta+1;
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"error10 AgregarDatosCompras "+ e);
+      }
+    }
+    
     // Calculando el total por producto vendido 
     public void TotalProductoVendido(){
         cantidad_venta = this.getCantidad_venta();
@@ -654,6 +668,25 @@ public class modelVENTAS {
         //Realizando la operacion para obtener el total por producto
         total_por_producto=cantidad_venta*precio_venta;
     }
+    //LLenando la tabla con el producto que se va a comprar 
+     /**
+     * los siguientes metodos realizaran los siguientes procesos
+     * 1. pasaran cada dato ingresado para la compra en la tabla, llenado una lista de los productos comprados
+     * 2. calcularan el importe, iva y subtotal de toda la compra en genera
+     * 3. este metodo solo servira para dar vista de como se ve cada producto 
+     *    con su respectivo precio y cantidad manejando tambien el Total final (SIN GUARDAR EN LA BASE DE DATOS)
+     */
+    public void AgregarDatosVenta(){
+        model_ventas.setColumnIdentifiers(new Object[]{"Numero de Venta", "Codigo Producto", "Nombre Producto", "Marca","Precio", "Cantidad", "Total"}); 
+        String datos[] = new String[8];
+        datos[0] = Integer.toString(this.getNumero_venta());
+        datos[1] = this.getCodigo_producto();
+        datos[2] = this.getNombre_producto();
+        datos[3] = this.getMarca_producto();
+        datos[4] = Float.toString(this.getPrecio_venta());
+        datos[5] = Integer.toString(this.getCantidad_venta());
+        datos[6] = Float.toString(this.getTotal_por_producto());
+        model_ventas.addRow(datos);
+    }
     
- 
 }
