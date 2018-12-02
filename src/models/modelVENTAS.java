@@ -598,6 +598,8 @@ public class modelVENTAS {
      * El metodo  pasara a las variables correspondintes los datos de los productos
      * pasara los datos de los productos que esten el promocion
      * para poder ser utlizado en el controlador de ventas 
+     * verificara si la Promocion esta Vigente 
+     * verificara si el producto esta o no a la venta 
      */
     public void llenarTextFieldsProductos(){
        try{//tabla de productos 
