@@ -759,7 +759,7 @@ public class ViewVENTAS extends javax.swing.JPanel {
     private rojeru_san.RSLabelHora hora;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JButton jb_agregar;
-    private javax.swing.JButton jb_aplicar_descuento;
+    public javax.swing.JButton jb_aplicar_descuento;
     public javax.swing.JButton jb_eliminar;
     public javax.swing.JButton jb_modificar;
     public javax.swing.JButton jb_nuevo;

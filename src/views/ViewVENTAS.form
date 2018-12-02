@@ -1324,6 +1324,9 @@
               <Image iconType="3" name="/Images/descuento_ventas.png"/>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jl_codigo_descuento">
           <Properties>
