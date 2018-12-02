@@ -191,5 +191,19 @@ public class ControllerVENTAS {
         modelVENTAS.setCantidad_venta(Integer.parseInt(viewVENTAS.jtf_cantidad.getText()));
         modelVENTAS.setTotal_por_producto(Float.parseFloat(viewVENTAS.jtf_total.getText()));
         modelVENTAS.AgregarDatosVenta();
+        
+        // ****************************** Calculando el importe ************************* 
+        //haciendo la suma de toda la columna de total por producto
+        float fila=0f;
+        float total=0f;
+        for (int i = 0; i < viewVENTAS.jt_vista.getRowCount(); i++){
+            fila = Float.parseFloat(viewVENTAS.jt_vista.getValueAt(i,6).toString());
+            total += fila;    
+        }
+        modelVENTAS.setImporte(total);
+        modelVENTAS.importe();
+        viewVENTAS.jtf_importe.setText(Float.toString(modelVENTAS.getImporte()));
+        viewVENTAS.jtf_iva.setText(Float.toString(modelVENTAS.getIva()));
+        viewVENTAS.jtf_subtotal.setText(Float.toString(modelVENTAS.getSubtotal())); 
     }
 }
