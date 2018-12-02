@@ -623,13 +623,25 @@ public class modelVENTAS {
         rs.next();
         codigo_producto_Promo2 = rs.getString("codigo_producto");
         if (codigo_producto.equals(codigo_producto_Promo2)){
-            precio_venta =rs.getFloat("precio_descuento");// solo se obtendra este dato, no se almacenara
+            
             fecha_final = rs.getDate("fecha_final");// solo se obtendra este dato, no se almacenara
-            Status_vista = "Producto en **Promocion**";
             System.out.println("La fecha:"+fecha_final);
+            
          }
+        //Conocer si la promocion a un se aplica segun la fecha de vencimiento
+        Date date = new Date(); //Obtenemos la fecha del sistema (Actual)
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");//dando formato a la fecha
+        System.out.println("Fecha Controlador: "+dateFormat.format(date)); //agregamos el formato a la fecha
+        //Hacer la comparacion para saber si la promocion aun se aplica 
+        if(date.before(fecha_final)){
+            precio_venta =rs.getFloat("precio_descuento");// solo se obtendra este dato, no se almacenara
+            Status_vista = "Producto en **Promocion**";
+            System.out.println("se aplica la promocion");
+        }else{
+            Status_vista = "Venta Normal";
+        }  
        }catch(Exception e){
-            System.out.println("error11 al llenarTextFields"+e);
+            System.out.println("El producto no esta en promocion, o se vencio su promocion");
        }
     }
 }
