@@ -68,6 +68,7 @@ public class modelVENTAS {
     public int cantidad_puntos;
     public int porcentaje;
     public float descuento;
+    public float descuento_prod;
     
     public float efectivo;
     public float cambio;
@@ -326,6 +327,14 @@ public class modelVENTAS {
 
     public float getDescuento() {
         return descuento;
+    }
+
+    public float getDescuento_prod() {
+        return descuento_prod;
+    }
+
+    public void setDescuento_prod(float descuento_prod) {
+        this.descuento_prod = descuento_prod;
     }
 
     public void setDescuento(float descuento) {
@@ -696,5 +705,15 @@ public class modelVENTAS {
       importe=this.getImporte();
       iva= importe*16/100;//calculando el iva
       subtotal = importe - iva; //calculando el subtotal
+    }
+    /**
+     * Aplicando el descuento segun los puntos que el cliente tenga
+     * el descuento se aplica en el importe final 
+     */
+    public void DescuentoImporte(){
+        porcentaje = this.getPorcentaje();
+        importe = this.getImporte();
+        descuento = (porcentaje * importe)/100;
+        descuento_prod = importe - descuento; //se aplica el descuento al importe final
     }
 }
