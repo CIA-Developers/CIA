@@ -715,5 +715,9 @@ public class modelVENTAS {
         importe = this.getImporte();
         descuento = (porcentaje * importe)/100;
         descuento_prod = importe - descuento; //se aplica el descuento al importe final
+        //volviando a calcular el iva y el subtotal
+        iva= descuento_prod*16/100;//calculando el iva
+        subtotal = descuento_prod - iva; //calculando el subtotal
+        
     }
 }
