@@ -223,6 +223,7 @@ public class ControllerCOMPRAS {
         modelCOMPRAS.TotalCompraProducto();
         viewCOMPRAS.jtf_total.setText(Float.toString(modelCOMPRAS.getTotal_por_producto()));
         }catch(Exception e){
+            System.out.println("error ignorado Total Producto");
         }
     }
     public void llenadoTabla(){
