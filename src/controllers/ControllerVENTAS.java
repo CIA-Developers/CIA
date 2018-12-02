@@ -66,7 +66,7 @@ public class ControllerVENTAS {
 
         @Override
         public void keyReleased(KeyEvent e) {
-            
+            totalProducto();
         }
         
     };
@@ -151,5 +151,20 @@ public class ControllerVENTAS {
         viewVENTAS.jl_status_producto.setText(modelVENTAS.getStatus_vista());
         viewVENTAS.jtf_precio.setText(Float.toString(modelVENTAS.getPrecio_venta()));
         
+    }
+    /***
+     * el siguiente metodo mandara a las variables dentro del modelo el valor de la cajas de precio y cantidad
+     * de la venta
+     * y recibira el total por producto para mandarlo a la caja que mostrara el total por producto
+     */
+    public void totalProducto(){
+       try{
+        modelVENTAS.setCantidad_venta(Integer.parseInt(viewVENTAS.jtf_cantidad.getText()));
+        modelVENTAS.setPrecio_venta(Float.parseFloat(viewVENTAS.jtf_precio.getText()));
+        modelVENTAS.TotalProductoVendido();
+        viewVENTAS.jtf_total.setText(Float.toString(modelVENTAS.getTotal_por_producto()));
+        }catch(Exception e){
+            System.out.println("error ignorado Total Producto");
+        } 
     }
 }
