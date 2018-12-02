@@ -50,6 +50,7 @@ public class modelVENTAS {
     public String tipo_producto;// solo se obtendra este dato, no se almacenara
     public String marca_producto;// solo se obtendra este dato, no se almacenara
     public String Status_producto;
+    public String Status_vista;
     public int cantidad_venta = 0;
     public float precio_venta;
     public float precio_venta_promo;
@@ -239,6 +240,14 @@ public class modelVENTAS {
 
     public void setStatus_producto(String Status_producto) {
         this.Status_producto = Status_producto;
+    }
+
+    public String getStatus_vista() {
+        return Status_vista;
+    }
+
+    public void setStatus_vista(String Status_vista) {
+        this.Status_vista = Status_vista;
     }
     
     public int getCantidad_venta() {
@@ -600,21 +609,25 @@ public class modelVENTAS {
            marca_producto = rs.getString("marca");  
            precio_venta = rs.getFloat("precio_unitario_venta");
            Status_producto=rs.getString("status_prod");
-       }catch(Exception e){
-            JOptionPane.showMessageDialog(null,"error10 al llenarTextFields"+e);
-       } 
-       try{//tabla de productos con Promocion
-           codigo_producto_Promo = this.getCodigo_producto();
-            if (codigo_producto.equals(codigo_producto_Promo)){
-                rs = st.executeQuery("SELECT * FROM promociones inner join promocion_prod on promociones.id_promociones = promocion_prod.id_promociones WHERE promocion_prod.codigo_producto='"+codigo_producto_Promo+"';");//consulta a productos
-                if(rs.next());{
-                    codigo_producto_Promo2 = rs.getString("codigo_producto");
-                    System.out.println(codigo_producto_Promo2);
-                    precio_venta_promo =rs.getFloat("precio_descuento");// solo se obtendra este dato, no se almacenara
-                    fecha_final = rs.getDate("fecha_final");// solo se obtendra este dato, no se almacenara
-                    System.out.println("La fecha:"+fecha_final);
-                }
-            }
+           switch (Status_producto) {
+            case "en venta":
+               Status_vista = "Venta Normal";
+                break;
+            case "ya no se maneja":
+                Status_vista = "El producto ya no se maneja";
+                precio_venta=0.0f;
+                break;
+        }
+        codigo_producto_Promo = this.getCodigo_producto();
+        rs = st.executeQuery("SELECT * FROM promociones inner join promocion_prod on promociones.id_promociones = promocion_prod.id_promociones WHERE promocion_prod.codigo_producto='"+codigo_producto_Promo+"';");//consulta a productos
+        rs.next();
+        codigo_producto_Promo2 = rs.getString("codigo_producto");
+        if (codigo_producto.equals(codigo_producto_Promo2)){
+            precio_venta =rs.getFloat("precio_descuento");// solo se obtendra este dato, no se almacenara
+            fecha_final = rs.getDate("fecha_final");// solo se obtendra este dato, no se almacenara
+            Status_vista = "Producto en **Promocion**";
+            System.out.println("La fecha:"+fecha_final);
+         }
        }catch(Exception e){
             System.out.println("error11 al llenarTextFields"+e);
        }
