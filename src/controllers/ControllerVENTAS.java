@@ -48,6 +48,8 @@ public class ControllerVENTAS {
                 viewVENTAS.jtf_puntos_requeridos.setText(Integer.toString(modelVENTAS.getCantidad_puntos()));
                 viewVENTAS.jtf_porcentaje.setText(Integer.toString(modelVENTAS.getPorcentaje()));
                 
+            }else if (e.getSource() == viewVENTAS.jb_agregar){
+                AgregarDatosVenta();
             }
         }
         
@@ -176,5 +178,18 @@ public class ControllerVENTAS {
         }catch(Exception e){
             System.out.println("error ignorado Total Producto");
         } 
+    }
+    /**
+     * metodo que llenara la tabla con cada producto vendido e ira calculando el importe
+     */
+    public void AgregarDatosVenta(){
+        modelVENTAS.setNumero_venta(Integer.parseInt(viewVENTAS.jtf_numero_venta.getText()));
+        modelVENTAS.setCodigo_producto((String) viewVENTAS.jcb_codigo_producto.getSelectedItem());
+        modelVENTAS.setNombre_producto(viewVENTAS.jtf_nombre_producto.getText());
+        modelVENTAS.setMarca_producto(viewVENTAS.jtf_marca_producto.getText());
+        modelVENTAS.setPrecio_venta(Float.parseFloat(viewVENTAS.jtf_precio.getText()));
+        modelVENTAS.setCantidad_venta(Integer.parseInt(viewVENTAS.jtf_cantidad.getText()));
+        modelVENTAS.setTotal_por_producto(Float.parseFloat(viewVENTAS.jtf_total.getText()));
+        modelVENTAS.AgregarDatosVenta();
     }
 }
