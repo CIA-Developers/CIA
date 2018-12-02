@@ -646,4 +646,14 @@ public class modelVENTAS {
             System.out.println("El producto no esta en promocion, o se vencio su promocion");
        }
     }
+    //******************** METODOS PARA REALIZAR LA VENTA ***************************
+    // Calculando el total por producto vendido 
+    public void TotalProductoVendido(){
+        cantidad_venta = this.getCantidad_venta();
+        precio_venta = this.getPrecio_venta();
+        //Realizando la operacion para obtener el total por producto
+        total_por_producto=cantidad_venta*precio_venta;
+    }
+    
+ 
 }
