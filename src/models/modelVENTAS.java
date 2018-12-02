@@ -53,7 +53,7 @@ public class modelVENTAS {
     public int cantidad_venta = 0;
     public float precio_venta;
     public float precio_venta_promo;
-    public String fecha_final;
+    public Date fecha_final;
     public float total_por_producto=0.0f;
     
     public ArrayList producto; // la variable almacenara una lista para llenar comboBox
@@ -261,11 +261,11 @@ public class modelVENTAS {
         this.precio_venta_promo = precio_venta_promo;
     }
 
-    public String getFecha_final() {
+    public Date getFecha_final() {
         return fecha_final;
     }
 
-    public void setFecha_final(String fecha_final) {
+    public void setFecha_final(Date fecha_final) {
         this.fecha_final = fecha_final;
     }
     
@@ -605,14 +605,16 @@ public class modelVENTAS {
        } 
        try{//tabla de productos con Promocion
            codigo_producto_Promo = this.getCodigo_producto();
-           rs = st.executeQuery("SELECT * FROM promociones inner join promocion_prod on promociones.id_promociones = promocion_prod.id_promociones WHERE promocion_prod.codigo_producto='"+codigo_producto_Promo+"';");//consulta a productos
-           rs.next();
-           codigo_producto_Promo2 = rs.getString("codigo_producto");
-           System.out.println(codigo_producto_Promo2);
-           precio_venta_promo =rs.getFloat("precio_descuento");// solo se obtendra este dato, no se almacenara
-           fecha_final = rs.getString("fecha_final");// solo se obtendra este dato, no se almacenara
-           System.out.println("La fecha:"+fecha_final);
-           System.out.println(precio_venta_promo);
+            if (codigo_producto.equals(codigo_producto_Promo)){
+                rs = st.executeQuery("SELECT * FROM promociones inner join promocion_prod on promociones.id_promociones = promocion_prod.id_promociones WHERE promocion_prod.codigo_producto='"+codigo_producto_Promo+"';");//consulta a productos
+                if(rs.next());{
+                    codigo_producto_Promo2 = rs.getString("codigo_producto");
+                    System.out.println(codigo_producto_Promo2);
+                    precio_venta_promo =rs.getFloat("precio_descuento");// solo se obtendra este dato, no se almacenara
+                    fecha_final = rs.getDate("fecha_final");// solo se obtendra este dato, no se almacenara
+                    System.out.println("La fecha:"+fecha_final);
+                }
+            }
        }catch(Exception e){
             System.out.println("error11 al llenarTextFields"+e);
        }
