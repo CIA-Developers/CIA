@@ -108,12 +108,19 @@ public class ControllerVENTAS {
      */
     public void Productos(){
         modelVENTAS.setCodigo_producto((String) viewVENTAS.jcb_codigo_producto.getSelectedItem());
+        modelVENTAS.setCodigo_producto_Promo((String) viewVENTAS.jcb_codigo_producto.getSelectedItem());
         modelVENTAS.llenarTextFieldsProductos();
         viewVENTAS.jtf_nombre_producto.setText(modelVENTAS.getNombre_producto());
         viewVENTAS.jtf_tipo_producto.setText(modelVENTAS.getTipo_producto());
         viewVENTAS.jtf_marca_producto.setText(modelVENTAS.getMarca_producto());
         //proceso para establecer el precio y Status del producto si esta en promocion, venta normal o no.
-        if("en venta".equals(modelVENTAS.getStatus_producto())){
+        //si el codigo:producto producto es igual al codigo_producto en promocion
+        if (modelVENTAS.getCodigo_producto_Promo2().equals(modelVENTAS.getCodigo_producto())){
+            //si la fecha de la promocion es vigente a un se puede aplicar dicha promocion
+            viewVENTAS.jl_status_producto.setText("Producto en **Promocion**");
+            viewVENTAS.jtf_precio.setText(Float.toString(modelVENTAS.getPrecio_venta_promo())); 
+        }
+        else if("en venta".equals(modelVENTAS.getStatus_producto())){
             viewVENTAS.jl_status_producto.setText("Venta Normal");
             viewVENTAS.jtf_precio.setText(Float.toString(modelVENTAS.getPrecio_venta())); 
         }else{
@@ -121,7 +128,6 @@ public class ControllerVENTAS {
             JOptionPane.showMessageDialog(null,"EL PRODUCTO YA NO SE MANEJA");
             viewVENTAS.jtf_precio.setText("0.0");
         }
-        
         
     }
 }
