@@ -705,6 +705,16 @@ public class modelVENTAS {
       importe=this.getImporte();
       iva= importe*16/100;//calculando el iva
       subtotal = importe - iva; //calculando el subtotal
+      /**
+       * Generar Puntos de acuerdo al importe generado y los puntos se generan para todos 
+       * los clientes, siempre y cuando no sea el cliente general 
+      */
+      RFC_cliente=this.getRFC_cliente();
+      if ("CLIENTEGENERA".equals(RFC_cliente)){
+          System.out.println("el cliente general no genera puntos");
+      }else{
+          puntos_ganados =(int)importe*3/100; //calcular los puntos ganados
+      }
     }
     /**
      * Aplicando el descuento segun los puntos que el cliente tenga

@@ -484,8 +484,8 @@ public class ModelCOMPRAS {
       //*********************calculando el importe, iva y subtotal de la compra***************
       importe=this.getImporte();
       iva= importe*16/100;//calculando el iva
-      subtotal = importe - iva; //calculando el subtotal
-    }
+      subtotal = importe - iva; //calculando el subtotal    
+    }  
     /**
      * metodo para saber la cantidad de filas que tiene la tabla de compras
      * para obtener el numero de compra quesigue
