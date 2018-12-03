@@ -736,6 +736,7 @@ public class modelVENTAS {
             }
           
         }else {
+            descuento_prod = importe;
             JOptionPane.showMessageDialog(null,"no se puede aplicar el descuento");
         }
     }
