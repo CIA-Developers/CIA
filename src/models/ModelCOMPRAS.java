@@ -443,7 +443,7 @@ public class ModelCOMPRAS {
     public void llenarTextFieldsProductos(){
        try{
            codigo_producto = this.getCodigo_producto();
-           rs = st.executeQuery("SELECT * FROM productos WHERE codigo_producto='" +codigo_producto+ "';");//consulta a empleaddos compras
+           rs = st.executeQuery("SELECT * FROM productos WHERE codigo_producto='"+codigo_producto+"';");//consulta a empleaddos compras
            rs.next();
            nombre_producto = rs.getString("nom_producto");// solo se obtendra este dato, no se almacenara
            tipo_producto = rs.getString("tipo_producto");// solo se obtendra este dato, no se almacenara

@@ -9,6 +9,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.TableRowSorter;
 
@@ -20,6 +21,19 @@ public class ControllerPromociones {
 
     ModelPromociones modelPromociones;
     ViewPromociones viewPromociones;
+    ActionListener list = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (e.getSource() == viewPromociones.jcb_codigo_producto) {
+                modelPromociones.setCodigo_producto((String) viewPromociones.jcb_codigo_producto.getSelectedItem());
+                modelPromociones.llenarTextFieldsProductos();
+                viewPromociones.jtf_nombre_producto.setText(modelPromociones.getNombre_producto());
+                viewPromociones.jtf_tipo_producto.setText(modelPromociones.getTipo_producto());
+                viewPromociones.jtf_marca_producto.setText(modelPromociones.getMarca_producto());
+                //habilitar cajas de texto
+            }
+        }
+    };
     MouseListener ml = new MouseListener() {
         @Override
         public void mouseClicked(MouseEvent e) {
@@ -71,7 +85,7 @@ public class ControllerPromociones {
             }
         }
     };
-
+    
     public ControllerPromociones(ModelPromociones modelPromociones, ViewPromociones viewPromociones) {
 
         this.modelPromociones = modelPromociones;
@@ -80,8 +94,41 @@ public class ControllerPromociones {
         this.viewPromociones.jtf_buscar.addKeyListener(key); //agregar elevento de keylistener en la tabla
 
         ConexionBD();
+        modelPromociones.Conectar();// conexion a la BD
+        initComponents();
+        llenadoCombos();
+        setActionListener();    
+    }
+
+    public void llenadoTabla() {
+        try {
+
+            modelPromociones.setCodigo_producto((String) viewPromociones.jcb_codigo_producto.getSelectedItem());
+            modelPromociones.setNombre_producto(viewPromociones.jtf_nombre_producto.getText());
+            modelPromociones.setMarca_producto(viewPromociones.jtf_marca_producto.getText());
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "error11 AgregarDatosCompras " + e);
+        }
+    }
+
+    public void llenadoCombos() {
+        modelPromociones.llenarCombo();
+        for (int c = 0; c < modelPromociones.getProducto().size(); c++) {
+            viewPromociones.jcb_codigo_producto.addItem((String) modelPromociones.getProducto().get(c));
+        }
+    }
+
+    public void setActionListener() {
+        viewPromociones.jcb_codigo_producto.addActionListener(list);
 
     }
+
+    public void initComponents() {
+        viewPromociones.jcb_codigo_producto.removeAllItems();
+
+    }
+
 
     public void ConexionBD() {
         modelPromociones.Conectar();
@@ -96,7 +143,7 @@ public class ControllerPromociones {
         viewPromociones.jtf_colonia1.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 2).toString());
         viewPromociones.jtf_numero1.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 3).toString());
         viewPromociones.jtf_telefono1.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 4).toString());
-       // viewPromociones.jtf_no_sucursal.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 5).toString());
+        // viewPromociones.jtf_no_sucursal.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 5).toString());
         //viewPromociones.jtf_calle.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 6).toString());
         //viewPromociones.jtf_colonia.setText(viewPromociones.jt_vista.getValueAt(modelPromociones.getRec(), 7).toString());
 

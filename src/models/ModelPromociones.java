@@ -13,6 +13,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -76,6 +77,7 @@ public class ModelPromociones {
         this.columnaABuscar = columnaABuscar;
     }
     private int verificar;
+    private ArrayList producto;
     private String no_promocion;
     private String causa;
     private String descuento;
@@ -84,6 +86,9 @@ public class ModelPromociones {
     private String codigo_producto;
     private String fecha_inicio;
     private String fecha_final;
+    private String nombre_producto;// solo se obtendra este dato, no se almacenara
+    private String tipo_producto;// solo se obtendra este dato, no se almacenara
+    private String marca_producto;// solo se obtendra este dato, no se almacenara
 
     public int getVerificar() {
         return verificar;
@@ -132,14 +137,14 @@ public class ModelPromociones {
     public void setUnidad_medida(String unidad_medida) {
         this.unidad_medida = unidad_medida;
     }
-        public String getCodigo_producto() {
+
+    public String getCodigo_producto() {
         return codigo_producto;
     }
 
     public void setCodigo_producto(String unidad_medida) {
         this.codigo_producto = codigo_producto;
     }
-
 
     public String getFecha_inicio() {
         return fecha_inicio;
@@ -156,8 +161,7 @@ public class ModelPromociones {
     public void setFecha_final(String fecha_final) {
         this.fecha_final = fecha_final;
     }
-    
-    
+
     public String Limpiar = " ";
     public int codigo = 0;
 
@@ -187,6 +191,38 @@ public class ModelPromociones {
         this.model = model;
     }
 
+    public String getTipo_producto() {
+        return tipo_producto;
+    }
+
+    public void setTipo_producto(String tipo_producto) {
+        this.tipo_producto = tipo_producto;
+    }
+
+    public String getMarca_producto() {
+        return marca_producto;
+    }
+
+    public void setMarca_producto(String marca_producto) {
+        this.marca_producto = marca_producto;
+    }
+
+    public ArrayList getProducto() {
+        return producto;
+    }
+
+    public void setProducto(ArrayList producto) {
+        this.producto = producto;
+    }
+
+    public String getNombre_producto() {
+        return nombre_producto;
+    }
+
+    public void setNombre_producto(String nombre_producto) {
+        this.nombre_producto = nombre_producto;
+    }
+
     private Connection conexion;
     private Statement st;
     private ResultSet rs;
@@ -204,7 +240,40 @@ public class ModelPromociones {
         }
 
     }
+///////////////////////////////////////////////////////////////
 
+    public void llenarCombo() {
+        ArrayList codigo = new ArrayList();
+        try {
+            rs = st.executeQuery("SELECT * FROM productos;");
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "error4 al llenar comboBox" + e);
+        }
+        try {
+            while (rs.next()) {
+                String sucursal = rs.getString("codigo_producto");
+                codigo.add(sucursal);//agregar los datos a la lista        
+            }
+            this.setProducto(codigo);// almacena la lista con los numeros de proveedores obetenidos de la BD      
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "error5 al llenar comboBox" + e);
+        }
+    }
+
+    public void llenarTextFieldsProductos() {
+        try {
+            codigo_producto = this.getCodigo_producto();
+            rs = st.executeQuery("SELECT * FROM productos WHERE codigo_producto='"+codigo_producto+"';");//consulta a empleaddos compras
+            rs.next();
+            nombre_producto = rs.getString("nom_producto");// solo se obtendra este dato, no se almacenara
+            tipo_producto = rs.getString("tipo_producto");// solo se obtendra este dato, no se almacenara
+            marca_producto = rs.getString("marca");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "error8 al llenarTextFields" + e);
+        }
+    }
+
+    ////////////////////////////////////////////
     public void mostrar() {
         ResultSet rs = Database.getTabla("SELECT promociones.id_promociones,causa_promocion, desc_promocion,precio_descuento, promociones.unidad_medida, promocion_prod.codigo_producto, promocion_prod.fecha_inicio, promocion_prod.fecha_final from promociones inner join promocion_prod on promociones.id_promociones = promocion_prod.id_promociones;");
         modelo_promocion.setColumnIdentifiers(new Object[]{"No promocion", "Causa", "Descuento", "precio_descuento", "unidad de medida", "codigo del producto", "fecha_inicio", "fecha_final"});
@@ -224,4 +293,5 @@ public class ModelPromociones {
             System.out.println(e);
         }
     }
+
 }
