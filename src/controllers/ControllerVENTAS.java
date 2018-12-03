@@ -76,9 +76,16 @@ public class ControllerVENTAS {
         public void keyReleased(KeyEvent e) {
            if (e.getSource() == viewVENTAS.jtf_cantidad){
                totalProducto();
+            }else if (e.getSource() == viewVENTAS.jtf_efectivo){
+            try{
+                modelVENTAS.setEfectivo(Float.parseFloat(viewVENTAS.jtf_efectivo.getText()));
+                modelVENTAS.Cambio();
+                viewVENTAS.jtf_cambio.setText(Float.toString(modelVENTAS.getCambio()));
+            }catch(Exception key){
+                 System.out.println("error ignorado Cambio");
+            } 
             }
-        }
-        
+        }    
     };
     
     public ControllerVENTAS(modelVENTAS modelVENTAS, ViewVENTAS viewVENTAS) {
@@ -86,7 +93,7 @@ public class ControllerVENTAS {
         this.viewVENTAS = viewVENTAS;
         
         viewVENTAS.jtf_cantidad.addKeyListener(key);
-        viewVENTAS.jtf_precio.addKeyListener(key);
+        viewVENTAS.jtf_efectivo.addKeyListener(key);
         
         modelVENTAS.Conectar();//Llamar a la conexion a la Base de datos 
         LimpiarCombox();

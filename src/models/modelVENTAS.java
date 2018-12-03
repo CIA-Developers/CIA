@@ -752,5 +752,20 @@ public class modelVENTAS {
             JOptionPane.showMessageDialog(null,"no se puede aplicar el descuento");
         }
     }
-    
+    /***
+     * metodo que recibira el efectivo que da el cliente y de acuerdo al cliente 
+     * calculara cuanto debe de recibir de cambio
+     * si el efectivo es menor al importe, no se puede realizar la operacion
+     * de lo contrario la operacion se realizara con exito
+     */
+    public void Cambio(){
+        try{
+            efectivo = this.getEfectivo();
+            if (efectivo > importe){
+                cambio = efectivo - importe; //se hace el calculo del cambio 
+            }
+       }catch(Exception e){
+            System.out.println("error MODELO: ignorado, Cambio");
+        } 
+    }
 }
