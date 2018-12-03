@@ -203,10 +203,12 @@ public class ControllerVENTAS {
             total += fila;    
         }
         modelVENTAS.setImporte(total);
+        modelVENTAS.setRFC_cliente((String) viewVENTAS.jcb_rfc_cliente.getSelectedItem());
         modelVENTAS.importe();
         viewVENTAS.jtf_importe.setText(Float.toString(modelVENTAS.getImporte()));
         viewVENTAS.jtf_iva.setText(Float.toString(modelVENTAS.getIva()));
         viewVENTAS.jtf_subtotal.setText(Float.toString(modelVENTAS.getSubtotal())); 
+        viewVENTAS.jtf_puntos_ganados.setText(Integer.toString(modelVENTAS.getPuntos_ganados()));
     }
     /**
      * metodo que evalua si el producto esta en venta, o no 
