@@ -129,7 +129,7 @@ public class ControllerPromociones {
 
     }
 
-
+//
     public void ConexionBD() {
         modelPromociones.Conectar();
         modelPromociones.mostrar();
