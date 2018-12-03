@@ -50,6 +50,8 @@ public class ControllerVENTAS {
                 
             }else if (e.getSource() == viewVENTAS.jb_agregar){
                 jtf_agregar();
+            }else if(e.getSource() == viewVENTAS.jb_aplicar_descuento){
+                descuento();
             }
         }
         
@@ -222,5 +224,19 @@ public class ControllerVENTAS {
                 AgregarDatosVenta();
                 break;
         }
+    }
+    /**
+     * Metodo que manda a llamar el metodo para aplicar el descuento si el cliente
+     * cumple con los puntos requeridos de lo contrario, no se aplicara el descuento deseado
+     */
+    public void descuento(){
+        modelVENTAS.setPorcentaje(Integer.parseInt(viewVENTAS.jtf_porcentaje.getText()));
+        modelVENTAS.setImporte(Float.parseFloat(viewVENTAS.jtf_importe.getText()));
+        modelVENTAS.DescuentoImporte();
+        viewVENTAS.jtf_descuento.setText(Float.toString(modelVENTAS.getDescuento()));
+        viewVENTAS.jtf_importe.setText(Float.toString(modelVENTAS.getDescuento_prod()));
+        //calculando de nuevo el iva y el subtotal
+        viewVENTAS.jtf_iva.setText(Float.toString(modelVENTAS.getIva()));
+        viewVENTAS.jtf_subtotal.setText(Float.toString(modelVENTAS.getSubtotal())); 
     }
 }
