@@ -39,19 +39,23 @@ public class ControllerVENTAS {
                 modelVENTAS.llenarTextFieldsClientes();
                 viewVENTAS.jtf_nombre_cliente.setText(modelVENTAS.getNombre_cliente()+"  "+modelVENTAS.getApell_pat_cliente()+"  "+modelVENTAS.getApell_mat_cliente());
                 viewVENTAS.jtf_puntos_acumulados.setText(Integer.toString(modelVENTAS.getPuntos_acumulados()));
+                viewVENTAS.jcb_codigo_producto.setEnabled(true);
             }else if (e.getSource() == viewVENTAS.jcb_codigo_producto){
                 Productos();
-             
+                viewVENTAS.jb_agregar.setEnabled(true);
             }else if (e.getSource() == viewVENTAS.jcb_codigo_descuento){
                 modelVENTAS.setCodigo_descuento(Integer.parseInt((String) viewVENTAS.jcb_codigo_descuento.getSelectedItem()));
                 modelVENTAS.llenarTextFieldsDescuentos();
                 viewVENTAS.jtf_puntos_requeridos.setText(Integer.toString(modelVENTAS.getCantidad_puntos()));
                 viewVENTAS.jtf_porcentaje.setText(Integer.toString(modelVENTAS.getPorcentaje()));
-                
+                viewVENTAS.jb_aplicar_descuento.setEnabled(true);
             }else if (e.getSource() == viewVENTAS.jb_agregar){
                 jtf_agregar();
             }else if(e.getSource() == viewVENTAS.jb_aplicar_descuento){
                 descuento();
+            }else if(e.getSource() == viewVENTAS.jb_nuevo){
+                nuevo();
+                viewVENTAS.jb_nuevo.setEnabled(false);
             }
         }
         
@@ -88,6 +92,7 @@ public class ControllerVENTAS {
         LimpiarCombox();
         LlenarCombox();
         setActionListener(); 
+        deshabiltarObjetos();
         
         // obetner el numero de venta y mostrarlo
         modelVENTAS.numeroVentas();
@@ -111,6 +116,37 @@ public class ControllerVENTAS {
        viewVENTAS.jb_modificar.addActionListener(list);
        viewVENTAS.jb_aplicar_descuento.addActionListener(list);
        viewVENTAS.jb_realizar_venta.addActionListener(list);
+    }
+     public void deshabiltarObjetos(){
+        viewVENTAS.jcb_numero_sucursal.setEnabled(false);
+        viewVENTAS.jcb_rfc_cliente.setEnabled(false);
+        viewVENTAS.jcb_codigo_producto.setEnabled(false);
+        viewVENTAS.jcb_codigo_descuento.setEnabled(false);
+        //Deshabilitar cajas de texto
+        viewVENTAS.jtf_cantidad.setEditable(false);
+        viewVENTAS.jtf_precio.setEditable(false);
+        //Deshablitar botones
+        viewVENTAS.jb_agregar.setEnabled(false);
+        viewVENTAS.jb_modificar.setEnabled(false);
+        viewVENTAS.jb_nuevo.setEnabled(false);
+        viewVENTAS.jb_realizar_venta.setEnabled(false);
+        viewVENTAS.jb_eliminar.setEnabled(false);
+        viewVENTAS.jb_aplicar_descuento.setEnabled(false);
+        //Deshabilitando la tabla de compras 
+        viewVENTAS.jt_vista.setEnabled(false);
+    }
+     //************************************ BOTONES DE NUEVO, AGREGAR, Eliminar ***********************************************
+    public void nuevo(){
+        viewVENTAS.jtf_nombre_producto.setText("  ");
+        viewVENTAS.jtf_tipo_producto.setText(" ");
+        viewVENTAS.jtf_marca_producto.setText(" ");
+        viewVENTAS.jtf_cantidad.setText("0");
+        viewVENTAS.jtf_precio.setText("0.0");
+        viewVENTAS.jtf_total.setText("0.0");
+        viewVENTAS.jb_agregar.setEnabled(false);
+        viewVENTAS.jb_modificar.setEnabled(false);
+        viewVENTAS.jb_eliminar.setEnabled(false);
+        viewVENTAS.jtf_cantidad.setEditable(true);
     }
     /**
      * Metodo que limpiara los ComboBox de la vista VENTAS
@@ -154,6 +190,12 @@ public class ControllerVENTAS {
      * 6. verificar con la fecha final de la promocion, para verificar si todavia es aplicable
      */
     public void Productos(){
+        viewVENTAS.jcb_numero_sucursal.setEnabled(false);
+        viewVENTAS.jcb_rfc_cliente.setEnabled(false);
+        viewVENTAS.jcb_rfc.setEnabled(false);
+        viewVENTAS.jb_agregar.setEnabled(false);
+        viewVENTAS.jt_vista.setEnabled(true);
+        viewVENTAS.jtf_cantidad.setEditable(true);
         modelVENTAS.setCodigo_producto((String) viewVENTAS.jcb_codigo_producto.getSelectedItem());
         modelVENTAS.setCodigo_producto_Promo((String) viewVENTAS.jcb_codigo_producto.getSelectedItem());
         modelVENTAS.llenarTextFieldsProductos();
@@ -209,6 +251,9 @@ public class ControllerVENTAS {
         viewVENTAS.jtf_iva.setText(Float.toString(modelVENTAS.getIva()));
         viewVENTAS.jtf_subtotal.setText(Float.toString(modelVENTAS.getSubtotal())); 
         viewVENTAS.jtf_puntos_ganados.setText(Integer.toString(modelVENTAS.getPuntos_ganados()));
+        
+        viewVENTAS.jb_agregar.setEnabled(false);
+        viewVENTAS.jb_nuevo.setEnabled(true);
     }
     /**
      * metodo que evalua si el producto esta en venta, o no 
@@ -226,6 +271,9 @@ public class ControllerVENTAS {
                 AgregarDatosVenta();
                 break;
         }
+        viewVENTAS.jtf_cantidad.setEditable(false);
+        viewVENTAS.jcb_codigo_descuento.setEnabled(true);
+        viewVENTAS.jb_realizar_venta.setEnabled(true);
     }
     /**
      * Metodo que manda a llamar el metodo para aplicar el descuento si el cliente
@@ -239,6 +287,16 @@ public class ControllerVENTAS {
         viewVENTAS.jtf_importe.setText(Float.toString(modelVENTAS.getDescuento_prod()));
         //calculando de nuevo el iva y el subtotal
         viewVENTAS.jtf_iva.setText(Float.toString(modelVENTAS.getIva()));
-        viewVENTAS.jtf_subtotal.setText(Float.toString(modelVENTAS.getSubtotal())); 
+        viewVENTAS.jtf_subtotal.setText(Float.toString(modelVENTAS.getSubtotal()));
+        if ("deshabilitado".equals(modelVENTAS.getActivo())){
+            viewVENTAS.jcb_codigo_descuento.setEnabled(false);
+            viewVENTAS.jtf_puntos_requeridos.setText("0.0");
+            viewVENTAS.jtf_porcentaje.setText("0.0");
+            viewVENTAS.jb_aplicar_descuento.setEnabled(false);
+        }else{
+            viewVENTAS.jb_aplicar_descuento.setEnabled(false);
+            viewVENTAS.jtf_puntos_requeridos.setText("0.0");
+            viewVENTAS.jtf_porcentaje.setText("0.0");
+        }
     }
 }

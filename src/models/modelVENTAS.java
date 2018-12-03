@@ -74,7 +74,17 @@ public class modelVENTAS {
     public float cambio;
     
     public int puntos_ganados;
+    
+    public String activo;
 
+    public String getActivo() {
+        return activo;
+    }
+
+    public void setActivo(String activo) {
+        this.activo = activo;
+    }
+    
     public String getRFC_empleado() {
         return RFC_empleado;
     }
@@ -733,10 +743,12 @@ public class modelVENTAS {
                 //volviando a calcular el iva y el subtotal
                 iva= descuento_prod*16/100;//calculando el iva
                 subtotal = descuento_prod - iva; //calculando el subtotal
+                activo = "deshabilitado";
             }
           
         }else {
             descuento_prod = importe;
+            activo = "habilitado";
             JOptionPane.showMessageDialog(null,"no se puede aplicar el descuento");
         }
     }
