@@ -711,13 +711,23 @@ public class modelVENTAS {
      * el descuento se aplica en el importe final 
      */
     public void DescuentoImporte(){
-        porcentaje = this.getPorcentaje();
-        importe = this.getImporte();
-        descuento = (porcentaje * importe)/100;
-        descuento_prod = importe - descuento; //se aplica el descuento al importe final
-        //volviando a calcular el iva y el subtotal
-        iva= descuento_prod*16/100;//calculando el iva
-        subtotal = descuento_prod - iva; //calculando el subtotal
-        
+        llenarTextFieldsClientes();
+        llenarTextFieldsDescuentos();
+        if (puntos_acumulados >= cantidad_puntos){ // si los puntos del cliente son menores o iguales a los requeridos
+            int confirmar = JOptionPane.showConfirmDialog(null, "¿esta seguro de realizar el descuento?");    
+            if(JOptionPane.OK_OPTION==confirmar){
+                porcentaje = this.getPorcentaje();
+                importe = this.getImporte();
+                descuento = (porcentaje * importe)/100;
+                descuento_prod = importe - descuento; //se aplica el descuento al importe final
+                //volviando a calcular el iva y el subtotal
+                iva= descuento_prod*16/100;//calculando el iva
+                subtotal = descuento_prod - iva; //calculando el subtotal
+            }
+          
+        }else {
+            JOptionPane.showMessageDialog(null,"no se puede aplicar el descuento");
+        }
     }
+    
 }
