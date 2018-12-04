@@ -847,4 +847,39 @@ public class modelVENTAS {
             JOptionPane.showMessageDialog(null,"error13 FinalizarCompras "+ e);
       }    
     }
+    //*********************** ACTUALIZACION DE STOCK Y SUMAR Y RESTAR PUNTOS A USUARIOS ***********************
+    /**
+     * este metodo actuliza las existencias sumando a las exitencias actuales las nuevas
+     * al relializar un compra, estos cambios se agregan en la tabla de sucursal_productos y en 
+     * productos que es la suma general de cada productos 
+    */
+    public void existencias(){
+         try{
+          //existencias por sucursal
+          cantidad_venta = this.getCantidad_venta();
+          codigo_producto = this.getCodigo_producto();
+          num_sucursal = this.getNum_sucursal();
+          rs = st.executeQuery("SELECT * FROM sucursal_productos WHERE no_sucursal="+num_sucursal+" and codigo_producto='"+codigo_producto+"';");//consulta a sucursales_productos
+          rs.next();
+          stock_productos_sucursales =rs.getInt("existencias"); 
+          existencias_sucursal = stock_productos_sucursales - cantidad_venta;//restando a existencias
+          //revisar que los datos sean correctos
+          System.out.println("sucursal:"+stock_productos_sucursales);
+          System.out.println("sucursal:"+cantidad_venta);
+          System.out.println("sucursal:"+existencias_sucursal);
+          st.executeUpdate("UPDATE sucursal_productos SET existencias="+existencias_sucursal+" WHERE no_sucursal="+num_sucursal+" and codigo_producto='"+codigo_producto+"';");
+          //existencias generales en productos
+          rs = st.executeQuery("SELECT * FROM productos WHERE codigo_producto='"+codigo_producto+"';");//consulta a productos
+          rs.next();
+          stock_productos=rs.getInt("existencia_total");
+          //revisar que los datos sean correctos
+          System.out.println("productos:"+stock_productos);
+          System.out.println("productos:"+cantidad_venta);
+          existencia_general = stock_productos - cantidad_venta;
+          System.out.println(existencia_general);
+          st.executeUpdate("UPDATE productos SET existencia_total="+existencia_general+" WHERE codigo_producto='"+codigo_producto+"';");
+      }catch(Exception e){
+          JOptionPane.showMessageDialog(null,"error16 FinalizarCompras "+ e);
+      }
+    }
 }
