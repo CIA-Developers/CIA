@@ -66,6 +66,7 @@ public class modelVENTAS {
     public int codigo_descuento;
     public int puntos_requeridos;
     public int cantidad_puntos;
+    public int puntos;
     public int porcentaje;
     public float descuento;
     public float descuento_prod;
@@ -324,6 +325,14 @@ public class modelVENTAS {
 
     public void setCantidad_puntos(int cantidad_puntos) {
         this.cantidad_puntos = cantidad_puntos;
+    }
+
+    public int getPuntos() {
+        return puntos;
+    }
+
+    public void setPuntos(int puntos) {
+        this.puntos = puntos;
     }
 
     
@@ -880,6 +889,19 @@ public class modelVENTAS {
           st.executeUpdate("UPDATE productos SET existencia_total="+existencia_general+" WHERE codigo_producto='"+codigo_producto+"';");
       }catch(Exception e){
           JOptionPane.showMessageDialog(null,"error16 FinalizarVentas "+ e);
+      }
+    }
+    // ************* Sumando puntos generados a los Clientes ****************
+    public void SumarPuntos(){
+        try{
+          RFC_cliente = this.getRFC_cliente();
+          rs = st.executeQuery("SELECT * FROM clientes WHERE RFC_cliente='"+RFC_cliente+"';");//consulta a productos
+          rs.next();
+          cantidad_puntos=rs.getInt("puntos");
+          puntos =  cantidad_puntos + puntos_ganados;
+          st.executeUpdate("UPDATE clientes SET puntos= "+puntos+" WHERE RFC_cliente='"+RFC_cliente+"';");
+        }catch(Exception e){
+          JOptionPane.showMessageDialog(null,"error17 FinalizarVentas "+ e);
       }
     }
 }

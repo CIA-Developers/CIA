@@ -65,6 +65,7 @@ public class ControllerVENTAS {
                 modificar();
                 viewVENTAS.jb_modificar.setEnabled(false);
             }else if(e.getSource() == viewVENTAS.jb_realizar_venta){
+                PuntosGanados();
                 realizarCompra();
             }
         }
@@ -454,6 +455,7 @@ public class ControllerVENTAS {
         viewVENTAS.jtf_iva.setText("0.0");
         viewVENTAS.jtf_subtotal.setText("0.0");
         viewVENTAS.jtf_descuento.setText(" ");
+        viewVENTAS.jtf_puntos_ganados.setText("0");
         viewVENTAS.jtf_efectivo.setText("0.0");
         viewVENTAS.jtf_cambio.setText("0.0");
         viewVENTAS.jcb_rfc.setEnabled(true);
@@ -462,5 +464,11 @@ public class ControllerVENTAS {
         }catch(Exception e){
                 JOptionPane.showMessageDialog(null,"error15 FinalizarVentas "+ e);
         } 
+    }
+    //*********** Sumando al cliente los puntos Ganados ***************** 
+    public void PuntosGanados(){
+        modelVENTAS.setRFC_cliente((String) viewVENTAS.jcb_rfc_cliente.getSelectedItem());
+        modelVENTAS.setPuntos_ganados(Integer.parseInt(viewVENTAS.jtf_puntos_ganados.getText()));
+        modelVENTAS.SumarPuntos();
     }
 }
