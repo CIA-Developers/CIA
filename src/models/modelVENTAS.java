@@ -71,6 +71,7 @@ public class modelVENTAS {
     public float descuento_prod;
     
     public float efectivo;
+    public String forma_pago;
     public float cambio;
     
     public int puntos_ganados;
@@ -357,6 +358,14 @@ public class modelVENTAS {
 
     public void setEfectivo(float efectivo) {
         this.efectivo = efectivo;
+    }
+
+    public String getForma_pago() {
+        return forma_pago;
+    }
+
+    public void setForma_pago(String forma_pago) {
+        this.forma_pago = forma_pago;
     }
 
     public float getCambio() {
@@ -768,5 +777,74 @@ public class modelVENTAS {
             System.out.println("error MODELO: ignorado, Cambio");
         } 
     }
-    
+    //************************* GUARDAR LA VENTA REALIZADA EN LA BASE DE DATOS **************************
+    /**
+     * finalizar Venta
+     * se hara la consulta a la base de datos, con las tablas de venta y detalle_venta
+     * guardara en la tablas los datos que le corresponden a cada una
+     * para realizar la venta y finalizarla 
+    */  
+   
+    /***
+     * Metodo que guradara en la tabla de ventas 
+     */  
+    public void finalizarCompratablaVenta(){
+        int confirmar = JOptionPane.showConfirmDialog(null, "¿esta seguro de realizar la compra?");    
+        if(JOptionPane.OK_OPTION==confirmar) {
+            try{// se guarda en la tabla de compra   
+                Connection cn = getConexion();
+                RFC_cliente = this.getRFC_cliente();
+                subtotal = this.getSubtotal();
+                iva = this.getIva();
+                importe = this.getImporte();
+                numero_venta = this.getNumero_venta();
+                RFC_empleado = this.getRFC_empleado();
+                forma_pago= "Efectivo";
+                num_sucursal = this.getNum_sucursal();
+                codigo_descuento = this.getCodigo_descuento();
+                puntos_ganados = this.getPuntos_ganados();
+                ps = cn.prepareStatement("insert into ventas (RFC_cliente,subtotal_venta,iva,importe_vent,num_factura,RFC_empleado,forma_pago,no_sucursal,codigo_descuento,puntos_ganados)"
+                    + " values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
+                ps.setString(1,RFC_cliente);
+                ps.setFloat(2,subtotal);
+                ps.setFloat(3,iva);
+                ps.setFloat(4,importe);
+                ps.setInt(5,numero_venta);
+                ps.setString(6,RFC_empleado);
+                ps.setString(7,forma_pago);
+                ps.setInt(8,num_sucursal);
+                ps.setInt(9,codigo_descuento);
+                ps.setInt(10,puntos_ganados);
+                ps.executeUpdate();//realizndo la accion de guardar
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null,"error12 FinalizarCompras "+ e);
+          }
+      }
+    }
+    /**
+     * este metodo guardara en la base de datos los datos correspondientes en detalle compra
+     * 1. se le agrega a cada variable el valor correspondiente para despues agregarlo a la base de datos
+     * 2. se hace la consulta para insertar datos
+     */
+     public void finalizarCompratablaDetalleVenta(){
+        try{//se guardara en la tabla detalle_compra
+            Connection cn = getConexion();
+            num_sucursal = this.getNum_sucursal();
+            numero_venta = this.getNumero_venta();
+            codigo_producto = this.getCodigo_producto();
+            cantidad_venta = this.getCantidad_venta();
+            precio_venta = this.getPrecio_venta();
+            total_por_producto = this.getTotal_por_producto();
+            ps = cn.prepareStatement("insert into detalle_ventas (id_ventas,codigo_producto,cantidad,precio_venta,total_producto)"
+                + " values(?, ?, ?, ?, ?);");
+            ps.setInt(1,numero_venta);
+            ps.setString(2,codigo_producto);
+            ps.setFloat(3,cantidad_venta);
+            ps.setFloat(4,precio_venta);
+            ps.setFloat(5,total_por_producto);
+            ps.executeUpdate();//realizndo la accion de guardar    
+      }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"error13 FinalizarCompras "+ e);
+      }    
+    }
 }
