@@ -371,6 +371,7 @@ public class ControllerVENTAS {
         viewVENTAS.jtf_cantidad.setText("0");
         viewVENTAS.jtf_precio.setText("0.0");
         viewVENTAS.jtf_total.setText("0.0");
+        viewVENTAS.jl_status_producto.setText("Normal");
     }
     /**
      * Metodo que manda a llamar el metodo para aplicar el descuento si el cliente
