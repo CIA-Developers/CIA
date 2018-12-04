@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
 import models.modelVENTAS;
 import views.ViewVENTAS;
@@ -56,15 +58,48 @@ public class ControllerVENTAS {
             }else if(e.getSource() == viewVENTAS.jb_nuevo){
                 nuevo();
                 viewVENTAS.jb_nuevo.setEnabled(false);
+            }else if(e.getSource() == viewVENTAS.jb_eliminar){
+                eliminar();
+                viewVENTAS.jb_eliminar.setEnabled(false);
+            }else if(e.getSource() == viewVENTAS.jb_modificar){
+                modificar();
+                viewVENTAS.jb_modificar.setEnabled(false);
             }
         }
         
     };
-    
+    MouseListener ml = new MouseListener(){
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            if (e.getSource() == viewVENTAS.jt_vista) {
+                jt_vista_MouseClicked();
+            }
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+          
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+            
+        }    
+        @Override
+        public void mouseEntered(MouseEvent e) {
+            
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+            
+        }
+        
+    };
     KeyListener key = new KeyListener(){
         @Override
         public void keyTyped(KeyEvent e) {
-
+    
         }
 
         @Override
@@ -94,6 +129,7 @@ public class ControllerVENTAS {
         
         viewVENTAS.jtf_cantidad.addKeyListener(key);
         viewVENTAS.jtf_efectivo.addKeyListener(key);
+        this.viewVENTAS.jt_vista.addMouseListener(ml);//agregar a la table el evento de MouseListener
         
         modelVENTAS.Conectar();//Llamar a la conexion a la Base de datos 
         LimpiarCombox();
@@ -154,6 +190,31 @@ public class ControllerVENTAS {
         viewVENTAS.jb_modificar.setEnabled(false);
         viewVENTAS.jb_eliminar.setEnabled(false);
         viewVENTAS.jtf_cantidad.setEditable(true);
+        viewVENTAS.jcb_codigo_producto.setEnabled(true);
+    }
+    /**
+     * metodo que sirve para eliminar una fila seleccionda dentro de la tabla
+     */
+    public void eliminar(){
+        modelVENTAS.getModel_ventas().removeRow(viewVENTAS.jt_vista.getSelectedRow()); //eliina la fila seleccionada en la jtable
+        //volviando a calcular el importe
+        float fila=0;
+        float total=0;
+        for (int i = 0; i < viewVENTAS.jt_vista.getRowCount(); i++){
+            fila = Float.parseFloat(viewVENTAS.jt_vista.getValueAt(i,6).toString());
+            total += fila;    
+        }
+        modelVENTAS.setImporte(total);
+        modelVENTAS.importe();
+        viewVENTAS.jtf_importe.setText(Float.toString(modelVENTAS.getImporte()));
+        viewVENTAS.jtf_iva.setText(Float.toString(modelVENTAS.getIva()));
+        viewVENTAS.jtf_subtotal.setText(Float.toString(modelVENTAS.getSubtotal())); 
+        viewVENTAS.jb_eliminar.setEnabled(false);
+        viewVENTAS.jb_nuevo.setEnabled(false);
+    }
+    public void modificar(){
+        eliminar();
+        jtf_agregar();
     }
     /**
      * Metodo que limpiara los ComboBox de la vista VENTAS
@@ -215,6 +276,22 @@ public class ControllerVENTAS {
         totalProducto();
         
     }
+    /**
+     * metodo que al haer clic en una fila de la tabla, pasara cada dato en sus Jtf correspondientes 
+     * para poder modificar o eliminar la fila seleccionada
+     */
+    public void jt_vista_MouseClicked(){
+        modelVENTAS.setRec(viewVENTAS.jt_vista.getSelectedRow());//a la variable se le asigna el elemento seleccionado en la tabla
+        viewVENTAS.jcb_codigo_producto.setSelectedItem(viewVENTAS.jt_vista.getValueAt(modelVENTAS.getRec(), 1).toString());
+        viewVENTAS.jtf_nombre_producto.setText(viewVENTAS.jt_vista.getValueAt(modelVENTAS.getRec(), 2).toString());
+        viewVENTAS.jtf_marca_producto.setText(viewVENTAS.jt_vista.getValueAt(modelVENTAS.getRec(), 3).toString());
+        viewVENTAS.jtf_precio.setText(viewVENTAS.jt_vista.getValueAt(modelVENTAS.getRec(), 4).toString());
+        viewVENTAS.jtf_cantidad.setText(viewVENTAS.jt_vista.getValueAt(modelVENTAS.getRec(), 5).toString());
+        viewVENTAS.jtf_total.setText(viewVENTAS.jt_vista.getValueAt(modelVENTAS.getRec(), 6).toString());
+        viewVENTAS.jb_modificar.setEnabled(true);
+        viewVENTAS.jb_eliminar.setEnabled(true);
+        viewVENTAS.jb_agregar.setEnabled(false);
+    }
     /***
      * el siguiente metodo mandara a las variables dentro del modelo el valor de la cajas de precio y cantidad
      * de la venta
@@ -270,17 +347,27 @@ public class ControllerVENTAS {
         switch (modelVENTAS.getStatus_producto()) {
             case "en venta":
                AgregarDatosVenta();
+               viewVENTAS.jcb_codigo_producto.setEnabled(false);
                 break;
             case "ya no se maneja":
                 JOptionPane.showMessageDialog(null,"no se puede vender este producto");
+                viewVENTAS.jcb_codigo_producto.setEnabled(true);
                 break;
             case "Producto en **Promocion**":
                 AgregarDatosVenta();
+                viewVENTAS.jcb_codigo_producto.setEnabled(false);
                 break;
         }
         viewVENTAS.jtf_cantidad.setEditable(false);
         viewVENTAS.jcb_codigo_descuento.setEnabled(true);
         viewVENTAS.jb_realizar_venta.setEnabled(true);
+        viewVENTAS.jt_vista.setEnabled(true);
+        viewVENTAS.jtf_nombre_producto.setText("  ");
+        viewVENTAS.jtf_tipo_producto.setText(" ");
+        viewVENTAS.jtf_marca_producto.setText(" ");
+        viewVENTAS.jtf_cantidad.setText("0");
+        viewVENTAS.jtf_precio.setText("0.0");
+        viewVENTAS.jtf_total.setText("0.0");
     }
     /**
      * Metodo que manda a llamar el metodo para aplicar el descuento si el cliente
