@@ -209,7 +209,7 @@ public class ModelProductos {
      */
     public void Conectar(){
              try{ 
-                conexion=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia","root","");                     
+                conexion=DriverManager.getConnection("jdbc:mysql://raspberry-tic41.zapto.org:3306/StockCia", "tic41", "tic41");                     
                 st=conexion.createStatement(); 
                 rs=st.executeQuery("SELECT * From productos;");
                         

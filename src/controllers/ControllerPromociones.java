@@ -13,6 +13,21 @@ import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.TableRowSorter;
 
+
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author LAB-1
@@ -28,7 +43,7 @@ public class ControllerPromociones {
                 modelPromociones.setCodigo_producto((String) viewPromociones.jcb_codigo_producto.getSelectedItem());
                 modelPromociones.llenarTextFieldsProductos();
                 viewPromociones.jtf_nombre_producto.setText(modelPromociones.getNombre_producto());
-                viewPromociones.jtf_tipo_producto.setText(modelPromociones.getTipo_producto());
+                viewPromociones.jtf_tipo_producto.setText(modelPromociones.getPrecio_unitario_venta());
                 viewPromociones.jtf_marca_producto.setText(modelPromociones.getMarca_producto());
                 //habilitar cajas de texto
             }
@@ -81,6 +96,7 @@ public class ControllerPromociones {
             if (e.getSource() == viewPromociones.jtf_buscar) {
                 modelPromociones.setCadena(viewPromociones.jtf_buscar.getText());
                 viewPromociones.jtf_buscar.setText(modelPromociones.getCadena());
+                   modelPromociones.getTrsFiltro().setRowFilter(RowFilter.regexFilter(viewPromociones.jtf_buscar.getText(), modelPromociones.getColumnaABuscar()));
 
             }
         }
@@ -99,19 +115,6 @@ public class ControllerPromociones {
         llenadoCombos();
         setActionListener();    
     }
-
-    public void llenadoTabla() {
-        try {
-
-            modelPromociones.setCodigo_producto((String) viewPromociones.jcb_codigo_producto.getSelectedItem());
-            modelPromociones.setNombre_producto(viewPromociones.jtf_nombre_producto.getText());
-            modelPromociones.setMarca_producto(viewPromociones.jtf_marca_producto.getText());
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "error11 AgregarDatosCompras " + e);
-        }
-    }
-
     public void llenadoCombos() {
         modelPromociones.llenarCombo();
         for (int c = 0; c < modelPromociones.getProducto().size(); c++) {

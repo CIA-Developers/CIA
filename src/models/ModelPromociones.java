@@ -44,7 +44,36 @@ public class ModelPromociones {
     public void setRec(int rec) {
         this.rec = rec;
     }
+    public String[] titulos = {"No promocion", "Causa", "Descuento", "precio_descuento", "unidad de medida", "codigo del producto", "fecha_inicio", "fecha_final"}; //columnas de la tabla
 
+    public String[] getTitulos() {
+        return titulos;
+    }
+
+    public void setTitulos(String[] titulos) {
+        this.titulos = titulos;
+    }
+
+    public String[] registros = new String[50];
+
+    public String[] getRegistros() {
+        return registros;
+    }
+
+    public void setRegistros(String[] registros) {
+        this.registros = registros;
+    }
+
+    public String sql;
+
+    public String getSql() {
+        return sql;
+    }
+
+    public void setSql(String sql) {
+        this.sql = sql;
+    }
+    
     /**
      * Variables para el metodo de busqueda
      */
@@ -87,7 +116,7 @@ public class ModelPromociones {
     private String fecha_inicio;
     private String fecha_final;
     private String nombre_producto;// solo se obtendra este dato, no se almacenara
-    private String tipo_producto;// solo se obtendra este dato, no se almacenara
+    private String precio_unitario_venta;// solo se obtendra este dato, no se almacenara
     private String marca_producto;// solo se obtendra este dato, no se almacenara
 
     public int getVerificar() {
@@ -134,16 +163,44 @@ public class ModelPromociones {
         return unidad_medida;
     }
 
-    public void setUnidad_medida(String unidad_medida) {
-        this.unidad_medida = unidad_medida;
-    }
-
     public String getCodigo_producto() {
         return codigo_producto;
     }
 
-    public void setCodigo_producto(String unidad_medida) {
+    public void setCodigo_producto(String codigo_producto) {
         this.codigo_producto = codigo_producto;
+    }
+
+    public String getPrecio_unitario_venta() {
+        return precio_unitario_venta;
+    }
+
+    public void setPrecio_unitario_venta(String precio_unitario_venta) {
+        this.precio_unitario_venta = precio_unitario_venta;
+    }
+
+    public String getMarca_producto() {
+        return marca_producto;
+    }
+
+    public void setMarca_producto(String marca_producto) {
+        this.marca_producto = marca_producto;
+    }
+
+    public ArrayList getProducto() {
+        return producto;
+    }
+
+    public void setProducto(ArrayList producto) {
+        this.producto = producto;
+    }
+
+    public String getNombre_producto() {
+        return nombre_producto;
+    }
+
+    public void setNombre_producto(String nombre_producto) {
+        this.nombre_producto = nombre_producto;
     }
 
     public String getFecha_inicio() {
@@ -191,38 +248,6 @@ public class ModelPromociones {
         this.model = model;
     }
 
-    public String getTipo_producto() {
-        return tipo_producto;
-    }
-
-    public void setTipo_producto(String tipo_producto) {
-        this.tipo_producto = tipo_producto;
-    }
-
-    public String getMarca_producto() {
-        return marca_producto;
-    }
-
-    public void setMarca_producto(String marca_producto) {
-        this.marca_producto = marca_producto;
-    }
-
-    public ArrayList getProducto() {
-        return producto;
-    }
-
-    public void setProducto(ArrayList producto) {
-        this.producto = producto;
-    }
-
-    public String getNombre_producto() {
-        return nombre_producto;
-    }
-
-    public void setNombre_producto(String nombre_producto) {
-        this.nombre_producto = nombre_producto;
-    }
-
     private Connection conexion;
     private Statement st;
     private ResultSet rs;
@@ -263,11 +288,12 @@ public class ModelPromociones {
     public void llenarTextFieldsProductos() {
         try {
             codigo_producto = this.getCodigo_producto();
-            rs = st.executeQuery("SELECT * FROM productos WHERE codigo_producto='"+codigo_producto+"';");//consulta a empleaddos compras
+            rs = st.executeQuery("SELECT * FROM productos WHERE codigo_producto='" + codigo_producto + "';");//consulta a empleaddos compras
             rs.next();
-            nombre_producto = rs.getString("nom_producto");// solo se obtendra este dato, no se almacenara
-            tipo_producto = rs.getString("tipo_producto");// solo se obtendra este dato, no se almacenara
+            nombre_producto = rs.getString("nom_producto");
             marca_producto = rs.getString("marca");
+            precio_unitario_venta = rs.getString("precio_unitario_venta");
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "error8 al llenarTextFields" + e);
         }
