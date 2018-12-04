@@ -64,6 +64,8 @@ public class ControllerVENTAS {
             }else if(e.getSource() == viewVENTAS.jb_modificar){
                 modificar();
                 viewVENTAS.jb_modificar.setEnabled(false);
+            }else if(e.getSource() == viewVENTAS.jb_realizar_venta){
+                realizarCompra();
             }
         }
         
@@ -392,5 +394,73 @@ public class ControllerVENTAS {
             viewVENTAS.jtf_puntos_requeridos.setText("0.0");
             viewVENTAS.jtf_porcentaje.setText("0.0");
         }
+    }
+    /**
+     * metodo  que guardara cada dato de la Venta en su respectiva tabla
+     * en detalle Venta, se agudaran los datos dentro de la jtable
+     * en Ventas, se llenara con los datos de jos jtf que le corresponden a la tabla
+     * este meodo finalizara toda la compra de la tabla
+     */
+    public void realizarCompra(){
+        try{
+            // se guarda en Ventas **agregando datos para guardar
+            modelVENTAS.setRFC_cliente((String) viewVENTAS.jcb_rfc_cliente.getSelectedItem());
+            modelVENTAS.setSubtotal(Float.parseFloat(viewVENTAS.jtf_subtotal.getText()));
+            modelVENTAS.setIva(Float.parseFloat(viewVENTAS.jtf_iva.getText()));
+            modelVENTAS.setImporte(Float.parseFloat(viewVENTAS.jtf_importe.getText()));
+            modelVENTAS.setNumero_venta(Integer.parseInt(viewVENTAS.jtf_numero_venta.getText()));
+            modelVENTAS.setRFC_empleado((String) viewVENTAS.jcb_rfc.getSelectedItem());
+            modelVENTAS.setNum_sucursal(Integer.parseInt((String) viewVENTAS.jcb_numero_sucursal.getSelectedItem()));
+            modelVENTAS.setCodigo_descuento(Integer.parseInt((String) viewVENTAS.jcb_codigo_descuento.getSelectedItem()));
+            modelVENTAS.setPuntos_ganados(Integer.parseInt(viewVENTAS.jtf_puntos_ganados.getText()));
+            modelVENTAS.finalizarCompratablaVenta();//llamamos al metodo de guardar en compra 
+        }catch(Exception e){
+                JOptionPane.showMessageDialog(null,"error14 FinalizarVentas "+ e);
+          } 
+        //se guardara en detalle_compras ***agregando datos
+        try{
+        for (int i = 0; i < viewVENTAS.jt_vista.getRowCount(); i++){
+            modelVENTAS.setNumero_venta(Integer.parseInt((String) viewVENTAS.jt_vista.getValueAt(i,0)));
+            modelVENTAS.setCodigo_producto(viewVENTAS.jt_vista.getValueAt(i,1).toString());
+            modelVENTAS.setCantidad_venta(Integer.parseInt((String) viewVENTAS.jt_vista.getValueAt(i,5)));
+            modelVENTAS.setPrecio_venta(Float.parseFloat((String) viewVENTAS.jt_vista.getValueAt(i,4)));
+            modelVENTAS.setTotal_por_producto(Float.parseFloat((String)viewVENTAS.jt_vista.getValueAt(i,6)));
+            modelVENTAS.finalizarCompratablaDetalleVenta(); //llamamos el metodo de guardar en detalle_compra   
+        }
+        //Actualizar stock al realizar la compra
+        for (int i = 0; i < viewVENTAS.jt_vista.getRowCount(); i++){
+           modelVENTAS.setNum_sucursal(Integer.parseInt((String)viewVENTAS.jcb_numero_sucursal.getSelectedItem()));
+           modelVENTAS.setCodigo_producto(viewVENTAS.jt_vista.getValueAt(i,1).toString());
+           modelVENTAS.setCantidad_venta(Integer.parseInt((String) viewVENTAS.jt_vista.getValueAt(i,5))); 
+           modelVENTAS.existencias();   
+        }
+        JOptionPane.showMessageDialog(null,"Se realizo la Venta con exito");  
+        deshabiltarObjetos();
+        //LIMPIAR TABLA 
+        for (int i = 0; i <  viewVENTAS.jt_vista.getRowCount(); i++) {
+           modelVENTAS.getModel_ventas().removeRow(i);
+            i-=1;
+        }
+        viewVENTAS.jtf_nombre_empleado.setText(" ");
+        viewVENTAS.jtf_nombre_cliente.setText(" ");
+        viewVENTAS.jtf_puntos_acumulados.setText(" ");
+        viewVENTAS.jtf_nombre_producto.setText("  ");
+        viewVENTAS.jtf_tipo_producto.setText(" ");
+        viewVENTAS.jtf_marca_producto.setText(" ");
+        viewVENTAS.jtf_cantidad.setText("0");
+        viewVENTAS.jtf_precio.setText("0.0");
+        viewVENTAS.jtf_total.setText("0.0");
+        viewVENTAS.jtf_importe.setText("0.0");
+        viewVENTAS.jtf_iva.setText("0.0");
+        viewVENTAS.jtf_subtotal.setText("0.0");
+        viewVENTAS.jtf_descuento.setText(" ");
+        viewVENTAS.jtf_efectivo.setText("0.0");
+        viewVENTAS.jtf_cambio.setText("0.0");
+        viewVENTAS.jcb_rfc.setEnabled(true);
+        modelVENTAS.numeroVentas();
+        viewVENTAS.jtf_numero_venta.setText(Integer.toString(modelVENTAS.getNumero_venta()));
+        }catch(Exception e){
+                JOptionPane.showMessageDialog(null,"error15 FinalizarVentas "+ e);
+        } 
     }
 }

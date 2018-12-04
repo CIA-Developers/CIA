@@ -817,7 +817,7 @@ public class modelVENTAS {
                 ps.setInt(10,puntos_ganados);
                 ps.executeUpdate();//realizndo la accion de guardar
             }catch(Exception e){
-                JOptionPane.showMessageDialog(null,"error12 FinalizarCompras "+ e);
+                JOptionPane.showMessageDialog(null,"error12 FinalizarVentas "+ e);
           }
       }
     }
@@ -844,7 +844,7 @@ public class modelVENTAS {
             ps.setFloat(5,total_por_producto);
             ps.executeUpdate();//realizndo la accion de guardar    
       }catch(Exception e){
-            JOptionPane.showMessageDialog(null,"error13 FinalizarCompras "+ e);
+            JOptionPane.showMessageDialog(null,"error13 FinalizarVentas "+ e);
       }    
     }
     //*********************** ACTUALIZACION DE STOCK Y SUMAR Y RESTAR PUNTOS A USUARIOS ***********************
@@ -879,7 +879,7 @@ public class modelVENTAS {
           System.out.println(existencia_general);
           st.executeUpdate("UPDATE productos SET existencia_total="+existencia_general+" WHERE codigo_producto='"+codigo_producto+"';");
       }catch(Exception e){
-          JOptionPane.showMessageDialog(null,"error16 FinalizarCompras "+ e);
+          JOptionPane.showMessageDialog(null,"error16 FinalizarVentas "+ e);
       }
     }
 }
