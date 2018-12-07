@@ -26,8 +26,8 @@ public class Database {
              * conexion a la Base de datos
              */
             
-            cn=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia","root","");
-            //cn=DriverManager.getConnection("jdbc:mysql://raspberry-tic41.zapto.org:3306/StockCia", "tic41", "tic41");//conexion local     
+           cn=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia","root","");
+           //cn=DriverManager.getConnection("jdbc:mysql://raspberry-tic41.zapto.org:3306/StockCia", "tic41", "tic41");//conexion local     
         }
         catch(Exception e){
          System.out.println(String.valueOf(e));}

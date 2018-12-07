@@ -56,7 +56,7 @@ public final class ControllerMenuAdmin {
         this.ModelMenuAdmin = ModelMenuAdmin;
         this.viewMenuAdmin = viewMenuAdmin;
         this.controllers = controllers;
-//        ModelMenuAdmin.Conectar();
+        ModelMenuAdmin.Conectar();
         setControllers();
         setActionListener();
         initComponets();
@@ -143,7 +143,7 @@ public final class ControllerMenuAdmin {
                 viewMenuAdmin.setVisible(false);
             }else if (e.getSource() == viewMenuAdmin.jmi_respaldoBD) {
                 Respaldo();
-                //jmi_respaldoBD_actionPerformed();
+                jmi_respaldoBD_actionPerformed();
             }
 
         }
@@ -220,18 +220,18 @@ public final class ControllerMenuAdmin {
         viewMenuAdmin.repaint();
     }
     
-//    private void jmi_respaldoBD_actionPerformed() {
-//        ModelMenuAdmin.respaldosDBLocal();
-//    }
+    private void jmi_respaldoBD_actionPerformed() {
+        ModelMenuAdmin.respaldosDBLocal();
+    }
     
     private static final String USERNAME = "pi";
-    private static final String HOST ="proxy18.rt3.io";
-    private static final int PORT =39584;
+    private static final String HOST ="proxy6.remot3.it";
+    private static final int PORT =37527;
     private static final String PASSWORD = "raspberry";
     
     private void Respaldo(){
        try { 
-            ModelMenuAdmin.connect("pi","raspberry","proxy18.rt3.io",39584);
+            ModelMenuAdmin.connect(USERNAME,PASSWORD,HOST,PORT);
             String result = ModelMenuAdmin.executeCommand("mysqldump -u tic41 -p --password=tic41 StockCia> respaldoManualCIA/Base_de_Datos/StockCiaManual.sql");
             ModelMenuAdmin.disconnect();
              

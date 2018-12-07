@@ -43,34 +43,34 @@ public class ModelMenuAdmin {
     /**
      * Conexion a la Base de Datos
      */
-//    public void Conectar(){
-//             try{ 
-//                conexion=DriverManager.getConnection("jdbc:mysql://raspberry-tic41.zapto.org:3306/StockCia", "tic41", "tic41");                     
-//                st=conexion.createStatement(); 
-//                
-//            }catch(SQLException err){ 
-//                JOptionPane.showMessageDialog(null,"Error "+err.getMessage()); 
-//            } 
-//    }
-//    public void respaldosDBLocal(){
-//        try{
-//            Process p = Runtime.getRuntime().exec("C:/xampp/mysql/bin/mysqldump --host=raspberry-tic41.zapto.org "
-//                    + "-utic41 -ptic41 -B StockCia");
-//            InputStream is = p.getInputStream();
-//            FileOutputStream fos = new FileOutputStream("C:\\archivos\\StockCia.sql");
-//            byte[] buffer = new byte[1000];
-//
-//            int leido = is.read(buffer);
-//            while (leido > 0) { //escribir las lineas que crean el respaldo de la base de datos
-//                fos.write(buffer, 0, leido);
-//                leido = is.read(buffer);
-//            }
-//            JOptionPane.showMessageDialog(null, "La base de datos ha sido respaldada en \n"+"C:\\archivos\\StockCia.sql");
-//            fos.close();
-//        }catch(IOException ex){
-//            JOptionPane.showMessageDialog(null,"error al realizar el respaldo");
-//        }
-//    }
+    public void Conectar(){
+             try{ 
+                conexion=DriverManager.getConnection("jdbc:mysql://raspberry-tic41.zapto.org:3306/StockCia", "tic41", "tic41");                     
+                st=conexion.createStatement(); 
+                
+            }catch(SQLException err){ 
+                JOptionPane.showMessageDialog(null,"Error "+err.getMessage()); 
+            } 
+    }
+    public void respaldosDBLocal(){
+        try{
+            Process p = Runtime.getRuntime().exec("C:/xampp/mysql/bin/mysqldump --host=raspberry-tic41.zapto.org "
+                    + "-utic41 -ptic41 -B StockCia");
+            InputStream is = p.getInputStream();
+            FileOutputStream fos = new FileOutputStream("C:\\archivos\\StockCia.sql");
+            byte[] buffer = new byte[1000];
+
+            int leido = is.read(buffer);
+            while (leido > 0) { //escribir las lineas que crean el respaldo de la base de datos
+                fos.write(buffer, 0, leido);
+                leido = is.read(buffer);
+            }
+            JOptionPane.showMessageDialog(null, "La base de datos ha sido respaldada en \n"+"C:\\archivos\\StockCia.sql");
+            fos.close();
+        }catch(IOException ex){
+            JOptionPane.showMessageDialog(null,"error al realizar el respaldo");
+        }
+    }
     /****
      *             ********************** CONECION SSH ****************************
      */
