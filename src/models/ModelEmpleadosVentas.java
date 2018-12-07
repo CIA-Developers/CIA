@@ -214,8 +214,8 @@ public class ModelEmpleadosVentas {
      */
      public void Conectar(){
             try{
-                //conexion=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia","root",""); 
-                conexion=DriverManager.getConnection("jdbc:mysql://raspberry-tic41.zapto.org:3306/StockCia", "tic41", "tic41");
+                conexion=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia","root",""); 
+                //conexion=DriverManager.getConnection("jdbc:mysql://raspberry-tic41.zapto.org:3306/StockCia", "tic41", "tic41");
                 st=conexion.createStatement(); 
                 rs=st.executeQuery("SELECT RFC_empl_vent, nombre_empl_vent, ap_pat_vent, ap_mat_vent, sexo_vent, estado_civil_vent, telefono_vent, correo_vent, usuario_vent FROM empleados_ventas ;");
                         

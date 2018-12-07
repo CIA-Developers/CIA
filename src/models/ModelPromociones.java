@@ -255,7 +255,8 @@ public class ModelPromociones {
 
     public void Conectar() {
         try {
-            conexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia", "root", "");
+            conexion =DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia","root","");
+            //conexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia", "root", "");
             st = conexion.createStatement();
             rs = st.executeQuery("SELECT promociones.id_promociones,causa_promocion, desc_promocion,precio_descuento, promociones.unidad_medida, promocion_prod.codigo_producto, promocion_prod.fecha_inicio, promocion_prod.fecha_final from promociones inner join promocion_prod on promociones.id_promociones = promocion_prod.id_promociones;");
             rs.first();

@@ -215,7 +215,8 @@ public class ModelEmpleadosCompras {
      */
      public void Conectar(){
             try{ 
-                conexion=DriverManager.getConnection("jdbc:mysql://raspberry-tic41.zapto.org:3306/StockCia", "tic41", "tic41");                     
+                conexion =DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia","root","");
+                //conexion=DriverManager.getConnection("jdbc:mysql://raspberry-tic41.zapto.org:3306/StockCia", "tic41", "tic41");                     
                 st=conexion.createStatement(); 
                 rs=st.executeQuery("SELECT RFC_empl_comp, nombre_empl_comp, ap_pat_comp, ap_mat_comp, sexo_comp, estado_civil_comp, telefono_comp, correo_comp, usuario_comp FROM empleados_compras ;");
                         

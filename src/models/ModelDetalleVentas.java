@@ -122,7 +122,8 @@ public class ModelDetalleVentas {
 
     public void Conectar() {
         try {
-            conexion = DriverManager.getConnection("jdbc:mysql://raspberry-tic41.zapto.org:3306/StockCia", "tic41", "tic41");
+            conexion =DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/stockcia","root","");
+            //conexion = DriverManager.getConnection("jdbc:mysql://raspberry-tic41.zapto.org:3306/StockCia", "tic41", "tic41");
             st = conexion.createStatement();
             rs = st.executeQuery("SELECT ventas.id_ventas, fecha_venta, RFC_cliente, RFC_empleado, no_sucursal, codigo_descuento, puntos_ganados, detalle_ventas.Id_detalle_venta, codigo_producto, cantidad, precio_venta, total_producto FROM ventas INNER JOIN detalle_ventas ON ventas.id_ventas = detalle_ventas.id_ventas;");
 
