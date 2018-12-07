@@ -7,6 +7,10 @@ package controllers;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import models.ModelMenuAdmin;
 import views.ViewMenuAdmin;
 
@@ -51,6 +55,7 @@ public final class ControllerMenuAdmin {
         this.ModelMenuAdmin = ModelMenuAdmin;
         this.viewMenuAdmin = viewMenuAdmin;
         this.controllers = controllers;
+        ModelMenuAdmin.Conectar();
         setControllers();
         setActionListener();
         initComponets();
@@ -101,6 +106,7 @@ public final class ControllerMenuAdmin {
         viewMenuAdmin.jmi_promociones.addActionListener(actionListener);
         viewMenuAdmin.jmi_descuentos.addActionListener(actionListener);
         viewMenuAdmin.jmi_salir.addActionListener(actionListener);
+        viewMenuAdmin.jmi_respaldoBD.addActionListener(actionListener);
     }
     /**
      * Evalua el componente que genero el evento y llama a un método en
@@ -134,6 +140,8 @@ public final class ControllerMenuAdmin {
             }else if (e.getSource() == viewMenuAdmin.jmi_salir) {
                 ModelMenuAdmin.VentanaLogin();
                 viewMenuAdmin.setVisible(false);
+            }else if (e.getSource() == viewMenuAdmin.jmi_respaldoBD) {
+                jmi_respaldoBD_actionPerformed();
             }
 
         }
@@ -208,5 +216,9 @@ public final class ControllerMenuAdmin {
         viewMenuAdmin.setContentPane(controllerDescuentos.viewDescuentos);
         viewMenuAdmin.revalidate();
         viewMenuAdmin.repaint();
+    }
+    
+    private void jmi_respaldoBD_actionPerformed() {
+        ModelMenuAdmin.respaldosDBLocal();
     }
 }
