@@ -90,7 +90,9 @@ public class ControllerDetalleCompra {
         
        
         ConexionBD();
-        cajas_deshabilitadas();
+        //cajas_deshabilitadas();
+        mostrarProductos();
+        Vendedor();
     }
     
      private void jt_detalle_compra_MouseClicked() {
@@ -151,6 +153,15 @@ public class ControllerDetalleCompra {
         viewDetalleCompra.jTF_prod_menos_comprado.setText(modelDetalleCompra.getLimpiar());
         cajas_habilitadas();//llamar al metodo de cajas habilitadas para proceder a escribir un nuevo registro 
     }
-
+    private void mostrarProductos(){
+        modelDetalleCompra.mostrarProducto();
+        modelDetalleCompra.mostrarProductoMenor();
+        viewDetalleCompra.jTF_prod_mas_comprado.setText(modelDetalleCompra.getNombre_producto());
+        viewDetalleCompra.jTF_prod_menos_comprado.setText(modelDetalleCompra.getProducto_menor());
+    }
+    private void Vendedor(){
+        modelDetalleCompra.mostrarComprador();
+        viewDetalleCompra.jTF_mejor_comprador.setText(modelDetalleCompra.getNombre_empleado()+" "+modelDetalleCompra.getApellido_paterno()+" "+modelDetalleCompra.getApellido_materno());
+    }
     
 }

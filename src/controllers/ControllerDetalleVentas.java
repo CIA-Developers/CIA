@@ -85,6 +85,8 @@ public class ControllerDetalleVentas {
        
         ConexionBD();
         cajas_deshabilitadas();
+        mostrarProductos();
+        Vendedor();
     }
     
      private void jt_detalle_venta_MouseClicked() {
@@ -139,5 +141,15 @@ public class ControllerDetalleVentas {
     }
 
     private void cajas_habilitadas() {
+    }
+    private void mostrarProductos(){
+        modelDetalleVentas.mostrarProducto();
+        modelDetalleVentas.mostrarProductoMenor();
+        viewDetalleVentas.jTF_prod_mas_vendido.setText(modelDetalleVentas.getNombre_producto());
+        viewDetalleVentas.jTF_prod_menos_vendido.setText(modelDetalleVentas.getProducto_menor());
+    }
+    private void Vendedor(){
+        modelDetalleVentas.mostrarVendedor();
+        viewDetalleVentas.jTF_mejor_vendedor.setText(modelDetalleVentas.getNombre_empleado()+" "+modelDetalleVentas.getApellido_paterno()+" "+modelDetalleVentas.getApellido_materno());
     }
 }

@@ -225,8 +225,8 @@ public final class ControllerMenuAdmin {
     }
     
     private static final String USERNAME = "pi";
-    private static final String HOST ="proxy6.remot3.it";
-    private static final int PORT =37527;
+    private static final String HOST ="proxy18.rt3.io";
+    private static final int PORT =39648;
     private static final String PASSWORD = "raspberry";
     
     private void Respaldo(){

@@ -12,6 +12,10 @@ import views.*;
  * @author Octaviano
  */
 public class ModelLogin {
+    /***
+     * Variables para el logeo de los usuarios, y accedan a la interfaz que les corresponda.  
+     */
+    
     public void muenuAdmin(){
         ModelClientes modelClientes = new ModelClientes();
         ViewClientes viewClientes = new ViewClientes();

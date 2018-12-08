@@ -21,8 +21,54 @@ import javax.swing.table.TableRowSorter;
  * @author Ami
  */
 public class ModelDetalleCompras {
+    public String nombre_producto;
+    public String producto_menor;
+    public String nombre_empleado;
+    public String apellido_paterno;
+    public String apellido_materno;
+
+    public String getNombre_producto() {
+        return nombre_producto;
+    }
+
+    public void setNombre_producto(String nombre_producto) {
+        this.nombre_producto = nombre_producto;
+    }
+
+    public String getProducto_menor() {
+        return producto_menor;
+    }
+
+    public void setProducto_menor(String producto_menor) {
+        this.producto_menor = producto_menor;
+    }
+
+    public String getNombre_empleado() {
+        return nombre_empleado;
+    }
+
+    public void setNombre_empleado(String nombre_empleado) {
+        this.nombre_empleado = nombre_empleado;
+    }
+
+    public String getApellido_paterno() {
+        return apellido_paterno;
+    }
+
+    public void setApellido_paterno(String apellido_paterno) {
+        this.apellido_paterno = apellido_paterno;
+    }
+
+    public String getApellido_materno() {
+        return apellido_materno;
+    }
+
+    public void setApellido_materno(String apellido_materno) {
+        this.apellido_materno = apellido_materno;
+    }
+    
      //la variable modelo almacenara los tados de la tabla
-        DefaultTableModel modelo_detalle_compra = new DefaultTableModel();
+    DefaultTableModel modelo_detalle_compra = new DefaultTableModel();
 
     public DefaultTableModel getModelo_detalle_compra() {
         return modelo_detalle_compra;
@@ -133,7 +179,7 @@ public class ModelDetalleCompras {
 
     }
     
-     public void mostrar() {
+    public void mostrar() {
         ResultSet rs = Database.getTabla("SELECT compra.id_compra, fecha_compra, RFC_empleado_comp, detalle_compra.id_detalle_compra, codigo_producto_comp, cantidad_comp, precio_comp, total_producto_comp FROM compra INNER JOIN detalle_compra ON compra.id_compra = detalle_compra.id_compra");
         modelo_detalle_compra.setColumnIdentifiers(new Object[]{"Id compra", "Fecha compra","RFC empleado", "Id detalle compra", "Codigo producto", "Cantidad", "Precio individual", "Total"});
         try {
@@ -153,6 +199,35 @@ public class ModelDetalleCompras {
             System.out.println(e);
         }
     }
-
+    public void mostrarProducto(){
+        try{
+        rs = st.executeQuery("select codigo_producto_comp,nom_producto, count(codigo_producto_comp) as cantidad from detalle_compra inner join productos on detalle_compra.codigo_producto_comp = productos.codigo_producto group by codigo_producto order by cantidad desc");//consulta a descuentos
+        rs.first();
+        nombre_producto = rs.getString("nom_producto"); 
+        }catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    public void mostrarProductoMenor(){
+        try{
+            rs = st.executeQuery("select codigo_producto_comp,nom_producto, count(codigo_producto_comp) as cantidad from detalle_compra inner join productos on detalle_compra.codigo_producto_comp = productos.codigo_producto group by codigo_producto order by cantidad desc");//consulta a descuentos
+            rs.last();
+            producto_menor = rs.getString("nom_producto"); 
+        }catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    public void mostrarComprador(){
+        try{
+           rs = st.executeQuery("select RFC_empleado_comp,nombre_empl_comp,ap_pat_comp,ap_mat_comp, count(RFC_empleado_comp) as cantidad from compra inner join empleados_compras on compra.RFC_empleado_comp = empleados_compras.RFC_empl_comp group by RFC_empleado_comp order by cantidad desc");//consulta a descuentos
+            rs.first();
+            nombre_empleado = rs.getString("nombre_empl_comp");
+            apellido_paterno = rs.getString("ap_pat_comp");
+            apellido_materno = rs.getString("ap_mat_comp");
+        }catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    
     
 }

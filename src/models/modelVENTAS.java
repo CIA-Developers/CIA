@@ -904,4 +904,19 @@ public class modelVENTAS {
           JOptionPane.showMessageDialog(null,"error17 FinalizarVentas "+ e);
       }
     }
+    /***
+     * metodo que realizara el llenado de la factura, haciendo el llenado de los 
+     * parametros correspendientes a la factura 
+    */
+    public void factura(){
+        try {
+            Object[] opciones = {"aceptar","cancelar"};
+            int confirmar = JOptionPane.showConfirmDialog(null, "se realizara la factura?");
+            if (JOptionPane.OK_OPTION == confirmar){
+                
+            }
+        }catch(Exception e){
+          JOptionPane.showMessageDialog(null,"error al realizar la factura:"+ e);
+      }
+    }
 }

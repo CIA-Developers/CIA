@@ -21,6 +21,55 @@ import javax.swing.table.TableRowSorter;
  * @author Ami
  */
 public class ModelDetalleVentas {
+    /***
+     * VAriables para proudctos, el mejor empleado
+     */
+    public String nombre_producto;
+    public String producto_menor;
+    public String nombre_empleado;
+    public String apellido_paterno;
+    public String apellido_materno;
+
+    public String getNombre_producto() {
+        return nombre_producto;
+    }
+
+    public void setNombre_producto(String nombre_producto) {
+        this.nombre_producto = nombre_producto;
+    }
+
+    public String getProducto_menor() {
+        return producto_menor;
+    }
+
+    public void setProducto_menor(String producto_menor) {
+        this.producto_menor = producto_menor;
+    }
+
+    public String getNombre_empleado() {
+        return nombre_empleado;
+    }
+
+    public void setNombre_empleado(String nombre_empleado) {
+        this.nombre_empleado = nombre_empleado;
+    }
+
+    public String getApellido_paterno() {
+        return apellido_paterno;
+    }
+
+    public void setApellido_paterno(String apellido_paterno) {
+        this.apellido_paterno = apellido_paterno;
+    }
+
+    public String getApellido_materno() {
+        return apellido_materno;
+    }
+
+    public void setApellido_materno(String apellido_materno) {
+        this.apellido_materno = apellido_materno;
+    }
+    
  //la variable modelo almacenara los tados de la tabla
         DefaultTableModel modelo_detalle_ventas = new DefaultTableModel();
 
@@ -156,6 +205,35 @@ public class ModelDetalleVentas {
                     rs.getString("detalle_ventas.total_producto")});
             }
         } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    public void mostrarProducto(){
+        try{
+        rs = st.executeQuery("select detalle_ventas.codigo_producto,nom_producto, count(detalle_ventas.codigo_producto) as cantidad from detalle_ventas inner join productos on detalle_ventas.codigo_producto = productos.codigo_producto group by codigo_producto order by cantidad desc");//consulta a descuentos
+        rs.first();
+        nombre_producto = rs.getString("nom_producto"); 
+        }catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    public void mostrarProductoMenor(){
+        try{
+            rs = st.executeQuery("select detalle_ventas.codigo_producto,nom_producto, count(detalle_ventas.codigo_producto) as cantidad from detalle_ventas inner join productos on detalle_ventas.codigo_producto = productos.codigo_producto group by codigo_producto order by cantidad desc");//consulta a descuentos
+            rs.last();
+            producto_menor = rs.getString("nom_producto"); 
+        }catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    public void mostrarVendedor(){
+        try{
+           rs = st.executeQuery("select RFC_empleado,nombre_empl_vent,ap_pat_vent,ap_mat_vent, count(RFC_empleado) as cantidad from ventas inner join empleados_ventas on ventas.RFC_empleado = empleados_ventas.RFC_empl_vent group by RFC_empleado order by cantidad desc");//consulta a descuentos
+            rs.first();
+            nombre_empleado = rs.getString("nombre_empl_vent");
+            apellido_paterno = rs.getString("ap_pat_vent");
+            apellido_materno = rs.getString("ap_mat_vent");
+        }catch (Exception e) {
             System.out.println(e);
         }
     }
